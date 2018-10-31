@@ -1,11 +1,11 @@
-﻿using MundiPagg.Models;
-using MundiPagg.Models.Request;
-using MundiPagg.Models.Response;
-using MundiPagg.Resources.Interface;
-using MundiPagg.Utils;
+﻿using Mundipagg.Models;
+using Mundipagg.Models.Request;
+using Mundipagg.Models.Response;
+using Mundipagg.Resources.Interface;
+using Mundipagg.Utils;
 using System.Net.Http;
 
-namespace MundiPagg.Resources
+namespace Mundipagg.Resources
 {
     /// <summary>
     /// Charge manager
@@ -15,7 +15,7 @@ namespace MundiPagg.Resources
         /// <summary>
         /// Creates a new charge manager
         /// </summary>
-        /// <param name="configuration">MundiPagg Api configuration</param>
+        /// <param name="configuration">Mundipagg Api configuration</param>
         public ChargeResource(Configuration configuration) : base(configuration) {}
 
         /// <summary>

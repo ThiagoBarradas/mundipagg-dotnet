@@ -1,4 +1,4 @@
-﻿namespace MundiPagg.Models.Request
+﻿namespace Mundipagg.Models.Request
 {
     /// <summary>
     /// Base list request

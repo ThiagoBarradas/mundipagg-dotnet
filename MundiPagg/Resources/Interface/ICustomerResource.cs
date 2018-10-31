@@ -1,7 +1,7 @@
-﻿using MundiPagg.Models.Request;
-using MundiPagg.Models.Response;
+﻿using Mundipagg.Models.Request;
+using Mundipagg.Models.Response;
 
-namespace MundiPagg.Resources.Interface
+namespace Mundipagg.Resources.Interface
 {
     /// <summary>
     /// Customer manager

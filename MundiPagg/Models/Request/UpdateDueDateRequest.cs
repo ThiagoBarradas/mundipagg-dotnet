@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MundiPagg.Models.Request
+namespace Mundipagg.Models.Request
 {
     /// <summary>
     /// Update due date request

@@ -1,7 +1,7 @@
-﻿using MundiPagg.Models.Enums;
+﻿using Mundipagg.Models.Enums;
 using System;
 
-namespace MundiPagg.Models.Request
+namespace Mundipagg.Models.Request
 {
     /// <summary>
     /// List charges request

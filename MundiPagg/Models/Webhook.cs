@@ -1,7 +1,7 @@
-﻿using MundiPagg.Models.Enums;
+﻿using Mundipagg.Models.Enums;
 using System;
 
-namespace MundiPagg.Models
+namespace Mundipagg.Models
 {
     /// <summary>
     /// Webhook model

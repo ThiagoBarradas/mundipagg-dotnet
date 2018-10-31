@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MundiPagg.Models.Request
+namespace Mundipagg.Models.Request
 {
     /// <summary>
     /// Update metadata request

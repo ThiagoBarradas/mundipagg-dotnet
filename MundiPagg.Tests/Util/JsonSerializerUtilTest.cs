@@ -1,9 +1,9 @@
-﻿using MundiPagg.Models.Enums;
-using MundiPagg.Utils;
+﻿using Mundipagg.Models.Enums;
+using Mundipagg.Utils;
 using Newtonsoft.Json;
 using Xunit;
 
-namespace MundiPagg.Tests.Util
+namespace Mundipagg.Tests.Util
 {
     public class JsonSerializerUtilTest
     {

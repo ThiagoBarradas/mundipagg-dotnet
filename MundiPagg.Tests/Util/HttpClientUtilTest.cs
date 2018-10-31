@@ -1,4 +1,4 @@
-﻿namespace MundiPagg.Tests.Util
+﻿namespace Mundipagg.Tests.Util
 {
     public class HttpClientUtilTest
     {

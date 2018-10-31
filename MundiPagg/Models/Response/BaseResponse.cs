@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net;
 
-namespace MundiPagg.Models.Response
+namespace Mundipagg.Models.Response
 {
     /// <summary>
     /// Base response for all operations
@@ -30,7 +30,7 @@ namespace MundiPagg.Models.Response
         public HttpStatusCode? StatusCode { get; set; }
 
         /// <summary>
-        /// Elapsed time to call MundiPagg Api
+        /// Elapsed time to call Mundipagg Api
         /// </summary>
         public long ElapsedTime { get; set; }
 

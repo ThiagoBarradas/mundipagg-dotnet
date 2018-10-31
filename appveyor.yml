@@ -1,0 +1,37 @@
+image: Visual Studio 2017
+platform: Any CPU
+
+environment:
+  version: $(APPVEYOR_BUILD_VERSION)
+
+configuration:
+- Release
+
+dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: '%version%'
+  package_version: '%version%'
+  assembly_version: '%version%'
+  file_version: '%version%'
+  informational_version: '%version%'
+
+before_build:
+  - dotnet restore
+
+build:
+  project: Mundipagg.sln
+
+after_test:
+  - dotnet pack --configuration Release /p:Version=%version%
+
+artifacts:
+  - path: Mundipagg\bin\Release\netstandard2.0\Mundipagg.dll
+    name: Mundipagg.dll
+  - path: Mundipagg\bin\Release\Mundipagg.%version%.nupkg
+    name: Mundipagg.%version%.nupkg
+
+deploy:
+  provider: NuGet
+  api_key:
+    secure: hb5jOmzsvUKCtOP41EFtc/lwXAOh5auC5KAi2Ok9i/FmTuo2F36yzEgaPiT9olsB

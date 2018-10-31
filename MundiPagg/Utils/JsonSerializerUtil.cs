@@ -2,7 +2,7 @@
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 
-namespace MundiPagg.Utils
+namespace Mundipagg.Utils
 {
     /// <summary>
     /// Resolve property names to lowercase only

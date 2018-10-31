@@ -1,12 +1,11 @@
-﻿using MundiPagg.Resources;
-using MundiPagg.Resources.Interface;
+﻿using Mundipagg.Resources.Interface;
 
-namespace MundiPagg
+namespace Mundipagg
 {
     /// <summary>
-    /// MundiPagg Api Client
+    /// Mundipagg Api Client
     /// </summary>
-    public interface IApiClient
+    public interface IMundipaggApiClient
     {
         /// <summary>
         /// Customer manager

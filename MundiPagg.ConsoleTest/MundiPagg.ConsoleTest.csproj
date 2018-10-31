@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MundiPagg\MundiPagg.csproj" />
+    <ProjectReference Include="..\Mundipagg\Mundipagg.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,5 @@
-﻿using MundiPagg.Models;
-using MundiPagg.Models.Response;
+﻿using Mundipagg.Models;
+using Mundipagg.Models.Response;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace MundiPagg.Utils
+namespace Mundipagg.Utils
 {
     /// <summary>
     /// Http client utility
@@ -24,7 +24,7 @@ namespace MundiPagg.Utils
         private HttpClient Client { get; set; }
 
         /// <summary>
-        /// MundiPagg Api Client Configuration
+        /// Mundipagg Api Client Configuration
         /// </summary>
         private Configuration Configuration { get; set; }
 
@@ -36,7 +36,7 @@ namespace MundiPagg.Utils
         /// <summary>
         /// Creates a new http client utility
         /// </summary>
-        /// <param name="configuration">MundiPagg Api configuration</param>
+        /// <param name="configuration">Mundipagg Api configuration</param>
         /// <param name="jsonSerializerSettings">Json serializer settings</param>
         public HttpClientUtil(Configuration configuration, JsonSerializerSettings jsonSerializerSettings)
         {
@@ -45,7 +45,7 @@ namespace MundiPagg.Utils
             this.Client = new HttpClient();
             this.Client.DefaultRequestHeaders.Accept.Clear();
             this.Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            this.Client.DefaultRequestHeaders.Add("User-Agent", "MundiPagg Dotnet SDK");
+            this.Client.DefaultRequestHeaders.Add("User-Agent", "Mundipagg Dotnet SDK");
             this.Client.DefaultRequestHeaders.Authorization = this.GenerateBasicAuth(configuration.SecretKey, "");
         }
 

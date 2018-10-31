@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MundiPagg.Models
+namespace Mundipagg.Models
 {
     /// <summary>
     /// Transaction model

@@ -1,8 +1,8 @@
-﻿using MundiPagg.Models.Enums;
+﻿using Mundipagg.Models.Enums;
 using Newtonsoft.Json;
 using System;
 
-namespace MundiPagg.Models
+namespace Mundipagg.Models
 {
     /// <summary>
     /// Gateway recipient model

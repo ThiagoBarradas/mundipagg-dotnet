@@ -1,8 +1,8 @@
-﻿using MundiPagg.Models.Enums;
+﻿using Mundipagg.Models.Enums;
 using System;
 using System.Collections.Generic;
 
-namespace MundiPagg.Models
+namespace Mundipagg.Models
 {
     /// <summary>
     /// Customer model

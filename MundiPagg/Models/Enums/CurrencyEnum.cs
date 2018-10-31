@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MundiPagg.Models.Enums
+namespace Mundipagg.Models.Enums
 {
     /// <summary>
     /// All currencies (ISO 4217)

@@ -1,4 +1,4 @@
-﻿namespace MundiPagg.Models
+﻿namespace Mundipagg.Models
 {
     /// <summary>
     /// Pagination model

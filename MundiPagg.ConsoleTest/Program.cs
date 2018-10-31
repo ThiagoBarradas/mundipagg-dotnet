@@ -1,9 +1,9 @@
-﻿using MundiPagg.Models;
-using MundiPagg.Models.Request;
-using MundiPagg.Utils;
+﻿using Mundipagg.Models;
+using Mundipagg.Models.Request;
+using Mundipagg.Utils;
 using Newtonsoft.Json;
 
-namespace MundiPagg.ConsoleTest
+namespace Mundipagg.ConsoleTest
 {
     class Program
     {
@@ -15,7 +15,7 @@ namespace MundiPagg.ConsoleTest
                 WerTest = 12
             }, JsonSerializerUtil.LowerCaseSettings);
 
-            var client = new ApiClient("sk_test_XXXXXXX");
+            var client = new MundipaggApiClient("sk_test_XXXXXXX");
 
             // Create
             var createRequest = new CreateCustomerRequest()
@@ -54,7 +54,7 @@ namespace MundiPagg.ConsoleTest
 
             var obj = hookParsed.Data;
 
-            //MundiPagg.IApiClient client = new ApiClient("sk_test_4GANDgoinHgDJ0VX");
+            //Mundipagg.IApiClient client = new ApiClient("sk_test_4GANDgoinHgDJ0VX");
 
             //var json = "{\r\n  \"id\": \"hook_eNKaMDbtQ2C7z72P\",\r\n  \"account\": {\r\n    \"id\": \"acc_gKD7oA6kIltG45V0\",\r\n    \"name\": \"App Teste Hub - Sandbox\"\r\n  },\r\n  \"type\": \"customer.created\",\r\n  \"created_at\": \"2017-09-28T05:40:50\",\r\n  \"data\": {\r\n    \"id\": \"cus_68ZVrjvfQtJoV97N\",\r\n    \"name\": \"asdasd\",\r\n    \"email\": \"asdas@mailinator.com\",\r\n    \"delinquent\": false,\r\n    \"created_at\": \"2017-09-28T05:40:50\",\r\n    \"updated_at\": \"2017-09-28T05:40:50\",\r\n    \"phones\": {}\r\n  }\r\n}";
             //var hookParsed = client.Webhook.ParseWebhook(json);

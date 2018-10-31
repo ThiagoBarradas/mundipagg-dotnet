@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MundiPagg.Models.Response
+namespace Mundipagg.Models.Response
 {
     /// <summary>
     /// Get customer response

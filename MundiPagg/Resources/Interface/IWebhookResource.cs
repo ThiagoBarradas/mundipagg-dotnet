@@ -1,8 +1,8 @@
-﻿using MundiPagg.Models;
-using MundiPagg.Models.Request;
-using MundiPagg.Models.Response;
+﻿using Mundipagg.Models;
+using Mundipagg.Models.Request;
+using Mundipagg.Models.Response;
 
-namespace MundiPagg.Resources.Interface
+namespace Mundipagg.Resources.Interface
 {
     /// <summary>
     /// Webhook manager
@@ -10,7 +10,7 @@ namespace MundiPagg.Resources.Interface
     public interface IWebhookResource
     {
         /// <summary>
-        /// Parse webhook received from MundiPagg Api
+        /// Parse webhook received from Mundipagg Api
         /// </summary>
         /// <param name="json">Received json</param>
         /// <returns></returns>

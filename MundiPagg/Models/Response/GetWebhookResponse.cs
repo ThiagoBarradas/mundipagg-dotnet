@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MundiPagg.Models.Response
+namespace Mundipagg.Models.Response
 {
     /// <summary>
     /// Get webhook response

@@ -1,14 +1,14 @@
-﻿namespace MundiPagg.Models
+﻿namespace Mundipagg.Models
 {
     /// <summary>
-    /// MundiPagg Api Client Configuration
+    /// Mundipagg Api Client Configuration
     /// </summary>
     public class Configuration
     {
         /// <summary>
         /// Default api url
         /// </summary>
-        private const string API_URL = "https://api.mundipagg.com";
+        private const string API_URL = "https://api.Mundipagg.com";
 
         /// <summary>
         /// Default timeout

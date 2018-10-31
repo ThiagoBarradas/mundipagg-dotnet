@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MundiPagg.Models.Response
+namespace Mundipagg.Models.Response
 {
     /// <summary>
     /// Errors response - Is set when status code is 4XX or 5XX

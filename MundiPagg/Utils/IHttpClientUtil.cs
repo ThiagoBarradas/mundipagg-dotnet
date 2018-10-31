@@ -1,8 +1,8 @@
-﻿using MundiPagg.Models.Response;
+﻿using Mundipagg.Models.Response;
 using System.Collections.Generic;
 using System.Net.Http;
 
-namespace MundiPagg.Utils
+namespace Mundipagg.Utils
 {
     /// <summary>
     /// Http client utility

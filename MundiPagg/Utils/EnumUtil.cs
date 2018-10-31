@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace MundiPagg.Utils
+namespace Mundipagg.Utils
 {
     /// <summary>
     /// Enum utility

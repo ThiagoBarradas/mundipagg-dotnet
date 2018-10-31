@@ -1,7 +1,7 @@
-﻿using MundiPagg.Utils;
+﻿using Mundipagg.Utils;
 using Xunit;
 
-namespace MundiPagg.Tests.Util
+namespace Mundipagg.Tests.Util
 {
     public class StringUtilTest
     {

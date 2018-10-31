@@ -3,11 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MundiPagg", "MundiPagg\MundiPagg.csproj", "{EBA3B994-E6DA-47DB-B943-644DD9BF44AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mundipagg", "Mundipagg\Mundipagg.csproj", "{EBA3B994-E6DA-47DB-B943-644DD9BF44AC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MundiPagg.ConsoleTest", "MundiPagg.ConsoleTest\MundiPagg.ConsoleTest.csproj", "{6120A790-3640-48ED-9919-A4E64A487D23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mundipagg.ConsoleTest", "Mundipagg.ConsoleTest\Mundipagg.ConsoleTest.csproj", "{6120A790-3640-48ED-9919-A4E64A487D23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MundiPagg.Tests", "MundiPagg.Tests\MundiPagg.Tests.csproj", "{513DEF35-F46C-4889-9924-049F21EF91FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mundipagg.Tests", "Mundipagg.Tests\Mundipagg.Tests.csproj", "{513DEF35-F46C-4889-9924-049F21EF91FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9291F099-6BD8-4856-82FA-F6241A7D47AA}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		appveyor.yml = appveyor.yml
+		.github\CONTRIBUTING.md = .github\CONTRIBUTING.md
+		.github\ISSUE_TEMPLATE.md = .github\ISSUE_TEMPLATE.md
+		LICENSE = LICENSE
+		.github\PULL_REQUEST_TEMPLATE.md = .github\PULL_REQUEST_TEMPLATE.md
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

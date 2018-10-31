@@ -1,4 +1,4 @@
-﻿namespace MundiPagg.Models.Response
+﻿namespace Mundipagg.Models.Response
 {
     /// <summary>
     /// Get charge response

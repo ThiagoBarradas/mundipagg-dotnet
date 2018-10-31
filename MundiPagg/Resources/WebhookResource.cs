@@ -1,13 +1,13 @@
-﻿using MundiPagg.Models;
-using MundiPagg.Models.Request;
-using MundiPagg.Models.Response;
-using MundiPagg.Resources.Interface;
-using MundiPagg.Utils;
+﻿using Mundipagg.Models;
+using Mundipagg.Models.Request;
+using Mundipagg.Models.Response;
+using Mundipagg.Resources.Interface;
+using Mundipagg.Utils;
 using Newtonsoft.Json;
 using System;
 using System.Net.Http;
 
-namespace MundiPagg.Resources
+namespace Mundipagg.Resources
 {
     /// <summary>
     /// Webhook manager
@@ -17,11 +17,11 @@ namespace MundiPagg.Resources
         /// <summary>
         /// Creates a new webhook manager
         /// </summary>
-        /// <param name="configuration">MundiPagg Api configuration</param>
+        /// <param name="configuration">Mundipagg Api configuration</param>
         public WebhookResource(Configuration configuration) : base(configuration) { }
 
         /// <summary>
-        /// Parse webhook received from MundiPagg Api
+        /// Parse webhook received from Mundipagg Api
         /// </summary>
         /// <param name="json">Received json</param>
         /// <returns></returns>

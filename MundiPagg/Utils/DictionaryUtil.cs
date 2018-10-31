@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace MundiPagg.Utils
+namespace Mundipagg.Utils
 {
     /// <summary>
     /// Dictionary utility

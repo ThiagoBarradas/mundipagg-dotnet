@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace MundiPagg.Utils
+namespace Mundipagg.Utils
 {
     /// <summary>
     /// String utility

@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace MundiPagg.Models.Enums
+namespace Mundipagg.Models.Enums
 {
     /// <summary>
     /// Webhook status enum

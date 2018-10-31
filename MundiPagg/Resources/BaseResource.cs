@@ -1,8 +1,8 @@
-﻿using MundiPagg.Models;
-using MundiPagg.Utils;
+﻿using Mundipagg.Models;
+using Mundipagg.Utils;
 using Newtonsoft.Json;
 
-namespace MundiPagg.Resources
+namespace Mundipagg.Resources
 {
     /// <summary>
     /// Base resource 
@@ -10,9 +10,9 @@ namespace MundiPagg.Resources
     public abstract class BaseResource
     {
         /// <summary>
-        /// Creates a new base resource with MundiPagg Api coniguration
+        /// Creates a new base resource with Mundipagg Api coniguration
         /// </summary>
-        /// <param name="configuration">MundiPagg Api coniguration</param>
+        /// <param name="configuration">Mundipagg Api coniguration</param>
         public BaseResource(Configuration configuration, JsonSerializerSettings jsonSerializerSettings = null)
         {
             this.JsonSerializerSettings = (jsonSerializerSettings == null)
@@ -23,7 +23,7 @@ namespace MundiPagg.Resources
         }
 
         /// <summary>
-        /// MundiPagg Api coniguration
+        /// Mundipagg Api coniguration
         /// </summary>
         protected Configuration Configuration { get; set; }
 
