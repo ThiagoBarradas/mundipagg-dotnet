@@ -2,6 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Company>Mundipagg</Company>
+    <Authors>Thiago Barradas</Authors>
+    <Product>Mundipagg SDK for dotnet</Product>
+    <Description>Mundipagg alternative sdk for dotnet applications</Description>
+    <Copyright>2018 Mundipagg</Copyright>
+    <PackageProjectUrl>https://github.com/ThiagoBarradas/mundipagg-dotnet</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ThiagoBarradas/mundipagg-dotnet</RepositoryUrl>
+    <PackageTags>mundipagg, new, api, client, apiclient, sdk, development, kit, payment, order, subscription</PackageTags>
+    <PackageIconUrl>https://avatars3.githubusercontent.com/u/5023402</PackageIconUrl>
+    <PackageLicenseUrl>https://github.com/ThiagoBarradas/mundipagg-dotnet/blob/master/LICENSE</PackageLicenseUrl>
   </PropertyGroup>
 
   <ItemGroup>
