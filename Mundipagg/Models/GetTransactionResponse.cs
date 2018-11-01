@@ -1,0 +1,25 @@
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+
+
+namespace Mundipagg.Models
+{
+    [JsonConverter(typeof(GetTransactionResponseCreationConverter))]
+    public class GetTransactionResponse
+    {
+        public string GatewayId { get; set; }
+        public int Amount { get; set; }
+        public string Status { get; set; }
+        public bool Success { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
+        public int AttemptCount { get; set; }
+        public int MaxAttempts { get; set; }
+        public List<GetSplitResponse> Splits { get; set; }
+        public DateTime? NextAttempt { get; set; }
+        public string TransactionType { get; set; }
+        public string Id { get; set; }
+        public GetGatewayResponseResponse GatewayResponse { get; set; }
+    }
+} 
