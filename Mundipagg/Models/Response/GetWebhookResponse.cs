@@ -1,4 +1,5 @@
 ﻿using Mundipagg.Models.Enums;
+using Mundipagg.Models.Webhooks;
 using System;
 
 namespace Mundipagg.Models.Response

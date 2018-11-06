@@ -1,6 +1,7 @@
-﻿using Mundipagg.Models;
+﻿using Mundipagg.Models.Commons;
 using Mundipagg.Models.Request;
 using Mundipagg.Models.Response;
+using Mundipagg.Models.Webhooks;
 
 namespace Mundipagg.Resources.Interface
 {

@@ -1,4 +1,5 @@
-﻿using Mundipagg.Models;
+﻿using Mundipagg.Models.Request;
+using Mundipagg.Models.Response;
 using Mundipagg.Resources.Interface;
 using Mundipagg.Utils;
 using System.Net.Http;
@@ -7,7 +8,15 @@ namespace Mundipagg.Resources
 {
     public class OrderResource : BaseResource, IOrderResource
     {
-        public OrderResource(Configuration configuration) : base(configuration) { }
+        #region Public Constructors
+
+        public OrderResource(Configuration configuration) : base(configuration)
+        {
+        }
+
+        #endregion Public Constructors
+
+        #region Public Methods
 
         public BaseResponse<GetOrderResponse> CreateOrder(CreateOrderRequest request)
         {
@@ -65,7 +74,6 @@ namespace Mundipagg.Resources
 
             return this.HttpClientUtil.SendRequest<ListOrderResponse>(method, endpoint, null, query);
         }
-        
 
         public BaseResponse<GetOrderItemResponse> UpdateOrderItem(string orderId, string itemId, UpdateOrderItemRequest request)
         {
@@ -93,5 +101,7 @@ namespace Mundipagg.Resources
 
             return this.HttpClientUtil.SendRequest<GetOrderResponse>(method, endpoint, null, query);
         }
+
+        #endregion Public Methods
     }
 }

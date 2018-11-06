@@ -1,3 +1,5 @@
+using Mundipagg.Models.Response;
+
 namespace Mundipagg.Models.Converters
 {
     internal class GetTransactionResponseCreationConverter : JsonCreationConverter<GetTransactionResponse>

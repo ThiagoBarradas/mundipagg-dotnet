@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Mundipagg.Models
+﻿using Mundipagg.Models.Request;
+using Mundipagg.Models.Response;
+
 namespace Mundipagg.Resources.Interface
 {
     public interface IOrderResource

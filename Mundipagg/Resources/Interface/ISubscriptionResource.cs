@@ -1,4 +1,5 @@
-﻿using Mundipagg.Models;
+﻿using Mundipagg.Models.Request;
+using Mundipagg.Models.Response;
 
 namespace Mundipagg.Resources.Interface
 {
@@ -121,7 +122,6 @@ namespace Mundipagg.Resources.Interface
         /// <param name="request">Required parameter: Request for updating the subscrption metadata</param>
         /// <return>Returns the BaseResponse<GetSubscriptionResponse> response from the API call</return>
         BaseResponse<GetSubscriptionResponse> UpdateSubscriptionMetadata(string subscriptionId, UpdateMetadataRequest request);
-
 
         /// <summary>
         /// Deletes a subscription item

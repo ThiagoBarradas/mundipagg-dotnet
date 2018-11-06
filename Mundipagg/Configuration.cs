@@ -5,6 +5,8 @@
     /// </summary>
     public class Configuration
     {
+        #region Private Fields
+
         /// <summary>
         /// Default api url
         /// </summary>
@@ -15,7 +17,13 @@
         /// </summary>
         private const int TIMEOUT = 30000;
 
-        public Configuration() { }
+        #endregion Private Fields
+
+        #region Public Constructors
+
+        public Configuration()
+        {
+        }
 
         /// <summary>
         /// Creates a new configuration using default values for api url and timeout
@@ -28,8 +36,12 @@
             this.Timeout = TIMEOUT;
         }
 
+        #endregion Public Constructors
+
+        #region Public Properties
+
         /// <summary>
-        /// Api Url 
+        /// Api Url
         /// </summary>
         public string ApiUrl { get; set; }
 
@@ -42,5 +54,7 @@
         /// Timeout in milliseconds
         /// </summary>
         public int Timeout { get; set; }
+
+        #endregion Public Properties
     }
 }

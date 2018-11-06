@@ -1,4 +1,5 @@
-﻿using Mundipagg.Models;
+﻿using Mundipagg.Models.Request;
+using Mundipagg.Models.Response;
 
 namespace Mundipagg.Resources.Interface
 {

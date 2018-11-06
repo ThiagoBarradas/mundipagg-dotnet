@@ -7,6 +7,8 @@ namespace Mundipagg.Utils
     /// </summary>
     public static class StringUtil
     {
+        #region Public Methods
+
         /// <summary>
         /// Cast string to snake case, something like MyTest to my_test
         /// </summary>
@@ -20,5 +22,7 @@ namespace Mundipagg.Utils
 
             return stringSnake;
         }
+
+        #endregion Public Methods
     }
 }

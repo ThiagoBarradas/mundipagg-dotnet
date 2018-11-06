@@ -1,4 +1,5 @@
-﻿using Mundipagg.Models;
+﻿using Mundipagg.Models.Request;
+using Mundipagg.Models.Response;
 using Mundipagg.Resources.Interface;
 using Mundipagg.Utils;
 using System.Net.Http;
@@ -7,7 +8,15 @@ namespace Mundipagg.Resources
 {
     public class SubscriptionResource : BaseResource, ISubscriptionResource
     {
-        public SubscriptionResource(Configuration configuration) : base(configuration) { }
+        #region Public Constructors
+
+        public SubscriptionResource(Configuration configuration) : base(configuration)
+        {
+        }
+
+        #endregion Public Constructors
+
+        #region Public Methods
 
         public BaseResponse<GetSubscriptionResponse> CancelSubscription(string subscriptionId, CreateCancelSubscriptionRequest request = null)
         {
@@ -262,5 +271,7 @@ namespace Mundipagg.Resources
 
             return this.HttpClientUtil.SendRequest<GetSubscriptionResponse>(method, endpoint, request);
         }
+
+        #endregion Public Methods
     }
 }

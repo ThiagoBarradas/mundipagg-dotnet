@@ -1,5 +1,4 @@
-﻿using Mundipagg.Models;
-using Mundipagg.Resources;
+﻿using Mundipagg.Resources;
 using Mundipagg.Resources.Interface;
 
 namespace Mundipagg
@@ -28,6 +27,16 @@ namespace Mundipagg
         }
 
         /// <summary>
+        /// Customer manager
+        /// </summary>
+        public ICustomerResource Customer { get; private set; }
+
+        /// <summary>
+        /// Webhook manager
+        /// </summary>
+        public IWebhookResource Webhook { get; private set; }
+
+        /// <summary>
         /// Initialize api client
         /// </summary>
         /// <param name="configuration">Mundipagg Api configuration</param>
@@ -36,15 +45,5 @@ namespace Mundipagg
             this.Customer = new CustomerResource(configuration);
             this.Webhook = new WebhookResource(configuration);
         }
-
-        /// <summary>
-        /// Customer manager
-        /// </summary>
-        public ICustomerResource Customer { get; private set; }
-        
-        /// <summary>
-        /// Webhook manager
-        /// </summary>
-        public IWebhookResource Webhook { get; private set; }
     }
 }

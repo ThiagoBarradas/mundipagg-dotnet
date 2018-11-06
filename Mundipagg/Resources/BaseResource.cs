@@ -1,14 +1,15 @@
-﻿using Mundipagg.Models;
-using Mundipagg.Utils;
+﻿using Mundipagg.Utils;
 using Newtonsoft.Json;
 
 namespace Mundipagg.Resources
 {
     /// <summary>
-    /// Base resource 
+    /// Base resource
     /// </summary>
     public abstract class BaseResource
     {
+        #region Public Constructors
+
         /// <summary>
         /// Creates a new base resource with Mundipagg Api coniguration
         /// </summary>
@@ -22,19 +23,25 @@ namespace Mundipagg.Resources
             this.HttpClientUtil = new HttpClientUtil(this.Configuration, this.JsonSerializerSettings);
         }
 
+        #endregion Public Constructors
+
+        #region Protected Properties
+
         /// <summary>
         /// Mundipagg Api coniguration
         /// </summary>
         protected Configuration Configuration { get; set; }
 
         /// <summary>
+        /// Http client utility
+        /// </summary>
+        protected IHttpClientUtil HttpClientUtil { get; set; }
+
+        /// <summary>
         /// Json serialize settings
         /// </summary>
         protected JsonSerializerSettings JsonSerializerSettings { get; set; }
 
-        /// <summary>
-        /// Http client utility
-        /// </summary>
-        protected IHttpClientUtil HttpClientUtil { get; set; }
+        #endregion Protected Properties
     }
 }

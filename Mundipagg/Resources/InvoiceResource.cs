@@ -1,14 +1,22 @@
-﻿using Mundipagg.Models;
+﻿using Mundipagg.Models.Request;
+using Mundipagg.Models.Response;
 using Mundipagg.Resources.Interface;
 using Mundipagg.Utils;
-using System;
 using System.Net.Http;
 
 namespace Mundipagg.Resources
 {
     public class InvoiceResource : BaseResource, IInvoiceResource
     {
-        public InvoiceResource(Configuration configuration):base(configuration) { }
+        #region Public Constructors
+
+        public InvoiceResource(Configuration configuration) : base(configuration)
+        {
+        }
+
+        #endregion Public Constructors
+
+        #region Public Methods
 
         public BaseResponse<GetInvoiceResponse> CancelInvoice(string invoiceId)
         {
@@ -58,5 +66,7 @@ namespace Mundipagg.Resources
 
             return this.HttpClientUtil.SendRequest<GetInvoiceResponse>(method, endpoint, request);
         }
+
+        #endregion Public Methods
     }
 }

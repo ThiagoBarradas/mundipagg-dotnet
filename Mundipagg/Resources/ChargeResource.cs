@@ -1,7 +1,7 @@
-﻿using Mundipagg.Models;
+﻿using Mundipagg.Models.Request;
+using Mundipagg.Models.Response;
 using Mundipagg.Resources.Interface;
 using Mundipagg.Utils;
-using System;
 using System.Net.Http;
 
 namespace Mundipagg.Resources
@@ -11,11 +11,17 @@ namespace Mundipagg.Resources
     /// </summary>
     public class ChargeResource : BaseResource, IChargeResource
     {
+        #region Public Constructors
+
         /// <summary>
         /// Creates a new charge manager
         /// </summary>
         /// <param name="configuration">Mundipagg Api configuration</param>
         public ChargeResource(Configuration configuration) : base(configuration) { }
+
+        #endregion Public Constructors
+
+        #region Public Methods
 
         public BaseResponse<GetChargeResponse> CancelCharge(string chargeId, CreateCancelChargeRequest request = null)
         {
@@ -105,5 +111,7 @@ namespace Mundipagg.Resources
 
             return this.HttpClientUtil.SendRequest<GetChargeResponse>(method, endpoint, request);
         }
+
+        #endregion Public Methods
     }
 }
