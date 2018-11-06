@@ -9,6 +9,7 @@ namespace Mundipagg.Models.Enums
     {
         [EnumMember(Value = "individual")]
         Individual,
+
         [EnumMember(Value = "company")]
         Company
     }
