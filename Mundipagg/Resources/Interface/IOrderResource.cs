@@ -3,7 +3,7 @@ using Mundipagg.Models.Response;
 
 namespace Mundipagg.Resources.Interface
 {
-    public interface IOrderResource
+    public interface IOrderResource : IResource
     {
         /// <summary>
         /// Gets an order

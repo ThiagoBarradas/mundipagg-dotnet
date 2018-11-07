@@ -6,7 +6,7 @@ namespace Mundipagg.Resources.Interface
     /// <summary>
     /// Charge manager
     /// </summary>
-    public interface IChargeResource
+    public interface IChargeResource : IResource
     {
         /// <summary>
         /// Updates the card from a charge

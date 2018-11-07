@@ -8,7 +8,7 @@ namespace Mundipagg.Resources.Interface
     /// <summary>
     /// Webhook manager
     /// </summary>
-    public interface IWebhookResource
+    public interface IWebhookResource : IResource
     {
         /// <summary>
         /// Parse webhook received from Mundipagg Api

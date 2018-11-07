@@ -30,7 +30,7 @@ namespace Mundipagg.Resources
         /// <summary>
         /// Mundipagg Api coniguration
         /// </summary>
-        protected Configuration Configuration { get; set; }
+        public Configuration Configuration { get; set; }
 
         /// <summary>
         /// Http client utility

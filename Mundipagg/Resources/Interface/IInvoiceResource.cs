@@ -3,7 +3,7 @@ using Mundipagg.Models.Response;
 
 namespace Mundipagg.Resources.Interface
 {
-    public interface IInvoiceResource
+    public interface IInvoiceResource : IResource
     {
         /// <summary>
         /// Cancels an invoice

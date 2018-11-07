@@ -3,7 +3,7 @@ using Mundipagg.Models.Response;
 
 namespace Mundipagg.Resources.Interface
 {
-    public interface ISubscriptionResource
+    public interface ISubscriptionResource : IResource
     {
         /// <summary>
         /// TODO: type endpoint description here

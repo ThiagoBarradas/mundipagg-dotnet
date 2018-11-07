@@ -6,7 +6,7 @@ namespace Mundipagg.Resources.Interface
     /// <summary>
     /// Customer manager
     /// </summary>
-    public interface ICustomerResource
+    public interface ICustomerResource : IResource
     {
         /// <summary>
         /// Creates a access token for a customer
