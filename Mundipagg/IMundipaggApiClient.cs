@@ -8,13 +8,33 @@ namespace Mundipagg
     public interface IMundipaggApiClient
     {
         /// <summary>
-        /// Customer manager
+        /// Customers resource
         /// </summary>
         ICustomerResource Customer { get; }
 
         /// <summary>
-        /// Webhook manager
+        /// Webhook resource
         /// </summary>
         IWebhookResource Webhook { get; }
+
+        /// <summary>
+        /// Charges resource
+        /// </summary>
+        IChargeResource Charge { get; }
+
+        /// <summary>
+        /// Invoices resource
+        /// </summary>
+        IInvoiceResource Invoice { get; }
+
+        /// <summary>
+        /// Orders resource
+        /// </summary>
+        IOrderResource Order { get; }
+
+        /// <summary>
+        /// Subscriptions resource
+        /// </summary>
+        ISubscriptionResource Subscription { get; }
     }
 }

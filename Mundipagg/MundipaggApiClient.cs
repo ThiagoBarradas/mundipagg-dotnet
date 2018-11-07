@@ -26,15 +26,17 @@ namespace Mundipagg
             this.Initialize(configuration);
         }
 
-        /// <summary>
-        /// Customer manager
-        /// </summary>
         public ICustomerResource Customer { get; private set; }
 
-        /// <summary>
-        /// Webhook manager
-        /// </summary>
         public IWebhookResource Webhook { get; private set; }
+
+        public IChargeResource Charge { get; private set; }
+
+        public IInvoiceResource Invoice { get; private set; }
+
+        public IOrderResource Order { get; private set; }
+
+        public ISubscriptionResource Subscription { get; private set; }
 
         /// <summary>
         /// Initialize api client
@@ -44,6 +46,10 @@ namespace Mundipagg
         {
             this.Customer = new CustomerResource(configuration);
             this.Webhook = new WebhookResource(configuration);
+            this.Charge = new ChargeResource(configuration);
+            this.Invoice = new InvoiceResource(configuration);
+            this.Order = new OrderResource(configuration);
+            this.Subscription = new SubscriptionResource(configuration);
         }
     }
 }
