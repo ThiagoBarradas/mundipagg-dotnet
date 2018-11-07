@@ -36,5 +36,7 @@ namespace Mundipagg
         /// Subscriptions resource
         /// </summary>
         ISubscriptionResource Subscription { get; }
+
+        void SetSecretKey(string secretKey);
     }
 }

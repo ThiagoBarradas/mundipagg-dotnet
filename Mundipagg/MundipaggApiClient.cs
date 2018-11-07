@@ -9,6 +9,14 @@ namespace Mundipagg
     public class MundipaggApiClient : IMundipaggApiClient
     {
         /// <summary>
+        /// Creates a new api client using default values for api url and timeout and empty secret key
+        /// </summary>
+        public MundipaggApiClient()
+        {
+            this.Initialize(new Configuration());
+        }
+
+        /// <summary>
         /// Creates a new api client using default values for api url and timeout
         /// </summary>
         /// <param name="secretKey">Your secret key, something like sk_xxxxx or sk_test_xxxx</param>
@@ -38,6 +46,11 @@ namespace Mundipagg
 
         public ISubscriptionResource Subscription { get; private set; }
 
+        public void SetSecretKey(string secretKey)
+        {
+            this.Configuration.SecretKey = secretKey;
+        }
+
         /// <summary>
         /// Initialize api client
         /// </summary>
@@ -50,6 +63,27 @@ namespace Mundipagg
             this.Invoice = new InvoiceResource(configuration);
             this.Order = new OrderResource(configuration);
             this.Subscription = new SubscriptionResource(configuration);
+            this.Configuration = configuration;
+        }
+
+        private Configuration _configuration { get; set; }
+
+        public Configuration Configuration
+        {
+            get { return _configuration; }
+            set
+            {
+                this._configuration = value;
+                this.Charge.Configuration = this._configuration;
+                this.Customer.Configuration = this._configuration;
+                this.Invoice.Configuration = this._configuration;
+                this.Order.Configuration = this._configuration;
+                this.Subscription.Configuration = this._configuration;
+                //this.Plans.Configuration = this._configuration;
+                //this.Recipients.Configuration = this._configuration;
+                //this.Sellers.Configuration = this._configuration;
+                //this.Tokens.Configuration = this._configuration;
+            }
         }
     }
 }
