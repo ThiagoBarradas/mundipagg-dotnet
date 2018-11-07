@@ -10,7 +10,7 @@
         /// <summary>
         /// Default api url
         /// </summary>
-        private const string API_URL = "https://api.Mundipagg.com";
+        private readonly string API_URL = "https://api.mundipagg.com/core/v1";
 
         /// <summary>
         /// Default timeout
@@ -23,6 +23,8 @@
 
         public Configuration()
         {
+            this.ApiUrl = API_URL;
+            this.Timeout = TIMEOUT;
         }
 
         /// <summary>
