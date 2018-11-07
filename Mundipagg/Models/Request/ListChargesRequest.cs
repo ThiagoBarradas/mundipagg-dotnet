@@ -8,30 +8,12 @@ namespace Mundipagg.Models.Request
     /// </summary>
     public class ListChargesRequest : BaseListRequest
     {
+        #region Public Properties
+
         /// <summary>
         /// Filter by code - Charge code at merchant system
         /// </summary>
         public string Code { get; set; }
-
-        /// <summary>
-        /// Filter by status
-        /// </summary>
-        public ChargeStatusEnum Status { get; set; }
-
-        /// <summary>
-        /// Filter by payment method type
-        /// </summary>
-        public PaymentMethodTypeEnum PaymentMethod { get; set; }
-
-        /// <summary>
-        /// Filter by order id
-        /// </summary>
-        public string OrderId { get; set; }
-
-        /// <summary>
-        /// Filter by customer id
-        /// </summary>
-        public string CustomerId { get; set; }
 
         /// <summary>
         /// Filter by create date - Creation after this date
@@ -42,5 +24,27 @@ namespace Mundipagg.Models.Request
         /// Filter by create date - Creation before this date
         /// </summary>
         public DateTime? CreatedUntil { get; set; }
+
+        /// <summary>
+        /// Filter by customer id
+        /// </summary>
+        public string CustomerId { get; set; }
+
+        /// <summary>
+        /// Filter by order id
+        /// </summary>
+        public string OrderId { get; set; }
+
+        /// <summary>
+        /// Filter by payment method type
+        /// </summary>
+        public PaymentMethodTypeEnum PaymentMethod { get; set; }
+
+        /// <summary>
+        /// Filter by status
+        /// </summary>
+        public ChargeStatusEnum Status { get; set; }
+
+        #endregion Public Properties
     }
 }

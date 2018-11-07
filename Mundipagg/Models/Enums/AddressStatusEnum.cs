@@ -9,6 +9,7 @@ namespace Mundipagg.Models.Enums
     {
         [EnumMember(Value = "active")]
         Active,
+
         [EnumMember(Value = "deleted")]
         Deleted,
     }

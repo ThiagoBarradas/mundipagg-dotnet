@@ -1,19 +1,15 @@
-﻿namespace Mundipagg.Models.Response
+namespace Mundipagg.Models.Response
 {
-    /// <summary>
-    /// Paging response
-    /// </summary>
-    /// <typeparam name="T">Response type</typeparam>
-    public class PagingResponse<T>
+    public class PagingResponse
     {
-        /// <summary>
-        /// Items
-        /// </summary>
-        public T[] Data { get; set; }
+        #region Public Properties
 
-        /// <summary>
-        /// Pagination info
-        /// </summary>
-        public Paging Paging { get; set; }
+        public string Next { get; set; }
+
+        public string Previous { get; set; }
+
+        public int Total { get; set; }
+
+        #endregion Public Properties
     }
 }

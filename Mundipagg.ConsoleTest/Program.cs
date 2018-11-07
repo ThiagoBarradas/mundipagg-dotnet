@@ -1,15 +1,14 @@
-﻿using Mundipagg.Models;
-using Mundipagg.Models.Request;
+﻿using Mundipagg.Models.Request;
 using Mundipagg.Utils;
 using Newtonsoft.Json;
 
 namespace Mundipagg.ConsoleTest
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-           var resut =  JsonConvert.SerializeObject(new
+            var resut = JsonConvert.SerializeObject(new
             {
                 Wer_Test = "1212",
                 WerTest = 12
@@ -24,7 +23,6 @@ namespace Mundipagg.ConsoleTest
                 Email = "testeeee@gmail.com"
             };
             var createResult = client.Customer.CreateCustomer(createRequest);
-
 
             //createResult.
 
@@ -46,8 +44,8 @@ namespace Mundipagg.ConsoleTest
             var listRequest = new ListCustomersRequest()
             {
                 Size = 5
-            };  
-            var listResult = client.Customer.ListCustomers(listRequest);
+            };
+            var listResult = client.Customer.GetCustomers(listRequest);
 
             var json = "{\r\n  \"id\": \"hook_eNKaMDbtQ2C7z72P\",\r\n  \"account\": {\r\n    \"id\": \"acc_gKD7oA6kIltG45V0\",\r\n    \"name\": \"App Teste Hub - Sandbox\"\r\n  },\r\n  \"type\": \"customer.created\",\r\n  \"created_at\": \"2017-09-28T05:40:50\",\r\n  \"data\": {\r\n    \"id\": \"cus_68ZVrjvfQtJoV97N\",\r\n    \"name\": \"asdasd\",\r\n    \"email\": \"asdas@mailinator.com\",\r\n    \"delinquent\": false,\r\n    \"created_at\": \"2017-09-28T05:40:50\",\r\n    \"updated_at\": \"2017-09-28T05:40:50\",\r\n    \"phones\": {}\r\n  }\r\n}";
             var hookParsed = client.Webhook.ParseWebhook(json);
@@ -68,12 +66,10 @@ namespace Mundipagg.ConsoleTest
             //var binresult11 = client.Bin.GetBin("002152");
 
             //var h1 = client.Webhook.ListWebhooks(new Models.Request.ListWebhooksRequest()
-            //{   
+            //{
             //    Status = Models.Enums.WebhookStatusEnum.Failed
             //});
             //var h2 = client.Webhook.RetryWebhook(h1.Data.Data[0].Id);
-
-
 
             //var result = client.Customer.CreateCustomer(new Models.Request.CreateCustomerRequest()
             //{

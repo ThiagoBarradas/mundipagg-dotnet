@@ -1,5 +1,4 @@
-﻿using Mundipagg.Models;
-using Mundipagg.Models.Response;
+﻿using Mundipagg.Models.Response;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -18,6 +17,27 @@ namespace Mundipagg.Utils
     /// </summary>
     internal class HttpClientUtil : IHttpClientUtil
     {
+        #region Public Constructors
+
+        /// <summary>
+        /// Creates a new http client utility
+        /// </summary>
+        /// <param name="configuration">Mundipagg Api configuration</param>
+        /// <param name="jsonSerializerSettings">Json serializer settings</param>
+        public HttpClientUtil(Configuration configuration, JsonSerializerSettings jsonSerializerSettings)
+        {
+            this.Configuration = configuration;
+            this.JsonSerializerSettings = jsonSerializerSettings;
+            this.Client = new HttpClient();
+            this.Client.DefaultRequestHeaders.Accept.Clear();
+            this.Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            this.Client.DefaultRequestHeaders.Add("User-Agent", "Mundipagg Dotnet SDK");
+        }
+
+        #endregion Public Constructors
+
+        #region Private Properties
+
         /// <summary>
         /// Native HttpClient
         /// </summary>
@@ -33,21 +53,9 @@ namespace Mundipagg.Utils
         /// </summary>
         private JsonSerializerSettings JsonSerializerSettings { get; set; }
 
-        /// <summary>
-        /// Creates a new http client utility
-        /// </summary>
-        /// <param name="configuration">Mundipagg Api configuration</param>
-        /// <param name="jsonSerializerSettings">Json serializer settings</param>
-        public HttpClientUtil(Configuration configuration, JsonSerializerSettings jsonSerializerSettings)
-        {
-            this.Configuration = configuration;
-            this.JsonSerializerSettings = jsonSerializerSettings;
-            this.Client = new HttpClient();
-            this.Client.DefaultRequestHeaders.Accept.Clear();
-            this.Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            this.Client.DefaultRequestHeaders.Add("User-Agent", "Mundipagg Dotnet SDK");
-            this.Client.DefaultRequestHeaders.Authorization = this.GenerateBasicAuth(configuration.SecretKey, "");
-        }
+        #endregion Private Properties
+
+        #region Public Methods
 
         /// <summary>
         /// Send request and mount response to client format
@@ -76,11 +84,13 @@ namespace Mundipagg.Utils
                     response.RawRequest = bodyAsString;
                 }
 
+                this.Client.DefaultRequestHeaders.Authorization = this.GenerateBasicAuth(this.Configuration.SecretKey, "");
+
                 var httpResponse = Task.Run(() => this.Client.SendAsync(request)).Result;
 
                 response = this.HandleResponse<T>(httpResponse);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 response.Exception = ex;
             }
@@ -89,6 +99,25 @@ namespace Mundipagg.Utils
             response.ElapsedTime = stopwatch.ElapsedMilliseconds;
 
             return response;
+        }
+
+        #endregion Public Methods
+
+        #region Private Methods
+
+        /// <summary>
+        /// Creates basic auth
+        /// </summary>
+        /// <param name="username">Username</param>
+        /// <param name="password">Password</param>
+        /// <returns></returns>
+        private AuthenticationHeaderValue GenerateBasicAuth(string username, string password)
+        {
+            var credentials = string.Format("{0}:{1}", username, password);
+            var token = Convert.ToBase64String(ASCIIEncoding.ASCII.GetBytes(credentials));
+            var authorization = new AuthenticationHeaderValue("Basic", token);
+
+            return authorization;
         }
 
         /// <summary>
@@ -118,22 +147,7 @@ namespace Mundipagg.Utils
 
             return fullUri;
         }
-        
-        /// <summary>
-        /// Creates basic auth
-        /// </summary>
-        /// <param name="username">Username</param>
-        /// <param name="password">Password</param>
-        /// <returns></returns>
-        private AuthenticationHeaderValue GenerateBasicAuth(string username, string password)
-        {
-            var credentials = string.Format("{0}:{1}", username, password);
-            var token = Convert.ToBase64String(ASCIIEncoding.ASCII.GetBytes(credentials));
-            var authorization = new AuthenticationHeaderValue("Basic", token);
 
-            return authorization;
-        }
-        
         /// <summary>
         /// Handle and mount response
         /// </summary>
@@ -157,8 +171,10 @@ namespace Mundipagg.Utils
             {
                 response.Errors = JsonConvert.DeserializeObject<ErrorsResponse>(responseBody, this.JsonSerializerSettings);
             }
-            
+
             return response;
         }
+
+        #endregion Private Methods
     }
 }

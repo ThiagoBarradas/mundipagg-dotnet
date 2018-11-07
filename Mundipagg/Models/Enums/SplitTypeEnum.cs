@@ -9,6 +9,7 @@ namespace Mundipagg.Models.Enums
     {
         [EnumMember(Value = "flat")]
         Flat,
+
         [EnumMember(Value = "percentage")]
         Percentage,
     }

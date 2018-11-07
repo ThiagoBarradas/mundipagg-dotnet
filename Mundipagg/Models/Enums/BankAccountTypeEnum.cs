@@ -9,6 +9,7 @@ namespace Mundipagg.Models.Enums
     {
         [EnumMember(Value = "checking")]
         Checking,
+
         [EnumMember(Value = "savings")]
         Savings
     }

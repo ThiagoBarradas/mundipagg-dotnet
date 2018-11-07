@@ -9,6 +9,8 @@ namespace Mundipagg.Utils
     /// </summary>
     public static class DictionaryUtil
     {
+        #region Public Methods
+
         /// <summary>
         /// Cast object to dictionary
         /// </summary>
@@ -24,6 +26,10 @@ namespace Mundipagg.Utils
                 AddPropertyToDictionary(property, source, dictionary);
             return dictionary;
         }
+
+        #endregion Public Methods
+
+        #region Private Methods
 
         /// <summary>
         /// Add identified property to dictionary
@@ -51,5 +57,7 @@ namespace Mundipagg.Utils
         {
             throw new ArgumentNullException("source", "Unable to convert object to a dictionary. The source object is null.");
         }
+
+        #endregion Private Methods
     }
 }

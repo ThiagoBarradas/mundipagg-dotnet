@@ -9,10 +9,13 @@ namespace Mundipagg.Models.Enums
     {
         [EnumMember(Value = "pending")]
         Pending,
+
         [EnumMember(Value = "paid")]
         Paid,
+
         [EnumMember(Value = "canceled")]
         Canceled,
+
         [EnumMember(Value = "failed")]
         Failed
     }

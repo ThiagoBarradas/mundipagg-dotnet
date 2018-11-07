@@ -1,5 +1,4 @@
-﻿using Mundipagg.Models;
-using Mundipagg.Models.Request;
+﻿using Mundipagg.Models.Request;
 using Mundipagg.Models.Response;
 using Mundipagg.Resources.Interface;
 using Mundipagg.Utils;
@@ -12,147 +11,107 @@ namespace Mundipagg.Resources
     /// </summary>
     public class ChargeResource : BaseResource, IChargeResource
     {
+        #region Public Constructors
+
         /// <summary>
         /// Creates a new charge manager
         /// </summary>
         /// <param name="configuration">Mundipagg Api configuration</param>
-        public ChargeResource(Configuration configuration) : base(configuration) {}
+        public ChargeResource(Configuration configuration) : base(configuration) { }
 
-        /// <summary>
-        /// Create new charge
-        /// </summary>
-        /// <param name="request">Create charge request</param>
-        /// <returns>Base response with charge data</returns>
+        #endregion Public Constructors
+
+        #region Public Methods
+
+        public BaseResponse<GetChargeResponse> CancelCharge(string chargeId, CreateCancelChargeRequest request = null)
+        {
+            var method = HttpMethod.Delete;
+            var endpoint = $"/charges/{chargeId}";
+
+            return this.HttpClientUtil.SendRequest<GetChargeResponse>(method, endpoint, request);
+        }
+
+        public BaseResponse<GetChargeResponse> CaptureCharge(string chargeId, CreateCaptureChargeRequest request = null)
+        {
+            var method = HttpMethod.Post;
+            var endpoint = $"/charges/{chargeId}/capture";
+
+            return this.HttpClientUtil.SendRequest<GetChargeResponse>(method, endpoint, request);
+        }
+
+        public BaseResponse<GetChargeResponse> ConfirmPayment(string chargeId, CreateConfirmPaymentRequest request = null)
+        {
+            var method = HttpMethod.Post;
+            var endpoint = $"/charges/{chargeId}/confirm-payment";
+
+            return this.HttpClientUtil.SendRequest<GetChargeResponse>(method, endpoint, request);
+        }
+
         public BaseResponse<GetChargeResponse> CreateCharge(CreateChargeRequest request)
         {
             var method = HttpMethod.Post;
-            var endpoint = $"/core/v1/charges";
+            var endpoint = $"/charges";
 
             return this.HttpClientUtil.SendRequest<GetChargeResponse>(method, endpoint, request);
         }
 
-        /// <summary>
-        /// Get charge data
-        /// </summary>
-        /// <param name="chargeId">Charge code</param>
-        /// <returns>Base response with charge data</returns>
         public BaseResponse<GetChargeResponse> GetCharge(string chargeId)
         {
             var method = HttpMethod.Get;
-            var endpoint = $"/core/v1/charges/{chargeId}";
+            var endpoint = $"/charges/{chargeId}";
 
             return this.HttpClientUtil.SendRequest<GetChargeResponse>(method, endpoint, null);
         }
 
-        /// <summary>
-        /// List charges
-        /// </summary>
-        /// <param name="request">List charge request</param>
-        /// <returns>Base response with paged charges data</returns>
-        public BaseResponse<PagingResponse<GetChargeResponse>> ListCharges(ListChargesRequest request)
+        public BaseResponse<ListChargesResponse> GetCharges(ListChargesRequest request)
         {
             var method = HttpMethod.Get;
-            var endpoint = $"/core/v1/charges";
+            var endpoint = $"/charges";
             var query = request.ToDictionary();
 
-            return this.HttpClientUtil.SendRequest<PagingResponse<GetChargeResponse>>(method, endpoint, null, query);
+            return this.HttpClientUtil.SendRequest<ListChargesResponse>(method, endpoint, null, query);
         }
 
-        /// <summary>
-        /// Update charge metadata
-        /// </summary>
-        /// <param name="chargeId">Charge code</param>
-        /// <param name="request">Update metadata request</param>
-        /// <returns>Base response with charge data</returns>
-        public BaseResponse<GetChargeResponse> UpdateMetadata(string chargeId, UpdateMetadataRequest request)
-        {
-            var method = new HttpMethod("PATCH");
-            var endpoint = $"/core/v1/charges/{chargeId}/metadata";
-
-            return this.HttpClientUtil.SendRequest<GetChargeResponse>(method, endpoint, request);
-        }
-
-        /// <summary>
-        /// Update charge credit card
-        /// </summary>
-        /// <param name="chargeId">Charge code</param>
-        /// <param name="request">Update credit card request</param>
-        /// <returns>Base response with charge data</returns>
-        public BaseResponse<GetChargeResponse> UpdateCreditCard(string chargeId, UpdateCreditCardRequest request)
-        {
-            var method = new HttpMethod("PATCH");
-            var endpoint = $"/core/v1/charges/{chargeId}/credit-card";
-
-            return this.HttpClientUtil.SendRequest<GetChargeResponse>(method, endpoint, request);
-        }
-
-        /// <summary>
-        /// Update charge payment method
-        /// </summary>
-        /// <param name="chargeId">Charge code</param>
-        /// <param name="request">Update payment method request</param>
-        /// <returns>Base response with charge data</returns>
-        public BaseResponse<GetChargeResponse> UpdatePaymentMethod(string chargeId, UpdatePaymentMethodRequest request)
-        {
-            var method = new HttpMethod("PATCH");
-            var endpoint = $"/core/v1/charges/{chargeId}/payment-method";
-
-            return this.HttpClientUtil.SendRequest<GetChargeResponse>(method, endpoint, request);
-        }
-
-        /// <summary>
-        /// Update charge due date
-        /// </summary>
-        /// <param name="chargeId">Charge code</param>
-        /// <param name="request">Update due date request</param>
-        /// <returns>Base response with charge data</returns>
-        public BaseResponse<GetChargeResponse> UpdateDueDate(string chargeId, UpdateDueDateRequest request)
-        {
-            var method = new HttpMethod("PATCH");
-            var endpoint = $"/core/v1/charges/{chargeId}/due-date";
-
-            return this.HttpClientUtil.SendRequest<GetChargeResponse>(method, endpoint, request);
-        }
-
-        /// <summary>
-        /// Capture a charge 
-        /// </summary>
-        /// <param name="chargeId">Charge code</param>
-        /// <param name="request">Capture charge request</param>
-        /// <returns>Base response with charge data</returns>
-        public BaseResponse<GetChargeResponse> CaptureCharge(string chargeId, CaptureChargeRequest request)
-        {
-            var method = HttpMethod.Post;
-            var endpoint = $"/core/v1/charges/{chargeId}/capture";
-
-            return this.HttpClientUtil.SendRequest<GetChargeResponse>(method, endpoint, request);
-        }
-
-        /// <summary>
-        /// Cancel a charge 
-        /// </summary>
-        /// <param name="chargeId">Charge code</param>
-        /// <param name="request">Cancel charge request</param>
-        /// <returns>Base response with charge data</returns>
-        public BaseResponse<GetChargeResponse> CancelCharge(string chargeId, CancelChargeRequest request)
-        {
-            var method = HttpMethod.Delete;
-            var endpoint = $"/core/v1/charges/{chargeId}";
-
-            return this.HttpClientUtil.SendRequest<GetChargeResponse>(method, endpoint, request);
-        }
-
-        /// <summary>
-        /// Retry a charge 
-        /// </summary>
-        /// <param name="chargeId">Charge code</param>
-        /// <returns>Base response with charge data</returns>
         public BaseResponse<GetChargeResponse> RetryCharge(string chargeId)
         {
             var method = HttpMethod.Post;
-            var endpoint = $"/core/v1/charges/{chargeId}/retry";
+            var endpoint = $"/charges/{chargeId}/retry";
 
             return this.HttpClientUtil.SendRequest<GetChargeResponse>(method, endpoint, null);
         }
+
+        public BaseResponse<GetChargeResponse> UpdateChargeCard(string chargeId, UpdateChargeCardRequest request)
+        {
+            var method = new HttpMethod("PATCH");
+            var endpoint = $"/charges/{chargeId}/credit-card";
+
+            return this.HttpClientUtil.SendRequest<GetChargeResponse>(method, endpoint, request);
+        }
+
+        public BaseResponse<GetChargeResponse> UpdateChargeDueDate(string chargeId, UpdateChargeDueDateRequest request)
+        {
+            var method = new HttpMethod("PATCH");
+            var endpoint = $"/charges/{chargeId}/due-date";
+
+            return this.HttpClientUtil.SendRequest<GetChargeResponse>(method, endpoint, request);
+        }
+
+        public BaseResponse<GetChargeResponse> UpdateChargeMetadata(string chargeId, UpdateMetadataRequest request)
+        {
+            var method = new HttpMethod("PATCH");
+            var endpoint = $"/charges/{chargeId}/metadata";
+
+            return this.HttpClientUtil.SendRequest<GetChargeResponse>(method, endpoint, request);
+        }
+
+        public BaseResponse<GetChargeResponse> UpdateChargePaymentMethod(string chargeId, UpdateChargePaymentMethodRequest request)
+        {
+            var method = new HttpMethod("PATCH");
+            var endpoint = $"/charges/{chargeId}/payment-method";
+
+            return this.HttpClientUtil.SendRequest<GetChargeResponse>(method, endpoint, request);
+        }
+
+        #endregion Public Methods
     }
 }

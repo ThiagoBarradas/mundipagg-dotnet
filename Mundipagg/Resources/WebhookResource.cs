@@ -1,6 +1,7 @@
-﻿using Mundipagg.Models;
+﻿using Mundipagg.Models.Commons;
 using Mundipagg.Models.Request;
 using Mundipagg.Models.Response;
+using Mundipagg.Models.Webhooks;
 using Mundipagg.Resources.Interface;
 using Mundipagg.Utils;
 using Newtonsoft.Json;
@@ -14,11 +15,44 @@ namespace Mundipagg.Resources
     /// </summary>
     public class WebhookResource : BaseResource, IWebhookResource
     {
+        #region Public Constructors
+
         /// <summary>
         /// Creates a new webhook manager
         /// </summary>
         /// <param name="configuration">Mundipagg Api configuration</param>
         public WebhookResource(Configuration configuration) : base(configuration) { }
+
+        #endregion Public Constructors
+
+        #region Public Methods
+
+        /// <summary>
+        /// Get webhook data
+        /// </summary>
+        /// <param name="webhookId">Webhook id</param>
+        /// <returns>Base response with webhook data</returns>
+        public BaseResponse<GetWebhookResponse> GetWebhook(string webhookId)
+        {
+            var method = HttpMethod.Get;
+            var endpoint = $"/hooks/{webhookId}";
+
+            return this.HttpClientUtil.SendRequest<GetWebhookResponse>(method, endpoint, null);
+        }
+
+        /// <summary>
+        /// List webhooks
+        /// </summary>
+        /// <param name="request">List webhooks request</param>
+        /// <returns>Base response with paged webhooks data</returns>
+        public BaseResponse<PagingResponse<GetWebhookResponse>> ListWebhooks(ListWebhooksRequest request)
+        {
+            var method = HttpMethod.Get;
+            var endpoint = $"/hooks";
+            var query = request.ToDictionary();
+
+            return this.HttpClientUtil.SendRequest<PagingResponse<GetWebhookResponse>>(method, endpoint, null, query);
+        }
 
         /// <summary>
         /// Parse webhook received from Mundipagg Api
@@ -34,33 +68,6 @@ namespace Mundipagg.Resources
         }
 
         /// <summary>
-        /// List webhooks
-        /// </summary>
-        /// <param name="request">List webhooks request</param>
-        /// <returns>Base response with paged webhooks data</returns>
-        public BaseResponse<PagingResponse<GetWebhookResponse>> ListWebhooks(ListWebhooksRequest request)
-        {
-            var method = HttpMethod.Get;
-            var endpoint = $"/core/v1/hooks";
-            var query = request.ToDictionary();
-
-            return this.HttpClientUtil.SendRequest<PagingResponse<GetWebhookResponse>>(method, endpoint, null, query);
-        }
-
-        /// <summary>
-        /// Get webhook data
-        /// </summary>
-        /// <param name="webhookId">Webhook id</param>
-        /// <returns>Base response with webhook data</returns>
-        public BaseResponse<GetWebhookResponse> GetWebhook(string webhookId)
-        {
-            var method = HttpMethod.Get;
-            var endpoint = $"/core/v1/hooks/{webhookId}";
-
-            return this.HttpClientUtil.SendRequest<GetWebhookResponse>(method, endpoint, null);
-        }
-
-        /// <summary>
         /// Retry send webhook
         /// </summary>
         /// <param name="webhookId">Webhook id</param>
@@ -68,9 +75,11 @@ namespace Mundipagg.Resources
         public BaseResponse<GetWebhookResponse> RetryWebhook(string webhookId)
         {
             var method = HttpMethod.Post;
-            var endpoint = $"/core/v1/hooks/{webhookId}/retry";
+            var endpoint = $"/hooks/{webhookId}/retry";
 
             return this.HttpClientUtil.SendRequest<GetWebhookResponse>(method, endpoint, null);
         }
+
+        #endregion Public Methods
     }
 }

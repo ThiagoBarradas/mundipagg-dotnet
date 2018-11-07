@@ -1,13 +1,14 @@
-﻿using Mundipagg.Models;
+﻿using Mundipagg.Models.Commons;
 using Mundipagg.Models.Request;
 using Mundipagg.Models.Response;
+using Mundipagg.Models.Webhooks;
 
 namespace Mundipagg.Resources.Interface
 {
     /// <summary>
     /// Webhook manager
     /// </summary>
-    public interface IWebhookResource
+    public interface IWebhookResource : IResource
     {
         /// <summary>
         /// Parse webhook received from Mundipagg Api

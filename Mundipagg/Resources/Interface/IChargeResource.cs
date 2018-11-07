@@ -6,75 +6,89 @@ namespace Mundipagg.Resources.Interface
     /// <summary>
     /// Charge manager
     /// </summary>
-    public interface IChargeResource
+    public interface IChargeResource : IResource
     {
         /// <summary>
-        /// Create new charge
+        /// Updates the card from a charge
         /// </summary>
-        /// <param name="request">Create charge request</param>
-        /// <returns>Base response with charge data</returns>
+        /// <param name="chargeId">Required parameter: Charge id</param>
+        /// <param name="request">Required parameter: Request for updating a charge's card</param>
+        /// <return>Returns the Models.GetChargeResponse response from the API call</return>
+        BaseResponse<GetChargeResponse> UpdateChargeCard(string chargeId, UpdateChargeCardRequest request);
+
+        /// <summary>
+        /// Updates a charge's payment method
+        /// </summary>
+        /// <param name="chargeId">Required parameter: Charge id</param>
+        /// <param name="request">Required parameter: Request for updating the payment method from a charge</param>
+        /// <return>Returns the Models.GetChargeResponse response from the API call</return>
+        BaseResponse<GetChargeResponse> UpdateChargePaymentMethod(string chargeId, UpdateChargePaymentMethodRequest request);
+
+        /// <summary>
+        /// Creates a new charge
+        /// </summary>
+        /// <param name="request">Required parameter: Request for creating a charge</param>
+        /// <return>Returns the Models.GetChargeResponse response from the API call</return>
         BaseResponse<GetChargeResponse> CreateCharge(CreateChargeRequest request);
 
         /// <summary>
-        /// Get charge data
+        /// Get a charge from its id
         /// </summary>
-        /// <param name="chargeId">Charge code</param>
-        /// <returns>Base response with charge data</returns>
+        /// <param name="chargeId">Required parameter: Charge id</param>
+        /// <return>Returns the Models.GetChargeResponse response from the API call</return>
         BaseResponse<GetChargeResponse> GetCharge(string chargeId);
 
         /// <summary>
-        /// List charges
+        /// Retries a charge
         /// </summary>
-        /// <param name="request">List charge request</param>
-        /// <returns>Base response with paged charges data</returns>
-        BaseResponse<PagingResponse<GetChargeResponse>> ListCharges(ListChargesRequest request);
+        /// <param name="chargeId">Required parameter: Charge id</param>
+        /// <return>Returns the Models.GetChargeResponse response from the API call</return>
+        BaseResponse<GetChargeResponse> RetryCharge(string chargeId);
 
         /// <summary>
-        /// Update charge metadata
+        /// Lists all charges
         /// </summary>
-        /// <param name="chargeId">Charge code</param>
-        /// <param name="request">Update metadata request</param>
-        /// <returns>Base response with charge data</returns>
-        BaseResponse<GetChargeResponse> UpdateMetadata(string chargeId, UpdateMetadataRequest request);
+        /// <return>Returns the Models.ListChargesResponse response from the API call</return>
+        BaseResponse<ListChargesResponse> GetCharges(ListChargesRequest request);
 
         /// <summary>
-        /// Update charge credit card
+        /// Updates the metadata from a charge
         /// </summary>
-        /// <param name="chargeId">Charge code</param>
-        /// <param name="request">Update credit card request</param>
-        /// <returns>Base response with charge data</returns>
-        BaseResponse<GetChargeResponse> UpdateCreditCard(string chargeId, UpdateCreditCardRequest request);
+        /// <param name="chargeId">Required parameter: The charge id</param>
+        /// <param name="request">Required parameter: Request for updating the charge metadata</param>
+        /// <return>Returns the Models.GetChargeResponse response from the API call</return>
+        BaseResponse<GetChargeResponse> UpdateChargeMetadata(string chargeId, UpdateMetadataRequest request);
 
         /// <summary>
-        /// Update charge payment method
+        /// Cancel a charge
         /// </summary>
-        /// <param name="chargeId">Charge code</param>
-        /// <param name="request">Update payment method request</param>
-        /// <returns>Base response with charge data</returns>
-        BaseResponse<GetChargeResponse> UpdatePaymentMethod(string chargeId, UpdatePaymentMethodRequest request);
+        /// <param name="chargeId">Required parameter: Charge id</param>
+        /// <param name="request">Optional parameter: Request for cancelling a charge</param>
+        /// <return>Returns the Models.GetChargeResponse response from the API call</return>
+        BaseResponse<GetChargeResponse> CancelCharge(string chargeId, CreateCancelChargeRequest request = null);
 
         /// <summary>
-        /// Update charge due date
+        /// Captures a charge
         /// </summary>
-        /// <param name="chargeId">Charge code</param>
-        /// <param name="request">Update due date request</param>
-        /// <returns>Base response with charge data</returns>
-        BaseResponse<GetChargeResponse> UpdateDueDate(string chargeId, UpdateDueDateRequest request);
+        /// <param name="chargeId">Required parameter: Charge id</param>
+        /// <param name="request">Optional parameter: Request for capturing a charge</param>
+        /// <return>Returns the Models.GetChargeResponse response from the API call</return>
+        BaseResponse<GetChargeResponse> CaptureCharge(string chargeId, CreateCaptureChargeRequest request = null);
 
         /// <summary>
-        /// Capture charge 
+        /// Updates the due date from a charge
         /// </summary>
-        /// <param name="chargeId">Charge code</param>
-        /// <param name="request">Capture charge request</param>
-        /// <returns>Base response with charge data</returns>
-        BaseResponse<GetChargeResponse> CaptureCharge(string chargeId, CaptureChargeRequest request);
+        /// <param name="chargeId">Required parameter: Charge Id</param>
+        /// <param name="request">Required parameter: Request for updating the due date</param>
+        /// <return>Returns the Models.GetChargeResponse response from the API call</return>
+        BaseResponse<GetChargeResponse> UpdateChargeDueDate(string chargeId, UpdateChargeDueDateRequest request);
 
         /// <summary>
-        /// Cancel charge 
+        /// TODO: type endpoint description here
         /// </summary>
-        /// <param name="chargeId">Charge code</param>
-        /// <param name="request">Cancel charge request</param>
-        /// <returns>Base response with charge data</returns>
-        BaseResponse<GetChargeResponse> CancelCharge(string chargeId, CancelChargeRequest request);
+        /// <param name="chargeId">Required parameter: Example: </param>
+        /// <param name="request">Optional parameter: Request for confirm payment</param>
+        /// <return>Returns the Models.GetChargeResponse response from the API call</return>
+        BaseResponse<GetChargeResponse> ConfirmPayment(string chargeId, CreateConfirmPaymentRequest request = null);
     }
 }

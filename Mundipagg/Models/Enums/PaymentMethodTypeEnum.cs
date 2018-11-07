@@ -9,14 +9,17 @@ namespace Mundipagg.Models.Enums
     {
         [EnumMember(Value = "credit_card")]
         CreditCard,
+
         [EnumMember(Value = "boleto")]
         Boleto,
+
         [EnumMember(Value = "bank_transfer")]
         BankTransfer,
+
         [EnumMember(Value = "safetypay")]
         SafetyPay,
+
         [EnumMember(Value = "voucher")]
         Voucher
     }
 }
-

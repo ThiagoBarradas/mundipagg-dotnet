@@ -5,11 +5,17 @@
     /// </summary>
     public abstract class BaseListRequest
     {
+        #region Public Constructors
+
         public BaseListRequest()
         {
             this.Page = 1;
             this.Size = 10;
         }
+
+        #endregion Public Constructors
+
+        #region Public Properties
 
         /// <summary>
         /// Page number
@@ -20,5 +26,7 @@
         /// Page size
         /// </summary>
         public int Size { get; set; }
+
+        #endregion Public Properties
     }
 }
