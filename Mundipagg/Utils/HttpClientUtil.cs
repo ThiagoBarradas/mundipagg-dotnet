@@ -32,7 +32,6 @@ namespace Mundipagg.Utils
             this.Client.DefaultRequestHeaders.Accept.Clear();
             this.Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             this.Client.DefaultRequestHeaders.Add("User-Agent", "Mundipagg Dotnet SDK");
-            this.Client.DefaultRequestHeaders.Authorization = this.GenerateBasicAuth(configuration.SecretKey, "");
         }
 
         #endregion Public Constructors
@@ -84,6 +83,8 @@ namespace Mundipagg.Utils
                     request.Content = new StringContent(bodyAsString, Encoding.UTF8, "application/json");
                     response.RawRequest = bodyAsString;
                 }
+
+                this.Client.DefaultRequestHeaders.Authorization = this.GenerateBasicAuth(this.Configuration.SecretKey, "");
 
                 var httpResponse = Task.Run(() => this.Client.SendAsync(request)).Result;
 
