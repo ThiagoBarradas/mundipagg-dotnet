@@ -27,6 +27,12 @@
             this.Timeout = TIMEOUT;
         }
 
+        public Configuration(string apiUrl, int? timeout = TIMEOUT)
+        {
+            this.ApiUrl = apiUrl;
+            this.Timeout = timeout ?? TIMEOUT;
+        }
+
         /// <summary>
         /// Creates a new configuration using default values for api url and timeout
         /// </summary>

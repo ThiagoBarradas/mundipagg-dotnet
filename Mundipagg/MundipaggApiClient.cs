@@ -28,6 +28,15 @@ namespace Mundipagg
         }
 
         /// <summary>
+        /// Creates a new api client using a custom values for url and timeout
+        /// </summary>
+        /// <param name="apiUrl"></param>
+        public MundipaggApiClient(string apiUrl, int? timeout = null)
+        {
+            this.Initialize(new Configuration(apiUrl, timeout));
+        }
+
+        /// <summary>
         /// Creates a new api with full configuration
         /// </summary>
         /// <param name="configuration">Mundipagg Api configuration</param>
