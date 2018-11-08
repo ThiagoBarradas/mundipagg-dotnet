@@ -79,9 +79,8 @@ namespace Mundipagg.Resources
         {
             var method = HttpMethod.Put;
             var endpoint = $"/orders/{orderId}/items/{itemId}";
-            var query = request.ToDictionary();
 
-            return this.HttpClientUtil.SendRequest<GetOrderItemResponse>(method, endpoint, null, query);
+            return this.HttpClientUtil.SendRequest<GetOrderItemResponse>(method, endpoint, request);
         }
 
         public BaseResponse<GetOrderResponse> UpdateOrderMetadata(string orderId, UpdateMetadataRequest request)
@@ -90,7 +89,7 @@ namespace Mundipagg.Resources
             var endpoint = $"/orders/{orderId}/metadata";
             var query = request.ToDictionary();
 
-            return this.HttpClientUtil.SendRequest<GetOrderResponse>(method, endpoint, null, query);
+            return this.HttpClientUtil.SendRequest<GetOrderResponse>(method, endpoint, request);
         }
 
         public BaseResponse<GetOrderResponse> UpdateOrderStatus(string id, UpdateOrderStatusRequest request)
@@ -99,7 +98,7 @@ namespace Mundipagg.Resources
             var endpoint = $"/orders/{id}/closed";
             var query = request.ToDictionary();
 
-            return this.HttpClientUtil.SendRequest<GetOrderResponse>(method, endpoint, null, query);
+            return this.HttpClientUtil.SendRequest<GetOrderResponse>(method, endpoint, request);
         }
 
         #endregion Public Methods

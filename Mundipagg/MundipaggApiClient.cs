@@ -8,6 +8,8 @@ namespace Mundipagg
     /// </summary>
     public class MundipaggApiClient : IMundipaggApiClient
     {
+        #region Public Constructors
+
         /// <summary>
         /// Creates a new api client using default values for api url and timeout and empty secret key
         /// </summary>
@@ -34,39 +36,11 @@ namespace Mundipagg
             this.Initialize(configuration);
         }
 
-        public ICustomerResource Customer { get; private set; }
+        #endregion Public Constructors
 
-        public IWebhookResource Webhook { get; private set; }
+        #region Public Properties
 
         public IChargeResource Charge { get; private set; }
-
-        public IInvoiceResource Invoice { get; private set; }
-
-        public IOrderResource Order { get; private set; }
-
-        public ISubscriptionResource Subscription { get; private set; }
-
-        public void SetSecretKey(string secretKey)
-        {
-            this.Configuration.SecretKey = secretKey;
-        }
-
-        /// <summary>
-        /// Initialize api client
-        /// </summary>
-        /// <param name="configuration">Mundipagg Api configuration</param>
-        private void Initialize(Configuration configuration)
-        {
-            this.Customer = new CustomerResource(configuration);
-            this.Webhook = new WebhookResource(configuration);
-            this.Charge = new ChargeResource(configuration);
-            this.Invoice = new InvoiceResource(configuration);
-            this.Order = new OrderResource(configuration);
-            this.Subscription = new SubscriptionResource(configuration);
-            this.Configuration = configuration;
-        }
-
-        private Configuration _configuration { get; set; }
 
         public Configuration Configuration
         {
@@ -85,5 +59,51 @@ namespace Mundipagg
                 //this.Tokens.Configuration = this._configuration;
             }
         }
+
+        public ICustomerResource Customer { get; private set; }
+
+        public IInvoiceResource Invoice { get; private set; }
+
+        public IOrderResource Order { get; private set; }
+
+        public ISubscriptionResource Subscription { get; private set; }
+
+        public IWebhookResource Webhook { get; private set; }
+
+        #endregion Public Properties
+
+        #region Private Properties
+
+        private Configuration _configuration { get; set; }
+
+        #endregion Private Properties
+
+        #region Public Methods
+
+        public void SetSecretKey(string secretKey)
+        {
+            this.Configuration.SecretKey = secretKey;
+        }
+
+        #endregion Public Methods
+
+        #region Private Methods
+
+        /// <summary>
+        /// Initialize api client
+        /// </summary>
+        /// <param name="configuration">Mundipagg Api configuration</param>
+        private void Initialize(Configuration configuration)
+        {
+            this.Customer = new CustomerResource(configuration);
+            this.Webhook = new WebhookResource(configuration);
+            this.Charge = new ChargeResource(configuration);
+            this.Invoice = new InvoiceResource(configuration);
+            this.Order = new OrderResource(configuration);
+            this.Subscription = new SubscriptionResource(configuration);
+            this.Configuration = configuration;
+        }
+
+        #endregion Private Methods
     }
 }

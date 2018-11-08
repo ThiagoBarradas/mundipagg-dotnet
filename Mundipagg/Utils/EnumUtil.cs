@@ -8,6 +8,8 @@ namespace Mundipagg.Utils
     /// </summary>
     public static class EnumUtil
     {
+        #region Public Methods
+
         /// <summary>
         /// Get value of enum member attribute
         /// </summary>
@@ -27,5 +29,7 @@ namespace Mundipagg.Utils
 
             return null;
         }
+
+        #endregion Public Methods
     }
 }

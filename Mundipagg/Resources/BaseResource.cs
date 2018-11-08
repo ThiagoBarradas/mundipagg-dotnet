@@ -25,12 +25,16 @@ namespace Mundipagg.Resources
 
         #endregion Public Constructors
 
-        #region Protected Properties
+        #region Public Properties
 
         /// <summary>
         /// Mundipagg Api coniguration
         /// </summary>
         public Configuration Configuration { get; set; }
+
+        #endregion Public Properties
+
+        #region Protected Properties
 
         /// <summary>
         /// Http client utility
