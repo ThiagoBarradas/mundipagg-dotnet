@@ -32,6 +32,7 @@ namespace Mundipagg.Utils
             this.Client.DefaultRequestHeaders.Accept.Clear();
             this.Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             this.Client.DefaultRequestHeaders.Add("User-Agent", "Mundipagg Dotnet SDK");
+            this.Client.Timeout = TimeSpan.FromMilliseconds(configuration.Timeout);
         }
 
         #endregion Public Constructors
