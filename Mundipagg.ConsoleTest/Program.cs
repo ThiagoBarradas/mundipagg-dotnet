@@ -8,7 +8,7 @@ namespace Mundipagg.ConsoleTest
     {
         private static void Main(string[] args)
         {
-            var client = new MundipaggApiClient("sk_test_xxxx");
+            var client = new MundipaggApiClient("sk_test_xxxx   ");
             client.Configuration.RequestKey = "xpto";
 
             // Create
