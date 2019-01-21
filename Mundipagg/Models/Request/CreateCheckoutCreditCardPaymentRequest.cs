@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreateCheckoutCreditCardPaymentRequest
     {
-        #region Public Properties
 
         public CreatePaymentAuthenticationRequest Authentication { get; set; }
 
@@ -12,6 +11,5 @@ namespace Mundipagg.Models.Request
 
         public string StatementDescriptor { get; set; }
 
-        #endregion Public Properties
     }
 }

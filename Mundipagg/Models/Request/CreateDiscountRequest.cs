@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreateDiscountRequest
     {
-        #region Public Properties
 
         public int? Cycles { get; set; }
 
@@ -14,6 +13,5 @@ namespace Mundipagg.Models.Request
 
         public double Mvalue { get; set; }
 
-        #endregion Public Properties
     }
 }

@@ -8,21 +8,26 @@ namespace Mundipagg.ConsoleTest
     {
         private static void Main(string[] args)
         {
-            var resut = JsonConvert.SerializeObject(new
-            {
-                Wer_Test = "1212",
-                WerTest = 12
-            }, JsonSerializerUtil.LowerCaseSettings);
-
-            var client = new MundipaggApiClient("sk_test_XXXXXXX");
+            var client = new MundipaggApiClient("sk_test_xxxx");
+            client.Configuration.RequestKey = "xpto";
 
             // Create
             var createRequest = new CreateCustomerRequest()
             {
-                Name = "testeeee",
-                Email = "testeeee@gmail.com"
+                Name = "teste1hj",
+                Email = "teste1hj@gmail.com"
             };
             var createResult = client.Customer.CreateCustomer(createRequest);
+
+            client.Configuration.RequestKey = "otherrk";
+
+            // Create
+            var createRequest2 = new CreateCustomerRequest()
+            {
+                Name = "teste2hj",
+                Email = "teste2hj@gmail.com"
+            };
+            var createResult2 = client.Customer.CreateCustomer(createRequest2);
 
             //createResult.
 
@@ -45,7 +50,7 @@ namespace Mundipagg.ConsoleTest
             {
                 Size = 5
             };
-            var listResult = client.Customer.GetCustomers(listRequest);
+            var listResult = client.Customer.ListCustomers(listRequest);
 
             var json = "{\r\n  \"id\": \"hook_eNKaMDbtQ2C7z72P\",\r\n  \"account\": {\r\n    \"id\": \"acc_gKD7oA6kIltG45V0\",\r\n    \"name\": \"App Teste Hub - Sandbox\"\r\n  },\r\n  \"type\": \"customer.created\",\r\n  \"created_at\": \"2017-09-28T05:40:50\",\r\n  \"data\": {\r\n    \"id\": \"cus_68ZVrjvfQtJoV97N\",\r\n    \"name\": \"asdasd\",\r\n    \"email\": \"asdas@mailinator.com\",\r\n    \"delinquent\": false,\r\n    \"created_at\": \"2017-09-28T05:40:50\",\r\n    \"updated_at\": \"2017-09-28T05:40:50\",\r\n    \"phones\": {}\r\n  }\r\n}";
             var hookParsed = client.Webhook.ParseWebhook(json);

@@ -5,8 +5,6 @@
     /// </summary>
     public class Paging
     {
-        #region Public Properties
-
         /// <summary>
         /// Next page url
         /// </summary>
@@ -22,6 +20,5 @@
         /// </summary>
         public int Total { get; set; }
 
-        #endregion Public Properties
     }
 }

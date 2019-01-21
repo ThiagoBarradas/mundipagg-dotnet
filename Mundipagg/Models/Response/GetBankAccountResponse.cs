@@ -5,7 +5,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetBankAccountResponse
     {
-        #region Public Properties
 
         public string AccountCheckDigit { get; set; }
 
@@ -37,6 +36,5 @@ namespace Mundipagg.Models.Response
 
         public DateTime UpdatedAt { get; set; }
 
-        #endregion Public Properties
     }
 }

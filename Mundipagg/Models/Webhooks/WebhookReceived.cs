@@ -7,7 +7,6 @@ namespace Mundipagg.Models.Webhooks
     /// </summary>
     public class WebhookReceived : BaseWebhook
     {
-        #region Public Properties
 
         /// <summary>
         /// Hook event type
@@ -24,6 +23,5 @@ namespace Mundipagg.Models.Webhooks
             }
         }
 
-        #endregion Public Properties
     }
 }

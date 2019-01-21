@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetPriceBracketResponse
     {
-        #region Public Properties
 
         public int? EndQuantity { get; set; }
 
@@ -12,6 +11,5 @@ namespace Mundipagg.Models.Response
 
         public int StartQuantity { get; set; }
 
-        #endregion Public Properties
     }
 }

@@ -10,28 +10,10 @@ using System.Net.Http;
 
 namespace Mundipagg.Resources
 {
-    /// <summary>
-    /// Webhook manager
-    /// </summary>
     public class WebhookResource : BaseResource, IWebhookResource
     {
-        #region Public Constructors
-
-        /// <summary>
-        /// Creates a new webhook manager
-        /// </summary>
-        /// <param name="configuration">Mundipagg Api configuration</param>
         public WebhookResource(Configuration configuration) : base(configuration) { }
 
-        #endregion Public Constructors
-
-        #region Public Methods
-
-        /// <summary>
-        /// Get webhook data
-        /// </summary>
-        /// <param name="webhookId">Webhook id</param>
-        /// <returns>Base response with webhook data</returns>
         public BaseResponse<GetWebhookResponse> GetWebhook(string webhookId)
         {
             var method = HttpMethod.Get;
@@ -40,11 +22,6 @@ namespace Mundipagg.Resources
             return this.HttpClientUtil.SendRequest<GetWebhookResponse>(method, endpoint, null);
         }
 
-        /// <summary>
-        /// List webhooks
-        /// </summary>
-        /// <param name="request">List webhooks request</param>
-        /// <returns>Base response with paged webhooks data</returns>
         public BaseResponse<PagingResponse<GetWebhookResponse>> ListWebhooks(ListWebhooksRequest request)
         {
             var method = HttpMethod.Get;
@@ -53,12 +30,7 @@ namespace Mundipagg.Resources
 
             return this.HttpClientUtil.SendRequest<PagingResponse<GetWebhookResponse>>(method, endpoint, null, query);
         }
-
-        /// <summary>
-        /// Parse webhook received from Mundipagg Api
-        /// </summary>
-        /// <param name="json">Received json</param>
-        /// <returns></returns>
+        
         public WebhookReceived ParseWebhook(string json)
         {
             if (string.IsNullOrWhiteSpace(json) == true)
@@ -67,11 +39,6 @@ namespace Mundipagg.Resources
             return JsonConvert.DeserializeObject<WebhookReceived>(json, JsonSerializerUtil.SnakeCaseSettings);
         }
 
-        /// <summary>
-        /// Retry send webhook
-        /// </summary>
-        /// <param name="webhookId">Webhook id</param>
-        /// <returns>Base response with webhook data</returns>
         public BaseResponse<GetWebhookResponse> RetryWebhook(string webhookId)
         {
             var method = HttpMethod.Post;
@@ -80,6 +47,5 @@ namespace Mundipagg.Resources
             return this.HttpClientUtil.SendRequest<GetWebhookResponse>(method, endpoint, null);
         }
 
-        #endregion Public Methods
     }
 }

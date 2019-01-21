@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetSafetyPayTransactionResponse : GetTransactionResponse
     {
-        #region Public Properties
 
         public string BankTid { get; set; }
 
@@ -14,6 +13,5 @@ namespace Mundipagg.Models.Response
 
         public string Url { get; set; }
 
-        #endregion Public Properties
     }
 }

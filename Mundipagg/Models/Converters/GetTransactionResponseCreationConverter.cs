@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Converters
 {
     internal class GetTransactionResponseCreationConverter : JsonCreationConverter<GetTransactionResponse>
     {
-        #region Public Constructors
 
         public GetTransactionResponseCreationConverter()
         {
@@ -21,6 +20,5 @@ namespace Mundipagg.Models.Converters
             };
         }
 
-        #endregion Public Constructors
     }
 }

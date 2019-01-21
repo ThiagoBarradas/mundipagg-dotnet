@@ -8,15 +8,7 @@ namespace Mundipagg.Resources
 {
     public class InvoiceResource : BaseResource, IInvoiceResource
     {
-        #region Public Constructors
-
-        public InvoiceResource(Configuration configuration) : base(configuration)
-        {
-        }
-
-        #endregion Public Constructors
-
-        #region Public Methods
+        public InvoiceResource(Configuration configuration) : base(configuration) { }
 
         public BaseResponse<GetInvoiceResponse> CancelInvoice(string invoiceId)
         {
@@ -42,7 +34,7 @@ namespace Mundipagg.Resources
             return this.HttpClientUtil.SendRequest<GetInvoiceResponse>(method, endpoint, null);
         }
 
-        public BaseResponse<ListInvoicesResponse> GetInvoices(ListInvoicesRequest request)
+        public BaseResponse<ListInvoicesResponse> ListInvoices(ListInvoicesRequest request)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/invoices";
@@ -67,6 +59,5 @@ namespace Mundipagg.Resources
             return this.HttpClientUtil.SendRequest<GetInvoiceResponse>(method, endpoint, request);
         }
 
-        #endregion Public Methods
     }
 }

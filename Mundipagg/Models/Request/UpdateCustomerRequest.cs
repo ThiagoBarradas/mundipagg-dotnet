@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Request
 {
     public class UpdateCustomerRequest
     {
-        #region Public Properties
 
         public CreateAddressRequest Address { get; set; }
 
@@ -22,6 +21,5 @@ namespace Mundipagg.Models.Request
 
         public string Type { get; set; }
 
-        #endregion Public Properties
     }
 }

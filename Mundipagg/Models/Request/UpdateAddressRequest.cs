@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Request
 {
     public class UpdateAddressRequest
     {
-        #region Public Properties
 
         public string Complement { get; set; }
 
@@ -14,6 +13,5 @@ namespace Mundipagg.Models.Request
 
         public string Number { get; set; }
 
-        #endregion Public Properties
     }
 }

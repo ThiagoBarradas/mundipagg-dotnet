@@ -5,7 +5,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetCardResponse
     {
-        #region Public Properties
 
         public GetBillingAddressResponse BillingAddress { get; set; }
 
@@ -39,6 +38,5 @@ namespace Mundipagg.Models.Response
 
         public DateTime UpdatedAt { get; set; }
 
-        #endregion Public Properties
     }
 }

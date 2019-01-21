@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetInvoiceItemResponse
     {
-        #region Public Properties
 
         public int Amount { get; set; }
 
@@ -18,6 +17,5 @@ namespace Mundipagg.Models.Response
 
         public string SubscriptionItemId { get; set; }
 
-        #endregion Public Properties
     }
 }

@@ -5,7 +5,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetOrderResponse
     {
-        #region Public Properties
 
         public List<GetChargeResponse> Charges { get; set; }
 
@@ -43,6 +42,5 @@ namespace Mundipagg.Models.Response
 
         public DateTime UpdatedAt { get; set; }
 
-        #endregion Public Properties
     }
 }

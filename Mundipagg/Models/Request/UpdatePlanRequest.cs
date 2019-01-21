@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Request
 {
     public class UpdatePlanRequest
     {
-        #region Public Properties
 
         public List<int> BillingDays { get; set; }
 
@@ -36,6 +35,5 @@ namespace Mundipagg.Models.Request
 
         public int? TrialPeriodDays { get; set; }
 
-        #endregion Public Properties
     }
 }

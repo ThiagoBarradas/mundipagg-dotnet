@@ -5,8 +5,6 @@
     /// </summary>
     public class Configuration
     {
-        #region Private Fields
-
         /// <summary>
         /// Default api url
         /// </summary>
@@ -16,17 +14,21 @@
         /// Default timeout
         /// </summary>
         private const int TIMEOUT = 30000;
-
-        #endregion Private Fields
-
-        #region Public Constructors
-
+        
+        /// <summary>
+        /// Empty constructor
+        /// </summary>
         public Configuration()
         {
             this.ApiUrl = API_URL;
             this.Timeout = TIMEOUT;
         }
 
+        /// <summary>
+        /// Constructor with api url and timeout
+        /// </summary>
+        /// <param name="apiUrl"></param>
+        /// <param name="timeout"></param>
         public Configuration(string apiUrl, int? timeout = TIMEOUT)
         {
             this.ApiUrl = apiUrl;
@@ -44,9 +46,18 @@
             this.Timeout = TIMEOUT;
         }
 
-        #endregion Public Constructors
-
-        #region Public Properties
+        /// <summary>
+        /// Creates a new configuration using default values for api url and timeout
+        /// </summary>
+        /// <param name="secretKey">Your secret key, something like sk_xxxxx or sk_test_xxxx</param>
+        /// <param name="requestKey">some identifier</param>
+        public Configuration(string secretKey, string requestKey)
+        {
+            this.SecretKey = secretKey;
+            this.ApiUrl = API_URL;
+            this.Timeout = TIMEOUT;
+            this.RequestKey = requestKey;
+        }
 
         /// <summary>
         /// Api Url
@@ -59,10 +70,13 @@
         public string SecretKey { get; set; }
 
         /// <summary>
+        /// Request Key to send in Header
+        /// </summary>
+        public string RequestKey { get; set; }
+
+        /// <summary>
         /// Timeout in milliseconds
         /// </summary>
         public int Timeout { get; set; }
-
-        #endregion Public Properties
     }
 }

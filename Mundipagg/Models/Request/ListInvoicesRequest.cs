@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Request
 {
     public class ListInvoicesRequest : BaseListRequest
     {
-        #region Public Properties
 
         /// <summary>
         /// Filter by code - Charge code at merchant system
@@ -37,6 +36,5 @@ namespace Mundipagg.Models.Request
         /// </summary>
         public string SubscriptionId { get; set; }
 
-        #endregion Public Properties
     }
 }

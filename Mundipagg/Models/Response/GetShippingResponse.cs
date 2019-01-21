@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetShippingResponse
     {
-        #region Public Properties
 
         public GetAddressResponse Address { get; set; }
 
@@ -20,6 +19,5 @@ namespace Mundipagg.Models.Response
 
         public string RecipientPhone { get; set; }
 
-        #endregion Public Properties
     }
 }

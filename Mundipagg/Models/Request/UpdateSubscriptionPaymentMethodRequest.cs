@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Request
 {
     public class UpdateSubscriptionPaymentMethodRequest
     {
-        #region Public Properties
 
         public CreateCardRequest Card { get; set; }
 
@@ -10,6 +9,5 @@ namespace Mundipagg.Models.Request
 
         public string PaymentMethod { get; set; }
 
-        #endregion Public Properties
     }
 }

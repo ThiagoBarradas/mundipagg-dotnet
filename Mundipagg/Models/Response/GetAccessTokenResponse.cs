@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetAccessTokenResponse
     {
-        #region Public Properties
 
         public string Code { get; set; }
 
@@ -16,6 +15,5 @@ namespace Mundipagg.Models.Response
 
         public string Status { get; set; }
 
-        #endregion Public Properties
     }
 }

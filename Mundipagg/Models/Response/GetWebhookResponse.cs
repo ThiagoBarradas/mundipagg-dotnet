@@ -9,7 +9,6 @@ namespace Mundipagg.Models.Response
     /// </summary>
     public class GetWebhookResponse : BaseWebhook
     {
-        #region Public Properties
 
         /// <summary>
         /// Attempts made/total
@@ -56,6 +55,5 @@ namespace Mundipagg.Models.Response
         /// </summary>
         public string Url { get; set; }
 
-        #endregion Public Properties
     }
 }

@@ -10,7 +10,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreateUsageRequest
     {
-        #region Public Properties
 
         public string Code { get; set; }
 
@@ -22,6 +21,5 @@ namespace Mundipagg.Models.Request
 
         public DateTime UsedAt { get; set; }
 
-        #endregion Public Properties
     }
 }

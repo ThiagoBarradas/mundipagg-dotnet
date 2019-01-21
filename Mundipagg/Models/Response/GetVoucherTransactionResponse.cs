@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetVoucherTransactionResponse : GetTransactionResponse
     {
-        #region Public Properties
 
         public string AcquirerAffiliationCode { get; set; }
 
@@ -24,6 +23,5 @@ namespace Mundipagg.Models.Response
 
         public string StatementDescriptor { get; set; }
 
-        #endregion Public Properties
     }
 }

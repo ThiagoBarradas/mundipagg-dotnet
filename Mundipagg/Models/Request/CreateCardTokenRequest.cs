@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreateCardTokenRequest
     {
-        #region Public Properties
 
         public string Brand { get; set; }
 
@@ -16,6 +15,5 @@ namespace Mundipagg.Models.Request
 
         public string Number { get; set; }
 
-        #endregion Public Properties
     }
 }

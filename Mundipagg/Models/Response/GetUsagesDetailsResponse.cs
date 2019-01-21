@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetUsagesDetailsResponse
     {
-        #region Public Properties
 
         public GetPeriodResponse Period { get; set; }
 
@@ -16,6 +15,5 @@ namespace Mundipagg.Models.Response
 
         public ListUsagesDetailsResponse Usages { get; set; }
 
-        #endregion Public Properties
     }
 }

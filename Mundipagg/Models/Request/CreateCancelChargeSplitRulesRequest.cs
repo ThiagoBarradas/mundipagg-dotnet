@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreateCancelChargeSplitRulesRequest
     {
-        #region Public Properties
 
         public int Amount { get; set; }
 
@@ -10,6 +9,5 @@ namespace Mundipagg.Models.Request
 
         public string Type { get; set; }
 
-        #endregion Public Properties
     }
 }

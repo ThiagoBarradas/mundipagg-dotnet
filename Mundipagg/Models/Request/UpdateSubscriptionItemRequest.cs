@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Request
 {
     public class UpdateSubscriptionItemRequest
     {
-        #region Public Properties
 
         public int? Cycles { get; set; }
 
@@ -18,6 +17,5 @@ namespace Mundipagg.Models.Request
 
         public string Status { get; set; }
 
-        #endregion Public Properties
     }
 }

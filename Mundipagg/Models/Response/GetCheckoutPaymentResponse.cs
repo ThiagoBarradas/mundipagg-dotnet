@@ -5,7 +5,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetCheckoutPaymentResponse
     {
-        #region Public Properties
 
         public List<string> AcceptedPaymentMethods { get; set; }
 
@@ -55,6 +54,5 @@ namespace Mundipagg.Models.Response
 
         public DateTime UpdatedAt { get; set; }
 
-        #endregion Public Properties
     }
 }

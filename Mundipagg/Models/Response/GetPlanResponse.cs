@@ -5,7 +5,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetPlanResponse
     {
-        #region Public Properties
 
         public List<int> BillingDays { get; set; }
 
@@ -49,6 +48,5 @@ namespace Mundipagg.Models.Response
 
         public string Url { get; set; }
 
-        #endregion Public Properties
     }
 }

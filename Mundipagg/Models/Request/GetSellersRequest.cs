@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Request
 {
     public class GetSellersRequest
     {
-        #region Public Properties
 
         public string Code { get; set; }
 
@@ -18,6 +17,5 @@ namespace Mundipagg.Models.Request
 
         public string Type { get; set; }
 
-        #endregion Public Properties
     }
 }

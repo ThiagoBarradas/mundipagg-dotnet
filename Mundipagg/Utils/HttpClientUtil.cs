@@ -1,5 +1,6 @@
 ﻿using Mundipagg.Models.Response;
 using Newtonsoft.Json;
+using PackUtils;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -17,27 +18,20 @@ namespace Mundipagg.Utils
     /// </summary>
     internal class HttpClientUtil : IHttpClientUtil
     {
-        #region Public Constructors
-
         /// <summary>
         /// Creates a new http client utility
         /// </summary>
         /// <param name="configuration">Mundipagg Api configuration</param>
-        /// <param name="jsonSerializerSettings">Json serializer settings</param>
-        public HttpClientUtil(Configuration configuration, JsonSerializerSettings jsonSerializerSettings)
+        public HttpClientUtil(Configuration configuration)
         {
             this.Configuration = configuration;
-            this.JsonSerializerSettings = jsonSerializerSettings;
+            this.JsonSerializerSettings = JsonUtility.SnakeCaseJsonSerializerSettings;
             this.Client = new HttpClient();
             this.Client.DefaultRequestHeaders.Accept.Clear();
             this.Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             this.Client.DefaultRequestHeaders.Add("User-Agent", "Mundipagg Dotnet SDK");
             this.Client.Timeout = TimeSpan.FromMilliseconds(configuration.Timeout);
         }
-
-        #endregion Public Constructors
-
-        #region Private Properties
 
         /// <summary>
         /// Native HttpClient
@@ -54,10 +48,6 @@ namespace Mundipagg.Utils
         /// </summary>
         private JsonSerializerSettings JsonSerializerSettings { get; set; }
 
-        #endregion Private Properties
-
-        #region Public Methods
-
         /// <summary>
         /// Send request and mount response to client format
         /// </summary>
@@ -68,6 +58,7 @@ namespace Mundipagg.Utils
         /// <param name="query">Params to mount query string</param>
         /// <returns>Base response with specific data defined in T</returns>
         public BaseResponse<T> SendRequest<T>(HttpMethod method, string endpoint, object body, IDictionary<string, string> query = null)
+            where T: class, new()
         {
             BaseResponse<T> response = new BaseResponse<T>();
             var stopwatch = new Stopwatch();
@@ -101,10 +92,6 @@ namespace Mundipagg.Utils
 
             return response;
         }
-
-        #endregion Public Methods
-
-        #region Private Methods
 
         /// <summary>
         /// Creates basic auth
@@ -175,7 +162,5 @@ namespace Mundipagg.Utils
 
             return response;
         }
-
-        #endregion Private Methods
     }
 }

@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Response
 {
     public class PagingResponse
     {
-        #region Public Properties
 
         public string Next { get; set; }
 
@@ -10,6 +9,5 @@ namespace Mundipagg.Models.Response
 
         public int Total { get; set; }
 
-        #endregion Public Properties
     }
 }

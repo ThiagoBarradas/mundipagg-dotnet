@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetSetupResponse
     {
-        #region Public Properties
 
         public int Amount { get; set; }
 
@@ -12,6 +11,5 @@ namespace Mundipagg.Models.Response
 
         public string Status { get; set; }
 
-        #endregion Public Properties
     }
 }

@@ -2,7 +2,6 @@
 {
     public class ListAddressesRequest : BaseListRequest
     {
-        #region Public Constructors
 
         /// <summary>
         /// Default constructor
@@ -13,15 +12,10 @@
             CustomerId = customerId;
         }
 
-        #endregion Public Constructors
-
-        #region Public Properties
-
         /// <summary>
         /// Filter by customer id
         /// </summary>
         public string CustomerId { get; set; }
 
-        #endregion Public Properties
     }
 }

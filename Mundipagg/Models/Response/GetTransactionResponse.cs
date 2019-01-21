@@ -8,7 +8,6 @@ namespace Mundipagg.Models.Response
     [JsonConverter(typeof(GetTransactionResponseCreationConverter))]
     public class GetTransactionResponse
     {
-        #region Public Properties
 
         public int Amount { get; set; }
 
@@ -36,6 +35,5 @@ namespace Mundipagg.Models.Response
 
         public DateTime UpdatedAt { get; set; }
 
-        #endregion Public Properties
     }
 }

@@ -9,47 +9,6 @@ namespace Mundipagg.Utils
     /// </summary>
     public class JsonSerializerUtil
     {
-        #region Public Properties
-
-        /// <summary>
-        /// Camel case settings
-        /// </summary>
-        public static JsonSerializerSettings CamelCaseSettings
-        {
-            get
-            {
-                var settings = new JsonSerializerSettings();
-
-                settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-                settings.Formatting = Formatting.Indented;
-                settings.Converters.Add(new StringEnumConverter());
-                settings.NullValueHandling = NullValueHandling.Ignore;
-
-                return settings;
-            }
-        }
-
-        /// <summary>
-        /// Camel case settings
-        /// </summary>
-        public static JsonSerializerSettings LowerCaseSettings
-        {
-            get
-            {
-                var settings = new JsonSerializerSettings();
-
-                settings.ContractResolver = new DefaultContractResolver()
-                {
-                    NamingStrategy = new LowerCaseNamingResolver()
-                };
-                settings.Formatting = Formatting.Indented;
-                settings.Converters.Add(new StringEnumConverter());
-                settings.NullValueHandling = NullValueHandling.Ignore;
-
-                return settings;
-            }
-        }
-
         /// <summary>
         /// Snake case settings
         /// </summary>
@@ -71,7 +30,6 @@ namespace Mundipagg.Utils
             }
         }
 
-        #endregion Public Properties
     }
 
     /// <summary>

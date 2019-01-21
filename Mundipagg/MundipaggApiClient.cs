@@ -8,8 +8,6 @@ namespace Mundipagg
     /// </summary>
     public class MundipaggApiClient : IMundipaggApiClient
     {
-        #region Public Constructors
-
         /// <summary>
         /// Creates a new api client using default values for api url and timeout and empty secret key
         /// </summary>
@@ -45,10 +43,6 @@ namespace Mundipagg
             this.Initialize(configuration);
         }
 
-        #endregion Public Constructors
-
-        #region Public Properties
-
         public IChargeResource Charge { get; private set; }
 
         public Configuration Configuration
@@ -79,24 +73,12 @@ namespace Mundipagg
 
         public IWebhookResource Webhook { get; private set; }
 
-        #endregion Public Properties
-
-        #region Private Properties
-
         private Configuration _configuration { get; set; }
-
-        #endregion Private Properties
-
-        #region Public Methods
 
         public void SetSecretKey(string secretKey)
         {
             this.Configuration.SecretKey = secretKey;
         }
-
-        #endregion Public Methods
-
-        #region Private Methods
 
         /// <summary>
         /// Initialize api client
@@ -113,6 +95,5 @@ namespace Mundipagg
             this.Configuration = configuration;
         }
 
-        #endregion Private Methods
     }
 }

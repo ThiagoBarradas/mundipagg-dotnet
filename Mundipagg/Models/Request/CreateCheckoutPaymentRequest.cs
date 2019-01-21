@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreateCheckoutPaymentRequest
     {
-        #region Public Properties
 
         public object AcceptedMultiPaymentMethods { get; set; }
 
@@ -34,6 +33,5 @@ namespace Mundipagg.Models.Request
 
         public string SuccessUrl { get; set; }
 
-        #endregion Public Properties
     }
 }

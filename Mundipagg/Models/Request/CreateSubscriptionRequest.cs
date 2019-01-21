@@ -5,7 +5,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreateSubscriptionRequest
     {
-        #region Public Properties
 
         public int? BillingDay { get; set; }
 
@@ -65,6 +64,5 @@ namespace Mundipagg.Models.Request
 
         public string StatementDescriptor { get; set; }
 
-        #endregion Public Properties
     }
 }

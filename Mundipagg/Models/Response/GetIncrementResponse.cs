@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetIncrementResponse
     {
-        #region Public Properties
 
         public DateTime CreatedAt { get; set; }
 
@@ -26,6 +25,5 @@ namespace Mundipagg.Models.Response
 
         public GetSubscriptionItemResponse SubscriptionItem { get; set; }
 
-        #endregion Public Properties
     }
 }

@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetCheckoutPaymentSettingsResponse
     {
-        #region Public Properties
 
         public List<string> AcceptedPaymentMethods { get; set; }
 
@@ -22,6 +21,5 @@ namespace Mundipagg.Models.Response
 
         public string SuccessUrl { get; set; }
 
-        #endregion Public Properties
     }
 }

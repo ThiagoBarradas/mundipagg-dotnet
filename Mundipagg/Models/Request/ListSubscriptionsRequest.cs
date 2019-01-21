@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Request
 {
     public class ListSubscriptionsRequest : BaseListRequest
     {
-        #region Public Properties
 
         /// <summary>
         /// Filter by billing type
@@ -57,6 +56,5 @@ namespace Mundipagg.Models.Request
         /// </summary>
         public string Status { get; set; }
 
-        #endregion Public Properties
     }
 }

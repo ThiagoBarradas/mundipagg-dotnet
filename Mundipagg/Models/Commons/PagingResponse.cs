@@ -6,8 +6,6 @@
     /// <typeparam name="T">Response type</typeparam>
     public class PagingResponse<T>
     {
-        #region Public Properties
-
         /// <summary>
         /// Items
         /// </summary>
@@ -18,6 +16,5 @@
         /// </summary>
         public Paging Paging { get; set; }
 
-        #endregion Public Properties
     }
 }

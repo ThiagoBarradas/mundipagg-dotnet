@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetUsageResponse
     {
-        #region Public Properties
 
         public string Code { get; set; }
 
@@ -26,6 +25,5 @@ namespace Mundipagg.Models.Response
 
         public DateTime UsedAt { get; set; }
 
-        #endregion Public Properties
     }
 }

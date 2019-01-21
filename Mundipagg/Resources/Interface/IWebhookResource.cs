@@ -14,7 +14,7 @@ namespace Mundipagg.Resources.Interface
         /// Parse webhook received from Mundipagg Api
         /// </summary>
         /// <param name="json">Received json</param>
-        /// <returns></returns>
+        /// <returns>Webhook object</returns>
         WebhookReceived ParseWebhook(string json);
 
         /// <summary>

@@ -5,7 +5,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetAddressResponse
     {
-        #region Public Properties
 
         public string City { get; set; }
 
@@ -41,6 +40,5 @@ namespace Mundipagg.Models.Response
 
         public string ZipCode { get; set; }
 
-        #endregion Public Properties
     }
 }

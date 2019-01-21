@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreateCardRequest
     {
-        #region Public Properties
 
         public CreateAddressRequest BillingAddress { get; set; }
 
@@ -32,6 +31,5 @@ namespace Mundipagg.Models.Request
 
         public string Type { get; set; } = "credit";
 
-        #endregion Public Properties
     }
 }

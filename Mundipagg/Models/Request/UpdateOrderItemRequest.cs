@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Request
 {
     public class UpdateOrderItemRequest
     {
-        #region Public Properties
 
         public int Amount { get; set; }
 
@@ -12,6 +11,5 @@ namespace Mundipagg.Models.Request
 
         public int Quantity { get; set; }
 
-        #endregion Public Properties
     }
 }

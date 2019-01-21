@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreateCreditCardPaymentRequest
     {
-        #region Public Properties
 
         public CreatePaymentAuthenticationRequest Authentication { get; set; }
 
@@ -28,6 +27,5 @@ namespace Mundipagg.Models.Request
 
         public CreateCardPaymentTokenRequest Token { get; set; }
 
-        #endregion Public Properties
     }
 }

@@ -12,7 +12,6 @@ namespace Mundipagg.Models.Webhooks
     /// </summary>
     public abstract class BaseWebhook
     {
-        #region Public Properties
 
         /// <summary>
         /// Account data
@@ -74,16 +73,10 @@ namespace Mundipagg.Models.Webhooks
         /// </summary>
         public string Id { get; set; }
 
-        #endregion Public Properties
-
-        #region Protected Properties
-
         /// <summary>
         /// Hook event type
         /// </summary>
         protected WebhookEventEnum EventType { get; set; }
-
-        #endregion Protected Properties
 
         #region Protected Methods
 

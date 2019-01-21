@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreateRecipientRequest
     {
-        #region Public Properties
 
         public CreateBankAccountRequest DefaultBankAccount { get; set; }
 
@@ -22,6 +21,5 @@ namespace Mundipagg.Models.Request
 
         public string Type { get; set; }
 
-        #endregion Public Properties
     }
 }

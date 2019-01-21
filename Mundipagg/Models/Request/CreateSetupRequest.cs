@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreateSetupRequest
     {
-        #region Public Properties
 
         public int Amount { get; set; }
 
@@ -10,6 +9,5 @@ namespace Mundipagg.Models.Request
 
         public CreatePaymentRequest Payment { get; set; }
 
-        #endregion Public Properties
     }
 }

@@ -1,11 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mundipagg.Resources.Interface
+﻿namespace Mundipagg.Resources.Interface
 {
+    /// <summary>
+    /// Resource Base
+    /// </summary>
     public interface IResource
     {
+        /// <summary>
+        /// Configuration
+        /// </summary>
         Configuration Configuration { get; set; }
     }
 }

@@ -2,7 +2,6 @@
 {
     public class ListUsagesRequest : BaseListRequest
     {
-        #region Public Properties
 
         /// <summary>
         /// Filter by code
@@ -24,6 +23,5 @@
         /// </summary>
         public string SubscriptionId { get; set; }
 
-        #endregion Public Properties
     }
 }

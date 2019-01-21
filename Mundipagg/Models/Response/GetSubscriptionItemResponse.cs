@@ -5,7 +5,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetSubscriptionItemResponse
     {
-        #region Public Properties
 
         public DateTime CreatedAt { get; set; }
 
@@ -33,6 +32,5 @@ namespace Mundipagg.Models.Response
 
         public DateTime UpdatedAt { get; set; }
 
-        #endregion Public Properties
     }
 }

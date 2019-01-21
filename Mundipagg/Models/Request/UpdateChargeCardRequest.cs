@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Request
 {
     public class UpdateChargeCardRequest
     {
-        #region Public Properties
 
         public CreateCardRequest Card { get; set; }
 
@@ -12,6 +11,5 @@ namespace Mundipagg.Models.Request
 
         public bool UpdateSubscription { get; set; }
 
-        #endregion Public Properties
     }
 }

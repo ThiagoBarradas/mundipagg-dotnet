@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreateBoletoPaymentRequest
     {
-        #region Public Properties
 
         public string Bank { get; set; }
 
@@ -22,6 +21,5 @@ namespace Mundipagg.Models.Request
 
         public int Retries { get; set; }
 
-        #endregion Public Properties
     }
 }

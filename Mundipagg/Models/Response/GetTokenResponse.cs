@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetTokenResponse
     {
-        #region Public Properties
 
         public GetCardTokenResponse Card { get; set; }
 
@@ -16,6 +15,5 @@ namespace Mundipagg.Models.Response
 
         public string Type { get; set; }
 
-        #endregion Public Properties
     }
 }

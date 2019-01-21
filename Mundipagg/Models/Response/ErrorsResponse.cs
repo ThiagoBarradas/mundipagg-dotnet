@@ -7,7 +7,6 @@ namespace Mundipagg.Models.Response
     /// </summary>
     public class ErrorsResponse
     {
-        #region Public Properties
 
         /// <summary>
         /// Errors detail per property
@@ -19,6 +18,5 @@ namespace Mundipagg.Models.Response
         /// </summary>
         public string Message { get; set; }
 
-        #endregion Public Properties
     }
 }

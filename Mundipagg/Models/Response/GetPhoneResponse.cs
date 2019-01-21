@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetPhoneResponse
     {
-        #region Public Properties
 
         public string AreaCode { get; set; }
 
@@ -10,6 +9,5 @@ namespace Mundipagg.Models.Response
 
         public string Number { get; set; }
 
-        #endregion Public Properties
     }
 }

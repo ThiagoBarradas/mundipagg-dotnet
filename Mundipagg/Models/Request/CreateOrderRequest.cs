@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreateOrderRequest
     {
-        #region Public Properties
 
         public bool? AntifraudEnabled { get; set; }
 
@@ -34,6 +33,5 @@ namespace Mundipagg.Models.Request
 
         public CreateShippingRequest Shipping { get; set; }
 
-        #endregion Public Properties
     }
 }

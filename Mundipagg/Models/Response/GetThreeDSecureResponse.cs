@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetThreeDSecureResponse
     {
-        #region Public Properties
 
         public string Cavv { get; set; }
 
@@ -14,6 +13,5 @@ namespace Mundipagg.Models.Response
 
         public string TransactionId { get; set; }
 
-        #endregion Public Properties
     }
 }

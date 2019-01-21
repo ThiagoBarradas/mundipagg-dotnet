@@ -9,22 +9,6 @@ namespace Mundipagg.Resources.Interface
     public interface IChargeResource : IResource
     {
         /// <summary>
-        /// Updates the card from a charge
-        /// </summary>
-        /// <param name="chargeId">Required parameter: Charge id</param>
-        /// <param name="request">Required parameter: Request for updating a charge's card</param>
-        /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        BaseResponse<GetChargeResponse> UpdateChargeCard(string chargeId, UpdateChargeCardRequest request);
-
-        /// <summary>
-        /// Updates a charge's payment method
-        /// </summary>
-        /// <param name="chargeId">Required parameter: Charge id</param>
-        /// <param name="request">Required parameter: Request for updating the payment method from a charge</param>
-        /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        BaseResponse<GetChargeResponse> UpdateChargePaymentMethod(string chargeId, UpdateChargePaymentMethodRequest request);
-
-        /// <summary>
         /// Creates a new charge
         /// </summary>
         /// <param name="request">Required parameter: Request for creating a charge</param>
@@ -49,12 +33,12 @@ namespace Mundipagg.Resources.Interface
         /// Lists all charges
         /// </summary>
         /// <return>Returns the Models.ListChargesResponse response from the API call</return>
-        BaseResponse<ListChargesResponse> GetCharges(ListChargesRequest request);
+        BaseResponse<ListChargesResponse> ListCharges(ListChargesRequest request);
 
         /// <summary>
         /// Updates the metadata from a charge
         /// </summary>
-        /// <param name="chargeId">Required parameter: The charge id</param>
+        /// <param name="chargeId">Required parameter: Charge id</param>
         /// <param name="request">Required parameter: Request for updating the charge metadata</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
         BaseResponse<GetChargeResponse> UpdateChargeMetadata(string chargeId, UpdateMetadataRequest request);
@@ -76,19 +60,35 @@ namespace Mundipagg.Resources.Interface
         BaseResponse<GetChargeResponse> CaptureCharge(string chargeId, CreateCaptureChargeRequest request = null);
 
         /// <summary>
+        /// Confirm Charge payment
+        /// </summary>
+        /// <param name="chargeId">Required parameter: Charge Id</param>
+        /// <param name="request">Optional parameter: Request for confirm payment</param>
+        /// <return>Returns the Models.GetChargeResponse response from the API call</return>
+        BaseResponse<GetChargeResponse> ConfirmChargePayment(string chargeId, CreateConfirmPaymentRequest request = null);
+
+        /// <summary>
         /// Updates the due date from a charge
         /// </summary>
         /// <param name="chargeId">Required parameter: Charge Id</param>
         /// <param name="request">Required parameter: Request for updating the due date</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
         BaseResponse<GetChargeResponse> UpdateChargeDueDate(string chargeId, UpdateChargeDueDateRequest request);
+       
+        /// <summary>
+        /// Updates the card from a charge
+        /// </summary>
+        /// <param name="chargeId">Required parameter: Charge id</param>
+        /// <param name="request">Required parameter: Request for updating a charge's card</param>
+        /// <return>Returns the Models.GetChargeResponse response from the API call</return>
+        BaseResponse<GetChargeResponse> UpdateChargeCard(string chargeId, UpdateChargeCardRequest request);
 
         /// <summary>
-        /// TODO: type endpoint description here
+        /// Updates a charge's payment method
         /// </summary>
-        /// <param name="chargeId">Required parameter: Example: </param>
-        /// <param name="request">Optional parameter: Request for confirm payment</param>
+        /// <param name="chargeId">Required parameter: Charge id</param>
+        /// <param name="request">Required parameter: Request for updating the payment method from a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        BaseResponse<GetChargeResponse> ConfirmPayment(string chargeId, CreateConfirmPaymentRequest request = null);
+        BaseResponse<GetChargeResponse> UpdateChargePaymentMethod(string chargeId, UpdateChargePaymentMethodRequest request);
     }
 }

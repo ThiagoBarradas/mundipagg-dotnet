@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreateSubscriptionItemRequest
     {
-        #region Public Properties
 
         public int? Cycles { get; set; }
 
@@ -24,6 +23,5 @@ namespace Mundipagg.Models.Request
 
         public int? Quantity { get; set; }
 
-        #endregion Public Properties
     }
 }

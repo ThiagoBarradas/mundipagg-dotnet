@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetBoletoTransactionResponse
     {
-        #region Public Properties
 
         public string Bank { get; set; }
 
@@ -38,6 +37,5 @@ namespace Mundipagg.Models.Response
 
         public string Url { get; set; }
 
-        #endregion Public Properties
     }
 }

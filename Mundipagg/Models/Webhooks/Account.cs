@@ -5,7 +5,6 @@
     /// </summary>
     public class Account
     {
-        #region Public Properties
 
         /// <summary>
         /// Account id
@@ -17,6 +16,5 @@
         /// </summary>
         public string Name { get; set; }
 
-        #endregion Public Properties
     }
 }

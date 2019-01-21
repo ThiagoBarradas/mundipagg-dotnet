@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreateAnticipationRequest
     {
-        #region Public Properties
 
         public int Amount { get; set; }
 
@@ -12,6 +11,5 @@ namespace Mundipagg.Models.Request
 
         public string Timeframe { get; set; }
 
-        #endregion Public Properties
     }
 }

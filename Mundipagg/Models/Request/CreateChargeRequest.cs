@@ -5,7 +5,7 @@ namespace Mundipagg.Models.Request
 {
     public class CreateChargeRequest
     {
-        #region Public Properties
+        public string OrderId { get; set; }
 
         public int Amount { get; set; }
 
@@ -21,6 +21,5 @@ namespace Mundipagg.Models.Request
 
         public CreatePaymentRequest Payment { get; set; }
 
-        #endregion Public Properties
     }
 }

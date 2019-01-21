@@ -9,8 +9,6 @@ namespace Mundipagg.Utils
     /// </summary>
     public static class DictionaryUtil
     {
-        #region Public Methods
-
         /// <summary>
         /// Cast object to dictionary
         /// </summary>
@@ -19,17 +17,13 @@ namespace Mundipagg.Utils
         public static IDictionary<string, string> ToDictionary(this object source)
         {
             if (source == null)
-                ThrowExceptionWhenSourceArgumentIsNull();
+                throw new ArgumentNullException("source", "Unable to convert object to a dictionary. The source object is null.");
 
             var dictionary = new Dictionary<string, string>();
             foreach (PropertyDescriptor property in TypeDescriptor.GetProperties(source))
                 AddPropertyToDictionary(property, source, dictionary);
             return dictionary;
         }
-
-        #endregion Public Methods
-
-        #region Private Methods
 
         /// <summary>
         /// Add identified property to dictionary
@@ -49,15 +43,5 @@ namespace Mundipagg.Utils
                 dictionary.Add(property.Name.ToSnakeCase(), value.ToString());
             }
         }
-
-        /// <summary>
-        /// Throw exception when source argument is null
-        /// </summary>
-        private static void ThrowExceptionWhenSourceArgumentIsNull()
-        {
-            throw new ArgumentNullException("source", "Unable to convert object to a dictionary. The source object is null.");
-        }
-
-        #endregion Private Methods
     }
 }

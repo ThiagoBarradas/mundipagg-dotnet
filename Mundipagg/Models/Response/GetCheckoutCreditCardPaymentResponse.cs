@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetCheckoutCreditCardPaymentResponse
     {
-        #region Public Properties
 
         public GetPaymentAuthenticationResponse Authentication { get; set; }
 
@@ -12,6 +11,5 @@ namespace Mundipagg.Models.Response
 
         public string StatementDescriptor { get; set; }
 
-        #endregion Public Properties
     }
 }

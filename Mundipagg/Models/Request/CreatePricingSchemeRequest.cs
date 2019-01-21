@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreatePricingSchemeRequest
     {
-        #region Public Properties
 
         public int? MinimumPrice { get; set; }
 
@@ -14,6 +13,5 @@ namespace Mundipagg.Models.Request
 
         public string SchemeType { get; set; }
 
-        #endregion Public Properties
     }
 }

@@ -2,7 +2,6 @@
 {
     public class ListUsageDetailsRequest : BaseListRequest
     {
-        #region Public Constructors
 
         /// <summary>
         ///
@@ -18,10 +17,6 @@
             CycleId = cycleId;
             Mgroup = mgroup;
         }
-
-        #endregion Public Constructors
-
-        #region Public Properties
 
         /// <summary>
         /// Filter by code
@@ -43,6 +38,5 @@
         /// </summary>
         public string SubscriptionId { get; set; }
 
-        #endregion Public Properties
     }
 }

@@ -5,7 +5,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetSubscriptionResponse
     {
-        #region Public Properties
 
         public int? BillingDay { get; set; }
 
@@ -61,6 +60,5 @@ namespace Mundipagg.Models.Response
 
         public DateTime UpdatedAt { get; set; }
 
-        #endregion Public Properties
     }
 }

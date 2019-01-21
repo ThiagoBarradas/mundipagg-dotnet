@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Request
 {
     public class ApplePayRequest
     {
-        #region Public Properties
 
         public string Data { get; set; }
 
@@ -14,6 +13,5 @@ namespace Mundipagg.Models.Request
 
         public string Version { get; set; }
 
-        #endregion Public Properties
     }
 }
