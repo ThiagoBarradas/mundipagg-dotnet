@@ -2,7 +2,6 @@
 {
     public class ListUsagesRequest : BaseListRequest
     {
-
         /// <summary>
         /// Filter by code
         /// </summary>
@@ -22,6 +21,5 @@
         /// Filter by subscription id
         /// </summary>
         public string SubscriptionId { get; set; }
-
     }
 }

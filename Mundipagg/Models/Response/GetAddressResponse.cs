@@ -5,7 +5,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetAddressResponse
     {
-
         public string City { get; set; }
 
         public string Complement { get; set; }
@@ -39,6 +38,5 @@ namespace Mundipagg.Models.Response
         public DateTime UpdatedAt { get; set; }
 
         public string ZipCode { get; set; }
-
     }
 }

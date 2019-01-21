@@ -7,7 +7,6 @@ namespace Mundipagg.Models.Webhooks
     /// </summary>
     public class WebhookReceived : BaseWebhook
     {
-
         /// <summary>
         /// Hook event type
         /// </summary>
@@ -22,6 +21,5 @@ namespace Mundipagg.Models.Webhooks
                 this.EventType = value;
             }
         }
-
     }
 }

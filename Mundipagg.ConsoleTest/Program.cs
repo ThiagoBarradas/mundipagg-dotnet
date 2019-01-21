@@ -8,7 +8,7 @@ namespace Mundipagg.ConsoleTest
     {
         private static void Main(string[] args)
         {
-            var client = new MundipaggApiClient("sk_test_xxxx   ");
+            IMundipaggApiClient client = new MundipaggApiClient("sk_test_xxxx   ");
             client.Configuration.RequestKey = "xpto";
 
             // Create
@@ -20,7 +20,7 @@ namespace Mundipagg.ConsoleTest
             var createResult = client.Customer.CreateCustomer(createRequest);
 
             client.Configuration.RequestKey = "otherrk";
-
+            //client.Charge.CreateCharge()
             // Create
             var createRequest2 = new CreateCustomerRequest()
             {

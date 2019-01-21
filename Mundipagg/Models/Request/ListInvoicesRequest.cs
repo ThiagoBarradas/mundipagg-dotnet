@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Request
 {
     public class ListInvoicesRequest : BaseListRequest
     {
-
         /// <summary>
         /// Filter by code - Charge code at merchant system
         /// </summary>
@@ -35,6 +34,5 @@ namespace Mundipagg.Models.Request
         /// Filter by subscription id
         /// </summary>
         public string SubscriptionId { get; set; }
-
     }
 }

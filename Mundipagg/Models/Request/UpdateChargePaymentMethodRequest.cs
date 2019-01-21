@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Request
 {
     public class UpdateChargePaymentMethodRequest
     {
-
         public CreateBoletoPaymentRequest Boleto { get; set; }
 
         public CreateCreditCardPaymentRequest CreditCard { get; set; }
@@ -14,6 +13,5 @@ namespace Mundipagg.Models.Request
         public bool UpdateSubscription { get; set; }
 
         public CreateVoucherPaymentRequest Voucher { get; set; }
-
     }
 }

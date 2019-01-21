@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreatePaymentRequest
     {
-
         public int? Amount { get; set; }
 
         public CreateBankTransferPaymentRequest BankTransfer { get; set; }
@@ -34,6 +33,5 @@ namespace Mundipagg.Models.Request
         public List<CreateSplitRequest> Split { get; set; }
 
         public CreateVoucherPaymentRequest Voucher { get; set; }
-
     }
 }

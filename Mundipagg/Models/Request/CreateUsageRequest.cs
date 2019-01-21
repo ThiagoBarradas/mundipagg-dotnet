@@ -10,7 +10,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreateUsageRequest
     {
-
         public string Code { get; set; }
 
         public string Description { get; set; }
@@ -20,6 +19,5 @@ namespace Mundipagg.Models.Request
         public int Quantity { get; set; }
 
         public DateTime UsedAt { get; set; }
-
     }
 }

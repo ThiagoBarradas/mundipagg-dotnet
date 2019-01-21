@@ -7,7 +7,6 @@ namespace Mundipagg.Models.Response
     /// </summary>
     public class ErrorsResponse
     {
-
         /// <summary>
         /// Errors detail per property
         /// </summary>
@@ -17,6 +16,5 @@ namespace Mundipagg.Models.Response
         /// Main error message
         /// </summary>
         public string Message { get; set; }
-
     }
 }

@@ -5,7 +5,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetOrderResponse
     {
-
         public List<GetChargeResponse> Charges { get; set; }
 
         public List<GetCheckoutPaymentResponse> Checkouts { get; set; }
@@ -41,6 +40,5 @@ namespace Mundipagg.Models.Response
         public string Status { get; set; }
 
         public DateTime UpdatedAt { get; set; }
-
     }
 }

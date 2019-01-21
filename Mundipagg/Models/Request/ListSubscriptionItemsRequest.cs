@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Request
 {
     public class ListSubscriptionItemsRequest : BaseListRequest
     {
-
         public ListSubscriptionItemsRequest(string subscriptionId, string name = null, string description = null, string itemId = null, string code = null,
             DateTime? createdSince = null, DateTime? createdUntil = null)
         {
@@ -51,6 +50,5 @@ namespace Mundipagg.Models.Request
         /// Filter by subscription id
         /// </summary>
         public string SubscriptionId { get; set; }
-
     }
 }

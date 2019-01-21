@@ -5,7 +5,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetPlanResponse
     {
-
         public List<int> BillingDays { get; set; }
 
         public string BillingType { get; set; }
@@ -47,6 +46,5 @@ namespace Mundipagg.Models.Response
         public DateTime UpdatedAt { get; set; }
 
         public string Url { get; set; }
-
     }
 }

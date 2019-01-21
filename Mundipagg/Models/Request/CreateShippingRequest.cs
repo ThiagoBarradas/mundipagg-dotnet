@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreateShippingRequest
     {
-
         public CreateAddressRequest Address { get; set; }
 
         public string AddressId { get; set; }
@@ -20,6 +19,5 @@ namespace Mundipagg.Models.Request
         public string RecipientName { get; set; }
 
         public string RecipientPhone { get; set; }
-
     }
 }

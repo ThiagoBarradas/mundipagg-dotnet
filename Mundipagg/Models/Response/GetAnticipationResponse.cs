@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetAnticipationResponse
     {
-
         public int ApprovedAmount { get; set; }
 
         public DateTime CreatedAt { get; set; }
@@ -24,6 +23,5 @@ namespace Mundipagg.Models.Response
         public string Timeframe { get; set; }
 
         public DateTime UpdatedAt { get; set; }
-
     }
 }

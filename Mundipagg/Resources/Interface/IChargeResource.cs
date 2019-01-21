@@ -9,7 +9,8 @@ namespace Mundipagg.Resources.Interface
     public interface IChargeResource : IResource
     {
         /// <summary>
-        /// Creates a new charge
+        /// Creates a new charge2
+        /// <see cref="https://docs.mundipagg.com/v1/reference#incluir-cobranca-no-pedido"/>
         /// </summary>
         /// <param name="request">Required parameter: Request for creating a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>

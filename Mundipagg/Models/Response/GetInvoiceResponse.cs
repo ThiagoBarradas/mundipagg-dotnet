@@ -5,7 +5,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetInvoiceResponse
     {
-
         public int Amount { get; set; }
 
         public GetBillingAddressResponse BillingAddress { get; set; }
@@ -49,6 +48,5 @@ namespace Mundipagg.Models.Response
         public int? TotalIncrement { get; set; }
 
         public string Url { get; set; }
-
     }
 }

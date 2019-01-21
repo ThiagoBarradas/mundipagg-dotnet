@@ -8,7 +8,6 @@ namespace Mundipagg.Models.Response
     [JsonConverter(typeof(GetTransactionResponseCreationConverter))]
     public class GetTransactionResponse
     {
-
         public int Amount { get; set; }
 
         public int AttemptCount { get; set; }
@@ -34,6 +33,5 @@ namespace Mundipagg.Models.Response
         public string TransactionType { get; set; }
 
         public DateTime UpdatedAt { get; set; }
-
     }
 }

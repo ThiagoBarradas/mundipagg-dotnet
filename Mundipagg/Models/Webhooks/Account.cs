@@ -5,7 +5,6 @@
     /// </summary>
     public class Account
     {
-
         /// <summary>
         /// Account id
         /// </summary>
@@ -15,6 +14,5 @@
         /// Account name
         /// </summary>
         public string Name { get; set; }
-
     }
 }

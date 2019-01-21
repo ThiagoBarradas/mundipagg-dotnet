@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetPlanItemResponse
     {
-
         public DateTime CreatedAt { get; set; }
 
         public int? Cycles { get; set; }
@@ -26,6 +25,5 @@ namespace Mundipagg.Models.Response
         public string Status { get; set; }
 
         public DateTime UpdatedAt { get; set; }
-
     }
 }

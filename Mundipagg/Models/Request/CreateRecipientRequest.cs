@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreateRecipientRequest
     {
-
         public CreateBankAccountRequest DefaultBankAccount { get; set; }
 
         public string Description { get; set; }
@@ -20,6 +19,5 @@ namespace Mundipagg.Models.Request
         public CreateTransferSettingsRequest TransferSettings { get; set; }
 
         public string Type { get; set; }
-
     }
 }

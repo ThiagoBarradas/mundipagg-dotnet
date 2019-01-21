@@ -5,10 +5,11 @@ namespace Mundipagg.Models.Response
 {
     public class GetChargeResponse
     {
-
         public int Amount { get; set; }
 
         public int CanceledAmount { get; set; }
+
+        public int PaidAmount { get; set; }
 
         public DateTime? CanceledAt { get; set; }
 
@@ -41,6 +42,5 @@ namespace Mundipagg.Models.Response
         public string Status { get; set; }
 
         public DateTime UpdatedAt { get; set; }
-
     }
 }

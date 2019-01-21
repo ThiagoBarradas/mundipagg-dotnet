@@ -2,9 +2,8 @@ using System;
 
 namespace Mundipagg.Models.Response
 {
-    public class GetBankTransferTransactionResponse
+    public class GetBankTransferTransactionResponse : GetTransactionResponse
     {
-
         public string Bank { get; set; }
 
         public string BankTid { get; set; }
@@ -14,6 +13,5 @@ namespace Mundipagg.Models.Response
         public DateTime? PaidAt { get; set; }
 
         public string Url { get; set; }
-
     }
 }

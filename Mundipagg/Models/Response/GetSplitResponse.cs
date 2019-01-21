@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetSplitResponse
     {
-
         public int Amount { get; set; }
 
         public string GatewayId { get; set; }
@@ -10,6 +9,5 @@ namespace Mundipagg.Models.Response
         public GetRecipientResponse Recipient { get; set; }
 
         public string Type { get; set; }
-
     }
 }

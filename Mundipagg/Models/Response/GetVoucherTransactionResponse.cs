@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetVoucherTransactionResponse : GetTransactionResponse
     {
-
         public string AcquirerAffiliationCode { get; set; }
 
         public string AcquirerAuthCode { get; set; }
@@ -22,6 +21,5 @@ namespace Mundipagg.Models.Response
         public string OperationType { get; set; }
 
         public string StatementDescriptor { get; set; }
-
     }
 }

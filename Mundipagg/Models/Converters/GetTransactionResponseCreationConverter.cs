@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Converters
 {
     internal class GetTransactionResponseCreationConverter : JsonCreationConverter<GetTransactionResponse>
     {
-
         public GetTransactionResponseCreationConverter()
         {
             typeName = "transaction_type";
@@ -19,6 +18,5 @@ namespace Mundipagg.Models.Converters
                 { "credit_card",typeof(GetCreditCardTransactionResponse)},
             };
         }
-
     }
 }

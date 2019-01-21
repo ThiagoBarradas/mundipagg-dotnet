@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetAccessTokenResponse
     {
-
         public string Code { get; set; }
 
         public DateTime CreatedAt { get; set; }
@@ -14,6 +13,5 @@ namespace Mundipagg.Models.Response
         public string Id { get; set; }
 
         public string Status { get; set; }
-
     }
 }

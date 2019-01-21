@@ -5,7 +5,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreateSubscriptionRequest
     {
-
         public int? BillingDay { get; set; }
 
         public string BillingType { get; set; }
@@ -63,6 +62,5 @@ namespace Mundipagg.Models.Request
         public DateTime? StartAt { get; set; }
 
         public string StatementDescriptor { get; set; }
-
     }
 }

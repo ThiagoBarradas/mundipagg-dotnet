@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetInvoiceItemResponse
     {
-
         public int Amount { get; set; }
 
         public string Description { get; set; }
@@ -16,6 +15,5 @@ namespace Mundipagg.Models.Response
         public int? Quantity { get; set; }
 
         public string SubscriptionItemId { get; set; }
-
     }
 }

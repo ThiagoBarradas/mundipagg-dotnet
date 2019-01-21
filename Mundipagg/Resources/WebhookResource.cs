@@ -46,6 +46,5 @@ namespace Mundipagg.Resources
 
             return this.HttpClientUtil.SendRequest<GetWebhookResponse>(method, endpoint, null);
         }
-
     }
 }

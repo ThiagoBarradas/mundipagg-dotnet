@@ -7,6 +7,8 @@ namespace Mundipagg
     /// </summary>
     public interface IMundipaggApiClient
     {
+        Configuration Configuration { get; set; }
+
         /// <summary>
         /// Customers resource
         /// </summary>

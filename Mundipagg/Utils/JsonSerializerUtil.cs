@@ -29,7 +29,6 @@ namespace Mundipagg.Utils
                 return settings;
             }
         }
-
     }
 
     /// <summary>

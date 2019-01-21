@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Request
 {
     public class ListSubscriptionsRequest : BaseListRequest
     {
-
         /// <summary>
         /// Filter by billing type
         /// </summary>
@@ -55,6 +54,5 @@ namespace Mundipagg.Models.Request
         /// Filter by status
         /// </summary>
         public string Status { get; set; }
-
     }
 }

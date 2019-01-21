@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetUsageResponse
     {
-
         public string Code { get; set; }
 
         public DateTime CreatedAt { get; set; }
@@ -24,6 +23,5 @@ namespace Mundipagg.Models.Response
         public GetSubscriptionItemResponse SubscriptionItem { get; set; }
 
         public DateTime UsedAt { get; set; }
-
     }
 }

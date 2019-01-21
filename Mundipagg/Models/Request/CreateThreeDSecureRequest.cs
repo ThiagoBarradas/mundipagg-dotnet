@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreateThreeDSecureRequest
     {
-
         public string Cavv { get; set; }
 
         public string Eci { get; set; }
@@ -12,6 +11,5 @@ namespace Mundipagg.Models.Request
         public string SuccessUrl { get; set; }
 
         public string TransactionId { get; set; }
-
     }
 }

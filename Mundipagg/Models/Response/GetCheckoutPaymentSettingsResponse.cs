@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetCheckoutPaymentSettingsResponse
     {
-
         public List<string> AcceptedPaymentMethods { get; set; }
 
         public int? Amount { get; set; }
@@ -20,6 +19,5 @@ namespace Mundipagg.Models.Response
         public string Status { get; set; }
 
         public string SuccessUrl { get; set; }
-
     }
 }

@@ -2,9 +2,8 @@ using System;
 
 namespace Mundipagg.Models.Response
 {
-    public class GetBoletoTransactionResponse
+    public class GetBoletoTransactionResponse : GetTransactionResponse
     {
-
         public string Bank { get; set; }
 
         public string BarCode { get; set; }
@@ -36,6 +35,5 @@ namespace Mundipagg.Models.Response
         public string Type { get; set; }
 
         public string Url { get; set; }
-
     }
 }

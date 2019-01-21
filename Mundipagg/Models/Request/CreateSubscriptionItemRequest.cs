@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreateSubscriptionItemRequest
     {
-
         public int? Cycles { get; set; }
 
         public string Description { get; set; }
@@ -22,6 +21,5 @@ namespace Mundipagg.Models.Request
         public CreatePricingSchemeRequest PricingScheme { get; set; }
 
         public int? Quantity { get; set; }
-
     }
 }

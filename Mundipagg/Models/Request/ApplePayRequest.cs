@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Request
 {
     public class ApplePayRequest
     {
-
         public string Data { get; set; }
 
         public ApplePayHeaderRequest Header { get; set; }
@@ -12,6 +11,5 @@ namespace Mundipagg.Models.Request
         public string Signature { get; set; }
 
         public string Version { get; set; }
-
     }
 }

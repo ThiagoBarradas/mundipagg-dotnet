@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetSellerResponse
     {
-
         public GetAddressResponse Address { get; set; }
 
         public string Code { get; set; }
@@ -26,6 +25,5 @@ namespace Mundipagg.Models.Response
         public string Status { get; set; }
 
         public string UpdatedAt { get; set; }
-
     }
 }

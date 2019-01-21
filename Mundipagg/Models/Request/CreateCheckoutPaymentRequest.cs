@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreateCheckoutPaymentRequest
     {
-
         public object AcceptedMultiPaymentMethods { get; set; }
 
         public List<string> AcceptedPaymentMethods { get; set; }
@@ -32,6 +31,5 @@ namespace Mundipagg.Models.Request
         public bool SkipCheckoutSuccessPage { get; set; }
 
         public string SuccessUrl { get; set; }
-
     }
 }

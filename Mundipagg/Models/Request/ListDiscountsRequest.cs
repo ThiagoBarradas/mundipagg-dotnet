@@ -2,7 +2,6 @@
 {
     public class ListDiscountsRequest : BaseListRequest
     {
-
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -13,6 +12,5 @@
         }
 
         public string SubscriptionId { get; set; }
-
     }
 }

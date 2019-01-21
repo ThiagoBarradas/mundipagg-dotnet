@@ -5,7 +5,6 @@
     /// </summary>
     public abstract class BaseListRequest
     {
-
         public BaseListRequest()
         {
             this.Page = 1;
@@ -21,6 +20,5 @@
         /// Page size
         /// </summary>
         public int Size { get; set; }
-
     }
 }

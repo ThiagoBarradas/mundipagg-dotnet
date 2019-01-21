@@ -8,7 +8,6 @@ namespace Mundipagg.Models.Request
     /// </summary>
     public class ListChargesRequest : BaseListRequest
     {
-
         /// <summary>
         /// Filter by code - Charge code at merchant system
         /// </summary>
@@ -43,6 +42,5 @@ namespace Mundipagg.Models.Request
         /// Filter by status
         /// </summary>
         public ChargeStatusEnum Status { get; set; }
-
     }
 }

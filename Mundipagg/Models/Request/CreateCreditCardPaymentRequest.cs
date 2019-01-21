@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreateCreditCardPaymentRequest
     {
-
         public CreatePaymentAuthenticationRequest Authentication { get; set; }
 
         public bool? Capture { get; set; } = true;
@@ -26,6 +25,5 @@ namespace Mundipagg.Models.Request
         public string StatementDescriptor { get; set; }
 
         public CreateCardPaymentTokenRequest Token { get; set; }
-
     }
 }

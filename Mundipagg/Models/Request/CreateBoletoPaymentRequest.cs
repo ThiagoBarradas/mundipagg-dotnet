@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreateBoletoPaymentRequest
     {
-
         public string Bank { get; set; }
 
         public CreateAddressRequest BillingAddress { get; set; }
@@ -20,6 +19,5 @@ namespace Mundipagg.Models.Request
         public string NossoNumero { get; set; }
 
         public int Retries { get; set; }
-
     }
 }

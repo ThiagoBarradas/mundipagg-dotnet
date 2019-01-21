@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetUsagesDetailsResponse
     {
-
         public GetPeriodResponse Period { get; set; }
 
         public string SubscriptionId { get; set; }
@@ -14,6 +13,5 @@ namespace Mundipagg.Models.Response
         public int? TotalIncrement { get; set; }
 
         public ListUsagesDetailsResponse Usages { get; set; }
-
     }
 }

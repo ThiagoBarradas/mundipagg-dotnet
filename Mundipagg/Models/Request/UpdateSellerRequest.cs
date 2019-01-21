@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Request
 {
     public class UpdateSellerRequest
     {
-
         public CreateAddressRequest Address { get; set; }
 
         public string Code { get; set; }
@@ -20,6 +19,5 @@ namespace Mundipagg.Models.Request
         public string Status { get; set; }
 
         public string Type { get; set; }
-
     }
 }

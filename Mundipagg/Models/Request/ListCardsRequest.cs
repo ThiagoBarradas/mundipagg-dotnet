@@ -2,7 +2,6 @@
 {
     public class ListCardsRequest : BaseListRequest
     {
-
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -16,6 +15,5 @@
         /// Filter by customer id
         /// </summary>
         public string CustomerId { get; set; }
-
     }
 }

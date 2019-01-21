@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreateCardTokenRequest
     {
-
         public string Brand { get; set; }
 
         public string Cvv { get; set; }
@@ -14,6 +13,5 @@ namespace Mundipagg.Models.Request
         public string HolderName { get; set; }
 
         public string Number { get; set; }
-
     }
 }

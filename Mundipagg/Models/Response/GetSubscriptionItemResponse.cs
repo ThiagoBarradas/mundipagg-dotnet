@@ -5,7 +5,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetSubscriptionItemResponse
     {
-
         public DateTime CreatedAt { get; set; }
 
         public int? Cycles { get; set; }
@@ -31,6 +30,5 @@ namespace Mundipagg.Models.Response
         public GetSubscriptionResponse Subscription { get; set; }
 
         public DateTime UpdatedAt { get; set; }
-
     }
 }

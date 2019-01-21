@@ -5,7 +5,6 @@ namespace Mundipagg.Models.Response
 {
     public class BaseResponse<T>
     {
-
         /// <summary>
         /// Success data - Is set when status code is 2XX
         /// </summary>
@@ -40,6 +39,5 @@ namespace Mundipagg.Models.Response
         /// Http status code
         /// </summary>
         public HttpStatusCode? StatusCode { get; set; }
-
     }
 }

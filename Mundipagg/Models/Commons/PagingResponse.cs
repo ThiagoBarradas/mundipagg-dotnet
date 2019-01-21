@@ -15,6 +15,5 @@
         /// Pagination info
         /// </summary>
         public Paging Paging { get; set; }
-
     }
 }

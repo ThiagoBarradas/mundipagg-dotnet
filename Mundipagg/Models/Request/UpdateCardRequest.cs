@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Request
 {
     public class UpdateCardRequest
     {
-
         public CreateAddressRequest BillingAddress { get; set; }
 
         public string BillingAddressId { get; set; }
@@ -16,6 +15,5 @@ namespace Mundipagg.Models.Request
         public string HolderName { get; set; }
 
         public Dictionary<string, string> Metadata { get; set; }
-
     }
 }

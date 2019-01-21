@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetDebitCardTransactionResponse : GetTransactionResponse
     {
-
         public string AcquirerAffiliationCode { get; set; }
 
         public string AcquirerAuthCode { get; set; }
@@ -30,6 +29,5 @@ namespace Mundipagg.Models.Response
         public string StatementDescriptor { get; set; }
 
         public string ThreedAuthenticationUrl { get; set; }
-
     }
 }

@@ -5,7 +5,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetRecipientResponse
     {
-
         public DateTime CreatedAt { get; set; }
 
         public GetBankAccountResponse DefaultBankAccount { get; set; }
@@ -31,6 +30,5 @@ namespace Mundipagg.Models.Response
         public string Type { get; set; }
 
         public DateTime UpdatedAt { get; set; }
-
     }
 }

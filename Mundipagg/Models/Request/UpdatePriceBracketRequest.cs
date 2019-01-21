@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Request
 {
     public class UpdatePriceBracketRequest
     {
-
         public int? EndQuantity { get; set; }
 
         public int? OveragePrice { get; set; }
@@ -10,6 +9,5 @@ namespace Mundipagg.Models.Request
         public int Price { get; set; }
 
         public int StartQuantity { get; set; }
-
     }
 }

@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreateAddressRequest
     {
-
         public string City { get; set; }
 
         public string Complement { get; set; }
@@ -26,6 +25,5 @@ namespace Mundipagg.Models.Request
         public string Street { get; set; }
 
         public string ZipCode { get; set; }
-
     }
 }

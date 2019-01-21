@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetDiscountResponse
     {
-
         public DateTime CreatedAt { get; set; }
 
         public int? Cycles { get; set; }
@@ -24,6 +23,5 @@ namespace Mundipagg.Models.Response
         public GetSubscriptionResponse Subscription { get; set; }
 
         public GetSubscriptionItemResponse SubscriptionItem { get; set; }
-
     }
 }

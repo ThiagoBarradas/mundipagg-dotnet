@@ -8,7 +8,6 @@ namespace Mundipagg.Models.Request
     /// </summary>
     public class ListWebhooksRequest : BaseListRequest
     {
-
         /// <summary>
         /// Filter by create date - Creation after this date
         /// </summary>
@@ -28,6 +27,5 @@ namespace Mundipagg.Models.Request
         /// Webhook event type
         /// </summary>
         public WebhookEventEnum? WebhookEvent { get; set; }
-
     }
 }

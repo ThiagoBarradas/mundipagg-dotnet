@@ -12,7 +12,6 @@ namespace Mundipagg.Models.Webhooks
     /// </summary>
     public abstract class BaseWebhook
     {
-
         /// <summary>
         /// Account data
         /// </summary>

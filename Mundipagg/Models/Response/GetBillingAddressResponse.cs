@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetBillingAddressResponse
     {
-
         public string City { get; set; }
 
         public string Complement { get; set; }
@@ -22,6 +21,5 @@ namespace Mundipagg.Models.Response
         public string Street { get; set; }
 
         public string ZipCode { get; set; }
-
     }
 }

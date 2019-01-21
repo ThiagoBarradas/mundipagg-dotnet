@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetGatewayRecipientResponse
     {
-
         public string CreatedAt { get; set; }
 
         public string Gateway { get; set; }
@@ -12,6 +11,5 @@ namespace Mundipagg.Models.Response
         public string Status { get; set; }
 
         public string UpdatedAt { get; set; }
-
     }
 }

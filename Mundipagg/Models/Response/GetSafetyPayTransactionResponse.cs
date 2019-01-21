@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetSafetyPayTransactionResponse : GetTransactionResponse
     {
-
         public string BankTid { get; set; }
 
         public int? PaidAmount { get; set; }
@@ -12,6 +11,5 @@ namespace Mundipagg.Models.Response
         public DateTime? PaidAt { get; set; }
 
         public string Url { get; set; }
-
     }
 }

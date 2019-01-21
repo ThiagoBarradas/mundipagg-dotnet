@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreateBankAccountRequest
     {
-
         public string AccountCheckDigit { get; set; }
 
         public string AccountNumber { get; set; }
@@ -24,6 +23,5 @@ namespace Mundipagg.Models.Request
         public Dictionary<string, string> Metadata { get; set; }
 
         public string Type { get; set; }
-
     }
 }

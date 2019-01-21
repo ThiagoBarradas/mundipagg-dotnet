@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreateOrderRequest
     {
-
         public bool? AntifraudEnabled { get; set; }
 
         public bool Closed { get; set; } = true;
@@ -32,6 +31,5 @@ namespace Mundipagg.Models.Request
         public string SessionId { get; set; }
 
         public CreateShippingRequest Shipping { get; set; }
-
     }
 }

@@ -4,7 +4,6 @@ namespace Mundipagg.Models.Request
 {
     public class CreateCardRequest
     {
-
         public CreateAddressRequest BillingAddress { get; set; }
 
         public string BillingAddressId { get; set; }
@@ -30,6 +29,5 @@ namespace Mundipagg.Models.Request
         public bool PrivateLabel { get; set; }
 
         public string Type { get; set; } = "credit";
-
     }
 }

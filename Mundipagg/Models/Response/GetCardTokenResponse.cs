@@ -2,7 +2,6 @@ namespace Mundipagg.Models.Response
 {
     public class GetCardTokenResponse
     {
-
         public string Brand { get; set; }
 
         public string ExpMonth { get; set; }
@@ -16,6 +15,5 @@ namespace Mundipagg.Models.Response
         public string LastFourDigits { get; set; }
 
         public string Type { get; set; }
-
     }
 }

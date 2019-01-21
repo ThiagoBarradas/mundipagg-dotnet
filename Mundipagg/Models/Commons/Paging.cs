@@ -19,6 +19,5 @@
         /// Items total
         /// </summary>
         public int Total { get; set; }
-
     }
 }

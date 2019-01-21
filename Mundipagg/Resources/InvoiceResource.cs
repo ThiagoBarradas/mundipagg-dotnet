@@ -58,6 +58,5 @@ namespace Mundipagg.Resources
 
             return this.HttpClientUtil.SendRequest<GetInvoiceResponse>(method, endpoint, request);
         }
-
     }
 }

@@ -20,6 +20,5 @@ namespace Mundipagg.Models.Request
         public Dictionary<string, string> Metadata { get; set; }
 
         public CreatePaymentRequest Payment { get; set; }
-
     }
 }
