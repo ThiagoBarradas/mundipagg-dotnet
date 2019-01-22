@@ -26,7 +26,8 @@ namespace Mundipagg.Utils
             this.Configuration = configuration;
             this.Client = new RestClientAutolog();
             this.Client.Configuration.JsonBlacklist = new string[]
-                { "*card.exp_year", "*card.exp_month", "*card.cvv", "*card.number" };
+                { "*card.token", "*card.exp_year", "*card.exp_month", "*card.cvv", "*card.number",
+                  "token", "exp_year", "exp_month", "cvv", "number"};
             this.Client.AddDefaultHeader("User-Agent", "Mundipagg Dotnet SDK");
             this.Client.AddNewtonsoftResponseHandler(NewtonsoftRestsharpJsonSerializer);
             this.Client.Timeout = configuration.Timeout;
