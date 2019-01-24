@@ -9,5 +9,7 @@ namespace Mundipagg.Models.Request
         public List<CreateCheckoutCardInstallmentOptionRequest> Installments { get; set; }
 
         public string StatementDescriptor { get; set; }
+
+        public bool? Capture { get; set; }
     }
 }

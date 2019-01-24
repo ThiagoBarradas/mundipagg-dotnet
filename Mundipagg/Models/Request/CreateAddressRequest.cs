@@ -25,5 +25,7 @@ namespace Mundipagg.Models.Request
         public string Street { get; set; }
 
         public string ZipCode { get; set; }
+
+        public bool? Editable { get; set; }
     }
 }
