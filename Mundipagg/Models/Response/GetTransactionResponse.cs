@@ -18,6 +18,10 @@ namespace Mundipagg.Models.Response
 
         public GetGatewayResponseResponse GatewayResponse { get; set; }
 
+        public GetAntifraudResponse AntifraudResponse { get; set; }
+
+        public string OperationType { get; set; }
+
         public string Id { get; set; }
 
         public int MaxAttempts { get; set; }
