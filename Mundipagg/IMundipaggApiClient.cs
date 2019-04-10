@@ -40,5 +40,7 @@ namespace Mundipagg
         ISubscriptionResource Subscription { get; }
 
         void SetSecretKey(string secretKey);
+
+        void SetSecretKey(string secretKey, string accountId);
     }
 }

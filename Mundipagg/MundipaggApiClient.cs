@@ -83,6 +83,12 @@ namespace Mundipagg
             this.Configuration.SecretKey = secretKey;
         }
 
+        public void SetSecretKey(string secretKey, string accountId)
+        {
+            this.Configuration.SecretKey = secretKey;
+            this.Configuration.AccountId = accountId;
+        }
+
         /// <summary>
         /// Initialize api client
         /// </summary>
