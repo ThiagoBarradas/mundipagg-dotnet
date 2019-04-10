@@ -82,6 +82,7 @@ namespace Mundipagg.Utils
             var restRequest = new RestRequest(method);
             restRequest.AddNewtonsoftRequestHandler(NewtonsoftRestsharpJsonSerializer);
             restRequest.AddHeader("RequestKey", this.Configuration.RequestKey);
+            restRequest.AddHeader("AccountId", this.Configuration.AccountId);
 
             if (body != null && method != Method.GET)
             {

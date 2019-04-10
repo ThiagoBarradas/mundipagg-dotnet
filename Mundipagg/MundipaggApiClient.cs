@@ -29,11 +29,11 @@ namespace Mundipagg
         /// Creates a new api client using a custom values for url and timeout
         /// </summary>
         /// <param name="apiUrl"></param>
-        public MundipaggApiClient(string apiUrl, int timeout, string requestKey)
+        public MundipaggApiClient(string apiUrl, int timeout, string requestKey)    
         {
             this.Initialize(new Configuration(apiUrl, timeout)
             {
-                RequestKey = requestKey
+                RequestKey = requestKey    
             });
         }
 

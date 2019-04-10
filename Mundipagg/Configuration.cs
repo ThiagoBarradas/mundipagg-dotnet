@@ -74,6 +74,8 @@
         /// </summary>
         public string RequestKey { get; set; }
 
+        public string AccountId { get; set; }
+
         /// <summary>
         /// Timeout in milliseconds
         /// </summary>
