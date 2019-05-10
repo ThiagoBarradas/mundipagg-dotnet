@@ -18,6 +18,8 @@ namespace Mundipagg.Models.Response
 
         public GetGatewayResponseResponse GatewayResponse { get; set; }
 
+        public GetCardResponse Card { get; set; }
+
         public GetAntifraudResponse AntifraudResponse { get; set; }
 
         public string Id { get; set; }
