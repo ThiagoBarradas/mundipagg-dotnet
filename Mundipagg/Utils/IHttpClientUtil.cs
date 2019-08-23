@@ -18,7 +18,7 @@ namespace Mundipagg.Utils
         /// <param name="body">Body object</param>
         /// <param name="query">Params to mount query string</param>
         /// <returns>Base response with specific data defined in T</returns>
-        BaseResponse<T> SendRequest<T>(HttpMethod method, string endpoint, object body, IDictionary<string, string> query = null)
+        BaseResponse<T> SendRequest<T>(HttpMethod method, string endpoint, object body, IDictionary<string, string> query = null, IDictionary<string, string> headers = null)
                where T : class, new();
     }
 }

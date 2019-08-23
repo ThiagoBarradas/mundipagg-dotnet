@@ -55,10 +55,11 @@ namespace Mundipagg.Resources.Interface
         /// <summary>
         /// Captures a charge
         /// </summary>
+        /// <param name="idempontencyKey">Required parameter: Idempontency Key</param>
         /// <param name="chargeId">Required parameter: Charge id</param>
         /// <param name="request">Optional parameter: Request for capturing a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        BaseResponse<GetChargeResponse> CaptureCharge(string chargeId, CreateCaptureChargeRequest request = null);
+        BaseResponse<GetChargeResponse> CaptureCharge(string idempontencyKey, string chargeId, CreateCaptureChargeRequest request = null);
 
         /// <summary>
         /// Confirm Charge payment
