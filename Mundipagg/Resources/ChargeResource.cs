@@ -35,12 +35,13 @@ namespace Mundipagg.Resources
             return this.HttpClientUtil.SendRequest<GetChargeResponse>(method, endpoint, request);
         }
 
-        public BaseResponse<GetChargeResponse> CaptureCharge(string chargeId, CreateCaptureChargeRequest request = null)
+        public BaseResponse<GetChargeResponse> CaptureCharge(string idempotencyKey, string chargeId, CreateCaptureChargeRequest request = null)
         {
             var method = HttpMethod.Post;
             var endpoint = $"/charges/{chargeId}/capture";
+            var headers = this.GetIdempontecyAsHeader(idempotencyKey);
 
-            return this.HttpClientUtil.SendRequest<GetChargeResponse>(method, endpoint, request);
+            return this.HttpClientUtil.SendRequest<GetChargeResponse>(method, endpoint, request, headers);
         }
 
         public BaseResponse<GetChargeResponse> ConfirmChargePayment(string chargeId, CreateConfirmPaymentRequest request = null)

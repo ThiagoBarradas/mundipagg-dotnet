@@ -1,5 +1,5 @@
 ﻿using Mundipagg.Utils;
-using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace Mundipagg.Resources
 {
@@ -27,5 +27,20 @@ namespace Mundipagg.Resources
         /// Http client utility
         /// </summary>
         protected IHttpClientUtil HttpClientUtil { get; set; }
+
+        /// <summary>
+        /// Mapper Idempotency Key as Header
+        /// </summary>
+        protected Dictionary<string, string> GetIdempontecyAsHeader(string idempontencyKey)
+        {
+            var headers = new Dictionary<string, string>();
+
+            if (!string.IsNullOrWhiteSpace(idempontencyKey))
+            {
+                headers.Add("Idempotency-key", idempontencyKey);
+            }
+
+            return headers;
+        }
     }
 }
