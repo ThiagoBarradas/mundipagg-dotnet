@@ -11,6 +11,15 @@ namespace Mundipagg.ConsoleTest
             IMundipaggApiClient client = new MundipaggApiClient("sk_test_xxxx   ");
             client.Configuration.RequestKey = "xpto";
 
+            // Capture
+            var captureRequest = new CreateCaptureChargeRequest()
+            {
+                Amount = 100,
+                Code = null
+            };
+
+            client.Charge.CaptureCharge("idempotencyKey", "ch_id", captureRequest);
+
             // Create
             var createRequest = new CreateCustomerRequest()
             {
