@@ -41,7 +41,7 @@ namespace Mundipagg.Resources
             var endpoint = $"/charges/{chargeId}/capture";
             var headers = this.GetIdempontecyAsHeader(idempotencyKey);
 
-            return this.HttpClientUtil.SendRequest<GetChargeResponse>(method, endpoint, request, headers);
+            return this.HttpClientUtil.SendRequest<GetChargeResponse>(method, endpoint, request, null, headers);
         }
 
         public BaseResponse<GetChargeResponse> ConfirmChargePayment(string chargeId, CreateConfirmPaymentRequest request = null)
