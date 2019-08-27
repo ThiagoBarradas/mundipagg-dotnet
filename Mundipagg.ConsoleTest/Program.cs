@@ -10,26 +10,12 @@ namespace Mundipagg.ConsoleTest
         {
             IMundipaggApiClient client = new MundipaggApiClient("sk_test_xxxx   ");
             client.Configuration.RequestKey = "xpto";
-            var createCharge = new CreateChargeRequest
-            {
-                Amount = 1000,
-                Code = "132",
-                CustomerId = "cus_aisnga",
-                Payment = new CreatePaymentRequest
-                {
-                    CreditCard = new CreateCreditCardPaymentRequest
-                    {
-                        Card = new CreateCardRequest
-                        {
-                            Brand = "visa",
-                            ExpMonth = 11,
 
-                        }
-                    }
-                }
-            };
+            client.Charge.CreateCharge("idempotency-key", new CreateChargeRequest());
 
-            client.Charge.CreateCharge(createCharge);
+            client.Charge.CancelCharge("idempotency-key", "ch_id");
+
+            client.Order.CreateOrder("idempotency-key", new CreateOrderRequest());
 
             // Capture
             var captureRequest = new CreateCaptureChargeRequest()

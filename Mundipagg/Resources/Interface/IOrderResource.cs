@@ -22,7 +22,7 @@ namespace Mundipagg.Resources.Interface
         /// </summary>
         /// <param name="body">Required parameter: Request for creating an order</param>
         /// <return>Returns Models.BaseResponse<GetOrderResponse> response from the API call</return>
-        BaseResponse<GetOrderResponse> CreateOrder(CreateOrderRequest body);
+        BaseResponse<GetOrderResponse> CreateOrder(string idempotencyKey, CreateOrderRequest body);
 
         /// <summary>
         /// Lists orders
