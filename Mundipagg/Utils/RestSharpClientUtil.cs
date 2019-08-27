@@ -84,9 +84,12 @@ namespace Mundipagg.Utils
             restRequest.AddHeader("RequestKey", this.Configuration.RequestKey);
             restRequest.AddHeader("AccountId", this.Configuration.AccountId);
 
-            foreach (var header in headers)
+            if(headers != null)
             {
-                restRequest.AddHeader(header.Key, header.Value);
+                foreach (var header in headers)
+                {
+                    restRequest.AddHeader(header.Key, header.Value);
+                }
             }
 
             if (body != null && method != Method.GET)
