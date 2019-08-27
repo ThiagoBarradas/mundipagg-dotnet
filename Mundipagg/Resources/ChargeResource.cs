@@ -27,12 +27,13 @@ namespace Mundipagg.Resources
             return this.HttpClientUtil.SendRequest<ListChargesResponse>(method, endpoint, null, query);
         }
 
-        public BaseResponse<GetChargeResponse> CancelCharge(string chargeId, CreateCancelChargeRequest request = null)
+        public BaseResponse<GetChargeResponse> CancelCharge(string idempotencyKey, string chargeId, CreateCancelChargeRequest request = null)
         {
             var method = HttpMethod.Delete;
             var endpoint = $"/charges/{chargeId}";
+            var headers = this.GetIdempontecyAsHeader(idempotencyKey);
 
-            return this.HttpClientUtil.SendRequest<GetChargeResponse>(method, endpoint, request);
+            return this.HttpClientUtil.SendRequest<GetChargeResponse>(method, endpoint, request, null, headers);
         }
 
         public BaseResponse<GetChargeResponse> CaptureCharge(string idempotencyKey, string chargeId, CreateCaptureChargeRequest request = null)
@@ -52,12 +53,13 @@ namespace Mundipagg.Resources
             return this.HttpClientUtil.SendRequest<GetChargeResponse>(method, endpoint, request);
         }
 
-        public BaseResponse<GetChargeResponse> CreateCharge(CreateChargeRequest request)
+        public BaseResponse<GetChargeResponse> CreateCharge(string idempotencyKey, CreateChargeRequest request)
         {
             var method = HttpMethod.Post;
             var endpoint = $"/charges";
+            var headers = this.GetIdempontecyAsHeader(idempotencyKey);
 
-            return this.HttpClientUtil.SendRequest<GetChargeResponse>(method, endpoint, request);
+            return this.HttpClientUtil.SendRequest<GetChargeResponse>(method, endpoint, request, null, headers);
         }
 
         public BaseResponse<GetChargeResponse> RetryCharge(string chargeId)

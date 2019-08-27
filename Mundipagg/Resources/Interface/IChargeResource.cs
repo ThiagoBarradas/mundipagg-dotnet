@@ -14,7 +14,7 @@ namespace Mundipagg.Resources.Interface
         /// </summary>
         /// <param name="request">Required parameter: Request for creating a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        BaseResponse<GetChargeResponse> CreateCharge(CreateChargeRequest request);
+        BaseResponse<GetChargeResponse> CreateCharge(string idempotencyKey, CreateChargeRequest request);
 
         /// <summary>
         /// Get a charge from its id
@@ -50,7 +50,7 @@ namespace Mundipagg.Resources.Interface
         /// <param name="chargeId">Required parameter: Charge id</param>
         /// <param name="request">Optional parameter: Request for cancelling a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        BaseResponse<GetChargeResponse> CancelCharge(string chargeId, CreateCancelChargeRequest request = null);
+        BaseResponse<GetChargeResponse> CancelCharge(string idempotencyKey, string chargeId, CreateCancelChargeRequest request = null);
 
         /// <summary>
         /// Captures a charge
@@ -59,7 +59,7 @@ namespace Mundipagg.Resources.Interface
         /// <param name="chargeId">Required parameter: Charge id</param>
         /// <param name="request">Optional parameter: Request for capturing a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        BaseResponse<GetChargeResponse> CaptureCharge(string idempontencyKey, string chargeId, CreateCaptureChargeRequest request = null);
+        BaseResponse<GetChargeResponse> CaptureCharge(string idempotencyKey, string chargeId, CreateCaptureChargeRequest request = null);
 
         /// <summary>
         /// Confirm Charge payment

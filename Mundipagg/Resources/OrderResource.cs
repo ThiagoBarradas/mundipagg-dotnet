@@ -20,12 +20,13 @@ namespace Mundipagg.Resources
             return this.HttpClientUtil.SendRequest<GetOrderResponse>(method, endpoint, null);
         }
 
-        public BaseResponse<GetOrderResponse> CreateOrder(CreateOrderRequest request)
+        public BaseResponse<GetOrderResponse> CreateOrder(string idempotencyKey, CreateOrderRequest request)
         {
             var method = HttpMethod.Post;
             var endpoint = $"/orders";
+            var headers = this.GetIdempontecyAsHeader(idempotencyKey);
 
-            return this.HttpClientUtil.SendRequest<GetOrderResponse>(method, endpoint, request);
+            return this.HttpClientUtil.SendRequest<GetOrderResponse>(method, endpoint, request, null, headers);
         }
 
         public BaseResponse<ListOrderResponse> ListOrders(ListOrdersRequest request)
