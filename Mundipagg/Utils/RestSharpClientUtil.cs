@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using PackUtils;
 using RestSharp;
 using RestSharp.Authenticators;
+using RestSharp.Serilog.Auto;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -24,13 +25,6 @@ namespace Mundipagg.Utils
         public RestSharpClientUtil(Configuration configuration)
         {
             this.Configuration = configuration;
-            this.Client = new RestClientAutolog();
-            this.Client.Configuration.JsonBlacklist = new string[]
-                { "*card.token", "*card.exp_year", "*card.exp_month", "*card.cvv", "*card.number",
-                  "token", "exp_year", "exp_month", "cvv", "number"};
-            this.Client.AddDefaultHeader("User-Agent", "Mundipagg Dotnet SDK");
-            this.Client.AddNewtonsoftResponseHandler(NewtonsoftRestsharpJsonSerializer);
-            this.Client.Timeout = configuration.Timeout;
         }
 
         /// <summary>
@@ -47,16 +41,35 @@ namespace Mundipagg.Utils
         /// Newtonsoft JsonSerializer for Restsharp
         /// </summary>
         private static NewtonsoftRestsharpJsonSerializer NewtonsoftRestsharpJsonSerializer = new NewtonsoftRestsharpJsonSerializer(JsonSerializer);
-
-        /// <summary>
-        /// RestSharp Client HttpClient
-        /// </summary>
-        private RestClientAutolog Client { get; set; }
-        
+       
         /// <summary>
         /// Mundipagg Api Client Configuration
         /// </summary>
         private Configuration Configuration { get; set; }
+
+        /// <summary>
+        /// Get Client
+        /// </summary>
+        /// <param name="fullUri"></param>
+        /// <returns></returns>
+        private RestClientAutolog GetClient(string fullUri)
+        {
+            var client = new RestClientAutolog();
+
+            client.BaseUrl = new Uri(fullUri);
+            client.AddLogAdditionalInfo("RequestKey", this.Configuration.RequestKey);
+            client.AddLogAdditionalInfo("AccountId", this.Configuration.MerchantId);
+            client.AddLogAdditionalInfo("MerchantId", this.Configuration.MerchantId);
+
+            client.Configuration.JsonBlacklist = new string[]
+                { "*card.token", "*card.exp_year", "*card.exp_month", "*card.cvv", "*card.number",
+                  "token", "exp_year", "exp_month", "cvv", "number"};
+            client.AddDefaultHeader("User-Agent", "Mundipagg Dotnet SDK");
+            client.AddNewtonsoftResponseHandler(NewtonsoftRestsharpJsonSerializer);
+            client.Timeout = this.Configuration.Timeout;
+
+            return client;
+        }
 
         /// <summary>
         /// Send request and mount response to client format
@@ -77,13 +90,10 @@ namespace Mundipagg.Utils
             var fullUri = this.GetFullUri(endpoint, query);
             var method = EnumUtility.ConvertToEnum<Method>(httpMethod.Method.ToUpper());
 
-            this.Client.BaseUrl = new Uri(fullUri);
+            var client = this.GetClient(fullUri);
 
             var restRequest = new RestRequest(method);
             restRequest.AddNewtonsoftRequestHandler(NewtonsoftRestsharpJsonSerializer);
-            restRequest.AddHeader("RequestKey", this.Configuration.RequestKey);
-            restRequest.AddHeader("AccountId", this.Configuration.MerchantId);
-            restRequest.AddHeader("MerchantId", this.Configuration.MerchantId);
 
             if (headers != null)
             {
@@ -99,9 +109,9 @@ namespace Mundipagg.Utils
                 response.RawRequest = JsonConvert.SerializeObject(body, JsonSerializerSettings);
             }
 
-            this.Client.Authenticator = new HttpBasicAuthenticator(this.Configuration.SecretKey, "");
+            client.Authenticator = new HttpBasicAuthenticator(this.Configuration.SecretKey, "");
 
-            var restResponse = this.Client.Execute<T>(restRequest);
+            var restResponse = client.Execute<T>(restRequest);
             this.HandleResponse(response, restResponse);
 
             stopwatch.Stop();       

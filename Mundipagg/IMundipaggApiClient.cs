@@ -44,5 +44,7 @@ namespace Mundipagg
         void SetSecretKey(string secretKey, string accountId);
 
         void SetSecretKey(string secretKey, string accountId, string merchantId);
+
+        void SetSecretKey(string secretKey, string accountId, string merchantId, string requestKey);
     }
 }

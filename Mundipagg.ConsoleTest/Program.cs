@@ -1,6 +1,4 @@
 ﻿using Mundipagg.Models.Request;
-using Mundipagg.Utils;
-using Newtonsoft.Json;
 
 namespace Mundipagg.ConsoleTest
 {
@@ -8,8 +6,8 @@ namespace Mundipagg.ConsoleTest
     {
         private static void Main(string[] args)
         {
-            IMundipaggApiClient client = new MundipaggApiClient("sk_test_xxxx   ");
-            client.Configuration.RequestKey = "xpto";
+            IMundipaggApiClient client = new MundipaggApiClient();
+            client.SetSecretKey("sk_test_xxx", "acc_xpto", "merch_xpto", "requestkeyyy");
 
             client.Charge.CreateCharge("idempotency-key", new CreateChargeRequest());
 

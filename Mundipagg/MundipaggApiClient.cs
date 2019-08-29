@@ -80,20 +80,32 @@ namespace Mundipagg
 
         public void SetSecretKey(string secretKey)
         {
-            this.Configuration.SecretKey = secretKey;
+            this._configuration.SecretKey = secretKey;
+            this.Configuration = _configuration;
         }
 
         public void SetSecretKey(string secretKey, string accountId)
         {
-            this.Configuration.SecretKey = secretKey;
-            this.Configuration.AccountId = accountId;
+            this._configuration.SecretKey = secretKey;
+            this._configuration.AccountId = accountId;
+            this.Configuration = _configuration;
         }
 
         public void SetSecretKey(string secretKey, string accountId, string merchantId)
         {
-            this.Configuration.SecretKey = secretKey;
-            this.Configuration.AccountId = accountId;
-            this.Configuration.MerchantId = merchantId;
+            this._configuration.SecretKey = secretKey;
+            this._configuration.AccountId = accountId;
+            this._configuration.MerchantId = merchantId;
+            this.Configuration = _configuration;
+        }
+
+        public void SetSecretKey(string secretKey, string accountId, string merchantId, string requestKey)
+        {
+            this._configuration.SecretKey = secretKey;
+            this._configuration.AccountId = accountId;
+            this._configuration.MerchantId = merchantId;
+            this._configuration.RequestKey = requestKey;
+            this.Configuration = _configuration;
         }
 
         /// <summary>
