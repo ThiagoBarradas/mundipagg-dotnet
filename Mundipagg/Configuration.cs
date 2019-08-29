@@ -74,7 +74,15 @@
         /// </summary>
         public string RequestKey { get; set; }
 
+        /// <summary>
+        /// Account Id
+        /// </summary>
         public string AccountId { get; set; }
+
+        /// <summary>
+        /// Merchant Id
+        /// </summary>
+        public string MerchantId { get; set; }
 
         /// <summary>
         /// Timeout in milliseconds
