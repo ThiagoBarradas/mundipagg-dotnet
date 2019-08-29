@@ -83,8 +83,9 @@ namespace Mundipagg.Utils
             restRequest.AddNewtonsoftRequestHandler(NewtonsoftRestsharpJsonSerializer);
             restRequest.AddHeader("RequestKey", this.Configuration.RequestKey);
             restRequest.AddHeader("AccountId", this.Configuration.MerchantId);
+            restRequest.AddHeader("MerchantId", this.Configuration.MerchantId);
 
-            if(headers != null)
+            if (headers != null)
             {
                 foreach (var header in headers)
                 {
