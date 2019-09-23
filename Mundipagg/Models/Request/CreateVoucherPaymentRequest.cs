@@ -4,6 +4,8 @@ namespace Mundipagg.Models.Request
     {
         public CreateCardRequest Card { get; set; }
 
+        public bool? Capture { get; set; }
+        
         public string CardId { get; set; }
 
         public string CardToken { get; set; }
