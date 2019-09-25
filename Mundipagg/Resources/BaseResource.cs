@@ -12,7 +12,7 @@ namespace Mundipagg.Resources
         /// Creates a new base resource with Mundipagg Api coniguration
         /// </summary>
         /// <param name="configuration">Mundipagg Api coniguration</param>
-        public BaseResource(Configuration configuration)
+        public BaseResource(Configuration configuration, string authMode = "sk")
         {
             this.Configuration = configuration;
             this.HttpClientUtil = new RestSharpClientUtil(this.Configuration);

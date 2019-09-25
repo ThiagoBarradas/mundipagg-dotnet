@@ -28,6 +28,27 @@ namespace Mundipagg.Utils
         }
 
         /// <summary>
+        /// Basic User
+        /// </summary>
+        private string GetBasicUser(string authMode)
+        {
+            if (authMode == null)
+            {
+                return this.Configuration.SecretKey;
+            }
+
+            switch (authMode)
+            {
+                case "amk":
+                    return this.Configuration.AccountManagementKey;
+                case "token":
+                    return this.Configuration.MpToken;
+                default:
+                    return this.Configuration.SecretKey;
+            }
+        }
+
+        /// <summary>
         /// JsonSerializer
         /// </summary>
         private static readonly JsonSerializer JsonSerializer = JsonUtility.SnakeCaseJsonSerializer;
@@ -79,8 +100,10 @@ namespace Mundipagg.Utils
         /// <param name="endpoint">Endpoint to call</param>
         /// <param name="body">Body object</param>
         /// <param name="query">Params to mount query string</param>
+        /// <param name="headers">Params to mount header string</param>
+        /// <param name="authMode">sk|amk|token</param>
         /// <returns>Base response with specific data defined in T</returns>
-        public BaseResponse<T> SendRequest<T>(HttpMethod httpMethod, string endpoint, object body, IDictionary<string, string> query = null, IDictionary<string, string> headers = null)
+        public BaseResponse<T> SendRequest<T>(HttpMethod httpMethod, string endpoint, object body, IDictionary<string, string> query = null, IDictionary<string, string> headers = null, string authMode = "sk")
             where T : class, new()
         {
             BaseResponse<T> response = new BaseResponse<T>();
@@ -109,7 +132,7 @@ namespace Mundipagg.Utils
                 response.RawRequest = JsonConvert.SerializeObject(body, JsonSerializerSettings);
             }
 
-            client.Authenticator = new HttpBasicAuthenticator(this.Configuration.SecretKey, "");
+            client.Authenticator = new HttpBasicAuthenticator(this.GetBasicUser(authMode), "");
 
             var restResponse = client.Execute<T>(restRequest);
             this.HandleResponse(response, restResponse);

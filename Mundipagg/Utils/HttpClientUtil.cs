@@ -49,6 +49,28 @@ namespace Mundipagg.Utils
         private JsonSerializerSettings JsonSerializerSettings { get; set; }
 
         /// <summary>
+        /// Get basic user
+        /// </summary>
+        /// <param name="authMode"></param>
+        /// <returns></returns>
+        private string GetBasicUser(string authMode)
+        {
+            if (authMode == null)
+            {
+                return this.Configuration.SecretKey;
+            }
+
+            switch (authMode)
+            {
+                case "amk":
+                    return this.Configuration.AccountManagementKey;
+                case "token":
+                    return this.Configuration.MpToken;
+                default:
+                    return this.Configuration.SecretKey;
+            }
+        }
+        /// <summary>
         /// Send request and mount response to client format
         /// </summary>
         /// <typeparam name="T">Response type</typeparam>
@@ -56,8 +78,10 @@ namespace Mundipagg.Utils
         /// <param name="endpoint">Endpoint to call</param>
         /// <param name="body">Body object</param>
         /// <param name="query">Params to mount query string</param>
+        /// <param name="headers">Params to mount header </param>
+        /// <param name="authMode">sk|amk|token</param>
         /// <returns>Base response with specific data defined in T</returns>
-        public BaseResponse<T> SendRequest<T>(HttpMethod method, string endpoint, object body, IDictionary<string, string> query = null, IDictionary<string, string> headers = null)
+        public BaseResponse<T> SendRequest<T>(HttpMethod method, string endpoint, object body, IDictionary<string, string> query = null, IDictionary<string, string> headers = null, string authMode = "sk")
             where T: class, new()
         {
             BaseResponse<T> response = new BaseResponse<T>();
@@ -81,7 +105,7 @@ namespace Mundipagg.Utils
                     response.RawRequest = bodyAsString;
                 }
 
-                this.Client.DefaultRequestHeaders.Authorization = this.GenerateBasicAuth(this.Configuration.SecretKey, "");
+                this.Client.DefaultRequestHeaders.Authorization = this.GenerateBasicAuth(this.GetBasicUser(authMode), "");
 
                 var httpResponse = Task.Run(() => this.Client.SendAsync(request)).Result;
 

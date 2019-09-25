@@ -10,6 +10,16 @@ namespace Mundipagg
         Configuration Configuration { get; set; }
 
         /// <summary>
+        /// Accounts resource
+        /// </summary>
+        IAccountResource Account { get; }
+
+        /// <summary>
+        /// Merchants resource
+        /// </summary>
+        IMerchantResource Merchant { get; }
+
+        /// <summary>
         /// Customers resource
         /// </summary>
         ICustomerResource Customer { get; }

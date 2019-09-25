@@ -75,6 +75,16 @@
         public string RequestKey { get; set; }
 
         /// <summary>
+        /// AccountManagementKey
+        /// </summary>
+        public string AccountManagementKey { get; set; }
+
+        /// <summary>
+        /// MpToken
+        /// </summary>
+        public string MpToken { get; set; }
+
+        /// <summary>
         /// Account Id
         /// </summary>
         public string AccountId { get; set; }
