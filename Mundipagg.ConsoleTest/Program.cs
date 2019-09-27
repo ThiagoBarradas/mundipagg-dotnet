@@ -6,8 +6,20 @@ namespace Mundipagg.ConsoleTest
     {
         private static void Main(string[] args)
         {
-            IMundipaggApiClient client = new MundipaggApiClient();
-            client.SetSecretKey("sk_test_xxx", "acc_xpto", "merch_xpto", "requestkeyyy");
+            Configuration config = new Configuration
+            {
+                AccountManagementKey = "amk",
+                MpToken = "token",
+                SecretKey = "sk",
+                RequestKey = "rk"
+            };
+
+            IMundipaggApiClient client = new MundipaggApiClient(config);
+
+            var result = client.Merchant.CreateMerchant(new CreateMerchantRequest { Name = "asd" });
+            var result1 = client.Account.CreateAccount(new CreateAccountRequest { Name = "asd" });
+
+            //client.SetSecretKey("sk_test_xxx", "acc_xpto", "merch_xpto", "requestkeyyy");
 
             client.Charge.CreateCharge("idempotency-key", new CreateChargeRequest());
 

@@ -101,8 +101,30 @@ namespace Mundipagg.Models.Webhooks
                 case WebhookEventEnum.ChargeRefunded:
                 case WebhookEventEnum.ChargeUnderpaid:
                 case WebhookEventEnum.ChargeUpdated:
+                case WebhookEventEnum.ChargeProcessing:
                     return typeof(GetChargeResponse);
 
+                case WebhookEventEnum.OrderCanceled:
+                case WebhookEventEnum.OrderClosed:
+                case WebhookEventEnum.OrderPaid:
+                case WebhookEventEnum.OrderCreated:
+                case WebhookEventEnum.OrderPaymentFailed:
+                case WebhookEventEnum.OrderUpdated:
+                    return typeof(GetOrderResponse);
+
+                case WebhookEventEnum.SubscriptionCanceled:
+                case WebhookEventEnum.SubscriptionCreated:
+                case WebhookEventEnum.SubscriptionDeleted:
+                case WebhookEventEnum.SubscriptionUpdated:
+                    return typeof(GetOrderResponse);
+
+                case WebhookEventEnum.InvoiceCanceled:
+                case WebhookEventEnum.InvoiceCreated:
+                case WebhookEventEnum.InvoicePaid:
+                case WebhookEventEnum.InvoicePaymentFailed:
+                case WebhookEventEnum.InvoiceUpdated:
+                    return typeof(GetOrderResponse);
+                    
                 default:
                     return null;
             }

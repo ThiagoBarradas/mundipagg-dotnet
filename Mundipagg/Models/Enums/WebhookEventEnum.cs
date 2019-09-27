@@ -159,6 +159,9 @@ namespace Mundipagg.Models.Enums
         [EnumMember(Value = "charge.partial_canceled")]
         ChargePartialCanceled,
 
+        [EnumMember(Value = "charge.processing")]
+        ChargeProcessing,
+
         // Usage
         [EnumMember(Value = "usage.created")]
         UsageCreated,
