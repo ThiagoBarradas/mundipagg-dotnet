@@ -1,5 +1,6 @@
 ﻿using Mundipagg.Models.Enums;
 using Mundipagg.Models.Webhooks;
+using Newtonsoft.Json;
 using System;
 
 namespace Mundipagg.Models.Response
@@ -17,15 +18,16 @@ namespace Mundipagg.Models.Response
         /// <summary>
         /// Hook event type
         /// </summary>
-        public WebhookEventEnum Event
+        [JsonProperty("event")]
+        public string EventTypeAsString
         {
             get
             {
-                return this.Type;
+                return this._eventTypeAsString;
             }
             set
             {
-                this.Type = value;
+                this._eventTypeAsString = value;
             }
         }
 

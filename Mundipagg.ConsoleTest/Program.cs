@@ -8,7 +8,7 @@ namespace Mundipagg.ConsoleTest
     {
         private static void Main(string[] args)
         {
-            var jsonn = "{ \"type\" : \"charge.pending\" }";
+            var jsonn = "{ \"type\" : \"order.created\" }";
 
             var testew = JsonConvert.DeserializeObject<WebhookReceived>(jsonn);
 

@@ -63,7 +63,7 @@ namespace Mundipagg.Models.Webhooks
         {
             get
             {
-                return this.GetDataType(this.Type);
+                return this.GetDataType(this.EventType);
             }
         }
 
@@ -73,9 +73,14 @@ namespace Mundipagg.Models.Webhooks
         public string Id { get; set; }
 
         /// <summary>
+        /// Event type as Enum
+        /// </summary>
+        public WebhookEventEnum EventType => JsonConvert.DeserializeObject<WebhookEventEnum>($"\"{this._eventTypeAsString}\"");
+
+        /// <summary>
         /// Hook event type
         /// </summary>
-        public WebhookEventEnum Type { get; set; }
+        protected string _eventTypeAsString { get; set; }
 
         #region Protected Methods
 
