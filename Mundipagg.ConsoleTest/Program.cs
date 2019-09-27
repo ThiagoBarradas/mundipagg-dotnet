@@ -1,4 +1,6 @@
 ﻿using Mundipagg.Models.Request;
+using Mundipagg.Models.Webhooks;
+using Newtonsoft.Json;
 
 namespace Mundipagg.ConsoleTest
 {
@@ -6,6 +8,10 @@ namespace Mundipagg.ConsoleTest
     {
         private static void Main(string[] args)
         {
+            var jsonn = "{ \"type\" : \"charge.pending\" }";
+
+            var testew = JsonConvert.DeserializeObject<WebhookReceived>(jsonn);
+
             Configuration config = new Configuration
             {
                 AccountManagementKey = "amk",

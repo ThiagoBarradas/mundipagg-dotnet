@@ -21,11 +21,11 @@ namespace Mundipagg.Models.Response
         {
             get
             {
-                return this.EventType;
+                return this.Type;
             }
             set
             {
-                this.EventType = value;
+                this.Type = value;
             }
         }
 
