@@ -1,4 +1,6 @@
-﻿namespace Mundipagg
+﻿using System;
+
+namespace Mundipagg
 {
     /// <summary>
     /// Mundipagg Api Client Configuration
@@ -8,7 +10,7 @@
         /// <summary>
         /// Default api url
         /// </summary>
-        private readonly string API_URL = "https://api.mundipagg.com/core/v1";
+        private const string API_URL = "https://api.mundipagg.com/core/v1";
 
         /// <summary>
         /// Default timeout
@@ -25,38 +27,28 @@
         }
 
         /// <summary>
-        /// Constructor with api url and timeout
+        /// Constructor with params - try named params to set specific configs
         /// </summary>
+        /// <param name="secretKey"></param>
+        /// <param name="requestKey"></param>
         /// <param name="apiUrl"></param>
         /// <param name="timeout"></param>
-        public Configuration(string apiUrl, int? timeout = TIMEOUT)
+        /// <param name="mpToken"></param>
+        /// <param name="accountManagementKey"></param>
+        public Configuration(
+            string secretKey = null, 
+            string requestKey = null, 
+            string apiUrl = null, 
+            int? timeout = null,
+            string mpToken = null,
+            string accountManagementKey = null)
         {
-            this.ApiUrl = apiUrl;
+            this.SecretKey = secretKey;
+            this.ApiUrl = apiUrl ?? API_URL;
             this.Timeout = timeout ?? TIMEOUT;
-        }
-
-        /// <summary>
-        /// Creates a new configuration using default values for api url and timeout
-        /// </summary>
-        /// <param name="secretKey">Your secret key, something like sk_xxxxx or sk_test_xxxx</param>
-        public Configuration(string secretKey)
-        {
-            this.SecretKey = secretKey;
-            this.ApiUrl = API_URL;
-            this.Timeout = TIMEOUT;
-        }
-
-        /// <summary>
-        /// Creates a new configuration using default values for api url and timeout
-        /// </summary>
-        /// <param name="secretKey">Your secret key, something like sk_xxxxx or sk_test_xxxx</param>
-        /// <param name="requestKey">some identifier</param>
-        public Configuration(string secretKey, string requestKey)
-        {
-            this.SecretKey = secretKey;
-            this.ApiUrl = API_URL;
-            this.Timeout = TIMEOUT;
-            this.RequestKey = requestKey;
+            this.RequestKey = requestKey ?? new Guid().ToString();
+            this.MpToken = mpToken;
+            this.AccountManagementKey = accountManagementKey;
         }
 
         /// <summary>

@@ -17,23 +17,30 @@ namespace Mundipagg
         }
 
         /// <summary>
-        /// Creates a new api client using default values for api url and timeout
+        /// Constructor
         /// </summary>
-        /// <param name="secretKey">Your secret key, something like sk_xxxxx or sk_test_xxxx</param>
-        public MundipaggApiClient(string secretKey)
-        {
-            this.Initialize(new Configuration(secretKey));
-        }
-
-        /// <summary>
-        /// Creates a new api client using a custom values for url and timeout
-        /// </summary>
+        /// <param name="secretKey"></param>
+        /// <param name="requestKey"></param>
         /// <param name="apiUrl"></param>
-        public MundipaggApiClient(string apiUrl, int timeout, string requestKey)    
+        /// <param name="timeout"></param>
+        /// <param name="mpToken"></param>
+        /// <param name="accountManagementKey"></param>
+        /// <param name="merchantId"></param>
+        /// <param name="accountId"></param>
+        public MundipaggApiClient(
+            string secretKey = null,
+            string requestKey = null,
+            string apiUrl = null,
+            int? timeout = null,
+            string mpToken = null,
+            string accountManagementKey = null,
+            string merchantId = null,
+            string accountId = null)
         {
-            this.Initialize(new Configuration(apiUrl, timeout)
+            this.Initialize(new Configuration(secretKey, requestKey, apiUrl, timeout, mpToken, accountManagementKey)
             {
-                RequestKey = requestKey    
+                MerchantId = merchantId,
+                AccountId = accountId
             });
         }
 
@@ -84,33 +91,35 @@ namespace Mundipagg
 
         private Configuration _configuration { get; set; }
 
-        public void SetSecretKey(string secretKey)
+        /// <summary>
+        /// Update configuration - if null, new values are ignored
+        /// </summary>
+        /// <param name="secretKey"></param>
+        /// <param name="requestKey"></param>
+        /// <param name="apiUrl"></param>
+        /// <param name="timeout"></param>
+        /// <param name="mpToken"></param>
+        /// <param name="accountManagementKey"></param>
+        /// <param name="merchantId"></param>
+        /// <param name="accountId"></param>
+        public void UpdateConfiguration(
+            string secretKey = null,
+            string requestKey = null,
+            string apiUrl = null,
+            int? timeout = null,
+            string mpToken = null,
+            string accountManagementKey = null,
+            string merchantId = null,
+            string accountId = null)
         {
-            this._configuration.SecretKey = secretKey;
-            this.Configuration = _configuration;
-        }
-
-        public void SetSecretKey(string secretKey, string accountId)
-        {
-            this._configuration.SecretKey = secretKey;
-            this._configuration.AccountId = accountId;
-            this.Configuration = _configuration;
-        }
-
-        public void SetSecretKey(string secretKey, string accountId, string merchantId)
-        {
-            this._configuration.SecretKey = secretKey;
-            this._configuration.AccountId = accountId;
-            this._configuration.MerchantId = merchantId;
-            this.Configuration = _configuration;
-        }
-
-        public void SetSecretKey(string secretKey, string accountId, string merchantId, string requestKey)
-        {
-            this._configuration.SecretKey = secretKey;
-            this._configuration.AccountId = accountId;
-            this._configuration.MerchantId = merchantId;
-            this._configuration.RequestKey = requestKey;
+            this._configuration.SecretKey = secretKey ?? this._configuration.SecretKey;
+            this._configuration.AccountId = accountId ?? this._configuration.AccountId;
+            this._configuration.MerchantId = merchantId ?? this._configuration.MerchantId;
+            this._configuration.RequestKey = requestKey ?? this._configuration.RequestKey;
+            this._configuration.AccountManagementKey = accountManagementKey ??this._configuration.AccountManagementKey;
+            this._configuration.MpToken = mpToken ?? this._configuration.MpToken;
+            this._configuration.Timeout = timeout ?? this._configuration.Timeout;
+            this._configuration.ApiUrl = apiUrl ?? this._configuration.ApiUrl;
             this.Configuration = _configuration;
         }
 

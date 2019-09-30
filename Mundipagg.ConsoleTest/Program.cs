@@ -8,7 +8,7 @@ namespace Mundipagg.ConsoleTest
     {
         private static void Main(string[] args)
         {
-            var jsonn = "{ \"type\" : \"order.created\" }";
+            var jsonn = "{ \"type\" : \"order.created\", \"data\" : { \"id\" : \"asdsads\" } }";
 
             var testew = JsonConvert.DeserializeObject<WebhookReceived>(jsonn);
 
@@ -50,7 +50,6 @@ namespace Mundipagg.ConsoleTest
             };
             var createResult = client.Customer.CreateCustomer(createRequest);
 
-            client.Configuration.RequestKey = "otherrk";
             //client.Charge.CreateCharge()
             // Create
             var createRequest2 = new CreateCustomerRequest()

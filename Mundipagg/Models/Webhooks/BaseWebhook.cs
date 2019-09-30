@@ -75,14 +75,12 @@ namespace Mundipagg.Models.Webhooks
         /// <summary>
         /// Event type as Enum
         /// </summary>
-        public WebhookEventEnum EventType => JsonConvert.DeserializeObject<WebhookEventEnum>($"\"{this._eventTypeAsString}\"");
+        public WebhookEventEnum EventType => JsonConvert.DeserializeObject<WebhookEventEnum>($"\"{this._eventTypeAsString.Replace(".","").Replace("_", "") }\"");
 
         /// <summary>
         /// Hook event type
         /// </summary>
         protected string _eventTypeAsString { get; set; }
-
-        #region Protected Methods
 
         /// <summary>
         /// Get data type from event type
@@ -134,7 +132,5 @@ namespace Mundipagg.Models.Webhooks
                     return null;
             }
         }
-
-        #endregion Protected Methods
     }
 }
