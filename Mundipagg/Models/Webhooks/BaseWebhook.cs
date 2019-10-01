@@ -119,14 +119,14 @@ namespace Mundipagg.Models.Webhooks
                 case WebhookEventEnum.SubscriptionCreated:
                 case WebhookEventEnum.SubscriptionDeleted:
                 case WebhookEventEnum.SubscriptionUpdated:
-                    return typeof(GetOrderResponse);
+                    return typeof(GetSubscriptionResponse);
 
                 case WebhookEventEnum.InvoiceCanceled:
                 case WebhookEventEnum.InvoiceCreated:
                 case WebhookEventEnum.InvoicePaid:
                 case WebhookEventEnum.InvoicePaymentFailed:
                 case WebhookEventEnum.InvoiceUpdated:
-                    return typeof(GetOrderResponse);
+                    return typeof(GetInvoiceResponse);
                     
                 default:
                     return null;
