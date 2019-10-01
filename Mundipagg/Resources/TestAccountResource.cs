@@ -9,12 +9,12 @@ namespace Mundipagg.Resources
     {
         public TestAccountResource(Configuration configuration) : base(configuration) { }
 
-        public BaseResponse<GetAccountResponse> GetAccount(string masterAccountId, string accountId)
+        public BaseResponse<ListAccountsResponse> GetAccounts(string masterAccountId)
         {
             var method = HttpMethod.Get;
-            var endpoint = $"/accounts/{masterAccountId}/tests/{accountId}";
+            var endpoint = $"/accounts/{masterAccountId}/tests";
 
-            return this.HttpClientUtil.SendRequest<GetAccountResponse>(method, endpoint, null, authMode: "amk");
+            return this.HttpClientUtil.SendRequest<ListAccountsResponse>(method, endpoint, null, authMode: "amk");
         }
 
         public BaseResponse<GetAccountResponse> CreateAccount(string masterAccountId, CreateAccountRequest request)
