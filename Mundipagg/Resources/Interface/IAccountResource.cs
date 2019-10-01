@@ -21,5 +21,23 @@ namespace Mundipagg.Resources.Interface
         /// <param name="request"></param>
         /// <returns></returns>
         BaseResponse<GetAccountResponse> CreateAccount(CreateAccountRequest request);
+        
+        /// <summary>
+        /// Get Account Info
+        /// </summary>
+        /// <param name="masterAccountId"></param>
+        /// <returns></returns>
+        BaseResponse<ListAccountsResponse> GetTestAccounts(string masterAccountId);
+
+        /// <summary>
+        /// Cretes a new account
+        /// </summary>
+        /// <param name="masterAccountId"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        BaseResponse<GetAccountResponse> CreateTestAccount(string masterAccountId, CreateAccountRequest request);
+        
+        BaseResponse<GetAccountResponse> UpdateAccount(string accountId, UpdateAccountRequest request);
+
     }
 }

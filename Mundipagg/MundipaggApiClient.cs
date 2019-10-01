@@ -61,7 +61,6 @@ namespace Mundipagg
             set
             {
                 this._configuration = value;
-                this.TestAccount.Configuration = this._configuration;
                 this.Account.Configuration = this._configuration;
                 this.Merchant.Configuration = this._configuration;
                 this.Charge.Configuration = this._configuration;
@@ -76,7 +75,6 @@ namespace Mundipagg
             }
         }
 
-        public ITestAccountResource TestAccount { get; private set; }
         public IAccountResource Account { get; private set; }
 
         public IMerchantResource Merchant { get; private set; }
@@ -131,7 +129,6 @@ namespace Mundipagg
         /// <param name="configuration">Mundipagg Api configuration</param>
         private void Initialize(Configuration configuration)
         {
-            this.TestAccount = new TestAccountResource(configuration);
             this.Account = new AccountResource(configuration);
             this.Merchant = new MerchantResource(configuration);
             this.Customer = new CustomerResource(configuration);

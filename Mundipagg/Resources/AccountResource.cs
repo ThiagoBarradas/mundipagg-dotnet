@@ -24,5 +24,29 @@ namespace Mundipagg.Resources
 
             return this.HttpClientUtil.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
+        
+        public BaseResponse<ListAccountsResponse> GetTestAccounts(string masterAccountId)
+        {
+            var method = HttpMethod.Get;
+            var endpoint = $"/accounts/{masterAccountId}/tests";
+
+            return this.HttpClientUtil.SendRequest<ListAccountsResponse>(method, endpoint, null, authMode: "amk");
+        }
+
+        public BaseResponse<GetAccountResponse> CreateTestAccount(string masterAccountId, CreateAccountRequest request)
+        {
+            var method = HttpMethod.Post;
+            var endpoint = $"/accounts/{masterAccountId}/tests";
+
+            return this.HttpClientUtil.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
+        }
+
+        public BaseResponse<GetAccountResponse> UpdateAccount(string accountId, UpdateAccountRequest request)
+        {
+            var method = HttpMethod.Put;
+            var endpoint = $"/accounts/{accountId}";
+
+            return this.HttpClientUtil.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
+        }
     }
 }
