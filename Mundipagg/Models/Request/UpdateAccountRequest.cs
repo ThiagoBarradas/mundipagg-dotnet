@@ -10,12 +10,12 @@
         /// <summary>
         /// Fuso horário
         /// </summary>
-        public string Time_Zone { get; set; }
+        public string TimeZone { get; set; }
 
         /// <summary>
         /// Moeda
         /// </summary>
-        public string Default_Currency { get; set; }
+        public string DefaultCurrency { get; set; }
 
         /// <summary>
         /// Status da empresa
@@ -30,5 +30,5 @@
         /// <summary>
         /// Lista de Ips liberados para se conectar com a API
         /// </summary>
-        public string[] Allowed_Ips { get; set; }    }
+        public string[] AllowedIps { get; set; }    }
 }

@@ -4,6 +4,8 @@ namespace Mundipagg.Models.Request
 {
     public class CreateAccountRequest
     {
+        public string Id { get; set; }
+
         public string Name { get; set; }
 
         public string TimeZone { get; set; }
