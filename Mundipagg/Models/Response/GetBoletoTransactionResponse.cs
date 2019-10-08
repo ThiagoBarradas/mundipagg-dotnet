@@ -1,7 +1,12 @@
 using System;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace Mundipagg.Models.Response
 {
+    [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class GetBoletoTransactionResponse : GetTransactionResponse
     {
         public string Bank { get; set; }

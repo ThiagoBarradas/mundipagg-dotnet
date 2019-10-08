@@ -1,7 +1,13 @@
 ﻿using System;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace Mundipagg.Models.Request
 {
+    [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class ListSubscriptionItemsRequest : BaseListRequest
     {
         public ListSubscriptionItemsRequest(string subscriptionId, string name = null, string description = null, string itemId = null, string code = null,

@@ -1,8 +1,12 @@
-﻿namespace Mundipagg.Models.Request
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+
+namespace Mundipagg.Models.Request
 {
     /// <summary>
     /// Base list request
     /// </summary>
+    [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public abstract class BaseListRequest
     {
         public BaseListRequest()

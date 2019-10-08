@@ -1,8 +1,12 @@
-﻿namespace Mundipagg.Models.Commons
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+
+namespace Mundipagg.Models.Commons
 {
     /// <summary>
     /// Pagination model
     /// </summary>
+    [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class Paging
     {
         /// <summary>

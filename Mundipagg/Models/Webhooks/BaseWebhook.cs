@@ -3,6 +3,7 @@ using Mundipagg.Models.Response;
 using Mundipagg.Utils;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Serialization;
 using System;
 
 namespace Mundipagg.Models.Webhooks
@@ -10,6 +11,7 @@ namespace Mundipagg.Models.Webhooks
     /// <summary>
     /// Base webhook model
     /// </summary>
+    [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public abstract class BaseWebhook
     {
         /// <summary>

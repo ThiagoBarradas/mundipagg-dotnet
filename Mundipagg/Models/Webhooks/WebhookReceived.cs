@@ -1,10 +1,9 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace Mundipagg.Models.Webhooks
 {
-    /// <summary>
-    /// Webhook received model
-    /// </summary>
+    [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class WebhookReceived : BaseWebhook
     {
         [JsonProperty("type")]
