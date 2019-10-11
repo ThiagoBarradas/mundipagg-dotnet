@@ -8,6 +8,8 @@ namespace Mundipagg.Models.Request
     {
         public string Name { get; set; }
 
+        public string Id { get; set; }
+
         public string ClientId { get; set; }
 
         public CreateMerchantSettingsRequest MerchantSettings { get; set; }

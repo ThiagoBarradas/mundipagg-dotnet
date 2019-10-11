@@ -48,5 +48,12 @@ namespace Mundipagg.Resources
 
             return this.HttpClientUtil.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
+
+        public BaseResponse<GetAccountResponse> UpdateStatus(string accountId, UpdateAccountStatusRequest request) {
+            var method = new HttpMethod("patch");
+            var endpoint = $"/accounts/{accountId}/status";
+
+            return this.HttpClientUtil.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
+        }
     }
 }

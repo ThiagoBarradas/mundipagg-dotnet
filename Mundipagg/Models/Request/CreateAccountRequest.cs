@@ -10,6 +10,8 @@ namespace Mundipagg.Models.Request
     [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class CreateAccountRequest
     {
+        public string Id { get; set; }
+
         public string Name { get; set; }
 
         public string TimeZone { get; set; }
