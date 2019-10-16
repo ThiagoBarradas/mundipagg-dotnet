@@ -5,7 +5,7 @@ namespace Mundipagg.Models.Response
 {
     public class GetOrderResponse
     {
-        public int Amount{ get; set; }
+        public int Amount { get; set; }
 
         public List<GetChargeResponse> Charges { get; set; }
 
