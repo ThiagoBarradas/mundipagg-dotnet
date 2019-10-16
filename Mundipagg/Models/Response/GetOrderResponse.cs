@@ -10,6 +10,8 @@ namespace Mundipagg.Models.Response
     [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class GetOrderResponse
     {
+        public int Amount { get; set; }
+
         public List<GetChargeResponse> Charges { get; set; }
 
         public List<GetCheckoutPaymentResponse> Checkouts { get; set; }

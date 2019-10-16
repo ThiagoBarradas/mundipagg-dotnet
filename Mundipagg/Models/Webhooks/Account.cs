@@ -18,5 +18,11 @@ namespace Mundipagg.Models.Webhooks
         /// Account name
         /// </summary>
         public string Name { get; set; }
+
+        /// <summary>
+        /// Merchant id
+        /// </summary>
+        public string MerchantId { get; set; }
+
     }
 }
