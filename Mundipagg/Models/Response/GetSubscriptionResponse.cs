@@ -15,6 +15,8 @@ namespace Mundipagg.Models.Response
 
         public GetCardResponse Card { get; set; }
 
+        public GetPlanResponse Plan { get; set; }
+
         public string Code { get; set; }
 
         public DateTime CreatedAt { get; set; }
