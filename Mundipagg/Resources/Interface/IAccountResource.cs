@@ -51,7 +51,6 @@ namespace Mundipagg.Resources.Interface
         /// <param name="accountId"></param>
         /// <param name="request"></param>
         /// <returns></returns>
-        BaseResponse<GetAccountResponse> UpdateStatus(string accountId, UpdateAccountStatusRequest request)
-
+        BaseResponse<GetAccountResponse> UpdateStatus(string accountId, UpdateAccountStatusRequest request);
     }
 }
