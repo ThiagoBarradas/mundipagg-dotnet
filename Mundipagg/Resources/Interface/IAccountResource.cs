@@ -52,5 +52,13 @@ namespace Mundipagg.Resources.Interface
         /// <param name="request"></param>
         /// <returns></returns>
         BaseResponse<GetAccountResponse> UpdateStatus(string accountId, UpdateAccountStatusRequest request);
+
+        /// <summary>
+        ///     
+        /// </summary>
+        /// <param name="accountId"></param>
+        /// <param name="merchantKey"></param>
+        /// <returns></returns>
+        BaseResponse<GetAccountResponse> UpdateMundipaggConfig(string accountId, string merchantKey);
     }
 }

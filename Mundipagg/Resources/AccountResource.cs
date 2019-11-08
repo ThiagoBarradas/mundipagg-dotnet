@@ -55,5 +55,13 @@ namespace Mundipagg.Resources
 
             return this.HttpClientUtil.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
+        
+        public BaseResponse<GetAccountResponse> UpdateMundipaggConfig(string accountId, string merchantKey)
+        {
+            var method = new HttpMethod("patch");
+            var endpoint = $"/accounts/{accountId}/mundipagg-settings";
+
+            return this.HttpClientUtil.SendRequest<GetAccountResponse>(method, endpoint, new { merchantKey }, authMode: "amk");
+        }
     }
 }
