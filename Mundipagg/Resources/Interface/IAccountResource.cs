@@ -1,4 +1,5 @@
-﻿using Mundipagg.Models.Request;
+﻿using Mundipagg.Models.Commons;
+using Mundipagg.Models.Request;
 using Mundipagg.Models.Response;
 
 namespace Mundipagg.Resources.Interface
@@ -14,6 +15,12 @@ namespace Mundipagg.Resources.Interface
         /// <param name="accountId"></param>
         /// <returns></returns>
         BaseResponse<GetAccountResponse> GetAccount(string accountId);
+
+        /// <summary>
+        /// List all accounts
+        /// </summary>
+        /// <returns></returns>
+        BaseResponse<PagingResponse<GetAccountResponse>> ListAccounts();
 
         /// <summary>
         /// Cretes a new account
