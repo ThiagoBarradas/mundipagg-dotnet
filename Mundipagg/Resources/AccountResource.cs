@@ -1,4 +1,5 @@
-﻿using Mundipagg.Models.Request;
+﻿using Mundipagg.Models.Commons;
+using Mundipagg.Models.Request;
 using Mundipagg.Models.Response;
 using Mundipagg.Resources.Interface;
 using System.Net.Http;
@@ -15,6 +16,14 @@ namespace Mundipagg.Resources
             var endpoint = $"/accounts/{accountId}";
 
             return this.HttpClientUtil.SendRequest<GetAccountResponse>(method, endpoint, null, authMode: "amk");
+        }
+
+        public BaseResponse<PagingResponse<GetAccountResponse>> ListAccounts()
+        {
+            var method = HttpMethod.Get;
+            var endpoint = $"/accounts";
+
+            return this.HttpClientUtil.SendRequest<PagingResponse<GetAccountResponse>>(method, endpoint, null, authMode: "amk");
         }
 
         public BaseResponse<GetAccountResponse> CreateAccount(CreateAccountRequest request)

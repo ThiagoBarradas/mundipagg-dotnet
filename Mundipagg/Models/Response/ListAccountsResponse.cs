@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using Mundipagg.Models.Commons;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
+using System.Collections.Generic;
 
 namespace Mundipagg.Models.Response
 {
@@ -11,6 +10,6 @@ namespace Mundipagg.Models.Response
     {
         public List<GetAccountResponse> Data { get; set; }
 
-        public PagingResponse Paging { get; set; }
+        public Paging Paging { get; set; }
     }
 }

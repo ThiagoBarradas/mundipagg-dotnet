@@ -1,10 +1,5 @@
 ﻿using Mundipagg.Models.Enums;
 using System;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
-
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 
 namespace Mundipagg.Models.Request
 {
