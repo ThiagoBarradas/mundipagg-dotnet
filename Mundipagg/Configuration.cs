@@ -90,5 +90,10 @@ namespace Mundipagg
         /// Timeout in milliseconds
         /// </summary>
         public int Timeout { get; set; }
+    
+        public Configuration Clone()
+        {
+            return (Configuration) this.MemberwiseClone();
+        }
     }
 }

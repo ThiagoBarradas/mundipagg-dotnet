@@ -79,7 +79,7 @@ namespace Mundipagg.Utils
 
             client.BaseUrl = new Uri(fullUri);
             client.AddLogAdditionalInfo("RequestKey", this.Configuration.RequestKey);
-            client.AddLogAdditionalInfo("AccountId", this.Configuration.MerchantId);
+            client.AddLogAdditionalInfo("AccountId", this.Configuration.AccountId);
             client.AddLogAdditionalInfo("MerchantId", this.Configuration.MerchantId);
 
             client.Configuration.JsonBlacklist = new string[]

@@ -50,7 +50,7 @@ namespace Mundipagg
         /// <param name="configuration">Mundipagg Api configuration</param>
         public MundipaggApiClient(Configuration configuration)
         {
-            this.Initialize(configuration);
+            this.Initialize(configuration.Clone());
         }
 
         public IChargeResource Charge { get; private set; }
