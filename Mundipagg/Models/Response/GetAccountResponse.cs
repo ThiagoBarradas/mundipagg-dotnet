@@ -160,14 +160,14 @@ namespace Mundipagg.Models.Response
 
     public class GetMundipaggSettingsResponse
     {
-        public DateTime UpdatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
 
-        public Guid? MerchantKey { get; set; }
+        public string MerchantKey { get; set; }
     }
 
     public class GetPagarmeSettingsResponse
     {
-        public DateTime UpdatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
 
         public string ApiKey { get; set; }
 
