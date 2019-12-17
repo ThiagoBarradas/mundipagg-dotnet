@@ -27,7 +27,7 @@ namespace Mundipagg.Resources.Interface
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        BaseResponse<GetMerchantResponse> UpdateMerchant(UpdateMerchantRequest request);
+        BaseResponse<GetMerchantResponse> UpdateMerchant(string merchantId, UpdateMerchantRequest request);
 
     }
 }
