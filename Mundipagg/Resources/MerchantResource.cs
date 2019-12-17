@@ -25,10 +25,10 @@ namespace Mundipagg.Resources
             return this.HttpClientUtil.SendRequest<GetMerchantResponse>(method, endpoint, request, authMode: "token");
         }
 
-        public BaseResponse<GetMerchantResponse> UpdateMerchant(UpdateMerchantRequest request)
+        public BaseResponse<GetMerchantResponse> UpdateMerchant(string merchantId, UpdateMerchantRequest request)
         {
             var method = HttpMethod.Put;
-            var endpoint = $"/merchants";
+            var endpoint = $"/merchants/{merchantId}";
 
             return this.HttpClientUtil.SendRequest<GetMerchantResponse>(method, endpoint, request, authMode: "token");
         }
