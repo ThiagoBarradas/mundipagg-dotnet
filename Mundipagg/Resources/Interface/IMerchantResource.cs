@@ -21,5 +21,13 @@ namespace Mundipagg.Resources.Interface
         /// <param name="request"></param>
         /// <returns></returns>
         BaseResponse<GetMerchantResponse> CreateMerchant(CreateMerchantRequest request);
+
+        /// <summary>
+        /// Cretes a new merchant
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        BaseResponse<GetMerchantResponse> UpdateMerchant(UpdateMerchantRequest request);
+
     }
 }
