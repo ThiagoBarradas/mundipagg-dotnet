@@ -193,6 +193,10 @@ namespace Mundipagg.Models.Request
     public class CreateBankTransferSettingsRequest
     {
         public bool Enabled { get; set; }
+
+        public string Bank { get; set; }
+
+        public string Gateway { get; set; }
     }
 
     public class CreateNotificationSettingsRequest
