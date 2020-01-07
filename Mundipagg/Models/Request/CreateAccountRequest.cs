@@ -49,7 +49,7 @@ namespace Mundipagg.Models.Request
 
         public CreateBankTransferSettingsRequest BankTransferSettings { get; set; }
 
-        public CreateSafetyPaySettingsRequest SafetyPaySettings { get; set; }
+        public CreateSafetypaySettingsRequest SafetypaySettings { get; set; }
 
         public CreateSplitSettingsRequest SplitSettings { get; set; }
 
@@ -204,9 +204,11 @@ namespace Mundipagg.Models.Request
         public bool Enabled { get; set; }
     }
 
-    public class CreateSafetyPaySettingsRequest
+    public class CreateSafetypaySettingsRequest
     {
         public bool Enabled { get; set; }
+
+        public string Gateway { get; set; }
     }
 
     public class CreateGuaranteedCancellationSettingsRequest
