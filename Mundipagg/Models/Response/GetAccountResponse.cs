@@ -256,6 +256,8 @@ namespace Mundipagg.Models.Response
     {
         public bool Enabled { get; set; }
 
+        public string Gateway { get; set; }
+
         public DateTime UpdatedAt { get; set; }
     }
 
