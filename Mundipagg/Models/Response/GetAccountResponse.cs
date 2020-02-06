@@ -59,7 +59,7 @@ namespace Mundipagg.Models.Response
 
         public GetBankTransferSettingsResponse BankTransferSettings { get; set; }
 
-        public GetSafetyPaySettingsResponse SafetyPaySettings { get; set; }
+        public GetSafetypaySettingsResponse SafetypaySettings { get; set; }
 
         public GetSplitSettingsResponse SplitSettings { get; set; }
 
@@ -252,9 +252,11 @@ namespace Mundipagg.Models.Response
         public DateTime UpdatedAt { get; set; }
     }
 
-    public class GetSafetyPaySettingsResponse
+    public class GetSafetypaySettingsResponse
     {
         public bool Enabled { get; set; }
+
+        public string Gateway { get; set; }
 
         public DateTime UpdatedAt { get; set; }
     }
