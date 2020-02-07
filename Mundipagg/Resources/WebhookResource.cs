@@ -5,6 +5,7 @@ using Mundipagg.Models.Webhooks;
 using Mundipagg.Resources.Interface;
 using Mundipagg.Utils;
 using Newtonsoft.Json;
+using RestSharp.Easy.Models;
 using System;
 using System.Net.Http;
 
@@ -19,7 +20,7 @@ namespace Mundipagg.Resources
             var method = HttpMethod.Get;
             var endpoint = $"/hooks/{webhookId}";
 
-            return this.HttpClientUtil.SendRequest<GetWebhookResponse>(method, endpoint, null);
+            return this.SendRequest<GetWebhookResponse>(method, endpoint, null);
         }
 
         public BaseResponse<PagingResponse<GetWebhookResponse>> ListWebhooks(ListWebhooksRequest request)
@@ -28,7 +29,7 @@ namespace Mundipagg.Resources
             var endpoint = $"/hooks";
             var query = request.ToDictionary();
 
-            return this.HttpClientUtil.SendRequest<PagingResponse<GetWebhookResponse>>(method, endpoint, null, query);
+            return this.SendRequest<PagingResponse<GetWebhookResponse>>(method, endpoint, null, query);
         }
         
         public WebhookReceived ParseWebhook(string json)
@@ -44,7 +45,7 @@ namespace Mundipagg.Resources
             var method = HttpMethod.Post;
             var endpoint = $"/hooks/{webhookId}/retry";
 
-            return this.HttpClientUtil.SendRequest<GetWebhookResponse>(method, endpoint, null);
+            return this.SendRequest<GetWebhookResponse>(method, endpoint, null);
         }
     }
 }

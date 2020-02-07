@@ -2,6 +2,7 @@
 using Mundipagg.Models.Response;
 using Mundipagg.Resources.Interface;
 using Mundipagg.Utils;
+using RestSharp.Easy.Models;
 using System.Net.Http;
 
 namespace Mundipagg.Resources
@@ -15,7 +16,7 @@ namespace Mundipagg.Resources
             var method = HttpMethod.Delete;
             var endpoint = $"/invoices/{invoiceId}";
 
-            return this.HttpClientUtil.SendRequest<GetInvoiceResponse>(method, endpoint, null);
+            return this.SendRequest<GetInvoiceResponse>(method, endpoint, null);
         }
 
         public BaseResponse<GetInvoiceResponse> CreateInvoice(string subscriptionId, string cycleId)
@@ -23,7 +24,7 @@ namespace Mundipagg.Resources
             var method = HttpMethod.Post;
             var endpoint = $"/subscriptions/{subscriptionId}/cycles/{cycleId}/pay";
 
-            return this.HttpClientUtil.SendRequest<GetInvoiceResponse>(method, endpoint, null);
+            return this.SendRequest<GetInvoiceResponse>(method, endpoint, null);
         }
 
         public BaseResponse<GetInvoiceResponse> GetInvoice(string invoiceId)
@@ -31,7 +32,7 @@ namespace Mundipagg.Resources
             var method = HttpMethod.Get;
             var endpoint = $"/invoices/{invoiceId}";
 
-            return this.HttpClientUtil.SendRequest<GetInvoiceResponse>(method, endpoint, null);
+            return this.SendRequest<GetInvoiceResponse>(method, endpoint, null);
         }
 
         public BaseResponse<ListInvoicesResponse> ListInvoices(ListInvoicesRequest request)
@@ -40,7 +41,7 @@ namespace Mundipagg.Resources
             var endpoint = $"/invoices";
             var query = request.ToDictionary();
 
-            return this.HttpClientUtil.SendRequest<ListInvoicesResponse>(method, endpoint, null, query);
+            return this.SendRequest<ListInvoicesResponse>(method, endpoint, null, query);
         }
 
         public BaseResponse<GetInvoiceResponse> UpdateInvoiceMetadata(string invoiceId, UpdateMetadataRequest request)
@@ -48,7 +49,7 @@ namespace Mundipagg.Resources
             var method = new HttpMethod("PATCH");
             var endpoint = $"/invoices/{invoiceId}/metadata";
 
-            return this.HttpClientUtil.SendRequest<GetInvoiceResponse>(method, endpoint, request);
+            return this.SendRequest<GetInvoiceResponse>(method, endpoint, request);
         }
 
         public BaseResponse<GetInvoiceResponse> UpdateInvoiceStatus(string invoiceId, UpdateInvoiceStatusRequest request)
@@ -56,7 +57,7 @@ namespace Mundipagg.Resources
             var method = new HttpMethod("PATCH");
             var endpoint = $"/invoices/{invoiceId}/status";
 
-            return this.HttpClientUtil.SendRequest<GetInvoiceResponse>(method, endpoint, request);
+            return this.SendRequest<GetInvoiceResponse>(method, endpoint, request);
         }
     }
 }

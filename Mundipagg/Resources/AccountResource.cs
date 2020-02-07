@@ -2,6 +2,7 @@
 using Mundipagg.Models.Request;
 using Mundipagg.Models.Response;
 using Mundipagg.Resources.Interface;
+using RestSharp.Easy.Models;
 using System.Net.Http;
 
 namespace Mundipagg.Resources
@@ -15,7 +16,7 @@ namespace Mundipagg.Resources
             var method = HttpMethod.Get;
             var endpoint = $"/accounts/{accountId}";
 
-            return this.HttpClientUtil.SendRequest<GetAccountResponse>(method, endpoint, null, authMode: "amk");
+            return this.SendRequest<GetAccountResponse>(method, endpoint, null, authMode: "amk");
         }
 
         public BaseResponse<PagingResponse<GetAccountResponse>> ListAccounts()
@@ -23,7 +24,7 @@ namespace Mundipagg.Resources
             var method = HttpMethod.Get;
             var endpoint = $"/accounts";
 
-            return this.HttpClientUtil.SendRequest<PagingResponse<GetAccountResponse>>(method, endpoint, null, authMode: "amk");
+            return this.SendRequest<PagingResponse<GetAccountResponse>>(method, endpoint, null, authMode: "amk");
         }
 
         public BaseResponse<GetAccountResponse> CreateAccount(CreateAccountRequest request)
@@ -31,7 +32,7 @@ namespace Mundipagg.Resources
             var method = HttpMethod.Post;
             var endpoint = $"/accounts";
 
-            return this.HttpClientUtil.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
+            return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
         
         public BaseResponse<ListAccountsResponse> GetTestAccounts(string masterAccountId)
@@ -39,7 +40,7 @@ namespace Mundipagg.Resources
             var method = HttpMethod.Get;
             var endpoint = $"/accounts/{masterAccountId}/tests";
 
-            return this.HttpClientUtil.SendRequest<ListAccountsResponse>(method, endpoint, null, authMode: "amk");
+            return this.SendRequest<ListAccountsResponse>(method, endpoint, null, authMode: "amk");
         }
 
         public BaseResponse<GetAccountResponse> CreateTestAccount(string masterAccountId, CreateAccountRequest request)
@@ -47,7 +48,7 @@ namespace Mundipagg.Resources
             var method = HttpMethod.Post;
             var endpoint = $"/accounts/{masterAccountId}/tests";
 
-            return this.HttpClientUtil.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
+            return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
         public BaseResponse<GetAccountResponse> UpdateAccount(string accountId, UpdateAccountRequest request)
@@ -55,14 +56,14 @@ namespace Mundipagg.Resources
             var method = HttpMethod.Put;
             var endpoint = $"/accounts/{accountId}";
 
-            return this.HttpClientUtil.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
+            return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
         public BaseResponse<GetAccountResponse> UpdateStatus(string accountId, UpdateAccountStatusRequest request) {
             var method = new HttpMethod("patch");
             var endpoint = $"/accounts/{accountId}/status";
 
-            return this.HttpClientUtil.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
+            return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
         
         public BaseResponse<GetAccountResponse> UpdateMundipaggConfig(string accountId, string merchantKey)
@@ -70,7 +71,7 @@ namespace Mundipagg.Resources
             var method = new HttpMethod("patch");
             var endpoint = $"/accounts/{accountId}/mundipagg-settings";
 
-            return this.HttpClientUtil.SendRequest<GetAccountResponse>(method, endpoint, new { merchantKey }, authMode: "amk");
+            return this.SendRequest<GetAccountResponse>(method, endpoint, new { merchantKey }, authMode: "amk");
         }
     }
 }

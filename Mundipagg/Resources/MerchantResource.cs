@@ -1,6 +1,7 @@
 ﻿using Mundipagg.Models.Request;
 using Mundipagg.Models.Response;
 using Mundipagg.Resources.Interface;
+using RestSharp.Easy.Models;
 using System.Net.Http;
 
 namespace Mundipagg.Resources
@@ -14,7 +15,7 @@ namespace Mundipagg.Resources
             var method = HttpMethod.Get;
             var endpoint = $"/merchants/{merchantId}";
 
-            return this.HttpClientUtil.SendRequest<GetMerchantResponse>(method, endpoint, null, authMode: "token");
+            return this.SendRequest<GetMerchantResponse>(method, endpoint, null, authMode: "token");
         }
 
         public BaseResponse<GetMerchantResponse> CreateMerchant(CreateMerchantRequest request)
@@ -22,7 +23,7 @@ namespace Mundipagg.Resources
             var method = HttpMethod.Post;
             var endpoint = $"/merchants";
 
-            return this.HttpClientUtil.SendRequest<GetMerchantResponse>(method, endpoint, request, authMode: "token");
+            return this.SendRequest<GetMerchantResponse>(method, endpoint, request, authMode: "token");
         }
 
         public BaseResponse<GetMerchantResponse> UpdateMerchant(string merchantId, UpdateMerchantRequest request)
@@ -30,7 +31,7 @@ namespace Mundipagg.Resources
             var method = HttpMethod.Put;
             var endpoint = $"/merchants/{merchantId}";
 
-            return this.HttpClientUtil.SendRequest<GetMerchantResponse>(method, endpoint, request, authMode: "token");
+            return this.SendRequest<GetMerchantResponse>(method, endpoint, request, authMode: "token");
         }
     }
 }

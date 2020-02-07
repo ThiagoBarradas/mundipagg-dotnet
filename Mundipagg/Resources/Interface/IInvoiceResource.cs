@@ -1,5 +1,6 @@
 ﻿using Mundipagg.Models.Request;
 using Mundipagg.Models.Response;
+using RestSharp.Easy.Models;
 
 namespace Mundipagg.Resources.Interface
 {

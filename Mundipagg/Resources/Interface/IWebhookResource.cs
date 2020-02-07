@@ -2,6 +2,7 @@
 using Mundipagg.Models.Request;
 using Mundipagg.Models.Response;
 using Mundipagg.Models.Webhooks;
+using RestSharp.Easy.Models;
 
 namespace Mundipagg.Resources.Interface
 {

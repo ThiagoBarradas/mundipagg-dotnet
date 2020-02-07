@@ -2,6 +2,7 @@
 using Mundipagg.Models.Response;
 using Mundipagg.Resources.Interface;
 using Mundipagg.Utils;
+using RestSharp.Easy.Models;
 using System.Net.Http;
 
 namespace Mundipagg.Resources
@@ -17,7 +18,7 @@ namespace Mundipagg.Resources
             var method = HttpMethod.Get;
             var endpoint = $"/orders/{orderId}";
 
-            return this.HttpClientUtil.SendRequest<GetOrderResponse>(method, endpoint, null);
+            return this.SendRequest<GetOrderResponse>(method, endpoint, null);
         }
 
         public BaseResponse<GetOrderResponse> CreateOrder(string idempotencyKey, CreateOrderRequest request)
@@ -26,7 +27,7 @@ namespace Mundipagg.Resources
             var endpoint = $"/orders";
             var headers = this.GetIdempontecyAsHeader(idempotencyKey);
 
-            return this.HttpClientUtil.SendRequest<GetOrderResponse>(method, endpoint, request, null, headers);
+            return this.SendRequest<GetOrderResponse>(method, endpoint, request, null, headers);
         }
 
         public BaseResponse<ListOrderResponse> ListOrders(ListOrdersRequest request)
@@ -35,7 +36,7 @@ namespace Mundipagg.Resources
             var endpoint = $"/orders";
             var query = request.ToDictionary();
 
-            return this.HttpClientUtil.SendRequest<ListOrderResponse>(method, endpoint, null, query);
+            return this.SendRequest<ListOrderResponse>(method, endpoint, null, query);
         }
 
         public BaseResponse<GetOrderResponse> UpdateOrderMetadata(string orderId, UpdateMetadataRequest request)
@@ -44,7 +45,7 @@ namespace Mundipagg.Resources
             var endpoint = $"/orders/{orderId}/metadata";
             var query = request.ToDictionary();
 
-            return this.HttpClientUtil.SendRequest<GetOrderResponse>(method, endpoint, request);
+            return this.SendRequest<GetOrderResponse>(method, endpoint, request);
         }
 
         public BaseResponse<GetOrderResponse> CloseOrder(string id, UpdateOrderStatusRequest request)
@@ -53,7 +54,7 @@ namespace Mundipagg.Resources
             var endpoint = $"/orders/{id}/closed";
             var query = request.ToDictionary();
 
-            return this.HttpClientUtil.SendRequest<GetOrderResponse>(method, endpoint, request);
+            return this.SendRequest<GetOrderResponse>(method, endpoint, request);
         }
 
         #endregion
@@ -65,7 +66,7 @@ namespace Mundipagg.Resources
             var method = HttpMethod.Get;
             var endpoint = $"/orders/{orderId}/{itemId}";
 
-            return this.HttpClientUtil.SendRequest<GetOrderItemResponse>(method, endpoint, null);
+            return this.SendRequest<GetOrderItemResponse>(method, endpoint, null);
         }
 
         public BaseResponse<GetOrderItemResponse> CreateOrderItem(string orderId, CreateOrderItemRequest request)
@@ -73,7 +74,7 @@ namespace Mundipagg.Resources
             var method = HttpMethod.Post;
             var endpoint = $"/orders/{orderId}/items";
 
-            return this.HttpClientUtil.SendRequest<GetOrderItemResponse>(method, endpoint, request);
+            return this.SendRequest<GetOrderItemResponse>(method, endpoint, request);
         }
 
         public BaseResponse<GetOrderResponse> DeleteAllOrderItems(string orderId)
@@ -81,7 +82,7 @@ namespace Mundipagg.Resources
             var method = HttpMethod.Delete;
             var endpoint = $"/orders/{orderId}/items";
 
-            return this.HttpClientUtil.SendRequest<GetOrderResponse>(method, endpoint, null);
+            return this.SendRequest<GetOrderResponse>(method, endpoint, null);
         }
 
         public BaseResponse<GetOrderItemResponse> DeleteOrderItem(string orderId, string itemId)
@@ -89,7 +90,7 @@ namespace Mundipagg.Resources
             var method = HttpMethod.Delete;
             var endpoint = $"/orders/{orderId}/items/{itemId}";
 
-            return this.HttpClientUtil.SendRequest<GetOrderItemResponse>(method, endpoint, null);
+            return this.SendRequest<GetOrderItemResponse>(method, endpoint, null);
         }
 
         public BaseResponse<GetOrderItemResponse> UpdateOrderItem(string orderId, string itemId, UpdateOrderItemRequest request)
@@ -97,7 +98,7 @@ namespace Mundipagg.Resources
             var method = HttpMethod.Put;
             var endpoint = $"/orders/{orderId}/items/{itemId}";
 
-            return this.HttpClientUtil.SendRequest<GetOrderItemResponse>(method, endpoint, request);
+            return this.SendRequest<GetOrderItemResponse>(method, endpoint, request);
         }
 
         #endregion        

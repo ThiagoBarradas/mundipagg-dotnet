@@ -14,7 +14,7 @@ namespace Mundipagg.Utils
         /// </summary>
         /// <param name="source">Object to cast</param>
         /// <returns></returns>
-        public static IDictionary<string, string> ToDictionary(this object source)
+        public static Dictionary<string, string> ToDictionary(this object source)
         {
             if (source == null)
                 throw new ArgumentNullException("source", "Unable to convert object to a dictionary. The source object is null.");
