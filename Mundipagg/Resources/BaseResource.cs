@@ -90,7 +90,7 @@ namespace Mundipagg.Resources
                     user = this.Configuration.MpToken;
                     break;
                 default:
-                    user = this.Configuration.MpToken;
+                    user = this.Configuration.SecretKey;
                     break;
             }
 
