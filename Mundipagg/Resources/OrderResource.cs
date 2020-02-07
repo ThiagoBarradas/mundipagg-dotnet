@@ -13,7 +13,7 @@ namespace Mundipagg.Resources
 
         #region Order
 
-        public BaseResponse<GetOrderResponse> GetOrder(string orderId)
+        public BaseResponse<GetOrderResponse, ErrorsResponse> GetOrder(string orderId)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/orders/{orderId}";
@@ -21,7 +21,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetOrderResponse>(method, endpoint, null);
         }
 
-        public BaseResponse<GetOrderResponse> CreateOrder(string idempotencyKey, CreateOrderRequest request)
+        public BaseResponse<GetOrderResponse, ErrorsResponse> CreateOrder(string idempotencyKey, CreateOrderRequest request)
         {
             var method = HttpMethod.Post;
             var endpoint = $"/orders";
@@ -30,7 +30,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetOrderResponse>(method, endpoint, request, null, headers);
         }
 
-        public BaseResponse<ListOrderResponse> ListOrders(ListOrdersRequest request)
+        public BaseResponse<ListOrderResponse, ErrorsResponse> ListOrders(ListOrdersRequest request)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/orders";
@@ -39,7 +39,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<ListOrderResponse>(method, endpoint, null, query);
         }
 
-        public BaseResponse<GetOrderResponse> UpdateOrderMetadata(string orderId, UpdateMetadataRequest request)
+        public BaseResponse<GetOrderResponse, ErrorsResponse> UpdateOrderMetadata(string orderId, UpdateMetadataRequest request)
         {
             var method = new HttpMethod("PATCH");
             var endpoint = $"/orders/{orderId}/metadata";
@@ -48,7 +48,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetOrderResponse>(method, endpoint, request);
         }
 
-        public BaseResponse<GetOrderResponse> CloseOrder(string id, UpdateOrderStatusRequest request)
+        public BaseResponse<GetOrderResponse, ErrorsResponse> CloseOrder(string id, UpdateOrderStatusRequest request)
         {
             var method = new HttpMethod("PATCH");
             var endpoint = $"/orders/{id}/closed";
@@ -61,7 +61,7 @@ namespace Mundipagg.Resources
 
         #region Order Item 
 
-        public BaseResponse<GetOrderItemResponse> GetOrderItem(string orderId, string itemId)
+        public BaseResponse<GetOrderItemResponse, ErrorsResponse> GetOrderItem(string orderId, string itemId)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/orders/{orderId}/{itemId}";
@@ -69,7 +69,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetOrderItemResponse>(method, endpoint, null);
         }
 
-        public BaseResponse<GetOrderItemResponse> CreateOrderItem(string orderId, CreateOrderItemRequest request)
+        public BaseResponse<GetOrderItemResponse, ErrorsResponse> CreateOrderItem(string orderId, CreateOrderItemRequest request)
         {
             var method = HttpMethod.Post;
             var endpoint = $"/orders/{orderId}/items";
@@ -77,7 +77,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetOrderItemResponse>(method, endpoint, request);
         }
 
-        public BaseResponse<GetOrderResponse> DeleteAllOrderItems(string orderId)
+        public BaseResponse<GetOrderResponse, ErrorsResponse> DeleteAllOrderItems(string orderId)
         {
             var method = HttpMethod.Delete;
             var endpoint = $"/orders/{orderId}/items";
@@ -85,7 +85,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetOrderResponse>(method, endpoint, null);
         }
 
-        public BaseResponse<GetOrderItemResponse> DeleteOrderItem(string orderId, string itemId)
+        public BaseResponse<GetOrderItemResponse, ErrorsResponse> DeleteOrderItem(string orderId, string itemId)
         {
             var method = HttpMethod.Delete;
             var endpoint = $"/orders/{orderId}/items/{itemId}";
@@ -93,7 +93,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetOrderItemResponse>(method, endpoint, null);
         }
 
-        public BaseResponse<GetOrderItemResponse> UpdateOrderItem(string orderId, string itemId, UpdateOrderItemRequest request)
+        public BaseResponse<GetOrderItemResponse, ErrorsResponse> UpdateOrderItem(string orderId, string itemId, UpdateOrderItemRequest request)
         {
             var method = HttpMethod.Put;
             var endpoint = $"/orders/{orderId}/items/{itemId}";

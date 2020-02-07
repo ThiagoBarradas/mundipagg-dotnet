@@ -11,7 +11,7 @@ namespace Mundipagg.Resources
     {
         public InvoiceResource(Configuration configuration) : base(configuration) { }
 
-        public BaseResponse<GetInvoiceResponse> CancelInvoice(string invoiceId)
+        public BaseResponse<GetInvoiceResponse, ErrorsResponse> CancelInvoice(string invoiceId)
         {
             var method = HttpMethod.Delete;
             var endpoint = $"/invoices/{invoiceId}";
@@ -19,7 +19,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetInvoiceResponse>(method, endpoint, null);
         }
 
-        public BaseResponse<GetInvoiceResponse> CreateInvoice(string subscriptionId, string cycleId)
+        public BaseResponse<GetInvoiceResponse, ErrorsResponse> CreateInvoice(string subscriptionId, string cycleId)
         {
             var method = HttpMethod.Post;
             var endpoint = $"/subscriptions/{subscriptionId}/cycles/{cycleId}/pay";
@@ -27,7 +27,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetInvoiceResponse>(method, endpoint, null);
         }
 
-        public BaseResponse<GetInvoiceResponse> GetInvoice(string invoiceId)
+        public BaseResponse<GetInvoiceResponse, ErrorsResponse> GetInvoice(string invoiceId)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/invoices/{invoiceId}";
@@ -35,7 +35,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetInvoiceResponse>(method, endpoint, null);
         }
 
-        public BaseResponse<ListInvoicesResponse> ListInvoices(ListInvoicesRequest request)
+        public BaseResponse<ListInvoicesResponse, ErrorsResponse> ListInvoices(ListInvoicesRequest request)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/invoices";
@@ -44,7 +44,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<ListInvoicesResponse>(method, endpoint, null, query);
         }
 
-        public BaseResponse<GetInvoiceResponse> UpdateInvoiceMetadata(string invoiceId, UpdateMetadataRequest request)
+        public BaseResponse<GetInvoiceResponse, ErrorsResponse> UpdateInvoiceMetadata(string invoiceId, UpdateMetadataRequest request)
         {
             var method = new HttpMethod("PATCH");
             var endpoint = $"/invoices/{invoiceId}/metadata";
@@ -52,7 +52,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetInvoiceResponse>(method, endpoint, request);
         }
 
-        public BaseResponse<GetInvoiceResponse> UpdateInvoiceStatus(string invoiceId, UpdateInvoiceStatusRequest request)
+        public BaseResponse<GetInvoiceResponse, ErrorsResponse> UpdateInvoiceStatus(string invoiceId, UpdateInvoiceStatusRequest request)
         {
             var method = new HttpMethod("PATCH");
             var endpoint = $"/invoices/{invoiceId}/status";

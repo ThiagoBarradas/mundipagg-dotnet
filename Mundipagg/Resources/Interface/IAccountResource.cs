@@ -15,27 +15,27 @@ namespace Mundipagg.Resources.Interface
         /// </summary>
         /// <param name="accountId"></param>
         /// <returns></returns>
-        BaseResponse<GetAccountResponse> GetAccount(string accountId);
+        BaseResponse<GetAccountResponse, ErrorsResponse> GetAccount(string accountId);
 
         /// <summary>
         /// List all accounts
         /// </summary>
         /// <returns></returns>
-        BaseResponse<PagingResponse<GetAccountResponse>> ListAccounts();
+        BaseResponse<PagingResponse<GetAccountResponse>, ErrorsResponse> ListAccounts();
 
         /// <summary>
         /// Cretes a new account
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        BaseResponse<GetAccountResponse> CreateAccount(CreateAccountRequest request);
+        BaseResponse<GetAccountResponse, ErrorsResponse> CreateAccount(CreateAccountRequest request);
         
         /// <summary>
         /// Get Account Info
         /// </summary>
         /// <param name="masterAccountId"></param>
         /// <returns></returns>
-        BaseResponse<ListAccountsResponse> GetTestAccounts(string masterAccountId);
+        BaseResponse<ListAccountsResponse, ErrorsResponse> GetTestAccounts(string masterAccountId);
 
         /// <summary>
         /// Cretes a new account
@@ -43,7 +43,7 @@ namespace Mundipagg.Resources.Interface
         /// <param name="masterAccountId"></param>
         /// <param name="request"></param>
         /// <returns></returns>
-        BaseResponse<GetAccountResponse> CreateTestAccount(string masterAccountId, CreateAccountRequest request);
+        BaseResponse<GetAccountResponse, ErrorsResponse> CreateTestAccount(string masterAccountId, CreateAccountRequest request);
         
         /// <summary>
         /// Update Account
@@ -51,7 +51,7 @@ namespace Mundipagg.Resources.Interface
         /// <param name="accountId"></param>
         /// <param name="request"></param>
         /// <returns></returns>
-        BaseResponse<GetAccountResponse> UpdateAccount(string accountId, UpdateAccountRequest request);
+        BaseResponse<GetAccountResponse, ErrorsResponse> UpdateAccount(string accountId, UpdateAccountRequest request);
 
         /// <summary>
         /// Update Status
@@ -59,7 +59,7 @@ namespace Mundipagg.Resources.Interface
         /// <param name="accountId"></param>
         /// <param name="request"></param>
         /// <returns></returns>
-        BaseResponse<GetAccountResponse> UpdateStatus(string accountId, UpdateAccountStatusRequest request);
+        BaseResponse<GetAccountResponse, ErrorsResponse> UpdateStatus(string accountId, UpdateAccountStatusRequest request);
 
         /// <summary>
         ///     
@@ -67,6 +67,6 @@ namespace Mundipagg.Resources.Interface
         /// <param name="accountId"></param>
         /// <param name="merchantKey"></param>
         /// <returns></returns>
-        BaseResponse<GetAccountResponse> UpdateMundipaggConfig(string accountId, string merchantKey);
+        BaseResponse<GetAccountResponse, ErrorsResponse> UpdateMundipaggConfig(string accountId, string merchantKey);
     }
 }

@@ -15,7 +15,7 @@ namespace Mundipagg.Resources
     {
         public WebhookResource(Configuration configuration) : base(configuration) { }
 
-        public BaseResponse<GetWebhookResponse> GetWebhook(string webhookId)
+        public BaseResponse<GetWebhookResponse, ErrorsResponse> GetWebhook(string webhookId)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/hooks/{webhookId}";
@@ -23,7 +23,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetWebhookResponse>(method, endpoint, null);
         }
 
-        public BaseResponse<PagingResponse<GetWebhookResponse>> ListWebhooks(ListWebhooksRequest request)
+        public BaseResponse<PagingResponse<GetWebhookResponse>, ErrorsResponse> ListWebhooks(ListWebhooksRequest request)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/hooks";
@@ -40,7 +40,7 @@ namespace Mundipagg.Resources
             return JsonConvert.DeserializeObject<WebhookReceived>(json, JsonSerializerUtil.SnakeCaseSettings);
         }
 
-        public BaseResponse<GetWebhookResponse> RetryWebhook(string webhookId)
+        public BaseResponse<GetWebhookResponse, ErrorsResponse> RetryWebhook(string webhookId)
         {
             var method = HttpMethod.Post;
             var endpoint = $"/hooks/{webhookId}/retry";

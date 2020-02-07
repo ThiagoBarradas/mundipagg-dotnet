@@ -13,7 +13,7 @@ namespace Mundipagg.Resources
 
         #region Customer
 
-        public BaseResponse<GetCustomerResponse> CreateCustomer(CreateCustomerRequest request)
+        public BaseResponse<GetCustomerResponse, ErrorsResponse> CreateCustomer(CreateCustomerRequest request)
         {
             var method = HttpMethod.Post;
             var endpoint = $"/customers";
@@ -21,7 +21,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetCustomerResponse>(method, endpoint, request);
         }
 
-        public BaseResponse<GetCustomerResponse> GetCustomer(string customerId)
+        public BaseResponse<GetCustomerResponse, ErrorsResponse> GetCustomer(string customerId)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/customers/{customerId}";
@@ -29,7 +29,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetCustomerResponse>(method, endpoint, null);
         }
 
-        public BaseResponse<ListCustomersResponse> ListCustomers(ListCustomersRequest request)
+        public BaseResponse<ListCustomersResponse, ErrorsResponse> ListCustomers(ListCustomersRequest request)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/customers";
@@ -38,7 +38,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<ListCustomersResponse>(method, endpoint, query);
         }
 
-        public BaseResponse<GetCustomerResponse> UpdateCustomer(string customerId, UpdateCustomerRequest request)
+        public BaseResponse<GetCustomerResponse, ErrorsResponse> UpdateCustomer(string customerId, UpdateCustomerRequest request)
         {
             var method = HttpMethod.Put;
             var endpoint = $"/customers/{customerId}";
@@ -46,7 +46,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetCustomerResponse>(method, endpoint, request);
         }
 
-        public BaseResponse<GetCustomerResponse> UpdateCustomerMetadata(string customerId, UpdateMetadataRequest request)
+        public BaseResponse<GetCustomerResponse, ErrorsResponse> UpdateCustomerMetadata(string customerId, UpdateMetadataRequest request)
         {
             var method = new HttpMethod("PATCH");
             var endpoint = $"/customers/{customerId}/metadata";
@@ -58,7 +58,7 @@ namespace Mundipagg.Resources
 
         #region Address
 
-        public BaseResponse<GetAddressResponse> CreateAddress(string customerId, CreateAddressRequest request)
+        public BaseResponse<GetAddressResponse, ErrorsResponse> CreateAddress(string customerId, CreateAddressRequest request)
         {
             var method = HttpMethod.Post;
             var endpoint = $"/customers/{customerId}/addresses";
@@ -66,7 +66,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAddressResponse>(method, endpoint, request);
         }
 
-        public BaseResponse<GetAddressResponse> DeleteAddress(string customerId, string addressId)
+        public BaseResponse<GetAddressResponse, ErrorsResponse> DeleteAddress(string customerId, string addressId)
         {
             var method = HttpMethod.Delete;
             var endpoint = $"/customers/{customerId}/addresses/{addressId}";
@@ -74,7 +74,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAddressResponse>(method, endpoint, null);
         }
 
-        public BaseResponse<GetAddressResponse> GetAddress(string customerId, string addressId)
+        public BaseResponse<GetAddressResponse, ErrorsResponse> GetAddress(string customerId, string addressId)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/customers/{customerId}/addresses/{addressId}";
@@ -82,7 +82,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAddressResponse>(method, endpoint, null);
         }
 
-        public BaseResponse<ListAddressesResponse> ListAddresses(ListAddressesRequest request)
+        public BaseResponse<ListAddressesResponse, ErrorsResponse> ListAddresses(ListAddressesRequest request)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/customers/{request.CustomerId}/addresses";
@@ -91,7 +91,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<ListAddressesResponse>(method, endpoint, query);
         }
 
-        public BaseResponse<GetAddressResponse> UpdateAddress(string customerId, string addressId, UpdateAddressRequest request)
+        public BaseResponse<GetAddressResponse, ErrorsResponse> UpdateAddress(string customerId, string addressId, UpdateAddressRequest request)
         {
             var method = HttpMethod.Put;
             var endpoint = $"/customers/{customerId}/addresses/{addressId}";
@@ -103,7 +103,7 @@ namespace Mundipagg.Resources
 
         #region Card
 
-        public BaseResponse<GetCardResponse> CreateCard(string customerId, CreateCardRequest request)
+        public BaseResponse<GetCardResponse, ErrorsResponse> CreateCard(string customerId, CreateCardRequest request)
         {
             var method = HttpMethod.Post;
             var endpoint = $"/customers/{customerId}/cards";
@@ -111,7 +111,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetCardResponse>(method, endpoint, request);
         }
 
-        public BaseResponse<GetCardResponse> GetCard(string customerId, string cardId)
+        public BaseResponse<GetCardResponse, ErrorsResponse> GetCard(string customerId, string cardId)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/customers/{customerId}/cards/{cardId}";
@@ -119,7 +119,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetCardResponse>(method, endpoint, null);
         }
 
-        public BaseResponse<ListCardsResponse> ListCards(ListCardsRequest request)
+        public BaseResponse<ListCardsResponse, ErrorsResponse> ListCards(ListCardsRequest request)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/customers/{request.CustomerId}/cards";
@@ -128,7 +128,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<ListCardsResponse>(method, endpoint, query);
         }
 
-        public BaseResponse<GetCardResponse> DeleteCard(string customerId, string cardId)
+        public BaseResponse<GetCardResponse, ErrorsResponse> DeleteCard(string customerId, string cardId)
         {
             var method = HttpMethod.Delete;
             var endpoint = $"/customers/{customerId}/cards/{cardId}";
@@ -136,7 +136,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetCardResponse>(method, endpoint, null);
         }
 
-        public BaseResponse<GetCardResponse> RenewCard(string customerId, string cardId)
+        public BaseResponse<GetCardResponse, ErrorsResponse> RenewCard(string customerId, string cardId)
         {
             var method = HttpMethod.Post;
             var endpoint = $"/customers/{customerId}/cards/{cardId}/renew";
@@ -144,7 +144,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetCardResponse>(method, endpoint, null);
         }
 
-        public BaseResponse<GetCardResponse> UpdateCard(string customerId, string cardId, UpdateCardRequest request)
+        public BaseResponse<GetCardResponse, ErrorsResponse> UpdateCard(string customerId, string cardId, UpdateCardRequest request)
         {
             var method = HttpMethod.Put;
             var endpoint = $"/customers/{customerId}/cards/{cardId}";
@@ -156,7 +156,7 @@ namespace Mundipagg.Resources
 
         #region Access Token
 
-        public BaseResponse<GetAccessTokenResponse> CreateAccessToken(string customerId, CreateAccessTokenRequest request)
+        public BaseResponse<GetAccessTokenResponse, ErrorsResponse> CreateAccessToken(string customerId, CreateAccessTokenRequest request)
         {
             var method = HttpMethod.Post;
             var endpoint = $"/customers/{customerId}/access-tokens";
@@ -164,7 +164,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccessTokenResponse>(method, endpoint, request);
         }
 
-        public BaseResponse<GetAccessTokenResponse> GetAccessToken(string customerId, string tokenId)
+        public BaseResponse<GetAccessTokenResponse, ErrorsResponse> GetAccessToken(string customerId, string tokenId)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/customers/{customerId}/access-tokens/{tokenId}";
@@ -172,7 +172,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccessTokenResponse>(method, endpoint, null);
         }
 
-        public BaseResponse<ListAccessTokensResponse> ListAccessTokens(ListAccessTokensRequest request)
+        public BaseResponse<ListAccessTokensResponse, ErrorsResponse> ListAccessTokens(ListAccessTokensRequest request)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/customers/{request.CustomerId}/access-tokens";
@@ -181,7 +181,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<ListAccessTokensResponse>(method, endpoint, query);
         }
 
-        public BaseResponse<GetAccessTokenResponse> DeleteAccessToken(string customerId, string tokenId)
+        public BaseResponse<GetAccessTokenResponse, ErrorsResponse> DeleteAccessToken(string customerId, string tokenId)
         {
             var method = HttpMethod.Delete;
             var endpoint = $"/customers/{customerId}/access-tokens/{tokenId}";
@@ -189,7 +189,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccessTokenResponse>(method, endpoint, null);
         }
 
-        public BaseResponse<ListAccessTokensResponse> DeleteAllAccessTokens(string customerId)
+        public BaseResponse<ListAccessTokensResponse, ErrorsResponse> DeleteAllAccessTokens(string customerId)
         {
             var method = HttpMethod.Delete;
             var endpoint = $"/customers/{customerId}/access-tokens/";

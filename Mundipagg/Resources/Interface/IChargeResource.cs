@@ -15,27 +15,27 @@ namespace Mundipagg.Resources.Interface
         /// </summary>
         /// <param name="request">Required parameter: Request for creating a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        BaseResponse<GetChargeResponse> CreateCharge(string idempotencyKey, CreateChargeRequest request);
+        BaseResponse<GetChargeResponse, ErrorsResponse> CreateCharge(string idempotencyKey, CreateChargeRequest request);
 
         /// <summary>
         /// Get a charge from its id
         /// </summary>
         /// <param name="chargeId">Required parameter: Charge id</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        BaseResponse<GetChargeResponse> GetCharge(string chargeId);
+        BaseResponse<GetChargeResponse, ErrorsResponse> GetCharge(string chargeId);
 
         /// <summary>
         /// Retries a charge
         /// </summary>
         /// <param name="chargeId">Required parameter: Charge id</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        BaseResponse<GetChargeResponse> RetryCharge(string chargeId);
+        BaseResponse<GetChargeResponse, ErrorsResponse> RetryCharge(string chargeId);
 
         /// <summary>
         /// Lists all charges
         /// </summary>
         /// <return>Returns the Models.ListChargesResponse response from the API call</return>
-        BaseResponse<ListChargesResponse> ListCharges(ListChargesRequest request);
+        BaseResponse<ListChargesResponse, ErrorsResponse> ListCharges(ListChargesRequest request);
 
         /// <summary>
         /// Updates the metadata from a charge
@@ -43,7 +43,7 @@ namespace Mundipagg.Resources.Interface
         /// <param name="chargeId">Required parameter: Charge id</param>
         /// <param name="request">Required parameter: Request for updating the charge metadata</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        BaseResponse<GetChargeResponse> UpdateChargeMetadata(string chargeId, UpdateMetadataRequest request);
+        BaseResponse<GetChargeResponse, ErrorsResponse> UpdateChargeMetadata(string chargeId, UpdateMetadataRequest request);
 
         /// <summary>
         /// Cancel a charge
@@ -51,7 +51,7 @@ namespace Mundipagg.Resources.Interface
         /// <param name="chargeId">Required parameter: Charge id</param>
         /// <param name="request">Optional parameter: Request for cancelling a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        BaseResponse<GetChargeResponse> CancelCharge(string idempotencyKey, string chargeId, CreateCancelChargeRequest request = null);
+        BaseResponse<GetChargeResponse, ErrorsResponse> CancelCharge(string idempotencyKey, string chargeId, CreateCancelChargeRequest request = null);
 
         /// <summary>
         /// Captures a charge
@@ -60,7 +60,7 @@ namespace Mundipagg.Resources.Interface
         /// <param name="chargeId">Required parameter: Charge id</param>
         /// <param name="request">Optional parameter: Request for capturing a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        BaseResponse<GetChargeResponse> CaptureCharge(string idempotencyKey, string chargeId, CreateCaptureChargeRequest request = null);
+        BaseResponse<GetChargeResponse, ErrorsResponse> CaptureCharge(string idempotencyKey, string chargeId, CreateCaptureChargeRequest request = null);
 
         /// <summary>
         /// Confirm Charge payment
@@ -68,7 +68,7 @@ namespace Mundipagg.Resources.Interface
         /// <param name="chargeId">Required parameter: Charge Id</param>
         /// <param name="request">Optional parameter: Request for confirm payment</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        BaseResponse<GetChargeResponse> ConfirmChargePayment(string chargeId, CreateConfirmPaymentRequest request = null);
+        BaseResponse<GetChargeResponse, ErrorsResponse> ConfirmChargePayment(string chargeId, CreateConfirmPaymentRequest request = null);
 
         /// <summary>
         /// Updates the due date from a charge
@@ -76,7 +76,7 @@ namespace Mundipagg.Resources.Interface
         /// <param name="chargeId">Required parameter: Charge Id</param>
         /// <param name="request">Required parameter: Request for updating the due date</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        BaseResponse<GetChargeResponse> UpdateChargeDueDate(string chargeId, UpdateChargeDueDateRequest request);
+        BaseResponse<GetChargeResponse, ErrorsResponse> UpdateChargeDueDate(string chargeId, UpdateChargeDueDateRequest request);
        
         /// <summary>
         /// Updates the card from a charge
@@ -84,7 +84,7 @@ namespace Mundipagg.Resources.Interface
         /// <param name="chargeId">Required parameter: Charge id</param>
         /// <param name="request">Required parameter: Request for updating a charge's card</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        BaseResponse<GetChargeResponse> UpdateChargeCard(string chargeId, UpdateChargeCardRequest request);
+        BaseResponse<GetChargeResponse, ErrorsResponse> UpdateChargeCard(string chargeId, UpdateChargeCardRequest request);
 
         /// <summary>
         /// Updates a charge's payment method
@@ -92,6 +92,6 @@ namespace Mundipagg.Resources.Interface
         /// <param name="chargeId">Required parameter: Charge id</param>
         /// <param name="request">Required parameter: Request for updating the payment method from a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
-        BaseResponse<GetChargeResponse> UpdateChargePaymentMethod(string chargeId, UpdateChargePaymentMethodRequest request);
+        BaseResponse<GetChargeResponse, ErrorsResponse> UpdateChargePaymentMethod(string chargeId, UpdateChargePaymentMethodRequest request);
     }
 }

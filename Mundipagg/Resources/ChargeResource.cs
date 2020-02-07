@@ -11,7 +11,7 @@ namespace Mundipagg.Resources
     {
         public ChargeResource(Configuration configuration) : base(configuration) { }
 
-        public BaseResponse<GetChargeResponse> GetCharge(string chargeId)
+        public BaseResponse<GetChargeResponse, ErrorsResponse> GetCharge(string chargeId)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/charges/{chargeId}";
@@ -19,7 +19,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetChargeResponse>(method, endpoint, null);
         }
 
-        public BaseResponse<ListChargesResponse> ListCharges(ListChargesRequest request)
+        public BaseResponse<ListChargesResponse, ErrorsResponse> ListCharges(ListChargesRequest request)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/charges";
@@ -28,7 +28,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<ListChargesResponse>(method, endpoint, null, query);
         }
 
-        public BaseResponse<GetChargeResponse> CancelCharge(string idempotencyKey, string chargeId, CreateCancelChargeRequest request = null)
+        public BaseResponse<GetChargeResponse, ErrorsResponse> CancelCharge(string idempotencyKey, string chargeId, CreateCancelChargeRequest request = null)
         {
             var method = HttpMethod.Delete;
             var endpoint = $"/charges/{chargeId}";
@@ -37,7 +37,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetChargeResponse>(method, endpoint, request, null, headers);
         }
 
-        public BaseResponse<GetChargeResponse> CaptureCharge(string idempotencyKey, string chargeId, CreateCaptureChargeRequest request = null)
+        public BaseResponse<GetChargeResponse, ErrorsResponse> CaptureCharge(string idempotencyKey, string chargeId, CreateCaptureChargeRequest request = null)
         {
             var method = HttpMethod.Post;
             var endpoint = $"/charges/{chargeId}/capture";
@@ -46,7 +46,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetChargeResponse>(method, endpoint, request, null, headers);
         }
 
-        public BaseResponse<GetChargeResponse> ConfirmChargePayment(string chargeId, CreateConfirmPaymentRequest request = null)
+        public BaseResponse<GetChargeResponse, ErrorsResponse> ConfirmChargePayment(string chargeId, CreateConfirmPaymentRequest request = null)
         {
             var method = HttpMethod.Post;
             var endpoint = $"/charges/{chargeId}/confirm-payment";
@@ -54,7 +54,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetChargeResponse>(method, endpoint, request);
         }
 
-        public BaseResponse<GetChargeResponse> CreateCharge(string idempotencyKey, CreateChargeRequest request)
+        public BaseResponse<GetChargeResponse, ErrorsResponse> CreateCharge(string idempotencyKey, CreateChargeRequest request)
         {
             var method = HttpMethod.Post;
             var endpoint = $"/charges";
@@ -63,7 +63,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetChargeResponse>(method, endpoint, request, null, headers);
         }
 
-        public BaseResponse<GetChargeResponse> RetryCharge(string chargeId)
+        public BaseResponse<GetChargeResponse, ErrorsResponse> RetryCharge(string chargeId)
         {
             var method = HttpMethod.Post;
             var endpoint = $"/charges/{chargeId}/retry";
@@ -71,7 +71,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetChargeResponse>(method, endpoint, null);
         }
 
-        public BaseResponse<GetChargeResponse> UpdateChargeCard(string chargeId, UpdateChargeCardRequest request)
+        public BaseResponse<GetChargeResponse, ErrorsResponse> UpdateChargeCard(string chargeId, UpdateChargeCardRequest request)
         {
             var method = new HttpMethod("PATCH");
             var endpoint = $"/charges/{chargeId}/credit-card";
@@ -79,7 +79,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetChargeResponse>(method, endpoint, request);
         }
 
-        public BaseResponse<GetChargeResponse> UpdateChargeDueDate(string chargeId, UpdateChargeDueDateRequest request)
+        public BaseResponse<GetChargeResponse, ErrorsResponse> UpdateChargeDueDate(string chargeId, UpdateChargeDueDateRequest request)
         {
             var method = new HttpMethod("PATCH");
             var endpoint = $"/charges/{chargeId}/due-date";
@@ -87,7 +87,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetChargeResponse>(method, endpoint, request);
         }
 
-        public BaseResponse<GetChargeResponse> UpdateChargeMetadata(string chargeId, UpdateMetadataRequest request)
+        public BaseResponse<GetChargeResponse, ErrorsResponse> UpdateChargeMetadata(string chargeId, UpdateMetadataRequest request)
         {
             var method = new HttpMethod("PATCH");
             var endpoint = $"/charges/{chargeId}/metadata";
@@ -95,7 +95,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetChargeResponse>(method, endpoint, request);
         }
 
-        public BaseResponse<GetChargeResponse> UpdateChargePaymentMethod(string chargeId, UpdateChargePaymentMethodRequest request)
+        public BaseResponse<GetChargeResponse, ErrorsResponse> UpdateChargePaymentMethod(string chargeId, UpdateChargePaymentMethodRequest request)
         {
             var method = new HttpMethod("PATCH");
             var endpoint = $"/charges/{chargeId}/payment-method";

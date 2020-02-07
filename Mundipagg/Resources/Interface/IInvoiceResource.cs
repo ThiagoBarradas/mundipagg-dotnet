@@ -15,27 +15,27 @@ namespace Mundipagg.Resources.Interface
         /// <param name="subscriptionId">Required parameter: Subscription Id</param>
         /// <param name="cycleId">Required parameter: Cycle Id</param>
         /// <return>Returns BaseResponse<GetInvoiceResponse> response from the API call</return>
-        BaseResponse<GetInvoiceResponse> CreateInvoice(string subscriptionId, string cycleId);
+        BaseResponse<GetInvoiceResponse, ErrorsResponse> CreateInvoice(string subscriptionId, string cycleId);
 
         /// <summary>
         /// Gets an invoice
         /// </summary>
         /// <param name="invoiceId">Required parameter: Invoice Id</param>
         /// <return>Returns BaseResponse<GetInvoiceResponse> response from the API call</return>
-        BaseResponse<GetInvoiceResponse> GetInvoice(string invoiceId);
+        BaseResponse<GetInvoiceResponse, ErrorsResponse> GetInvoice(string invoiceId);
         
         /// <summary>
         /// Cancels an invoice
         /// </summary>
         /// <param name="invoiceId">Required parameter: Invoice id</param>
         /// <return>Returns BaseResponse<GetInvoiceResponse> response from the API call</return>
-        BaseResponse<GetInvoiceResponse> CancelInvoice(string invoiceId);
+        BaseResponse<GetInvoiceResponse, ErrorsResponse> CancelInvoice(string invoiceId);
 
         /// <summary>
         /// Lists invoices
         /// </summary>
         /// <return>Returns ListInvoicesResponse response from the API call</return>
-        BaseResponse<ListInvoicesResponse> ListInvoices(ListInvoicesRequest request);
+        BaseResponse<ListInvoicesResponse, ErrorsResponse> ListInvoices(ListInvoicesRequest request);
 
         /// <summary>
         /// Updates the status from an invoice
@@ -43,7 +43,7 @@ namespace Mundipagg.Resources.Interface
         /// <param name="invoiceId">Required parameter: Invoice Id</param>
         /// <param name="request">Required parameter: Request for updating an invoice's status</param>
         /// <return>Returns BaseResponse<GetInvoiceResponse> response from the API call</return>
-        BaseResponse<GetInvoiceResponse> UpdateInvoiceStatus(string invoiceId, UpdateInvoiceStatusRequest request);
+        BaseResponse<GetInvoiceResponse, ErrorsResponse> UpdateInvoiceStatus(string invoiceId, UpdateInvoiceStatusRequest request);
 
         /// <summary>
         /// Updates the metadata from an invoice
@@ -51,6 +51,6 @@ namespace Mundipagg.Resources.Interface
         /// <param name="invoiceId">Required parameter: The invoice id</param>
         /// <param name="request">Required parameter: Request for updating the invoice metadata</param>
         /// <return>Returns BaseResponse<GetInvoiceResponse> response from the API call</return>
-        BaseResponse<GetInvoiceResponse> UpdateInvoiceMetadata(string invoiceId, UpdateMetadataRequest request);
+        BaseResponse<GetInvoiceResponse, ErrorsResponse> UpdateInvoiceMetadata(string invoiceId, UpdateMetadataRequest request);
     }
 }

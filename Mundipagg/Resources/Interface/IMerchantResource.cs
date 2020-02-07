@@ -14,21 +14,21 @@ namespace Mundipagg.Resources.Interface
         /// </summary>
         /// <param name="merchantId"></param>
         /// <returns></returns>
-        BaseResponse<GetMerchantResponse> GetMerchant(string merchantId);
+        BaseResponse<GetMerchantResponse, ErrorsResponse> GetMerchant(string merchantId);
 
         /// <summary>
         /// Cretes a new merchant
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        BaseResponse<GetMerchantResponse> CreateMerchant(CreateMerchantRequest request);
+        BaseResponse<GetMerchantResponse, ErrorsResponse> CreateMerchant(CreateMerchantRequest request);
 
         /// <summary>
         /// Cretes a new merchant
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        BaseResponse<GetMerchantResponse> UpdateMerchant(string merchantId, UpdateMerchantRequest request);
+        BaseResponse<GetMerchantResponse, ErrorsResponse> UpdateMerchant(string merchantId, UpdateMerchantRequest request);
 
     }
 }
