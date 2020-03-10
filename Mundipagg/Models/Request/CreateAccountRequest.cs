@@ -160,6 +160,8 @@ namespace Mundipagg.Models.Request
 
     public class CreateWalletSettingsRequest
     {
+        public bool Enabled { get; set; }
+
         public long MaxCards { get; set; }
 
         public bool Shared { get; set; }
