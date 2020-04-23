@@ -8,7 +8,9 @@ namespace Mundipagg.Resources
 {
     public class MerchantResource : BaseResource, IMerchantResource
     {
-        public MerchantResource(Configuration configuration) : base(configuration) { }
+        public MerchantResource(Configuration configuration) : base(configuration)
+        {
+        }
 
         public BaseResponse<GetMerchantResponse, ErrorsResponse> GetMerchant(string merchantId)
         {
@@ -30,6 +32,14 @@ namespace Mundipagg.Resources
         {
             var method = HttpMethod.Put;
             var endpoint = $"/merchants/{merchantId}";
+
+            return this.SendRequest<GetMerchantResponse>(method, endpoint, request, authMode: "token");
+        }
+
+        public BaseResponse<GetMerchantResponse, ErrorsResponse> UpdateMerchantStatus(string merchantId, UpdateMerchantStatusRequest request)
+        {
+            var method = new HttpMethod("patch");
+            var endpoint = $"/merchants/{merchantId}/status";
 
             return this.SendRequest<GetMerchantResponse>(method, endpoint, request, authMode: "token");
         }
