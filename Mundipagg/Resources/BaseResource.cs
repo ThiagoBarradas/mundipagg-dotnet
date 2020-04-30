@@ -21,29 +21,42 @@ namespace Mundipagg.Resources
         public BaseResource(Configuration configuration, string authMode = "sk")
         {
             this.Configuration = configuration;
-
-            var defaultHeaders = new Dictionary<string, string>()
-            { };
-
-            var additionalLog = new Dictionary<string, string>()
-            {
-                { "AccountId", this.Configuration.AccountId },
-                { "MerchantId", this.Configuration.MerchantId }
-            };
-
-            this.EasyRestClient = new EasyRestClient(configuration.ApiUrl,
-                defaultHeaders,
-                SerializeStrategyEnum.SnakeCase,
-                configuration.Timeout,
-                configuration.RequestKey,
-                additionalLog,
-                "Mundipagg Dotnet ApiClient https://github.com/ThiagoBarradas/mundipagg-dotnet");
         }
+
+
+        private Configuration _configuration { get; set; }
 
         /// <summary>
         /// Mundipagg Api coniguration
         /// </summary>
-        public Configuration Configuration { get; set; }
+        public Configuration Configuration
+        {
+            get
+            {
+                return _configuration;
+            }
+            set
+            {
+                this._configuration = value;
+
+                var defaultHeaders = new Dictionary<string, string>()
+                { };
+
+                var additionalLog = new Dictionary<string, string>()
+                {
+                    { "AccountId", this._configuration.AccountId },
+                    { "MerchantId", this._configuration.MerchantId }
+                };
+
+                this.EasyRestClient = new EasyRestClient(value.ApiUrl,
+                    defaultHeaders,
+                    SerializeStrategyEnum.SnakeCase,
+                    value.Timeout,
+                    value.RequestKey,
+                    additionalLog,
+                    "Mundipagg Dotnet ApiClient https://github.com/ThiagoBarradas/mundipagg-dotnet");
+            }
+        }
 
         /// <summary>
         /// Http client utility
