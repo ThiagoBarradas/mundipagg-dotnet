@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using System.Collections.Generic;
 
 namespace Mundipagg.Models.Request
 {
@@ -11,6 +12,8 @@ namespace Mundipagg.Models.Request
         public string Id { get; set; }
 
         public string ClientId { get; set; }
+
+        public Dictionary<string, string> Metadata { get; set; }
 
         public CreateMerchantSettingsRequest MerchantSettings { get; set; }
     }

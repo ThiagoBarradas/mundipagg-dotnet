@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System;
+using System.Collections.Generic;
 
 namespace Mundipagg.Models.Response
 {
@@ -20,6 +21,8 @@ namespace Mundipagg.Models.Response
         public DateTime UpdatedAt { get; set; }
 
         public string Status { get; set; }
+
+        public Dictionary<string, string> Metadata { get; set; }
 
         public GetMerchantSettingsResponse MerchantSettings { get; set; }
     }
