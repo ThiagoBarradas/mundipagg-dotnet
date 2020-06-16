@@ -48,7 +48,7 @@ namespace Mundipagg
         ISubscriptionResource Subscription { get; }
         
         /// <summary>
-        /// 
+        /// Update configuration
         /// </summary>
         /// <param name="secretKey"></param>
         /// <param name="requestKey"></param>
@@ -58,6 +58,7 @@ namespace Mundipagg
         /// <param name="accountManagementKey"></param>
         /// <param name="merchantId"></param>
         /// <param name="accountId"></param>
+        /// <param name="enableLog"></param>
         void UpdateConfiguration(string secretKey = null,
             string requestKey = null,
             string apiUrl = null,
@@ -65,6 +66,7 @@ namespace Mundipagg
             string mpToken = null,
             string accountManagementKey = null,
             string merchantId = null,
-            string accountId = null);
+            string accountId = null,
+            bool enableLog = false);
     }
 }

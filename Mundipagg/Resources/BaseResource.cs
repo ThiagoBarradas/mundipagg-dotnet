@@ -54,7 +54,8 @@ namespace Mundipagg.Resources
                     value.Timeout,
                     value.RequestKey,
                     additionalLog,
-                    "Mundipagg Dotnet ApiClient https://github.com/ThiagoBarradas/mundipagg-dotnet");
+                    "Mundipagg Dotnet ApiClient https://github.com/ThiagoBarradas/mundipagg-dotnet",
+                    enableLog: value.EnableLog);
             }
         }
 

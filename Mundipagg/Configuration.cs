@@ -41,7 +41,8 @@ namespace Mundipagg
             string apiUrl = null, 
             int? timeout = null,
             string mpToken = null,
-            string accountManagementKey = null)
+            string accountManagementKey = null,
+            bool enableLog = false)
         {
             this.SecretKey = secretKey;
             this.ApiUrl = apiUrl ?? API_URL;
@@ -49,6 +50,7 @@ namespace Mundipagg
             this.RequestKey = requestKey ?? new Guid().ToString();
             this.MpToken = mpToken;
             this.AccountManagementKey = accountManagementKey;
+            this.EnableLog = enableLog;
         }
 
         /// <summary>
@@ -65,6 +67,11 @@ namespace Mundipagg
         /// Request Key to send in Header
         /// </summary>
         public string RequestKey { get; set; }
+
+        /// <summary>
+        /// Enable autolog with serilog
+        /// </summary>
+        public bool EnableLog { get; set; }
 
         /// <summary>
         /// AccountManagementKey

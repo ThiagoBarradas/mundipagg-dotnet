@@ -27,6 +27,7 @@ namespace Mundipagg
         /// <param name="accountManagementKey"></param>
         /// <param name="merchantId"></param>
         /// <param name="accountId"></param>
+        /// <param name="enableLog"></param>
         public MundipaggApiClient(
             string secretKey = null,
             string requestKey = null,
@@ -35,9 +36,10 @@ namespace Mundipagg
             string mpToken = null,
             string accountManagementKey = null,
             string merchantId = null,
-            string accountId = null)
+            string accountId = null,
+            bool enableLog = false)
         {
-            this.Initialize(new Configuration(secretKey, requestKey, apiUrl, timeout, mpToken, accountManagementKey)
+            this.Initialize(new Configuration(secretKey, requestKey, apiUrl, timeout, mpToken, accountManagementKey, enableLog)
             {
                 MerchantId = merchantId,
                 AccountId = accountId
@@ -102,6 +104,7 @@ namespace Mundipagg
         /// <param name="accountManagementKey"></param>
         /// <param name="merchantId"></param>
         /// <param name="accountId"></param>
+        /// <param name="enableLog"></param>
         public void UpdateConfiguration(
             string secretKey = null,
             string requestKey = null,
@@ -110,7 +113,8 @@ namespace Mundipagg
             string mpToken = null,
             string accountManagementKey = null,
             string merchantId = null,
-            string accountId = null)
+            string accountId = null,
+            bool enableLog = false)
         {
             this._configuration.SecretKey = secretKey ?? this._configuration.SecretKey;
             this._configuration.AccountId = accountId ?? this._configuration.AccountId;
@@ -120,6 +124,7 @@ namespace Mundipagg
             this._configuration.MpToken = mpToken ?? this._configuration.MpToken;
             this._configuration.Timeout = timeout ?? this._configuration.Timeout;
             this._configuration.ApiUrl = apiUrl ?? this._configuration.ApiUrl;
+            this._configuration.EnableLog = enableLog;
             this.Configuration = _configuration;
         }
 
