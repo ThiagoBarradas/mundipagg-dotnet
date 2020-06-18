@@ -10,6 +10,8 @@ namespace Mundipagg.Models.Request
         public object AcceptedMultiPaymentMethods { get; set; }
 
         public List<string> AcceptedPaymentMethods { get; set; }
+        
+        public List<string> AcceptedBrands { get; set; }
 
         public CreateCheckoutBankTransferRequest BankTransfer { get; set; }
 
