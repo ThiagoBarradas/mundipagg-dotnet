@@ -1,9 +1,6 @@
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
-
 namespace Mundipagg.Models.Request
 {
-    [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
+    [Newtonsoft.Json.JsonObject(NamingStrategyType = typeof(Newtonsoft.Json.Serialization.SnakeCaseNamingStrategy))]
     public class UpdateTransferSettingsRequest
     {
         public string TransferDay { get; set; }
