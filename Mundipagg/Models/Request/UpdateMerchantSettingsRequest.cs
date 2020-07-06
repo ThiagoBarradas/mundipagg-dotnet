@@ -3,7 +3,6 @@
     [Newtonsoft.Json.JsonObject(NamingStrategyType = typeof(Newtonsoft.Json.Serialization.SnakeCaseNamingStrategy))]
     public class UpdateMerchantSettingsRequest
     {
-
         /// <summary>
         /// Código
         /// </summary>

@@ -58,6 +58,7 @@ namespace Mundipagg.Models.Request
         public CreateNotificationSettingsRequest NotificationSettings { get; set; }
 
         public CreateGuaranteedCancellationSettingsRequest GuaranteedCancellationSettings { get; set; }
+        public CreateWebhookSettingRequest[] WebhokoSettings { get; set; }
     }
 
     public class CreateBoletoSettingsRequest
@@ -178,6 +179,13 @@ namespace Mundipagg.Models.Request
         public long? Interval { get; set; }
 
         public int? MaxAttempts { get; set; }
+
+        public string AuthenticationType { get; set; }
+        
+        public string AppId { get; set; }
+
+        [JsonProperty("basic_authentication")]
+        public CreateWebhookAuthenticationRequest WebhookAuthentication { get; set; }
     }
 
     public class CreateAntifraudSettingsRequest

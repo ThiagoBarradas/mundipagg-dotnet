@@ -1,9 +1,10 @@
-﻿namespace Mundipagg.Models.Request
+﻿using Newtonsoft.Json;
+
+namespace Mundipagg.Models.Request
 {
     [Newtonsoft.Json.JsonObject(NamingStrategyType = typeof(Newtonsoft.Json.Serialization.SnakeCaseNamingStrategy))]
     public class UpdateWalletSettingsRequest
     {
-
         /// <summary>
         /// Indica se a configuração de wallet está habilitada
         /// </summary>
@@ -22,6 +23,7 @@
         /// <summary>
         /// Quantidade máxima de cartões
         /// </summary>
+        [JsonProperty("max_cards")]
         public int MaxCardsCount { get; set; }
 
         /// <summary>
