@@ -1,4 +1,6 @@
-﻿namespace Mundipagg.Models.Request
+﻿using Newtonsoft.Json;
+
+namespace Mundipagg.Models.Request
 {
     [Newtonsoft.Json.JsonObject(NamingStrategyType = typeof(Newtonsoft.Json.Serialization.SnakeCaseNamingStrategy))]
     public class UpdateWebhookSettingsRequest
@@ -51,6 +53,7 @@
         /// <summary>
         /// Dados de autenticação webhook
         /// </summary>
+        [JsonProperty("basic_authentication")]
         public UpdateWebhookAuthenticationRequest WebhookAuthentication { get; set; }
 
         public string Version { get; set; }

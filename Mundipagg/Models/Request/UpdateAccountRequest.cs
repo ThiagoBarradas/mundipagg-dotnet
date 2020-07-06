@@ -44,7 +44,7 @@ namespace Mundipagg.Models.Request
         /// <summary>
         /// Configurações do One
         /// </summary>
-        public UpdateMundiPaggSettingsRequest MundiPaggSettings { get; set; }
+        public UpdateMundiPaggSettingsRequest MundipaggSettings { get; set; }
 
         /// <summary>
         /// Configurações da Pagarme
@@ -100,6 +100,11 @@ namespace Mundipagg.Models.Request
         /// Configurações de webhook
         /// </summary>
         public UpdateWebhookSettingsRequest[] WebhookSettings { get; set; }
+
+        /// <summary>
+        /// Configurações de merchant
+        /// </summary>
+        public UpdateMerchantSettingsRequest MerchantSettings { get; set; }
 
         /// <summary>
         /// Configurações de Split
