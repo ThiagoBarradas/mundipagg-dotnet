@@ -79,7 +79,7 @@ namespace Mundipagg.Models.Request
         /// <summary>
         /// Configurações de SafetyPay
         /// </summary>
-        public UpdateSafetyPaySettingsRequest SafetyPaySettings { get; set; }
+        public UpdateSafetyPaySettingsRequest SafetypaySettings { get; set; }
 
         /// <summary>
         /// Configurações de boleto
