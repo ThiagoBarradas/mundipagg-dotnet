@@ -11,7 +11,7 @@ namespace Mundipagg.Models.Response
 
         public string PublicKey { get; set; }
 
-        public string SecretsKey { get; set; }
+        public string SecretKey { get; set; }
 
         public string Name { get; set; }
 
