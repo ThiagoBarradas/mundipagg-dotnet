@@ -156,6 +156,10 @@ namespace Mundipagg.Models.Response
         public string Email { get; set; }
 
         public string Website { get; set; }
+
+        public string PrimaryColor { get; set; }
+
+        public string SecondaryColor { get; set; }
     }
 
     public class GetMundipaggSettingsResponse
