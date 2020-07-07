@@ -11,7 +11,7 @@ namespace Mundipagg.Models.Response
 
         public string PublicKey { get; set; }
 
-        public string SecretsKey { get; set; }
+        public string SecretKey { get; set; }
 
         public string Name { get; set; }
 
@@ -156,6 +156,10 @@ namespace Mundipagg.Models.Response
         public string Email { get; set; }
 
         public string Website { get; set; }
+
+        public string PrimaryColor { get; set; }
+
+        public string SecondaryColor { get; set; }
     }
 
     public class GetMundipaggSettingsResponse
