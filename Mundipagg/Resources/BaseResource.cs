@@ -79,7 +79,7 @@ namespace Mundipagg.Resources
             return headers;
         }
 
-        public BaseResponse<TSuccess, ErrorsResponse> SendRequest<TSuccess>(
+        public BaseResponse<TSuccess, MundipaggErrorsResponse> SendRequest<TSuccess>(
             HttpMethod method,
             string endpoint,
             object body = null,
@@ -117,7 +117,7 @@ namespace Mundipagg.Resources
 
             headers.Add("Authorization", $"Basic {basic}");
 
-            return this.EasyRestClient.SendRequest<TSuccess, ErrorsResponse>
+            return this.EasyRestClient.SendRequest<TSuccess, MundipaggErrorsResponse>
                 (method, endpoint, body, query, headers);
         }
     }

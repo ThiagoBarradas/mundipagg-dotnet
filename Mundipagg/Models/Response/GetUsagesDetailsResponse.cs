@@ -1,5 +1,6 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using System.Collections.Generic;
 
 namespace Mundipagg.Models.Response
 {
@@ -16,6 +17,6 @@ namespace Mundipagg.Models.Response
 
         public int? TotalIncrement { get; set; }
 
-        public ListUsagesDetailsResponse Usages { get; set; }
+        public List<GetUsageResponse> Usages { get; set; }
     }
 }

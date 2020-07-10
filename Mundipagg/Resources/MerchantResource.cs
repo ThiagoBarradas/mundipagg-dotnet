@@ -12,7 +12,7 @@ namespace Mundipagg.Resources
         {
         }
 
-        public BaseResponse<GetMerchantResponse, ErrorsResponse> GetMerchant(string merchantId)
+        public BaseResponse<GetMerchantResponse, MundipaggErrorsResponse> GetMerchant(string merchantId)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/merchants/{merchantId}";
@@ -20,7 +20,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetMerchantResponse>(method, endpoint, null, authMode: "token");
         }
 
-        public BaseResponse<GetMerchantResponse, ErrorsResponse> CreateMerchant(CreateMerchantRequest request)
+        public BaseResponse<GetMerchantResponse, MundipaggErrorsResponse> CreateMerchant(CreateMerchantRequest request)
         {
             var method = HttpMethod.Post;
             var endpoint = $"/merchants";
@@ -28,7 +28,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetMerchantResponse>(method, endpoint, request, authMode: "token");
         }
 
-        public BaseResponse<GetMerchantResponse, ErrorsResponse> UpdateMerchant(string merchantId, UpdateMerchantRequest request)
+        public BaseResponse<GetMerchantResponse, MundipaggErrorsResponse> UpdateMerchant(string merchantId, UpdateMerchantRequest request)
         {
             var method = HttpMethod.Put;
             var endpoint = $"/merchants/{merchantId}";
@@ -36,7 +36,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetMerchantResponse>(method, endpoint, request, authMode: "token");
         }
 
-        public BaseResponse<GetMerchantResponse, ErrorsResponse> UpdateMerchantStatus(string merchantId, UpdateMerchantStatusRequest request)
+        public BaseResponse<GetMerchantResponse, MundipaggErrorsResponse> UpdateMerchantStatus(string merchantId, UpdateMerchantStatusRequest request)
         {
             var method = new HttpMethod("patch");
             var endpoint = $"/merchants/{merchantId}/status";

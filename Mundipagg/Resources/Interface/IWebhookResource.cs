@@ -23,20 +23,20 @@ namespace Mundipagg.Resources.Interface
         /// </summary>
         /// <param name="request">List webhooks request</param>
         /// <returns>Base response with paged webhooks data</returns>
-        BaseResponse<PagingResponse<GetWebhookResponse>, ErrorsResponse> ListWebhooks(ListWebhooksRequest request);
+        BaseResponse<PagingResponse<GetWebhookResponse>, MundipaggErrorsResponse> ListWebhooks(ListWebhooksRequest request);
 
         /// <summary>
         /// Get webhook data
         /// </summary>
         /// <param name="webhookId">Webhook id</param>
         /// <returns>Base response with webhook data</returns>
-        BaseResponse<GetWebhookResponse, ErrorsResponse> GetWebhook(string webhookId);
+        BaseResponse<GetWebhookResponse, MundipaggErrorsResponse> GetWebhook(string webhookId);
 
         /// <summary>
         /// Retry send webhook
         /// </summary>
         /// <param name="webhookId">Webhook id</param>
         /// <returns>Base response with webhook data</returns>
-        BaseResponse<GetWebhookResponse, ErrorsResponse> RetryWebhook(string webhookId);
+        BaseResponse<GetWebhookResponse, MundipaggErrorsResponse> RetryWebhook(string webhookId);
     }
 }
