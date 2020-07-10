@@ -1,3 +1,4 @@
+[![Build Status](https://barradas.visualstudio.com/Contributions/_apis/build/status/NugetPackage/Mundipagg%20SDK?branchName=develop)](https://barradas.visualstudio.com/Contributions/_build/latest?definitionId=21&branchName=develop)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ThiagoBarradas_mundipagg-dotnet&metric=alert_status)](https://sonarcloud.io/dashboard?id=ThiagoBarradas_mundipagg-dotnet)
 [![NuGet Downloads](https://img.shields.io/nuget/dt/Mundipagg.svg)](https://www.nuget.org/packages/Mundipagg/)
 [![NuGet Version](https://img.shields.io/nuget/v/Mundipagg.svg)](https://www.nuget.org/packages/Mundipagg/)
