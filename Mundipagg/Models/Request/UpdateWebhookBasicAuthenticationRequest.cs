@@ -4,12 +4,10 @@ using Newtonsoft.Json.Serialization;
 namespace Mundipagg.Models.Request
 {
     [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class UpdateWalletSettingsRequest
+    public class UpdateWebhookBasicAuthenticationRequest
     {
-        public bool Enabled { get; set; }
+        public string Username { get; set; }
 
-        public int MaxCards { get; set; }
-
-        public bool Shared { get; set; }
+        public string Password { get; set; }
     }
 }

@@ -6,8 +6,6 @@ namespace Mundipagg.Models.Request
     [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class ListCustomersRequest : BaseListRequest
     {
-        #region Properties
-
         public string Code { get; set; }
 
         public string Document { get; set; }
@@ -15,7 +13,5 @@ namespace Mundipagg.Models.Request
         public string Email { get; set; }
 
         public string Name { get; set; }
-
-        #endregion Properties
     }
 }

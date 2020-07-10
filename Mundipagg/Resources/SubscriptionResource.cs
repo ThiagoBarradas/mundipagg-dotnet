@@ -1,4 +1,5 @@
-﻿using Mundipagg.Models.Request;
+﻿using Mundipagg.Models.Commons;
+using Mundipagg.Models.Request;
 using Mundipagg.Models.Response;
 using Mundipagg.Resources.Interface;
 using Mundipagg.Utils;
@@ -13,7 +14,7 @@ namespace Mundipagg.Resources
 
         #region Subscription
 
-        public BaseResponse<GetSubscriptionResponse, ErrorsResponse> GetSubscription(string subscriptionId)
+        public BaseResponse<GetSubscriptionResponse, MundipaggErrorsResponse> GetSubscription(string subscriptionId)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/subscriptions/{subscriptionId}";
@@ -21,7 +22,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetSubscriptionResponse>(method, endpoint, null);
         }
 
-        public BaseResponse<GetSubscriptionResponse, ErrorsResponse> CreateSubscription(CreateSubscriptionRequest request)
+        public BaseResponse<GetSubscriptionResponse, MundipaggErrorsResponse> CreateSubscription(CreateSubscriptionRequest request)
         {
             var method = HttpMethod.Post;
             var endpoint = $"/subscriptions";
@@ -29,16 +30,16 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetSubscriptionResponse>(method, endpoint, request);
         }
 
-        public BaseResponse<ListSubscriptionsResponse, ErrorsResponse> ListSubscriptions(ListSubscriptionsRequest request)
+        public BaseResponse<PagingResponse<GetSubscriptionResponse>, MundipaggErrorsResponse> ListSubscriptions(ListSubscriptionsRequest request)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/subscriptions";
             var query = request.ToDictionary();
 
-            return this.SendRequest<ListSubscriptionsResponse>(method, endpoint, null, query);
+            return this.SendRequest<PagingResponse<GetSubscriptionResponse>>(method, endpoint, null, query);
         }
 
-        public BaseResponse<GetSubscriptionResponse, ErrorsResponse> CancelSubscription(string subscriptionId, CreateCancelSubscriptionRequest request = null)
+        public BaseResponse<GetSubscriptionResponse, MundipaggErrorsResponse> CancelSubscription(string subscriptionId, CreateCancelSubscriptionRequest request = null)
         {
             var method = HttpMethod.Delete;
             var endpoint = $"/subscriptions/{subscriptionId}";
@@ -46,7 +47,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetSubscriptionResponse>(method, endpoint, request);
         }
 
-        public BaseResponse<GetSubscriptionResponse, ErrorsResponse> UpdateSubscriptionMetadata(string subscriptionId, UpdateMetadataRequest request)
+        public BaseResponse<GetSubscriptionResponse, MundipaggErrorsResponse> UpdateSubscriptionMetadata(string subscriptionId, UpdateMetadataRequest request)
         {
             var method = new HttpMethod("PATCH");
             var endpoint = $"/subscriptions/{subscriptionId}/metadata";
@@ -54,7 +55,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetSubscriptionResponse>(method, endpoint, request);
         }
 
-        public BaseResponse<GetSubscriptionResponse, ErrorsResponse> UpdateSubscriptionMiniumPrice(string subscriptionId, UpdateSubscriptionMinimumPriceRequest request)
+        public BaseResponse<GetSubscriptionResponse, MundipaggErrorsResponse> UpdateSubscriptionMiniumPrice(string subscriptionId, UpdateSubscriptionMinimumPriceRequest request)
         {
             var method = new HttpMethod("PATCH");
             var endpoint = $"/subscriptions/{subscriptionId}/minimum_price";
@@ -62,7 +63,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetSubscriptionResponse>(method, endpoint, request);
         }
 
-        public BaseResponse<GetSubscriptionResponse, ErrorsResponse> UpdateSubscriptionPaymentMethod(string subscriptionId, UpdateSubscriptionPaymentMethodRequest request)
+        public BaseResponse<GetSubscriptionResponse, MundipaggErrorsResponse> UpdateSubscriptionPaymentMethod(string subscriptionId, UpdateSubscriptionPaymentMethodRequest request)
         {
             var method = new HttpMethod("PATCH");
             var endpoint = $"/subscriptions/{subscriptionId}/payment-method";
@@ -70,7 +71,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetSubscriptionResponse>(method, endpoint, request);
         }
 
-        public BaseResponse<GetSubscriptionResponse, ErrorsResponse> UpdateSubscriptionStartAt(string subscriptionId, UpdateSubscriptionStartAtRequest request)
+        public BaseResponse<GetSubscriptionResponse, MundipaggErrorsResponse> UpdateSubscriptionStartAt(string subscriptionId, UpdateSubscriptionStartAtRequest request)
         {
             var method = new HttpMethod("PATCH");
             var endpoint = $"/subscriptions/{subscriptionId}/start-at";
@@ -82,7 +83,7 @@ namespace Mundipagg.Resources
 
         #region Subscription Item
         
-        public BaseResponse<GetSubscriptionItemResponse, ErrorsResponse> GetSubscriptionItem(string subscriptionId, string itemId)
+        public BaseResponse<GetSubscriptionItemResponse, MundipaggErrorsResponse> GetSubscriptionItem(string subscriptionId, string itemId)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/subscriptions/{subscriptionId}/items/{itemId}";
@@ -90,7 +91,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetSubscriptionItemResponse>(method, endpoint, null);
         }
 
-        public BaseResponse<GetSubscriptionItemResponse, ErrorsResponse> CreateSubscriptionItem(string subscriptionId, CreateSubscriptionItemRequest request)
+        public BaseResponse<GetSubscriptionItemResponse, MundipaggErrorsResponse> CreateSubscriptionItem(string subscriptionId, CreateSubscriptionItemRequest request)
         {
             var method = HttpMethod.Post;
             var endpoint = $"/subscriptions/{subscriptionId}/items";
@@ -98,7 +99,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetSubscriptionItemResponse>(method, endpoint, request);
         }
 
-        public BaseResponse<GetSubscriptionItemResponse, ErrorsResponse> DeleteSubscriptionItem(string subscriptionId, string subscriptionItemId)
+        public BaseResponse<GetSubscriptionItemResponse, MundipaggErrorsResponse> DeleteSubscriptionItem(string subscriptionId, string subscriptionItemId)
         {
             var method = HttpMethod.Delete;
             var endpoint = $"/subscriptions/{subscriptionId}/items/{subscriptionItemId}";
@@ -106,16 +107,16 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetSubscriptionItemResponse>(method, endpoint, null);
         }
 
-        public BaseResponse<ListSubscriptionItemsResponse, ErrorsResponse> ListSubscriptionItems(ListSubscriptionItemsRequest request)
+        public BaseResponse<PagingResponse<GetSubscriptionItemResponse>, MundipaggErrorsResponse> ListSubscriptionItems(ListSubscriptionItemsRequest request)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/subscriptions/{request.SubscriptionId}/items";
             var query = request.ToDictionary();
 
-            return this.SendRequest<ListSubscriptionItemsResponse>(method, endpoint, null, query);
+            return this.SendRequest<PagingResponse<GetSubscriptionItemResponse>>(method, endpoint, null, query);
         }
 
-        public BaseResponse<GetSubscriptionItemResponse, ErrorsResponse> UpdateSubscriptionItem(string subscriptionId, string itemId, UpdateSubscriptionItemRequest request)
+        public BaseResponse<GetSubscriptionItemResponse, MundipaggErrorsResponse> UpdateSubscriptionItem(string subscriptionId, string itemId, UpdateSubscriptionItemRequest request)
         {
             var method = HttpMethod.Put;
             var endpoint = $"/subscriptions/{subscriptionId}/items/{itemId}";
@@ -123,7 +124,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetSubscriptionItemResponse>(method, endpoint, request);
         }
 
-        public BaseResponse<GetSubscriptionItemResponse, ErrorsResponse> UpdateCurrentCycleEndDate(string subscriptionId, UpdateCurrentCycleEndDateRequest request)
+        public BaseResponse<GetSubscriptionItemResponse, MundipaggErrorsResponse> UpdateCurrentCycleEndDate(string subscriptionId, UpdateCurrentCycleEndDateRequest request)
         {
             var method = new HttpMethod("PATCH");
             var endpoint = $"/subscriptions/{subscriptionId}/cycle-end-date";
@@ -131,7 +132,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetSubscriptionItemResponse>(method, endpoint, request);
         }
 
-        public BaseResponse<GetSubscriptionResponse, ErrorsResponse> UpdateSubscriptionAffiliationId(string subscriptionId, UpdateSubscriptionAffiliationIdRequest request)
+        public BaseResponse<GetSubscriptionResponse, MundipaggErrorsResponse> UpdateSubscriptionAffiliationId(string subscriptionId, UpdateSubscriptionAffiliationIdRequest request)
         {
             var method = new HttpMethod("PATCH");
             var endpoint = $"/subscriptions/{subscriptionId}/gateway-affiliation-id";
@@ -139,7 +140,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetSubscriptionResponse>(method, endpoint, request);
         }
 
-        public BaseResponse<GetSubscriptionResponse, ErrorsResponse> UpdateSubscriptionBillingDate(string subscriptionId, UpdateSubscriptionBillingDateRequest request)
+        public BaseResponse<GetSubscriptionResponse, MundipaggErrorsResponse> UpdateSubscriptionBillingDate(string subscriptionId, UpdateSubscriptionBillingDateRequest request)
         {
             var method = new HttpMethod("PATCH");
             var endpoint = $"/subscriptions/{subscriptionId}/billing-date";
@@ -147,7 +148,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetSubscriptionResponse>(method, endpoint, request);
         }
 
-        public BaseResponse<GetSubscriptionResponse, ErrorsResponse> UpdateSubscriptionCard(string subscriptionId, UpdateSubscriptionCardRequest request)
+        public BaseResponse<GetSubscriptionResponse, MundipaggErrorsResponse> UpdateSubscriptionCard(string subscriptionId, UpdateSubscriptionCardRequest request)
         {
             var method = new HttpMethod("PATCH");
             var endpoint = $"/subscriptions/{subscriptionId}/card";
@@ -155,7 +156,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetSubscriptionResponse>(method, endpoint, request);
         }
 
-        public BaseResponse<GetSubscriptionResponse, ErrorsResponse> UpdateSubscriptionDueDays(string subscriptionId, UpdateSubscriptionDueDaysRequest request)
+        public BaseResponse<GetSubscriptionResponse, MundipaggErrorsResponse> UpdateSubscriptionDueDays(string subscriptionId, UpdateSubscriptionDueDaysRequest request)
         {
             var method = new HttpMethod("PATCH");
             var endpoint = $"/subscriptions/{subscriptionId}/boleto-due-days";
@@ -167,7 +168,7 @@ namespace Mundipagg.Resources
 
         #region Discount
 
-        public BaseResponse<GetDiscountResponse, ErrorsResponse> CreateDiscount(string subscriptionId, CreateDiscountRequest request)
+        public BaseResponse<GetDiscountResponse, MundipaggErrorsResponse> CreateDiscount(string subscriptionId, CreateDiscountRequest request)
         {
             var method = HttpMethod.Post;
             var endpoint = $"/subscriptions/{subscriptionId}/discounts";
@@ -175,7 +176,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetDiscountResponse>(method, endpoint, request);
         }
 
-        public BaseResponse<GetDiscountResponse, ErrorsResponse> GetDiscount(string subscriptionId, string discountId)
+        public BaseResponse<GetDiscountResponse, MundipaggErrorsResponse> GetDiscount(string subscriptionId, string discountId)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/subscriptions/{subscriptionId}/discounts/{discountId}";
@@ -183,7 +184,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetDiscountResponse>(method, endpoint, null);
         }
 
-        public BaseResponse<GetDiscountResponse, ErrorsResponse> DeleteDiscount(string subscriptionId, string discountId)
+        public BaseResponse<GetDiscountResponse, MundipaggErrorsResponse> DeleteDiscount(string subscriptionId, string discountId)
         {
             var method = HttpMethod.Delete;
             var endpoint = $"/subscriptions/{subscriptionId}/discounts/{discountId}";
@@ -191,20 +192,20 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetDiscountResponse>(method, endpoint, null);
         }
 
-        public BaseResponse<ListDiscountsResponse, ErrorsResponse> ListDiscounts(ListDiscountsRequest request)
+        public BaseResponse<PagingResponse<GetDiscountResponse>, MundipaggErrorsResponse> ListDiscounts(ListDiscountsRequest request)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/subscriptions/{request.SubscriptionId}/discounts/";
             var query = request.ToDictionary();
 
-            return this.SendRequest<ListDiscountsResponse>(method, endpoint, null, query);
+            return this.SendRequest<PagingResponse<GetDiscountResponse>>(method, endpoint, null, query);
         }
 
         #endregion
 
         #region Increment
 
-        public BaseResponse<GetIncrementResponse, ErrorsResponse> GetIncrement(string subscriptionId, string incrementId)
+        public BaseResponse<GetIncrementResponse, MundipaggErrorsResponse> GetIncrement(string subscriptionId, string incrementId)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/subscriptions/{subscriptionId}/increments/{incrementId}";
@@ -212,7 +213,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetIncrementResponse>(method, endpoint, null);
         }
 
-        public BaseResponse<GetIncrementResponse, ErrorsResponse> CreateIncrement(string subscriptionId, CreateIncrementRequest request)
+        public BaseResponse<GetIncrementResponse, MundipaggErrorsResponse> CreateIncrement(string subscriptionId, CreateIncrementRequest request)
         {
             var method = HttpMethod.Post;
             var endpoint = $"/subscriptions/{subscriptionId}/increments";
@@ -220,7 +221,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetIncrementResponse>(method, endpoint, request);
         }
 
-        public BaseResponse<GetIncrementResponse, ErrorsResponse> DeleteIncrement(string subscriptionId, string incrementId)
+        public BaseResponse<GetIncrementResponse, MundipaggErrorsResponse> DeleteIncrement(string subscriptionId, string incrementId)
         {
             var method = HttpMethod.Delete;
             var endpoint = $"/subscriptions/{subscriptionId}/increments/{incrementId}";
@@ -228,20 +229,20 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetIncrementResponse>(method, endpoint, null);
         }
 
-        public BaseResponse<ListIncrementsResponse, ErrorsResponse> ListIncrements(ListIncrementsRequest request)
+        public BaseResponse<PagingResponse<GetIncrementResponse>, MundipaggErrorsResponse> ListIncrements(ListIncrementsRequest request)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/subscriptions/{request.SubscriptionId}/increments/";
             var query = request.ToDictionary();
 
-            return this.SendRequest<ListIncrementsResponse>(method, endpoint, null, query);
+            return this.SendRequest<PagingResponse<GetIncrementResponse>>(method, endpoint, null, query);
         }
 
         #endregion
 
         #region Usage
 
-        public BaseResponse<GetUsageResponse, ErrorsResponse> CreateUsage(string subscriptionId, string itemId, CreateUsageRequest request = null)
+        public BaseResponse<GetUsageResponse, MundipaggErrorsResponse> CreateUsage(string subscriptionId, string itemId, CreateUsageRequest request = null)
         {
             var method = HttpMethod.Post;
             var endpoint = $"/subscriptions/{subscriptionId}/items/{itemId}/usages";
@@ -249,7 +250,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetUsageResponse>(method, endpoint, request);
         }
 
-        public BaseResponse<GetUsagesDetailsResponse, ErrorsResponse> GetCurrentUsages(ListUsageDetailsRequest request)
+        public BaseResponse<GetUsagesDetailsResponse, MundipaggErrorsResponse> GetCurrentUsages(ListUsageDetailsRequest request)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/subscriptions/{request.SubscriptionId}/usages-details/";
@@ -258,16 +259,16 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetUsagesDetailsResponse>(method, endpoint, null, query);
         }
 
-        public BaseResponse<ListUsagesResponse, ErrorsResponse> ListUsages(ListUsagesRequest request)
+        public BaseResponse<PagingResponse<GetUsageResponse>, MundipaggErrorsResponse> ListUsages(ListUsagesRequest request)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/subscriptions/{request.SubscriptionId}/items/{request.ItemId}/usages";
             var query = request.ToDictionary();
 
-            return this.SendRequest<ListUsagesResponse>(method, endpoint, null, query);
+            return this.SendRequest<PagingResponse<GetUsageResponse>>(method, endpoint, null, query);
         }
 
-        public BaseResponse<GetUsageResponse, ErrorsResponse> DeleteUsage(string subscriptionId, string itemId, string usageId)
+        public BaseResponse<GetUsageResponse, MundipaggErrorsResponse> DeleteUsage(string subscriptionId, string itemId, string usageId)
         {
             var method = HttpMethod.Delete;
             var endpoint = $"/subscriptions/{subscriptionId}/items/{itemId}/usages/{usageId}";

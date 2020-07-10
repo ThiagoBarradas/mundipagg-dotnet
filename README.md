@@ -1,10 +1,23 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/cs4qm7f8xropqkae/branch/master?svg=true)](https://ci.appveyor.com/project/ThiagoBarradas/mundipagg-dotnet/branch/master)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ThiagoBarradas_mundipagg-dotnet&metric=alert_status)](https://sonarcloud.io/dashboard?id=ThiagoBarradas_mundipagg-dotnet)
 [![NuGet Downloads](https://img.shields.io/nuget/dt/Mundipagg.svg)](https://www.nuget.org/packages/Mundipagg/)
 [![NuGet Version](https://img.shields.io/nuget/v/Mundipagg.svg)](https://www.nuget.org/packages/Mundipagg/)
+<!-- [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=ThiagoBarradas_mundipagg-dotnet&metric=coverage)](https://sonarcloud.io/dashboard?id=ThiagoBarradas_mundipagg-dotnet) -->
 
 # Mundipagg Client for Dotnet Applications
 
-:construction:
+This is a unofficial api client to integrate with mundipagg api. Please, keep in your mind you cannot get mundipagg support for this SDK, you can only get some help creating a issue here. Thanks and feel free to contribute with this repository. :)
+
+Basic Sample
+
+```
+
+IMundipaggApiClient client = new MundipaggApiClient(secretKey: "sk_xxxx", timeout: 30000);
+
+var request = new CreateOrderRequest();
+
+var result = client.Order.CreateOrder(request);
+
+```
 
 ## Install via NuGet
 

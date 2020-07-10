@@ -185,7 +185,7 @@ namespace Mundipagg.Models.Request
         public string AppId { get; set; }
 
         [JsonProperty("basic_authentication")]
-        public CreateWebhookAuthenticationRequest WebhookAuthentication { get; set; }
+        public CreateWebhookBasicAuthenticationRequest WebhookAuthentication { get; set; }
     }
 
     public class CreateAntifraudSettingsRequest

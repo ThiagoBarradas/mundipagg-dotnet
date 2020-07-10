@@ -1,23 +1,11 @@
-﻿namespace Mundipagg.Models.Request
-{
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
-    [Newtonsoft.Json.JsonObject(NamingStrategyType = typeof(Newtonsoft.Json.Serialization.SnakeCaseNamingStrategy))]
+namespace Mundipagg.Models.Request
+{
+    [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class UpdateMundiPaggSettingsRequest
     {
-
-        /// <summary>
-        /// Chave da empresa
-        /// </summary>
         public string MerchantKey { get; set; }
-
-        /// <summary>
-        /// Código da loja 
-        /// </summary>
-        public string AccountId { get; set; }
-
-        /// <summary>
-        /// Código da empresa
-        /// </summary>
-        public string MerchantId { get; set; }
     }
 }

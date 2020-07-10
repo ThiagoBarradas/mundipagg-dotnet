@@ -8,20 +8,11 @@ using System;
 
 namespace Mundipagg.Models.Webhooks
 {
-    /// <summary>
-    /// Base webhook model
-    /// </summary>
     [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public abstract class BaseWebhook
     {
-        /// <summary>
-        /// Account data
-        /// </summary>
         public Account Account { get; set; }
 
-        /// <summary>
-        /// Create date
-        /// </summary>
         public DateTime CreatedAt { get; set; }
 
         /// <summary>

@@ -8,7 +8,9 @@ namespace Mundipagg.Models.Request
     public class UpdateMerchantRequest
     {
         public string Name { get; set; }
+
         public string ClientId { get; set; }
+
         public Dictionary<string, string> Metadata { get; set; }
     }
 }
