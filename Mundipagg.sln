@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mundipagg", "Mundipagg\Mundipagg.csproj", "{EBA3B994-E6DA-47DB-B943-644DD9BF44AC}"
 EndProject
@@ -10,15 +10,25 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mundipagg.Tests", "Mundipagg.Tests\Mundipagg.Tests.csproj", "{513DEF35-F46C-4889-9924-049F21EF91FD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9291F099-6BD8-4856-82FA-F6241A7D47AA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "git", "git", "{2C715AD0-25F6-4062-9D06-9EE851030D04}"
 	ProjectSection(SolutionItems) = preProject
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
-		appveyor.yml = appveyor.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "github", "github", "{B19D9C3A-070D-456C-B342-323F68A4BE19}"
+	ProjectSection(SolutionItems) = preProject
 		.github\CONTRIBUTING.md = .github\CONTRIBUTING.md
 		.github\ISSUE_TEMPLATE.md = .github\ISSUE_TEMPLATE.md
 		LICENSE = LICENSE
 		.github\PULL_REQUEST_TEMPLATE.md = .github\PULL_REQUEST_TEMPLATE.md
 		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "devops", "devops", "{04322BA6-D62A-4AB8-8B26-37146EC98BD6}"
+	ProjectSection(SolutionItems) = preProject
+		azure-pipelines.yml = azure-pipelines.yml
 	EndProjectSection
 EndProject
 Global
@@ -42,6 +52,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2C715AD0-25F6-4062-9D06-9EE851030D04} = {9291F099-6BD8-4856-82FA-F6241A7D47AA}
+		{B19D9C3A-070D-456C-B342-323F68A4BE19} = {9291F099-6BD8-4856-82FA-F6241A7D47AA}
+		{04322BA6-D62A-4AB8-8B26-37146EC98BD6} = {9291F099-6BD8-4856-82FA-F6241A7D47AA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5A2EA154-3B0E-46CF-9901-B2DBE67D721F}

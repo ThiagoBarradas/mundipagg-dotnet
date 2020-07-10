@@ -11,7 +11,7 @@ namespace Mundipagg.Resources
     {
         public AccountResource(Configuration configuration) : base(configuration) { }
 
-        public BaseResponse<GetAccountResponse, ErrorsResponse> GetAccount(string accountId)
+        public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> GetAccount(string accountId)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/accounts/{accountId}";
@@ -19,7 +19,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, null, authMode: "amk");
         }
 
-        public BaseResponse<PagingResponse<GetAccountResponse>, ErrorsResponse> ListAccounts()
+        public BaseResponse<PagingResponse<GetAccountResponse>, MundipaggErrorsResponse> ListAccounts()
         {
             var method = HttpMethod.Get;
             var endpoint = $"/accounts";
@@ -27,7 +27,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<PagingResponse<GetAccountResponse>>(method, endpoint, null, authMode: "amk");
         }
 
-        public BaseResponse<GetAccountResponse, ErrorsResponse> CreateAccount(CreateAccountRequest request)
+        public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> CreateAccount(CreateAccountRequest request)
         {
             var method = HttpMethod.Post;
             var endpoint = $"/accounts";
@@ -35,15 +35,15 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
         
-        public BaseResponse<ListAccountsResponse, ErrorsResponse> GetTestAccounts(string masterAccountId)
+        public BaseResponse<PagingResponse<GetAccountResponse>, MundipaggErrorsResponse> GetTestAccounts(string masterAccountId)
         {
             var method = HttpMethod.Get;
             var endpoint = $"/accounts/{masterAccountId}/tests";
 
-            return this.SendRequest<ListAccountsResponse>(method, endpoint, null, authMode: "amk");
+            return this.SendRequest<PagingResponse<GetAccountResponse>>(method, endpoint, null, authMode: "amk");
         }
 
-        public BaseResponse<GetAccountResponse, ErrorsResponse> CreateTestAccount(string masterAccountId, CreateAccountRequest request)
+        public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> CreateTestAccount(string masterAccountId, CreateAccountRequest request)
         {
             var method = HttpMethod.Post;
             var endpoint = $"/accounts/{masterAccountId}/tests";
@@ -51,7 +51,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
-        public BaseResponse<GetAccountResponse, ErrorsResponse> UpdateAccount(string accountId, UpdateAccountRequest request)
+        public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateAccount(string accountId, UpdateAccountRequest request)
         {
             var method = HttpMethod.Put;
             var endpoint = $"/accounts/{accountId}";
@@ -59,14 +59,14 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
-        public BaseResponse<GetAccountResponse, ErrorsResponse> UpdateStatus(string accountId, UpdateAccountStatusRequest request) {
+        public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateStatus(string accountId, UpdateAccountStatusRequest request) {
             var method = new HttpMethod("patch");
             var endpoint = $"/accounts/{accountId}/status";
 
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
         
-        public BaseResponse<GetAccountResponse, ErrorsResponse> UpdateMundipaggConfig(string accountId, string merchantKey)
+        public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateMundipaggConfig(string accountId, string merchantKey)
         {
             var method = new HttpMethod("patch");
             var endpoint = $"/accounts/{accountId}/mundipagg-settings";

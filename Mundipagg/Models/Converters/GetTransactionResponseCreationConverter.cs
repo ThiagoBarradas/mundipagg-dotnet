@@ -16,6 +16,7 @@ namespace Mundipagg.Models.Converters
                 { "debit_card",typeof(GetDebitCardTransactionResponse)},
                 { "cash",typeof(GetCashTransactionResponse)},
                 { "credit_card",typeof(GetCreditCardTransactionResponse)},
+                { "private_label",typeof(GetPrivateLabelTransactionResponse)}
             };
         }
     }
