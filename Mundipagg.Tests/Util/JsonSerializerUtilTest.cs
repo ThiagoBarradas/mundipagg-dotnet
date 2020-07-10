@@ -23,8 +23,8 @@ namespace Mundipagg.Tests.Util
             var jsonAsString = JsonConvert.SerializeObject(obj, settings);
 
             // Assert
-            var expected = "{\r\n  \"name\": \"test\",\r\n  \"age\": 18,\r\n  \"customer_type\": \"individual\"\r\n}";
-            Assert.Equal(expected, jsonAsString);
+            var expected = "{\n  \"name\": \"test\",\n  \"age\": 18,\n  \"customer_type\": \"individual\"\n}";
+            Assert.Equal(expected.Replace("\r", ""), jsonAsString);
         }
     }
 
