@@ -24,7 +24,7 @@ namespace Mundipagg.Tests.Util
 
             // Assert
             var expected = "{\n  \"name\": \"test\",\n  \"age\": 18,\n  \"customer_type\": \"individual\"\n}";
-            Assert.Equal(expected.Replace("\r", ""), jsonAsString);
+            Assert.Equal(expected.Replace("\r", ""), jsonAsString.Replace("\r", ""));
         }
     }
 
