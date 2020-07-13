@@ -20,7 +20,8 @@ namespace Mundipagg.Models.Request
 
         public string AuthenticationType { get; set; }
 
-        public UpdateWebhookBasicAuthenticationRequest BasicAuthentication { get; set; }
+        [JsonProperty("basic_authentication")]
+        public UpdateWebhookBasicAuthenticationRequest WebhookAuthentication { get; set; }
 
         public string Version { get; set; }
     }
