@@ -61,6 +61,8 @@ namespace Mundipagg.Models.Request
         public UpdateCashSettingsRequest CashSettings { get; set; }
 
         public UpdateCheckoutSettingsRequest CheckoutSettings { get; set; }
+
+        public UpdateAttemptSettingsRequest AttemptSettings { get; set; }
     }
 
 }

@@ -58,7 +58,10 @@ namespace Mundipagg.Models.Request
         public CreateNotificationSettingsRequest NotificationSettings { get; set; }
 
         public CreateGuaranteedCancellationSettingsRequest GuaranteedCancellationSettings { get; set; }
+
         public CreateWebhookSettingRequest[] WebhokoSettings { get; set; }
+
+        public CreateAttemptSettingsRequest AttemptSettings { get; set; }
     }
 
     public class CreateBoletoSettingsRequest
