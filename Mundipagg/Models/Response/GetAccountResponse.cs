@@ -74,6 +74,8 @@ namespace Mundipagg.Models.Response
 
     public class GetAttemptSettingsResponse
     {
+        public string Id { get; set; }
+
         public string Type { get; set; }
 
         public double[] Intervals { get; set; }
