@@ -68,6 +68,17 @@ namespace Mundipagg.Models.Response
         public GetNotificationSettingsResponse NotificationSettings { get; set; }
 
         public GetGuaranteedCancellationSettingsResponse GuaranteedCancellationSettings { get; set; }
+
+        public GetAttemptSettingsResponse AttemptSettings { get; set; }
+    }
+
+    public class GetAttemptSettingsResponse
+    {
+        public string Type { get; set; }
+
+        public double[] Intervals { get; set; }
+
+        public string Status { get; set; }
     }
 
     public class GetBoletoSettingsResponse
