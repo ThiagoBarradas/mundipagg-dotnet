@@ -58,7 +58,10 @@ namespace Mundipagg.Models.Request
         public CreateNotificationSettingsRequest NotificationSettings { get; set; }
 
         public CreateGuaranteedCancellationSettingsRequest GuaranteedCancellationSettings { get; set; }
+
         public CreateWebhookSettingRequest[] WebhokoSettings { get; set; }
+
+        public CreateAttemptSettingsRequest AttemptSettings { get; set; }
     }
 
     public class CreateBoletoSettingsRequest
@@ -183,6 +186,8 @@ namespace Mundipagg.Models.Request
         public string AuthenticationType { get; set; }
         
         public string AppId { get; set; }
+
+        public bool IsEnabled { get; set; }
 
         [JsonProperty("basic_authentication")]
         public CreateWebhookBasicAuthenticationRequest WebhookAuthentication { get; set; }
