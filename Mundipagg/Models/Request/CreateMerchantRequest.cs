@@ -13,6 +13,8 @@ namespace Mundipagg.Models.Request
 
         public string ClientId { get; set; }
 
+        public string AccountManagementKey { get; set; }
+
         public Dictionary<string, string> Metadata { get; set; }
 
         public CreateMerchantSettingsRequest MerchantSettings { get; set; }
