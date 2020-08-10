@@ -17,6 +17,12 @@ namespace Mundipagg.Models.Request
 
         public string[] Domains { get; set; }
 
+        public string Status { get; set; }
+
+        public string SecretKey { get; set; }
+
+        public string PublicKey { get; set; }
+
         public CreateMundipaggSettingsRequest MundipaggSettings { get; set; }
 
         public CreatePagarmeSettingsRequest PagarmeSettings { get; set; }
