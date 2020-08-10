@@ -11,6 +11,8 @@ namespace Mundipagg.Models.Request
 
         public string ClientId { get; set; }
 
+        public string Status { get; set; }
+
         public Dictionary<string, string> Metadata { get; set; }
     }
 }
