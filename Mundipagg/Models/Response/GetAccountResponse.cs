@@ -27,6 +27,8 @@ namespace Mundipagg.Models.Response
 
         public string[] Domains { get; set; }
 
+        public string[] AllowedIps { get; set; }    
+
         public GetMundipaggSettingsResponse MundipaggSettings { get; set; }
 
         public GetPagarmeSettingsResponse PagarmeSettings { get; set; }
