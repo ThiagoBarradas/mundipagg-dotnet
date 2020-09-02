@@ -68,5 +68,14 @@ namespace Mundipagg.Resources.Interface
         /// <param name="merchantKey"></param>
         /// <returns></returns>
         BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateMundipaggConfig(string accountId, string merchantKey);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountId"></param>
+        /// <param name="apiKey"></param>
+        /// <param name="cryptoKey"></param>
+        /// <returns></returns>
+        BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdatePagarmeConfig(string accountId, string apiKey, string cryptoKey);
     }
 }
