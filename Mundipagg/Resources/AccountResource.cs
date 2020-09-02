@@ -73,5 +73,13 @@ namespace Mundipagg.Resources
 
             return this.SendRequest<GetAccountResponse>(method, endpoint, new { merchantKey }, authMode: "amk");
         }
+
+        public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdatePagarmeConfig(string accountId, string apiKey, string cryptoKey)
+        {
+            var method = new HttpMethod("patch");
+            var endpoint = $"/accounts/{accountId}/pagarme-settings";
+
+            return this.SendRequest<GetAccountResponse>(method, endpoint, new { apiKey, cryptoKey }, authMode: "amk");
+        }
     }
 }
