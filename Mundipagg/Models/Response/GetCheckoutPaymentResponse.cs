@@ -25,6 +25,8 @@ namespace Mundipagg.Models.Response
         public DateTime CreatedAt { get; set; }
 
         public GetCheckoutCreditCardPaymentResponse CreditCard { get; set; }
+        
+        public GetCheckoutVoucherPaymentResponse Voucher { get; set; }
 
         public string Currency { get; set; }
 
