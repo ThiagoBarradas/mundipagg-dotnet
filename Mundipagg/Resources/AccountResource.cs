@@ -66,12 +66,20 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
         
-        public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateMundipaggConfig(string accountId, string merchantKey)
+        public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateMundipaggConfig(string accountId, UpdateMundipaggConfigRequest request)
         {
             var method = new HttpMethod("patch");
             var endpoint = $"/accounts/{accountId}/mundipagg-settings";
 
-            return this.SendRequest<GetAccountResponse>(method, endpoint, new { merchantKey }, authMode: "amk");
+            return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
+        }
+
+        public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdatePagarmeConfig(string accountId, UpdatePagarmeConfigRequest request)
+        {
+            var method = new HttpMethod("patch");
+            var endpoint = $"/accounts/{accountId}/pagarme-settings";
+
+            return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
     }
 }
