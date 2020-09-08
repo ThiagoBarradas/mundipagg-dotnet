@@ -22,6 +22,8 @@ namespace Mundipagg.Models.Request
         public CreateCheckoutBoletoPaymentRequest Boleto { get; set; }
 
         public CreateCheckoutCreditCardPaymentRequest CreditCard { get; set; }
+        
+        public CreateCheckoutVoucherPaymentRequest Voucher { get; set; }
 
         public bool? CustomerEditable { get; set; }
 
