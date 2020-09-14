@@ -43,5 +43,13 @@ namespace Mundipagg.Resources
 
             return this.SendRequest<GetMerchantResponse>(method, endpoint, request, authMode: "token");
         }
+
+        public BaseResponse<GetMerchantResponse, MundipaggErrorsResponse> UpdateMerchantConfig(string merchantId, UpdateMerchantSettingsRequest request)
+        {
+            var method = new HttpMethod("patch");
+            var endpoint = $"/merchants/{merchantId}/merchant-settings";
+
+            return this.SendRequest<GetMerchantResponse>(method, endpoint, request, authMode: "token");
+        }
     }
 }
