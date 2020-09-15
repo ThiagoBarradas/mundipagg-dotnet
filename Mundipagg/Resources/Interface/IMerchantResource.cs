@@ -36,5 +36,13 @@ namespace Mundipagg.Resources.Interface
         /// <param name="request"></param>
         /// <returns></returns>
         BaseResponse<GetMerchantResponse, MundipaggErrorsResponse> UpdateMerchantStatus(string merchantId, UpdateMerchantStatusRequest request);
+
+        /// <summary>
+        /// Update settings of a Merchant
+        /// </summary>
+        /// <param name="merchantId"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        BaseResponse<GetMerchantResponse, MundipaggErrorsResponse> UpdateMerchantSettings(string merchantId, UpdateMerchantSettingsRequest request);
     }
 }
