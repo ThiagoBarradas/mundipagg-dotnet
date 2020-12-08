@@ -76,5 +76,150 @@ namespace Mundipagg.Resources.Interface
         /// <param name="request"></param>
         /// <returns></returns>
         BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdatePagarmeConfig(string accountId, UpdatePagarmeConfigRequest request);
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountId"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateCreditCardSettings(string accountId, UpdateCreditCardSettingsRequest request);
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountId"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateDebitCardSettings(string accountId, UpdateDebitCardSettingsRequest request);
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountId"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateBoletoSettings(string accountId, UpdateBoletoSettingsRequest request);
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountId"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateBankTransferSettings(string accountId, UpdateBankTransferSettingsRequest request);
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountId"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateWalletSettings(string accountId, UpdateWalletSettingsRequest request);
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountId"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateSafetyPaySettings(string accountId, UpdateSafetyPaySettingsRequest request);
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountId"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateVoucherSettings(string accountId, UpdateVoucherSettingsRequest request);
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountId"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateWebhookSettings(string accountId, UpdateWebhookSettingsRequest request);
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountId"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateAttemptSettings(string accountId, UpdateAttemptSettingsRequest request);
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountId"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateCheckoutSettings(string accountId, UpdateCheckoutSettingsRequest request);
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountId"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateRenewCardSettings(string accountId, UpdateRenewCardSettingsRequest request);
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountId"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateSplitSettings(string accountId, UpdateSplitSettingsRequest request);
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountId"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateOrderSettings(string accountId, UpdateOrderSettingsRequest request);
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountId"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateSubscriptionSettings(string accountId, UpdateSubscriptionSettingsRequest request);
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountId"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateNotificationSettings(string accountId, UpdateNotificationSettingsRequest request);
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountId"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateGuaranteedCancellationSettings(string accountId, UpdateGuaranteedCancellationSettingsRequest request);
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountId"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateCashSettings(string accountId, UpdateCashSettingsRequest request);
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountId"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateAntifraudSettings(string accountId, UpdateCashSettingsRequest request);
+
     }
 }
