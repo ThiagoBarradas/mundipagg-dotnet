@@ -209,5 +209,21 @@ namespace Mundipagg.Resources
 
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
+
+        public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateWebhookSettings(string accountId, UpdateWebhookSettingsRequest request)
+        {
+            var method = new HttpMethod("patch");
+            var endpoint = $"/accounts/{accountId}/webhook-settings";
+
+            return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
+        }
+
+        public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateAttemptSettings(string accountId, UpdateAttemptSettingsRequest request)
+        {
+            var method = new HttpMethod("patch");
+            var endpoint = $"/accounts/{accountId}/attempt-settings";
+
+            return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
+        }
     }
 }
