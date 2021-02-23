@@ -36,7 +36,7 @@ namespace Mundipagg.Resources
             var endpoint = $"/customers";
             var query = request.ToDictionary();
 
-            return this.SendRequest<PagingResponse<GetCustomerResponse>>(method, endpoint, query);
+            return this.SendRequest<PagingResponse<GetCustomerResponse>>(method, endpoint, query: query);
         }
 
         public BaseResponse<GetCustomerResponse, MundipaggErrorsResponse> UpdateCustomer(string customerId, UpdateCustomerRequest request)
