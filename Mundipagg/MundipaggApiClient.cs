@@ -85,6 +85,8 @@ namespace Mundipagg
 
         public IInvoiceResource Invoice { get; private set; }
 
+        public IRecipientResource Recipient { get; private set; }
+
         public IOrderResource Order { get; private set; }
 
         public ISubscriptionResource Subscription { get; private set; }
@@ -142,6 +144,7 @@ namespace Mundipagg
             this.Invoice = new InvoiceResource(configuration);
             this.Order = new OrderResource(configuration);
             this.Subscription = new SubscriptionResource(configuration);
+            this.Recipient = new RecipientResource(configuration);
             this.Configuration = configuration;
         }
     }
