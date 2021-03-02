@@ -18,6 +18,20 @@ namespace Mundipagg.Resources.Interface
         BaseResponse<GetRecipientResponse, MundipaggErrorsResponse> GetRecipient(string recipientId);
 
         /// <summary>
+        /// Create a recipient
+        /// </summary>
+        /// <param name="request"></param>
+        /// <return>Returns BaseResponse<GetRecipientResponse> response from the API call</return>
+        BaseResponse<GetRecipientResponse, MundipaggErrorsResponse> CreateRecipient(CreateRecipientRequest request);
+
+        /// <summary>
+        /// Update a recipient
+        /// </summary>
+        /// <param name="request"></param>
+        /// <return>Returns BaseResponse<GetRecipientResponse> response from the API call</return>
+        BaseResponse<GetRecipientResponse, MundipaggErrorsResponse> UpdateRecipient(string recipientId, UpdateRecipientRequest request);
+
+        /// <summary>
         /// List recipients
         /// </summary>
         /// <param name="request"></param>

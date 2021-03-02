@@ -12,6 +12,14 @@ namespace Mundipagg.Resources
     {
         public RecipientResource(Configuration configuration) : base(configuration) { }
 
+        public BaseResponse<GetRecipientResponse, MundipaggErrorsResponse> CreateRecipient(CreateRecipientRequest request)
+        {
+            var method = HttpMethod.Post;
+            var endpoint = $"/recipients";
+
+            return this.SendRequest<GetRecipientResponse>(method, endpoint, request);
+        }
+
         public BaseResponse<GetRecipientResponse, MundipaggErrorsResponse> GetRecipient(string recipientId)
         {
             var method = HttpMethod.Get;
@@ -27,6 +35,14 @@ namespace Mundipagg.Resources
             var query = request.ToDictionary();
 
             return this.SendRequest<PagingResponse<GetRecipientResponse>>(method, endpoint, null, query);
+        }
+
+        public BaseResponse<GetRecipientResponse, MundipaggErrorsResponse> UpdateRecipient(string recipientId, UpdateRecipientRequest request)
+        {
+            var method = HttpMethod.Put;
+            var endpoint = $"/recipients/{recipientId}";
+
+            return this.SendRequest<GetRecipientResponse>(method, endpoint, request);
         }
     }
 }
