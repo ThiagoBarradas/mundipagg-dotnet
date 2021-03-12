@@ -34,6 +34,8 @@ namespace Mundipagg.Models.Response
 
         public List<GetGatewayRecipientResponse> GatewayRecipients { get; set; }
 
+        public GetAutomaticAnticipationSettingsResponse AutomaticAnticipationSettings { get; set; }
+
         public Dictionary<string, string> Metadata { get; set; }
     }
 }
