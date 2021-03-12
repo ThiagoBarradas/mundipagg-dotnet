@@ -1,4 +1,6 @@
-﻿namespace Mundipagg.Models.Response
+﻿using System.Collections.Generic;
+
+namespace Mundipagg.Models.Response
 {
     public class GetAutomaticAnticipationSettingsResponse
     {
@@ -6,8 +8,10 @@
 
         public string Type { get; set; }
 
-        public decimal VolumePercentage { get; set; }
+        public int VolumePercentage { get; set; }
 
-        public int Delay { get; set; }
+        public int? Delay { get; set; }
+
+        public List<int> Days { get; set; }
     }
 }
