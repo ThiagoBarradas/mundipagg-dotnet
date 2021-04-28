@@ -55,7 +55,7 @@ namespace Mundipagg
             this.Initialize(configuration.Clone());
         }
 
-        public IChargeResource Charge { get; private set; }
+        private Configuration _configuration { get; set; }
 
         public Configuration Configuration
         {
@@ -70,12 +70,14 @@ namespace Mundipagg
                 this.Invoice.Configuration = this._configuration;
                 this.Order.Configuration = this._configuration;
                 this.Subscription.Configuration = this._configuration;
-                //this.Plans.Configuration = this._configuration;
+                this.Plan.Configuration = this._configuration;
                 //this.Recipients.Configuration = this._configuration;
                 //this.Sellers.Configuration = this._configuration;
                 //this.Tokens.Configuration = this._configuration;
             }
         }
+
+        public IChargeResource Charge { get; private set; }
 
         public IAccountResource Account { get; private set; }
 
@@ -87,11 +89,11 @@ namespace Mundipagg
 
         public IOrderResource Order { get; private set; }
 
+        public IPlanResource Plan { get; private set; }
+
         public ISubscriptionResource Subscription { get; private set; }
 
         public IWebhookResource Webhook { get; private set; }
-
-        private Configuration _configuration { get; set; }
 
         /// <summary>
         /// Update configuration - if null, new values are ignored
@@ -142,6 +144,7 @@ namespace Mundipagg
             this.Invoice = new InvoiceResource(configuration);
             this.Order = new OrderResource(configuration);
             this.Subscription = new SubscriptionResource(configuration);
+            this.Plan = new PlanResource(configuration);
             this.Configuration = configuration;
         }
     }
