@@ -18,6 +18,11 @@ namespace Mundipagg
         IMerchantResource Merchant { get; }
 
         /// <summary>
+        /// Recipients resource
+        /// </summary>
+        IRecipientResource Recipient { get; }
+
+        /// <summary>
         /// Customers resource
         /// </summary>
         ICustomerResource Customer { get; }
