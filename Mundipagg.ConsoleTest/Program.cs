@@ -17,10 +17,15 @@ namespace Mundipagg.ConsoleTest
                 AccountManagementKey = "amk",
                 MpToken = "token",
                 SecretKey = "sk",
-                RequestKey = "rk"
+                RequestKey = "rk",
+                ApiUrl = "https://stgapi.mundipagg.com/core/v1"
             };
 
             IMundipaggApiClient client = new MundipaggApiClient(config);
+
+            var r = client.Recipient.GetRecipient("rp_xxx");
+            var r1 = client.Recipient.ListRecipients(new ListRecipientsRequest { Page = 1, Size = 2 });
+            var r2 = client.Recipient.ListRecipients(new ListRecipientsRequest { Page = 2, Size = 1 });
 
             var result = client.Merchant.CreateMerchant(new CreateMerchantRequest { Name = "asd" });
             var result1 = client.Account.CreateAccount(new CreateAccountRequest { Name = "asd" });

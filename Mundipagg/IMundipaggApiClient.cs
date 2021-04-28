@@ -18,6 +18,11 @@ namespace Mundipagg
         IMerchantResource Merchant { get; }
 
         /// <summary>
+        /// Recipients resource
+        /// </summary>
+        IRecipientResource Recipient { get; }
+
+        /// <summary>
         /// Customers resource
         /// </summary>
         ICustomerResource Customer { get; }
@@ -46,7 +51,12 @@ namespace Mundipagg
         /// Subscriptions resource
         /// </summary>
         ISubscriptionResource Subscription { get; }
-        
+
+        /// <summary>
+        /// Plans resource
+        /// </summary>
+        IPlanResource Plan { get; }
+
         /// <summary>
         /// Update configuration
         /// </summary>

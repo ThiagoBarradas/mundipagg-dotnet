@@ -23,8 +23,8 @@ namespace Mundipagg.Models.Request
 
         public string HolderType { get; set; }
 
-        public Dictionary<string, string> Metadata { get; set; }
-
         public string Type { get; set; }
+
+        public Dictionary<string, string> Metadata { get; set; }
     }
 }
