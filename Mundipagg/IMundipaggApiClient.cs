@@ -51,7 +51,12 @@ namespace Mundipagg
         /// Subscriptions resource
         /// </summary>
         ISubscriptionResource Subscription { get; }
-        
+
+        /// <summary>
+        /// Plans resource
+        /// </summary>
+        IPlanResource Plan { get; }
+
         /// <summary>
         /// Update configuration
         /// </summary>
