@@ -17,7 +17,7 @@ namespace Mundipagg.Models.Request
 
         public DateTime? DueSince { get; set; }
 
-        public DateTime? Dueuntil { get; set; }
+        public DateTime? DueUntil { get; set; }
 
         public string CustomerId { get; set; }
 
