@@ -13,6 +13,10 @@ namespace Mundipagg.Models.Request
 
         public DateTime? CreatedUntil { get; set; }
 
+        public DateTime? DueSince { get; set; }
+
+        public DateTime? Dueuntil { get; set; }
+
         public string CustomerId { get; set; }
 
         public string Status { get; set; }
