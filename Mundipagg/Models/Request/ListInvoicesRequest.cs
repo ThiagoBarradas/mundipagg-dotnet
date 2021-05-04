@@ -7,11 +7,17 @@ namespace Mundipagg.Models.Request
     [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class ListInvoicesRequest : BaseListRequest
     {
+        public string Id { get; set; }
+
         public string Code { get; set; }
 
         public DateTime? CreatedSince { get; set; }
 
         public DateTime? CreatedUntil { get; set; }
+
+        public DateTime? DueSince { get; set; }
+
+        public DateTime? DueUntil { get; set; }
 
         public string CustomerId { get; set; }
 
