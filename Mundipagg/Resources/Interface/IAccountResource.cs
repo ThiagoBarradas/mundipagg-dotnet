@@ -84,7 +84,15 @@ namespace Mundipagg.Resources.Interface
         /// <param name="request"></param>
         /// <returns></returns>
         BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateCreditCardSettings(string accountId, UpdateCreditCardSettingsRequest request);
-        
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountId"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdatePixSettings(string accountId, UpdatePixSettingsRequest request);
+
         /// <summary>
         /// 
         /// </summary>

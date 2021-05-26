@@ -90,6 +90,14 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
+        public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdatePixSettings(string accountId, UpdatePixSettingsRequest request)
+        {
+            var method = new HttpMethod("patch");
+            var endpoint = $"/accounts/{accountId}/pix-settings";
+
+            return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
+        }
+
         public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateDebitCardSettings(string accountId, UpdateDebitCardSettingsRequest request)
         {
             var method = new HttpMethod("patch");
