@@ -37,6 +37,8 @@ namespace Mundipagg.Models.Response
 
         public GetCreditCardSettingsResponse CreditCardSettings { get; set; }
 
+        public GetPixSettingsResponse PixSettings { get; set; }
+
         public GetDebitCardSettingsResponse DebitCardSettings { get; set; }
 
         public GetVoucherSettingsResponse VoucherSettings { get; set; }
@@ -121,6 +123,15 @@ namespace Mundipagg.Models.Response
     }
 
     public class GetCreditCardSettingsResponse
+    {
+        public DateTime UpdatedAt { get; set; }
+
+        public bool Enabled { get; set; }
+
+        public string Gateway { get; set; }
+    }
+
+    public class GetPixSettingsResponse
     {
         public DateTime UpdatedAt { get; set; }
 
