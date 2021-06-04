@@ -44,5 +44,13 @@ namespace Mundipagg.Resources
 
             return this.SendRequest<GetRecipientResponse>(method, endpoint, request);
         }
+
+        public BaseResponse<GetRecipientResponse, MundipaggErrorsResponse> ImportRecipient(CreateImportRecipientRequest request)
+        {
+            var method = HttpMethod.Post;
+            var endpoint = $"/recipients/import";
+
+            return this.SendRequest<GetRecipientResponse>(method, endpoint, request);
+        }
     }
 }
