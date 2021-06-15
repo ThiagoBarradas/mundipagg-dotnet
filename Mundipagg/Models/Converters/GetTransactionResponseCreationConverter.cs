@@ -13,6 +13,7 @@ namespace Mundipagg.Models.Converters
                 { "bank_transfer",typeof(GetBankTransferTransactionResponse)},
                 { "safetypay",typeof(GetSafetyPayTransactionResponse)},
                 { "boleto",typeof(GetBoletoTransactionResponse)},
+                { "pix",typeof(GetPixTransactionResponse)},
                 { "debit_card",typeof(GetDebitCardTransactionResponse)},
                 { "cash",typeof(GetCashTransactionResponse)},
                 { "credit_card",typeof(GetCreditCardTransactionResponse)},

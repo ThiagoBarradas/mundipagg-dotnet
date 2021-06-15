@@ -36,5 +36,7 @@ namespace Mundipagg.Models.Request
         public List<CreateSplitRequest> Split { get; set; }
 
         public CreateVoucherPaymentRequest Voucher { get; set; }
+
+        public CreatePixPaymentRequest Pix { get; set; }
     }
 }
