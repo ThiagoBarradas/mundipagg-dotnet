@@ -104,8 +104,107 @@ namespace Mundipagg.ConsoleTest
                 Shipping = null
             };
 
-            client.UpdateConfiguration(secretKey: "sk_test_4GANDgoinHgDJ0VX");
-            var createPixResult = client.Order.CreateOrder(null, createPixOrder);
+            //CreateCheckoutPixOrder
+            var createCheckoutPixOrder = new CreateOrderRequest
+            {
+                AntifraudEnabled = false,
+                Closed = false,
+                Code = "or_123",
+                Currency = "BRL",
+                Customer = new CreateCustomerRequest()
+                {
+                    Name = "teste1hj",
+                    Email = "teste1hj@gmail.com",
+                    Document = "12345678978",
+                    Type = "individual",
+                    Phones = new CreatePhonesRequest()
+                    {
+                        HomePhone = new CreatePhoneRequest()
+                        {
+                            AreaCode = "22",
+                            CountryCode = "55",
+                            Number = "12345678"
+                        }
+                    }
+                },
+                CustomerId = null,
+                Device = new CreateDeviceRequest(),
+                Ip = null,
+                Items = new List<CreateOrderItemRequest>
+                {
+                    new CreateOrderItemRequest
+                    {
+                        Amount = 10000,
+                        Category = "beleza",
+                        Code = "pro_123",
+                        Description = "maquiagem",
+                        Quantity = 1,
+                        Seller = null,
+                        SellerId = null
+                    }
+                },
+                Location = null,
+                Metadata = new Dictionary<string, string>(),
+                Payments = new List<CreatePaymentRequest>()
+                {
+                    new CreatePaymentRequest
+                    {
+                        Amount = 10000,
+                        BankTransfer = null,
+                        Boleto = null,
+                        Pix = null,
+                        Cash = null,
+                        Checkout = new CreateCheckoutPaymentRequest
+                        {
+                            AcceptedMultiPaymentMethods = null,
+                            AcceptedPaymentMethods = new List<string>{"pix"},
+                            AcceptedBrands = null,
+                            BankTransfer = null,
+                            BillingAddress = null,
+                            BillingAddressEditable = false,
+                            Boleto = null,
+                            CreditCard = null,
+                            Voucher = null,
+                            CustomerEditable = null,
+                            DebitCard = null,
+                            Pix = new CreateCheckoutPixPaymentRequest
+                            {
+                                ExpiresAt = null,
+                                ExpiresIn = 600,
+                                AdditionalInformation = new List<PixAdditionalInformation>()
+                                {
+                                    new PixAdditionalInformation()
+                                    {
+                                        Name = "Mensagem",
+                                        Value = "Esta é uma mensagem do checkout"
+                                    }
+                                }
+                            },
+                            DefaultPaymentMethod = "Pix",
+                            ExpiresIn = 900,
+                            GatewayAffiliationId = null,
+                            SkipCheckoutSuccessPage = false,
+                            SuccessUrl = null
+                        },
+                        CreditCard = null,
+                        Currency = null,
+                        Customer = null,
+                        CustomerId = null,
+                        DebitCard = null,
+                        GatewayAffiliationId = "123",
+                        Metadata = null,
+                        PaymentMethod = "checkout",
+                        Split = null,
+                        Voucher = null
+                    }
+                },
+                SessionId = "123",
+                Shipping = null
+            };
+
+            client.UpdateConfiguration(secretKey: "sk_test_WoE1e30U9YIAvM9R");
+            // var createPixResult = client.Order.CreateOrder(null, createPixOrder);
+            var createPixResult = client.Order.CreateOrder(null, createCheckoutPixOrder);
 
             var teste = createPixResult.Data;
 
