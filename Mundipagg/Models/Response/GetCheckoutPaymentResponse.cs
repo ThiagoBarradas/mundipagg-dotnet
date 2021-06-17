@@ -57,5 +57,7 @@ namespace Mundipagg.Models.Response
         public string SuccessUrl { get; set; }
 
         public DateTime UpdatedAt { get; set; }
+
+        public GetCheckoutPixPaymentResponse Pix { get; set; }
     }
 }
