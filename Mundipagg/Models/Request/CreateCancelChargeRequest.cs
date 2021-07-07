@@ -9,6 +9,6 @@ namespace Mundipagg.Models.Request
     {
         public int? Amount { get; set; }
 
-        public List<CreateCancelChargeSplitRulesRequest> SplitRules { get; set; }
+        public List<CreateCancelChargeSplitRequest> Split { get; set; }
     }
 }
