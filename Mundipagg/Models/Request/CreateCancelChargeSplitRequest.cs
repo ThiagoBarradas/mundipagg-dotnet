@@ -12,6 +12,6 @@ namespace Mundipagg.Models.Request
 
         public string RecipientId { get; set; }
 
-        public CreateSplitOptionsRequest SplitOptions { get; set; } = new CreateSplitOptionsRequest();
+        public CreateSplitOptionsRequest Options { get; set; } = new CreateSplitOptionsRequest();
     }
 }
