@@ -39,5 +39,7 @@ namespace Mundipagg.Models.Response
         public string Type { get; set; }
 
         public DateTime UpdatedAt { get; set; }
+
+        public string BrandReference { get; set; }
     }
 }

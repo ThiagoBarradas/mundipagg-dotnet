@@ -29,5 +29,7 @@ namespace Mundipagg.Models.Response
         public string StatementDescriptor { get; set; }
 
         public string ThreedAuthenticationUrl { get; set; }
+
+        public string InstallmentType { get; set; }
     }
 }

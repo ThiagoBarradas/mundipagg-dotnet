@@ -2,6 +2,7 @@
 using Mundipagg.Models.Request;
 using Mundipagg.Models.Response;
 using RestSharp.Easy.Models;
+using System.Collections.Generic;
 
 namespace Mundipagg.Resources.Interface
 {
@@ -25,6 +26,13 @@ namespace Mundipagg.Resources.Interface
         /// <param name="body">Required parameter: Request for creating an order</param>
         /// <return>Returns Models.BaseResponse<GetOrderResponse> response from the API call</return>
         BaseResponse<GetOrderResponse, MundipaggErrorsResponse> CreateOrder(string idempotencyKey, CreateOrderRequest body);
+
+        /// <summary>
+        /// Creates a new Order
+        /// </summary>
+        /// <param name="body">Required parameter: Request for creating an order</param>
+        /// <return>Returns Models.BaseResponse<GetOrderResponse> response from the API call</return>
+        BaseResponse<GetOrderResponse, MundipaggErrorsResponse> CreateOrder(CreateOrderRequest body, Dictionary<string, string> headers);
 
         /// <summary>
         /// Lists orders
