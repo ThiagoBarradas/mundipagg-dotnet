@@ -16,27 +16,26 @@ namespace Mundipagg.ConsoleTest
 
             Configuration config = new Configuration
             {
-                AccountManagementKey = "amk",
-                MpToken = "token",
-                SecretKey = "sk",
-                RequestKey = "rk",
+                // AccountManagementKey = "amk",
+                // MpToken = "token",
+                SecretKey = "sk_test_WoE1e30U9YIAvM9R",
+                // RequestKey = "rk",
                 ApiUrl = "https://stgapi.mundipagg.com/core/v1"
             };
 
             IMundipaggApiClient client = new MundipaggApiClient(config);
 
-            //CreatePixOrder
-            var createPixOrder = new CreateOrderRequest
+            // Create Order AuthOnly
+            var createOrder = new CreateOrderRequest
             {
-                AntifraudEnabled = false,
-                Closed = false,
-                Code = "or_123",
-                Currency = "BRL",
+                AntifraudEnabled = null,
+                Closed = true,
+                Currency = null,
                 Customer = new CreateCustomerRequest()
                 {
                     Name = "teste1hj",
                     Email = "teste1hj@gmail.com",
-                    Document = "12345678978",
+                    Document = "38321618804",
                     Type = "individual",
                     Phones = new CreatePhonesRequest()
                     {
@@ -48,9 +47,6 @@ namespace Mundipagg.ConsoleTest
                         }
                     }
                 },
-                CustomerId = null,
-                Device = new CreateDeviceRequest(),
-                Ip = null,
                 Items = new List<CreateOrderItemRequest>
                 {
                     new CreateOrderItemRequest
@@ -64,87 +60,6 @@ namespace Mundipagg.ConsoleTest
                         SellerId = null
                     }
                 },
-                Location = null,
-                Metadata = new Dictionary<string, string>(),
-                Payments = new List<CreatePaymentRequest>()
-                {
-                    new CreatePaymentRequest
-                    {
-                        Amount = 10000,
-                        BankTransfer = null,
-                        Boleto = null,
-                        Pix = new CreatePixPaymentRequest
-                        {
-                            ExpiresAt = null,
-                            ExpiresIn = 600,
-                            AdditionalInformation = new List<PixAdditionalInformation>()
-                            {
-                                new PixAdditionalInformation()
-                                {
-                                    Name = "Mensagem",
-                                    Value = "Esta é uma mensagem do Pix"
-                                }
-                            }
-                        },
-                        Cash = null,
-                        Checkout = null,
-                        CreditCard = null,
-                        Currency = null,
-                        Customer = null,
-                        CustomerId = null,
-                        DebitCard = null,
-                        GatewayAffiliationId = "123",
-                        Metadata = null,
-                        PaymentMethod = "pix",
-                        Split = null,
-                        Voucher = null
-                    }
-                },
-                SessionId = "123",
-                Shipping = null
-            };
-
-            //CreateCheckoutPixOrder
-            var createCheckoutPixOrder = new CreateOrderRequest
-            {
-                AntifraudEnabled = false,
-                Closed = false,
-                Code = "or_123",
-                Currency = "BRL",
-                Customer = new CreateCustomerRequest()
-                {
-                    Name = "teste1hj",
-                    Email = "teste1hj@gmail.com",
-                    Document = "12345678978",
-                    Type = "individual",
-                    Phones = new CreatePhonesRequest()
-                    {
-                        HomePhone = new CreatePhoneRequest()
-                        {
-                            AreaCode = "22",
-                            CountryCode = "55",
-                            Number = "12345678"
-                        }
-                    }
-                },
-                CustomerId = null,
-                Device = new CreateDeviceRequest(),
-                Ip = null,
-                Items = new List<CreateOrderItemRequest>
-                {
-                    new CreateOrderItemRequest
-                    {
-                        Amount = 10000,
-                        Category = "beleza",
-                        Code = "pro_123",
-                        Description = "maquiagem",
-                        Quantity = 1,
-                        Seller = null,
-                        SellerId = null
-                    }
-                },
-                Location = null,
-                Metadata = new Dictionary<string, string>(),
                 Payments = new List<CreatePaymentRequest>()
                 {
                     new CreatePaymentRequest
@@ -154,59 +69,306 @@ namespace Mundipagg.ConsoleTest
                         Boleto = null,
                         Pix = null,
                         Cash = null,
-                        Checkout = new CreateCheckoutPaymentRequest
+                        Checkout = null,
+                        CreditCard = new CreateCreditCardPaymentRequest()
                         {
-                            AcceptedMultiPaymentMethods = null,
-                            AcceptedPaymentMethods = new List<string>{"pix"},
-                            AcceptedBrands = null,
-                            BankTransfer = null,
-                            BillingAddress = null,
-                            BillingAddressEditable = false,
-                            Boleto = null,
-                            CreditCard = null,
-                            Voucher = null,
-                            CustomerEditable = null,
-                            DebitCard = null,
-                            Pix = new CreateCheckoutPixPaymentRequest
+                            Capture = false,
+                            Card = new CreateCardRequest()
                             {
-                                ExpiresAt = null,
-                                ExpiresIn = 600,
-                                AdditionalInformation = new List<PixAdditionalInformation>()
+                                Brand = "Visa",
+                                Cvv = "123",
+                                Number = "4000000000000010",
+                                Type = "credit",
+                                ExpMonth = 02,
+                                ExpYear = 25,
+                                HolderDocument = "76876122646",
+                                HolderName = "Moises N Consegue",
+                                BillingAddress = new CreateAddressRequest()
                                 {
-                                    new PixAdditionalInformation()
-                                    {
-                                        Name = "Mensagem",
-                                        Value = "Esta é uma mensagem do checkout"
-                                    }
+                                    City = "Niteroi",
+                                    Country = "BR",
+                                    Line1 = "12, Rua Jorge Luís da Silva, Tenente Jardim",
+                                    Neighborhood = "Tenente Jardim",
+                                    Number = "12",
+                                    State = "RJ",
+                                    Street = "Rua Jorge Luís da Silva",
+                                    ZipCode = "24110730"
                                 }
                             },
-                            DefaultPaymentMethod = "Pix",
-                            ExpiresIn = 900,
-                            GatewayAffiliationId = null,
-                            SkipCheckoutSuccessPage = false,
-                            SuccessUrl = null
                         },
-                        CreditCard = null,
                         Currency = null,
                         Customer = null,
                         CustomerId = null,
                         DebitCard = null,
-                        GatewayAffiliationId = "123",
+                        GatewayAffiliationId = null,
                         Metadata = null,
-                        PaymentMethod = "checkout",
+                        PaymentMethod = "credit_card",
                         Split = null,
                         Voucher = null
                     }
                 },
-                SessionId = "123",
+                SessionId = null,
                 Shipping = null
             };
-
             client.UpdateConfiguration(secretKey: "sk_test_WoE1e30U9YIAvM9R");
-            // var createPixResult = client.Order.CreateOrder(null, createPixOrder);
-            var createPixResult = client.Order.CreateOrder(null, createCheckoutPixOrder);
+            var createOrderResult = client.Order.CreateOrder(null, createOrder);
+            var charge = createOrderResult.Data.Charges[0];
 
-            var teste = createPixResult.Data;
+            // Capture Charge With Split
+            var recipient = client.Recipient.CreateRecipient(new CreateRecipientRequest()
+            {
+                Document = "85191834500",
+                Email = "moises@teste.com",
+                Type = "individual",
+                Name = "Moises Recipient",
+                DefaultBankAccount = new CreateBankAccountRequest()
+                {
+                    Bank = "341",
+                    Type = "checking",
+                    AccountNumber = "12345",
+                    BranchNumber = "1234",
+                    HolderDocument = "85191834500",
+                    HolderName = "Moises",
+                    HolderType = "individual",
+                    AccountCheckDigit = "2",
+                    BranchCheckDigit = "7"
+                }
+            });
+
+            var recipient2 = client.Recipient.CreateRecipient(new CreateRecipientRequest()
+            {
+                Document = "85191834500",
+                Email = "moises@teste.com",
+                Type = "individual",
+                Name = "Moises Recipient 2",
+                DefaultBankAccount = new CreateBankAccountRequest()
+                {
+                    Bank = "341",
+                    Type = "checking",
+                    AccountNumber = "12345",
+                    BranchNumber = "1234",
+                    HolderDocument = "85191834500",
+                    HolderName = "Moises2",
+                    HolderType = "individual",
+                    AccountCheckDigit = "2",
+                    BranchCheckDigit = "7"
+                }
+            });
+
+            var captureChargeWithSplitRequest = new CreateCaptureChargeRequest()
+            {
+              Amount  = 10000,
+              Split = new List<CreateSplitRequest>()
+              {
+                  new CreateSplitRequest() {
+                      RecipientId = recipient.Data.Id,
+                      Amount = 8000,
+                      Type = "flat",
+                      Options = new CreateSplitOptionsRequest()
+                      {
+                          Liable = true,
+                          ChargeProcessingFee = true,
+                          ChargeRemainderFee = true
+                      }
+                  },
+                  new CreateSplitRequest() {
+                      RecipientId = recipient2.Data.Id,
+                      Amount = 2000,
+                      Type = "flat",
+                      Options = new CreateSplitOptionsRequest()
+                      {
+                          Liable = false,
+                          ChargeProcessingFee = false,
+                          ChargeRemainderFee = false
+                      }
+                  }
+              }
+            };
+
+            var test = client.Charge.CaptureCharge("idempotencyKey", charge.Id, captureChargeWithSplitRequest);
+
+            //CreatePixOrder
+            // var createPixOrder = new CreateOrderRequest
+            // {
+            //     AntifraudEnabled = false,
+            //     Closed = false,
+            //     Code = "or_123",
+            //     Currency = "BRL",
+            //     Customer = new CreateCustomerRequest()
+            //     {
+            //         Name = "teste1hj",
+            //         Email = "teste1hj@gmail.com",
+            //         Document = "12345678978",
+            //         Type = "individual",
+            //         Phones = new CreatePhonesRequest()
+            //         {
+            //             HomePhone = new CreatePhoneRequest()
+            //             {
+            //                 AreaCode = "22",
+            //                 CountryCode = "55",
+            //                 Number = "12345678"
+            //             }
+            //         }
+            //     },
+            //     CustomerId = null,
+            //     Device = new CreateDeviceRequest(),
+            //     Ip = null,
+            //     Items = new List<CreateOrderItemRequest>
+            //     {
+            //         new CreateOrderItemRequest
+            //         {
+            //             Amount = 10000,
+            //             Category = "beleza",
+            //             Code = "pro_123",
+            //             Description = "maquiagem",
+            //             Quantity = 1,
+            //             Seller = null,
+            //             SellerId = null
+            //         }
+            //     },
+            //     Location = null,
+            //     Metadata = new Dictionary<string, string>(),
+            //     Payments = new List<CreatePaymentRequest>()
+            //     {
+            //         new CreatePaymentRequest
+            //         {
+            //             Amount = 10000,
+            //             BankTransfer = null,
+            //             Boleto = null,
+            //             Pix = new CreatePixPaymentRequest
+            //             {
+            //                 ExpiresAt = null,
+            //                 ExpiresIn = 600,
+            //                 AdditionalInformation = new List<PixAdditionalInformation>()
+            //                 {
+            //                     new PixAdditionalInformation()
+            //                     {
+            //                         Name = "Mensagem",
+            //                         Value = "Esta é uma mensagem do Pix"
+            //                     }
+            //                 }
+            //             },
+            //             Cash = null,
+            //             Checkout = null,
+            //             CreditCard = null,
+            //             Currency = null,
+            //             Customer = null,
+            //             CustomerId = null,
+            //             DebitCard = null,
+            //             GatewayAffiliationId = "123",
+            //             Metadata = null,
+            //             PaymentMethod = "pix",
+            //             Split = null,
+            //             Voucher = null
+            //         }
+            //     },
+            //     SessionId = "123",
+            //     Shipping = null
+            // };
+
+            //CreateCheckoutPixOrder
+            // var createCheckoutPixOrder = new CreateOrderRequest
+            // {
+            //     AntifraudEnabled = false,
+            //     Closed = false,
+            //     Code = "or_123",
+            //     Currency = "BRL",
+            //     Customer = new CreateCustomerRequest()
+            //     {
+            //         Name = "teste1hj",
+            //         Email = "teste1hj@gmail.com",
+            //         Document = "12345678978",
+            //         Type = "individual",
+            //         Phones = new CreatePhonesRequest()
+            //         {
+            //             HomePhone = new CreatePhoneRequest()
+            //             {
+            //                 AreaCode = "22",
+            //                 CountryCode = "55",
+            //                 Number = "12345678"
+            //             }
+            //         }
+            //     },
+            //     CustomerId = null,
+            //     Device = new CreateDeviceRequest(),
+            //     Ip = null,
+            //     Items = new List<CreateOrderItemRequest>
+            //     {
+            //         new CreateOrderItemRequest
+            //         {
+            //             Amount = 10000,
+            //             Category = "beleza",
+            //             Code = "pro_123",
+            //             Description = "maquiagem",
+            //             Quantity = 1,
+            //             Seller = null,
+            //             SellerId = null
+            //         }
+            //     },
+            //     Location = null,
+            //     Metadata = new Dictionary<string, string>(),
+            //     Payments = new List<CreatePaymentRequest>()
+            //     {
+            //         new CreatePaymentRequest
+            //         {
+            //             Amount = 10000,
+            //             BankTransfer = null,
+            //             Boleto = null,
+            //             Pix = null,
+            //             Cash = null,
+            //             Checkout = new CreateCheckoutPaymentRequest
+            //             {
+            //                 AcceptedMultiPaymentMethods = null,
+            //                 AcceptedPaymentMethods = new List<string>{"pix"},
+            //                 AcceptedBrands = null,
+            //                 BankTransfer = null,
+            //                 BillingAddress = null,
+            //                 BillingAddressEditable = false,
+            //                 Boleto = null,
+            //                 CreditCard = null,
+            //                 Voucher = null,
+            //                 CustomerEditable = null,
+            //                 DebitCard = null,
+            //                 Pix = new CreateCheckoutPixPaymentRequest
+            //                 {
+            //                     ExpiresAt = null,
+            //                     ExpiresIn = 600,
+            //                     AdditionalInformation = new List<PixAdditionalInformation>()
+            //                     {
+            //                         new PixAdditionalInformation()
+            //                         {
+            //                             Name = "Mensagem",
+            //                             Value = "Esta é uma mensagem do checkout"
+            //                         }
+            //                     }
+            //                 },
+            //                 DefaultPaymentMethod = "Pix",
+            //                 ExpiresIn = 900,
+            //                 GatewayAffiliationId = null,
+            //                 SkipCheckoutSuccessPage = false,
+            //                 SuccessUrl = null
+            //             },
+            //             CreditCard = null,
+            //             Currency = null,
+            //             Customer = null,
+            //             CustomerId = null,
+            //             DebitCard = null,
+            //             GatewayAffiliationId = "123",
+            //             Metadata = null,
+            //             PaymentMethod = "checkout",
+            //             Split = null,
+            //             Voucher = null
+            //         }
+            //     },
+            //     SessionId = "123",
+            //     Shipping = null
+            // };
+
+            // client.UpdateConfiguration(secretKey: "sk_test_WoE1e30U9YIAvM9R");
+            // var createPixResult = client.Order.CreateOrder(null, createPixOrder);
+            // var createPixResult = client.Order.CreateOrder(null, createCheckoutPixOrder);
+
+            // var teste = createPixResult.Data;
 
             // var r = client.Recipient.GetRecipient("rp_xxx");
             // var r1 = client.Recipient.ListRecipients(new ListRecipientsRequest { Page = 1, Size = 2 });
