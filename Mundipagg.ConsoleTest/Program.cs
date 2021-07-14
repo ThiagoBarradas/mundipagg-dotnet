@@ -16,10 +16,10 @@ namespace Mundipagg.ConsoleTest
 
             Configuration config = new Configuration
             {
-                // AccountManagementKey = "amk",
-                // MpToken = "token",
-                SecretKey = "sk_test_WoE1e30U9YIAvM9R",
-                // RequestKey = "rk",
+                AccountManagementKey = "amk",
+                MpToken = "token",
+                SecretKey = "sk",
+                RequestKey = "rk",
                 ApiUrl = "https://stgapi.mundipagg.com/core/v1"
             };
 
