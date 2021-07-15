@@ -9,5 +9,7 @@ namespace Mundipagg.Models.Request
         public bool? ChargeProcessingFee { get; set; }
 
         public bool? Liable { get; set; }
+
+        public bool? ChargeRemainderFee { get; set; }
     }
 }
