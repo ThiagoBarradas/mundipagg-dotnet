@@ -34,5 +34,7 @@ namespace Mundipagg.Models.Request
         public string SessionId { get; set; }
 
         public CreateShippingRequest Shipping { get; set; }
+
+        public CreatePOIPaymentSettingsRequest PoiPaymentSettings { get; set; }
     }
 }
