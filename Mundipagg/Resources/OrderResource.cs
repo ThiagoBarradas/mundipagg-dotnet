@@ -4,6 +4,7 @@ using Mundipagg.Models.Response;
 using Mundipagg.Resources.Interface;
 using Mundipagg.Utils;
 using RestSharp.Easy.Models;
+using System.Collections.Generic;
 using System.Net.Http;
 
 namespace Mundipagg.Resources
@@ -27,6 +28,14 @@ namespace Mundipagg.Resources
             var method = HttpMethod.Post;
             var endpoint = $"/orders";
             var headers = this.GetIdempontecyAsHeader(idempotencyKey);
+
+            return this.SendRequest<GetOrderResponse>(method, endpoint, request, null, headers);
+        }
+
+        public BaseResponse<GetOrderResponse, MundipaggErrorsResponse> CreateOrder(CreateOrderRequest request, Dictionary<string, string> headers)
+        {
+            var method = HttpMethod.Post;
+            var endpoint = $"/orders";
 
             return this.SendRequest<GetOrderResponse>(method, endpoint, request, null, headers);
         }

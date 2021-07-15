@@ -19,5 +19,11 @@ namespace Mundipagg.Models.Request
         public string StatementDescriptor { get; set; }
 
         public CreateCardPaymentTokenRequest Token { get; set; }
+
+        public string EntryMode { get; set; }
+
+        public string AcquirerAffiliationKey { get; set; }
+
+        public CreatePOIRequest Poi { get; set; }
     }
 }

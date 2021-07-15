@@ -35,5 +35,25 @@ namespace Mundipagg.Models.Response
         public string TransactionType { get; set; }
 
         public DateTime UpdatedAt { get; set; }
+
+        public string BrandReturnCode { get; set; }
+
+        public string AcquirerOid { get; set; }
+
+        public string IssuerTid { get; set; }
+
+        public string IccData { get; set; }
+
+        public DateTime? InitiatorDate { get; set; }
+
+        public string InitiatorReference { get; set; }
+
+        public string InitiatorTransactionkey { get; set; }
+
+        public string DeviceSerialNumber { get; set; }
+
+        public string EntryMode { get; set; }
+
+        public GetActionPOIInformationResponse Action { get; set; }
     }
 }
