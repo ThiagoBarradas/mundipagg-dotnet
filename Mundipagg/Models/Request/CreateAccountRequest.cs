@@ -68,6 +68,8 @@ namespace Mundipagg.Models.Request
         public CreateWebhookSettingRequest[] WebhokoSettings { get; set; }
 
         public CreateAttemptSettingsRequest AttemptSettings { get; set; }
+
+        public CreatePixSettingsRequest PixSettingsRequest { get; set; }
     }
 
     public class CreateBoletoSettingsRequest
@@ -244,5 +246,12 @@ namespace Mundipagg.Models.Request
         public bool MultiBuyersEnabled { get; set; }
 
         public bool OpenOrdersEnabled { get; set; }
+    }
+
+    public class CreatePixSettingsRequest
+    {
+        public bool Enabled { get; set; }
+
+        public string Gateway { get; set; }
     }
 }
