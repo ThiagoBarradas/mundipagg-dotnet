@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Mundipagg.Models.Commons;
 using Mundipagg.Models.Request;
 using Mundipagg.Models.Webhooks;
