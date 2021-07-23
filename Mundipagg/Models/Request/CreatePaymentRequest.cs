@@ -19,8 +19,6 @@ namespace Mundipagg.Models.Request
 
         public CreateCreditCardPaymentRequest CreditCard { get; set; }
 
-        public string Currency { get; set; }
-
         public CreateCustomerRequest Customer { get; set; }
 
         public string CustomerId { get; set; }

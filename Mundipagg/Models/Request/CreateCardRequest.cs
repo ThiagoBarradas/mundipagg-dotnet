@@ -33,10 +33,13 @@ namespace Mundipagg.Models.Request
 
         public string Type { get; set; } = "credit";
 
+        [JsonProperty("track_1")]
         public string Track1 { get; set; }
 
+        [JsonProperty("track_2")]
         public string Track2 { get; set; }
 
+        [JsonProperty("track_3")]
         public string Track3 { get; set; }
     }
 }

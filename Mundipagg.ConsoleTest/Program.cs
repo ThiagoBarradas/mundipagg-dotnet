@@ -89,7 +89,6 @@ namespace Mundipagg.ConsoleTest
                         Cash = null,
                         Checkout = null,
                         CreditCard = null,
-                        Currency = null,
                         Customer = null,
                         CustomerId = null,
                         DebitCard = null,
@@ -187,7 +186,6 @@ namespace Mundipagg.ConsoleTest
                             SuccessUrl = null
                         },
                         CreditCard = null,
-                        Currency = null,
                         Customer = null,
                         CustomerId = null,
                         DebitCard = null,
