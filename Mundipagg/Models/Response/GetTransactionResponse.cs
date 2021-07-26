@@ -55,5 +55,7 @@ namespace Mundipagg.Models.Response
         public string EntryMode { get; set; }
 
         public GetActionPOIInformationResponse Action { get; set; }
+
+        public string OperationKey { get; set; }
     }
 }
