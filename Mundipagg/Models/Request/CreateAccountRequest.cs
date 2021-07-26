@@ -69,7 +69,7 @@ namespace Mundipagg.Models.Request
 
         public CreateAttemptSettingsRequest AttemptSettings { get; set; }
 
-        public CreatePixSettingsRequest PixSettingsRequest { get; set; }
+        public CreatePixSettingsRequest PixSettings { get; set; }
     }
 
     public class CreateBoletoSettingsRequest
