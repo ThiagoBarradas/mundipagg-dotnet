@@ -44,5 +44,12 @@ namespace Mundipagg.Resources.Interface
         /// <param name="request"></param>
         /// <returns>Returns BaseResponse<GetRecipientResponse> response from the API call</returns>
         BaseResponse<GetRecipientResponse, MundipaggErrorsResponse> ImportRecipient(CreateImportRecipientRequest request);
+
+        /// <summary>
+        /// Gets a recipient by code
+        /// </summary>
+        /// <param name="code"></param>
+        /// <returns>Returns BaseResponse<GetRecipientResponse> response from the API call</returns>
+        BaseResponse<GetRecipientResponse, MundipaggErrorsResponse> GetRecipientByCode(string code);
     }
 }

@@ -17,6 +17,8 @@ namespace Mundipagg.Models.Request
 
         public string Name { get; set; }
 
+        public string Code { get; set; }
+
         public Dictionary<string, string> Metadata { get; set; }
         
         public CreateTransferSettingsRequest TransferSettings { get; set; }

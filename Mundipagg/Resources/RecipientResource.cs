@@ -52,5 +52,13 @@ namespace Mundipagg.Resources
 
             return this.SendRequest<GetRecipientResponse>(method, endpoint, request);
         }
+
+        public BaseResponse<GetRecipientResponse, MundipaggErrorsResponse> GetRecipientByCode(string code)
+        {
+            var method = HttpMethod.Get;
+            var endpoint = $"/recipients/code/{code}";
+
+            return this.SendRequest<GetRecipientResponse>(method, endpoint, null);
+        }
     }
 }
