@@ -18,5 +18,7 @@ namespace Mundipagg.Models.Request
         public PaymentMethodTypeEnum PaymentMethod { get; set; }
 
         public ChargeStatusEnum Status { get; set; }
+
+        public string InitiatorTransactionKey { get; set; }
     }
 }
