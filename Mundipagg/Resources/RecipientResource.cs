@@ -45,12 +45,44 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetRecipientResponse>(method, endpoint, request);
         }
 
+        public BaseResponse<GetRecipientResponse, MundipaggErrorsResponse> UpdateTransferSettings(string recipientId, UpdateTransferSettingsRequest request)
+        {
+            var method = new HttpMethod("patch");
+            var endpoint = $"/recipients/{recipientId}/transfer-settings";
+
+            return this.SendRequest<GetRecipientResponse>(method, endpoint, request);
+        }
+
+        public BaseResponse<GetRecipientResponse, MundipaggErrorsResponse> UpdateAutomaticAnticipationSettings(string recipientId, UpdateAutomaticAnticipationSettingsRequest request)
+        {
+            var method = new HttpMethod("patch");
+            var endpoint = $"/recipients/{recipientId}/automatic-anticipation-settings";
+
+            return this.SendRequest<GetRecipientResponse>(method, endpoint, request);
+        }
+
+        public BaseResponse<GetRecipientResponse, MundipaggErrorsResponse> UpdateDefaultBankAccount(string recipientId, UpdateRecipientDefaultBankAccountRequest request)
+        {
+            var method = new HttpMethod("patch");
+            var endpoint = $"/recipients/{recipientId}/default-bank-account";
+
+            return this.SendRequest<GetRecipientResponse>(method, endpoint, request);
+        }
+
         public BaseResponse<GetRecipientResponse, MundipaggErrorsResponse> ImportRecipient(CreateImportRecipientRequest request)
         {
             var method = HttpMethod.Post;
             var endpoint = $"/recipients/import";
 
             return this.SendRequest<GetRecipientResponse>(method, endpoint, request);
+        }
+
+        public BaseResponse<GetRecipientResponse, MundipaggErrorsResponse> GetRecipientByCode(string code)
+        {
+            var method = HttpMethod.Get;
+            var endpoint = $"/recipients/code/{code}";
+
+            return this.SendRequest<GetRecipientResponse>(method, endpoint, null);
         }
     }
 }

@@ -1,5 +1,6 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using System;
 using System.Collections.Generic;
 
 namespace Mundipagg.Models.Request
@@ -9,6 +10,10 @@ namespace Mundipagg.Models.Request
     {
         public int? Amount { get; set; }
 
-        public List<CreateCancelChargeSplitRulesRequest> SplitRules { get; set; }
+        public List<CreateSplitRequest> SplitRules { get; set; }
+
+        public DateTime? InitiatorDate { get; set; }
+
+        public string InitiatorReference { get; set; }
     }
 }

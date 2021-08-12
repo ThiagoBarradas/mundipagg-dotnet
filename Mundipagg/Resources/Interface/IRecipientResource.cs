@@ -32,6 +32,31 @@ namespace Mundipagg.Resources.Interface
         BaseResponse<GetRecipientResponse, MundipaggErrorsResponse> UpdateRecipient(string recipientId, UpdateRecipientRequest request);
 
         /// <summary>
+        /// Update a recipient's transfer settings
+        /// </summary>
+        /// <param name="recipientId"></param>
+        /// <param name="request"></param>
+        /// <return>Returns BaseResponse<GetRecipientResponse> response from the API call</return>
+        BaseResponse<GetRecipientResponse, MundipaggErrorsResponse> UpdateTransferSettings(string recipientId, UpdateTransferSettingsRequest request);
+
+        /// <summary>
+        /// Update a recipient's automatic anticipation settings
+        /// </summary>
+        /// <param name="recipientId"></param>
+        /// <param name="request"></param>
+        /// <return>Returns BaseResponse<GetRecipientResponse> response from the API call</return>
+        BaseResponse<GetRecipientResponse, MundipaggErrorsResponse> UpdateAutomaticAnticipationSettings(string recipientId, UpdateAutomaticAnticipationSettingsRequest request);
+
+        /// <summary>
+        /// Update a recipient's default bank account
+        /// </summary>
+        /// <param name="recipientId"></param>
+        /// <param name="request"></param>
+        /// <return>Returns BaseResponse<GetRecipientResponse> response from the API call</return>
+        BaseResponse<GetRecipientResponse, MundipaggErrorsResponse> UpdateDefaultBankAccount(string recipientId, UpdateRecipientDefaultBankAccountRequest request);
+
+
+        /// <summary>
         /// List recipients
         /// </summary>
         /// <param name="request"></param>
@@ -44,5 +69,12 @@ namespace Mundipagg.Resources.Interface
         /// <param name="request"></param>
         /// <returns>Returns BaseResponse<GetRecipientResponse> response from the API call</returns>
         BaseResponse<GetRecipientResponse, MundipaggErrorsResponse> ImportRecipient(CreateImportRecipientRequest request);
+
+        /// <summary>
+        /// Gets a recipient by code
+        /// </summary>
+        /// <param name="code"></param>
+        /// <returns>Returns BaseResponse<GetRecipientResponse> response from the API call</returns>
+        BaseResponse<GetRecipientResponse, MundipaggErrorsResponse> GetRecipientByCode(string code);
     }
 }

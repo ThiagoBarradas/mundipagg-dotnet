@@ -48,7 +48,7 @@ namespace Mundipagg.Models.Response
 
         public string InitiatorReference { get; set; }
 
-        public string InitiatorTransactionkey { get; set; }
+        public string InitiatorTransactionKey { get; set; }
 
         public string DeviceSerialNumber { get; set; }
 
