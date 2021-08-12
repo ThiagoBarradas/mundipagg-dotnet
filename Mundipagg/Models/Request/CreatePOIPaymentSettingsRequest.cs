@@ -20,6 +20,6 @@
 
         public CreatePOIPaymentSetupRequest PaymentSetup { get; set; }
 
-        public string[] Terminals { get; set; }
+        public string[] DevicesSerialNumber { get; set; }
     }
 }
