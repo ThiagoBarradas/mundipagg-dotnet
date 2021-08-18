@@ -12,8 +12,6 @@ namespace Mundipagg.Models.Request
 
         public List<CreateSplitRequest> SplitRules { get; set; }
 
-        public DateTime? InitiatorDate { get; set; }
-
-        public string InitiatorReference { get; set; }
+        public CreatePOIInformationRequest PoiInformation { get; set; }
     }
 }
