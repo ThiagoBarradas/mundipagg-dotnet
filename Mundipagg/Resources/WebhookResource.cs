@@ -16,7 +16,6 @@ namespace Mundipagg.Resources
     {
         public WebhookResource(Configuration configuration) : base(configuration) { }
 
-
         public BaseResponse<GetWebhookResponse, MundipaggErrorsResponse> GetWebhook(string webhookId)
         {
             var method = HttpMethod.Get;
@@ -24,7 +23,6 @@ namespace Mundipagg.Resources
 
             return this.SendRequest<GetWebhookResponse>(method, endpoint, null);
         }
-
 
         public async Task<BaseResponse<GetWebhookResponse, MundipaggErrorsResponse>> GetWebhookAsync(string webhookId)
         {
@@ -34,7 +32,6 @@ namespace Mundipagg.Resources
             return await this.SendRequestAsync<GetWebhookResponse>(method, endpoint, null);
         }
 
-
         public BaseResponse<PagingResponse<GetWebhookResponse>, MundipaggErrorsResponse> ListWebhooks(ListWebhooksRequest request)
         {
             var method = HttpMethod.Get;
@@ -42,14 +39,6 @@ namespace Mundipagg.Resources
             var query = request.ToDictionary();
 
             return this.SendRequest<PagingResponse<GetWebhookResponse>>(method, endpoint, null, query);
-        }
-
-        public WebhookReceived ParseWebhook(string json)
-        {
-            if (string.IsNullOrWhiteSpace(json) == true)
-                throw new NullReferenceException($"{nameof(json)} can not be null or empty");
-
-            return JsonConvert.DeserializeObject<WebhookReceived>(json, JsonSerializerUtil.SnakeCaseSettings);
         }
 
         public async Task<BaseResponse<PagingResponse<GetWebhookResponse>, MundipaggErrorsResponse>> ListWebhooksAsync(ListWebhooksRequest request)
@@ -61,6 +50,14 @@ namespace Mundipagg.Resources
             return await this.SendRequestAsync<PagingResponse<GetWebhookResponse>>(method, endpoint, null, query);
         }
 
+        public WebhookReceived ParseWebhook(string json)
+        {
+            if (string.IsNullOrWhiteSpace(json) == true)
+                throw new NullReferenceException($"{nameof(json)} can not be null or empty");
+
+            return JsonConvert.DeserializeObject<WebhookReceived>(json, JsonSerializerUtil.SnakeCaseSettings);
+        }
+
         public BaseResponse<GetWebhookResponse, MundipaggErrorsResponse> RetryWebhook(string webhookId)
         {
             var method = HttpMethod.Post;
@@ -68,7 +65,6 @@ namespace Mundipagg.Resources
 
             return this.SendRequest<GetWebhookResponse>(method, endpoint, null);
         }
-
 
         public async Task<BaseResponse<GetWebhookResponse, MundipaggErrorsResponse>> RetryWebhookAsync(string webhookId)
         {

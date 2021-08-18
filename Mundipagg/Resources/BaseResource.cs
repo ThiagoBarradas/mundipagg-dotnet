@@ -24,7 +24,6 @@ namespace Mundipagg.Resources
             this.Configuration = configuration;
         }
 
-
         private Configuration _configuration { get; set; }
 
         /// <summary>

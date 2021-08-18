@@ -11,16 +11,16 @@ namespace Mundipagg.Resources.Interface
     public interface IMerchantResource : IResource
     {
         /// <summary>
-        /// Cretes a new merchant
+        /// Get merchant info
         /// </summary>
         /// <param name="merchantId"></param>
         /// <returns></returns>
         BaseResponse<GetMerchantResponse, MundipaggErrorsResponse> GetMerchant(string merchantId);
 
         /// <summary>
-        /// Cretes a new merchant
+        /// Get merchant info
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="merchantId"></param>
         /// <returns></returns>
         Task<BaseResponse<GetMerchantResponse, MundipaggErrorsResponse>> GetMerchantAsync(string merchantId);
 
@@ -32,7 +32,7 @@ namespace Mundipagg.Resources.Interface
         BaseResponse<GetMerchantResponse, MundipaggErrorsResponse> CreateMerchant(CreateMerchantRequest request);
 
         /// <summary>
-        /// Update a merchant
+        /// Cretes a new merchant
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
@@ -46,7 +46,7 @@ namespace Mundipagg.Resources.Interface
         BaseResponse<GetMerchantResponse, MundipaggErrorsResponse> UpdateMerchant(string merchantId, UpdateMerchantRequest request);
 
         /// <summary>
-        /// Update status of a merchant
+        /// Update a merchant
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
@@ -60,9 +60,8 @@ namespace Mundipagg.Resources.Interface
         BaseResponse<GetMerchantResponse, MundipaggErrorsResponse> UpdateMerchantStatus(string merchantId, UpdateMerchantStatusRequest request);
 
         /// <summary>
-        /// Update settings of a Merchant
+        /// Update status of a merchant
         /// </summary>
-        /// <param name="merchantId"></param>
         /// <param name="request"></param>
         /// <returns></returns>
         Task<BaseResponse<GetMerchantResponse, MundipaggErrorsResponse>> UpdateMerchantStatusAsync(string merchantId, UpdateMerchantStatusRequest request);
@@ -74,7 +73,7 @@ namespace Mundipagg.Resources.Interface
         /// <param name="request"></param>
         /// <returns></returns>
         BaseResponse<GetMerchantResponse, MundipaggErrorsResponse> UpdateMerchantSettings(string merchantId, UpdateMerchantSettingsRequest request);
-
+        
         /// <summary>
         /// Update settings of a Merchant
         /// </summary>

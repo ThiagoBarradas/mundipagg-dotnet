@@ -20,7 +20,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, null, authMode: "amk");
         }
 
-
         public async Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> GetAccountAsync(string accountId)
         {
             var method = HttpMethod.Get;
@@ -28,7 +27,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<GetAccountResponse>(method, endpoint, null, authMode: "amk");
         }
-
 
         public BaseResponse<PagingResponse<GetAccountResponse>, MundipaggErrorsResponse> ListAccounts()
         {
@@ -38,7 +36,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<PagingResponse<GetAccountResponse>>(method, endpoint, null, authMode: "amk");
         }
 
-
         public async Task<BaseResponse<PagingResponse<GetAccountResponse>, MundipaggErrorsResponse>> ListAccountsAsync()
         {
             var method = HttpMethod.Get;
@@ -46,7 +43,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<PagingResponse<GetAccountResponse>>(method, endpoint, null, authMode: "amk");
         }
-
 
         public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> CreateAccount(CreateAccountRequest request)
         {
@@ -56,7 +52,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
-
         public async Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> CreateAccountAsync(CreateAccountRequest request)
         {
             var method = HttpMethod.Post;
@@ -64,7 +59,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
-
 
         public BaseResponse<PagingResponse<GetAccountResponse>, MundipaggErrorsResponse> GetTestAccounts(string masterAccountId)
         {
@@ -74,7 +68,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<PagingResponse<GetAccountResponse>>(method, endpoint, null, authMode: "amk");
         }
 
-
         public async Task<BaseResponse<PagingResponse<GetAccountResponse>, MundipaggErrorsResponse>> GetTestAccountsAsync(string masterAccountId)
         {
             var method = HttpMethod.Get;
@@ -82,7 +75,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<PagingResponse<GetAccountResponse>>(method, endpoint, null, authMode: "amk");
         }
-
 
         public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> CreateTestAccount(string masterAccountId, CreateAccountRequest request)
         {
@@ -92,7 +84,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
-
         public async Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> CreateTestAccountAsync(string masterAccountId, CreateAccountRequest request)
         {
             var method = HttpMethod.Post;
@@ -100,7 +91,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
-
 
         public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateAccount(string accountId, UpdateAccountRequest request)
         {
@@ -110,7 +100,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
-
         public async Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> UpdateAccountAsync(string accountId, UpdateAccountRequest request)
         {
             var method = HttpMethod.Put;
@@ -118,7 +107,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
-
 
         public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateStatus(string accountId, UpdateAccountStatusRequest request)
         {
@@ -128,7 +116,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
-
         public async Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> UpdateStatusAsync(string accountId, UpdateAccountStatusRequest request)
         {
             var method = new HttpMethod("patch");
@@ -136,7 +123,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
-
 
         public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateMundipaggConfig(string accountId, UpdateMundipaggConfigRequest request)
         {
@@ -146,7 +132,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
-
         public async Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> UpdateMundipaggConfigAsync(string accountId, UpdateMundipaggConfigRequest request)
         {
             var method = new HttpMethod("patch");
@@ -154,7 +139,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
-
 
         public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdatePagarmeConfig(string accountId, UpdatePagarmeConfigRequest request)
         {
@@ -164,7 +148,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
-
         public async Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> UpdatePagarmeConfigAsync(string accountId, UpdatePagarmeConfigRequest request)
         {
             var method = new HttpMethod("patch");
@@ -172,7 +155,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
-
 
         public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateCreditCardSettings(string accountId, UpdateCreditCardSettingsRequest request)
         {
@@ -182,7 +164,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
-
         public async Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> UpdateCreditCardSettingsAsync(string accountId, UpdateCreditCardSettingsRequest request)
         {
             var method = new HttpMethod("patch");
@@ -190,7 +171,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
-
 
         public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdatePixSettings(string accountId, UpdatePixSettingsRequest request)
         {
@@ -200,7 +180,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
-
         public async Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> UpdatePixSettingsAsync(string accountId, UpdatePixSettingsRequest request)
         {
             var method = new HttpMethod("patch");
@@ -208,7 +187,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
-
 
         public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateDebitCardSettings(string accountId, UpdateDebitCardSettingsRequest request)
         {
@@ -218,7 +196,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
-
         public async Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> UpdateDebitCardSettingsAsync(string accountId, UpdateDebitCardSettingsRequest request)
         {
             var method = new HttpMethod("patch");
@@ -226,7 +203,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
-
 
         public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateBoletoSettings(string accountId, UpdateBoletoSettingsRequest request)
         {
@@ -236,7 +212,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
-
         public async Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> UpdateBoletoSettingsAsync(string accountId, UpdateBoletoSettingsRequest request)
         {
             var method = new HttpMethod("patch");
@@ -244,7 +219,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
-
 
         public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateBankTransferSettings(string accountId, UpdateBankTransferSettingsRequest request)
         {
@@ -254,7 +228,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
-
         public async Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> UpdateBankTransferSettingsAsync(string accountId, UpdateBankTransferSettingsRequest request)
         {
             var method = new HttpMethod("patch");
@@ -262,7 +235,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
-
 
         public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateWalletSettings(string accountId, UpdateWalletSettingsRequest request)
         {
@@ -272,7 +244,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
-
         public async Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> UpdateWalletSettingsAsync(string accountId, UpdateWalletSettingsRequest request)
         {
             var method = new HttpMethod("patch");
@@ -280,7 +251,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
-
 
         public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateSafetyPaySettings(string accountId, UpdateSafetyPaySettingsRequest request)
         {
@@ -290,7 +260,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
-
         public async Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> UpdateSafetyPaySettingsAsync(string accountId, UpdateSafetyPaySettingsRequest request)
         {
             var method = new HttpMethod("patch");
@@ -298,7 +267,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
-
 
         public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateVoucherSettings(string accountId, UpdateVoucherSettingsRequest request)
         {
@@ -308,7 +276,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
-
         public async Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> UpdateVoucherSettingsAsync(string accountId, UpdateVoucherSettingsRequest request)
         {
             var method = new HttpMethod("patch");
@@ -316,7 +283,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
-
 
         public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateCheckoutSettings(string accountId, UpdateCheckoutSettingsRequest request)
         {
@@ -326,7 +292,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
-
         public async Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> UpdateCheckoutSettingsAsync(string accountId, UpdateCheckoutSettingsRequest request)
         {
             var method = new HttpMethod("patch");
@@ -334,7 +299,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
-
 
         public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateRenewCardSettings(string accountId, UpdateRenewCardSettingsRequest request)
         {
@@ -344,7 +308,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
-
         public async Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> UpdateRenewCardSettingsAsync(string accountId, UpdateRenewCardSettingsRequest request)
         {
             var method = new HttpMethod("patch");
@@ -352,7 +315,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
-
 
         public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateSplitSettings(string accountId, UpdateSplitSettingsRequest request)
         {
@@ -362,7 +324,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
-
         public async Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> UpdateSplitSettingsAsync(string accountId, UpdateSplitSettingsRequest request)
         {
             var method = new HttpMethod("patch");
@@ -370,7 +331,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
-
 
         public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateOrderSettings(string accountId, UpdateOrderSettingsRequest request)
         {
@@ -380,7 +340,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
-
         public async Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> UpdateOrderSettingsAsync(string accountId, UpdateOrderSettingsRequest request)
         {
             var method = new HttpMethod("patch");
@@ -388,7 +347,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
-
 
         public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateSubscriptionSettings(string accountId, UpdateSubscriptionSettingsRequest request)
         {
@@ -398,7 +356,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
-
         public async Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> UpdateSubscriptionSettingsAsync(string accountId, UpdateSubscriptionSettingsRequest request)
         {
             var method = new HttpMethod("patch");
@@ -406,7 +363,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
-
 
         public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateNotificationSettings(string accountId, UpdateNotificationSettingsRequest request)
         {
@@ -416,7 +372,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
-
         public async Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> UpdateNotificationSettingsAsync(string accountId, UpdateNotificationSettingsRequest request)
         {
             var method = new HttpMethod("patch");
@@ -424,7 +379,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
-
 
         public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateGuaranteedCancellationSettings(string accountId, UpdateGuaranteedCancellationSettingsRequest request)
         {
@@ -434,7 +388,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
-
         public async Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> UpdateGuaranteedCancellationSettingsAsync(string accountId, UpdateGuaranteedCancellationSettingsRequest request)
         {
             var method = new HttpMethod("patch");
@@ -442,7 +395,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
-
 
         public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateCashSettings(string accountId, UpdateCashSettingsRequest request)
         {
@@ -452,7 +404,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
-
         public async Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> UpdateCashSettingsAsync(string accountId, UpdateCashSettingsRequest request)
         {
             var method = new HttpMethod("patch");
@@ -460,7 +411,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
-
 
         public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateAntifraudSettings(string accountId, UpdateCashSettingsRequest request)
         {
@@ -470,7 +420,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
-
         public async Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> UpdateAntifraudSettingsAsync(string accountId, UpdateCashSettingsRequest request)
         {
             var method = new HttpMethod("patch");
@@ -478,7 +427,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
-
 
         public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateWebhookSettings(string accountId, UpdateWebhookSettingsRequest request)
         {
@@ -488,7 +436,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
-
         public async Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> UpdateWebhookSettingsAsync(string accountId, UpdateWebhookSettingsRequest request)
         {
             var method = new HttpMethod("patch");
@@ -497,7 +444,6 @@ namespace Mundipagg.Resources
             return await this.SendRequestAsync<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
-
         public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateAttemptSettings(string accountId, UpdateAttemptSettingsRequest request)
         {
             var method = new HttpMethod("patch");
@@ -505,7 +451,6 @@ namespace Mundipagg.Resources
 
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
-
 
         public async Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> UpdateAttemptSettingsAsync(string accountId, UpdateAttemptSettingsRequest request)
         {

@@ -14,16 +14,16 @@ namespace Mundipagg.Resources.Interface
         #region Customer
 
         /// <summary>
-        /// 
+        /// Creates a new customer
         /// </summary>
-        /// <param name="request"></param>
-        /// <returns></returns>
+        /// <param name="request">Required parameter: Request for creating a customer</param>
+        /// <return>Returns Models.GetCustomerResponse response from the API call</return>
         BaseResponse<GetCustomerResponse, MundipaggErrorsResponse> CreateCustomer(CreateCustomerRequest request);
 
         /// <summary>
-        /// Get a customer
+        /// Creates a new customer
         /// </summary>
-        /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <param name="request">Required parameter: Request for creating a customer</param>
         /// <return>Returns Models.GetCustomerResponse response from the API call</return>
         Task<BaseResponse<GetCustomerResponse, MundipaggErrorsResponse>> CreateCustomerAsync(CreateCustomerRequest request);
 
@@ -35,9 +35,10 @@ namespace Mundipagg.Resources.Interface
         BaseResponse<GetCustomerResponse, MundipaggErrorsResponse> GetCustomer(string customerId);
 
         /// <summary>
-        /// Lists all Customers
+        /// Get a customer
         /// </summary>
-        /// <return>Returns PagingResponse of Models.GetCustomerResponse</Models.ListCustomersResponse> response from the API call</return>
+        /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <return>Returns Models.GetCustomerResponse response from the API call</return>
         Task<BaseResponse<GetCustomerResponse, MundipaggErrorsResponse>> GetCustomerAsync(string customerId);
 
         /// <summary>
@@ -47,11 +48,9 @@ namespace Mundipagg.Resources.Interface
         BaseResponse<PagingResponse<GetCustomerResponse>, MundipaggErrorsResponse> ListCustomers(ListCustomersRequest request);
 
         /// <summary>
-        /// Updates a customer
+        /// Lists all Customers
         /// </summary>
-        /// <param name="customerId">Required parameter: Customer id</param>
-        /// <param name="request">Required parameter: Request for updating a customer</param>
-        /// <return>Returns Models.GetCustomerResponse response from the API call</return>
+        /// <return>Returns PagingResponse of Models.GetCustomerResponse</Models.ListCustomersResponse> response from the API call</return>
         Task<BaseResponse<PagingResponse<GetCustomerResponse>, MundipaggErrorsResponse>> ListCustomersAsync(ListCustomersRequest request);
 
         /// <summary>
@@ -63,10 +62,10 @@ namespace Mundipagg.Resources.Interface
         BaseResponse<GetCustomerResponse, MundipaggErrorsResponse> UpdateCustomer(string customerId, UpdateCustomerRequest request);
 
         /// <summary>
-        /// Updates the metadata a customer
+        /// Updates a customer
         /// </summary>
-        /// <param name="customerId">Required parameter: The customer id</param>
-        /// <param name="request">Required parameter: Request for updating the customer metadata</param>
+        /// <param name="customerId">Required parameter: Customer id</param>
+        /// <param name="request">Required parameter: Request for updating a customer</param>
         /// <return>Returns Models.GetCustomerResponse response from the API call</return>
         Task<BaseResponse<GetCustomerResponse, MundipaggErrorsResponse>> UpdateCustomerAsync(string customerId, UpdateCustomerRequest request);
 
@@ -79,11 +78,11 @@ namespace Mundipagg.Resources.Interface
         BaseResponse<GetCustomerResponse, MundipaggErrorsResponse> UpdateCustomerMetadata(string customerId, UpdateMetadataRequest request);
 
         /// <summary>
-        /// 
+        /// Updates the metadata a customer
         /// </summary>
-        /// <param name="customerId"></param>
-        /// <param name="request"></param>
-        /// <returns></returns>
+        /// <param name="customerId">Required parameter: The customer id</param>
+        /// <param name="request">Required parameter: Request for updating the customer metadata</param>
+        /// <return>Returns Models.GetCustomerResponse response from the API call</return>
         Task<BaseResponse<GetCustomerResponse, MundipaggErrorsResponse>> UpdateCustomerMetadataAsync(string customerId, UpdateMetadataRequest request);
 
         #endregion
@@ -91,18 +90,18 @@ namespace Mundipagg.Resources.Interface
         #region Address
 
         /// <summary>
-        /// Get a customer's address
+        /// Creates a new address for a customer
         /// </summary>
-        /// <param name="customerId"></param>
-        /// <param name="request"></param>
-        /// <returns></returns>
+        /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <param name="request">Required parameter: Request for creating an address</param>
+        /// <return>Returns Models.GetAddressResponse response from the API call</return>
         BaseResponse<GetAddressResponse, MundipaggErrorsResponse> CreateAddress(string customerId, CreateAddressRequest request);
 
         /// <summary>
-        /// Get a customer's address
+        /// Creates a new address for a customer
         /// </summary>
-        /// <param name="customerId">Required parameter: Customer id</param>
-        /// <param name="addressId">Required parameter: Address Id</param>
+        /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <param name="request">Required parameter: Request for creating an address</param>
         /// <return>Returns Models.GetAddressResponse response from the API call</return>
         Task<BaseResponse<GetAddressResponse, MundipaggErrorsResponse>> CreateAddressAsync(string customerId, CreateAddressRequest request);
 
@@ -115,8 +114,11 @@ namespace Mundipagg.Resources.Interface
         BaseResponse<GetAddressResponse, MundipaggErrorsResponse> GetAddress(string customerId, string addressId);
 
         /// <summary>
-        /// Lists all adressess from a customer
+        /// Get a customer's address
         /// </summary>
+        /// <param name="customerId">Required parameter: Customer id</param>
+        /// <param name="addressId">Required parameter: Address Id</param>
+        /// <return>Returns Models.GetAddressResponse response from the API call</return>
         Task<BaseResponse<GetAddressResponse, MundipaggErrorsResponse>> GetAddressAsync(string customerId, string addressId);
 
         /// <summary>
@@ -127,11 +129,10 @@ namespace Mundipagg.Resources.Interface
         BaseResponse<PagingResponse<GetAddressResponse>, MundipaggErrorsResponse> ListAddresses(ListAddressesRequest request);
 
         /// <summary>
-        /// Delete a Customer's address
+        /// Lists all adressess from a customer
         /// </summary>
-        /// <param name="customerId">Required parameter: Customer Id</param>
-        /// <param name="addressId">Required parameter: Address Id</param>
-        /// <return>Returns Models.GetAddressResponse response from the API call</return>
+        /// <return>Returns BaseResponse<PagingResponse<GetAddressResponse>> response from the API call</return>
+        /// <return>Returns Task<BaseResponse<PagingResponse<GetAddressResponse>>> response from the API call</return>
         Task<BaseResponse<PagingResponse<GetAddressResponse>, MundipaggErrorsResponse>> ListAddressesAsync(ListAddressesRequest request);
 
         /// <summary>
@@ -143,11 +144,10 @@ namespace Mundipagg.Resources.Interface
         BaseResponse<GetAddressResponse, MundipaggErrorsResponse> DeleteAddress(string customerId, string addressId);
 
         /// <summary>
-        /// Updates an address
+        /// Delete a Customer's address
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
         /// <param name="addressId">Required parameter: Address Id</param>
-        /// <param name="request">Required parameter: Request for updating an address</param>
         /// <return>Returns Models.GetAddressResponse response from the API call</return>
         Task<BaseResponse<GetAddressResponse, MundipaggErrorsResponse>> DeleteAddressAsync(string customerId, string addressId);
 
@@ -158,15 +158,15 @@ namespace Mundipagg.Resources.Interface
         /// <param name="addressId">Required parameter: Address Id</param>
         /// <param name="request">Required parameter: Request for updating an address</param>
         /// <return>Returns Models.GetAddressResponse response from the API call</return>
-        BaseResponse<GetAddressResponse, MundipaggErrorsResponse> UpdateAddress(string customerId, string addressId, UpdateAddressRequest request); 
-        
+        BaseResponse<GetAddressResponse, MundipaggErrorsResponse> UpdateAddress(string customerId, string addressId, UpdateAddressRequest request);
+
         /// <summary>
-        /// 
+        /// Updates an address
         /// </summary>
-        /// <param name="customerId"></param>
-        /// <param name="addressId"></param>
-        /// <param name="request"></param>
-        /// <returns></returns>
+        /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <param name="addressId">Required parameter: Address Id</param>
+        /// <param name="request">Required parameter: Request for updating an address</param>
+        /// <return>Returns Models.GetAddressResponse response from the API call</return>
         Task<BaseResponse<GetAddressResponse, MundipaggErrorsResponse>> UpdateAddressAsync(string customerId, string addressId, UpdateAddressRequest request);
 
         #endregion
@@ -174,18 +174,18 @@ namespace Mundipagg.Resources.Interface
         #region Card
 
         /// <summary>
-        /// Get a customer's card
+        /// Creates a new card for a customer
         /// </summary>
-        /// <param name="customerId"></param>
-        /// <param name="request"></param>
-        /// <returns></returns>
+        /// <param name="customerId">Required parameter: Customer id</param>
+        /// <param name="request">Required parameter: Request for creating a card</param>
+        /// <return>Returns Models.GetCardResponse response from the API call</return>
         BaseResponse<GetCardResponse, MundipaggErrorsResponse> CreateCard(string customerId, CreateCardRequest request);
 
         /// <summary>
-        /// Get a customer's card
+        /// Creates a new card for a customer
         /// </summary>
         /// <param name="customerId">Required parameter: Customer id</param>
-        /// <param name="cardId">Required parameter: Card id</param>
+        /// <param name="request">Required parameter: Request for creating a card</param>
         /// <return>Returns Models.GetCardResponse response from the API call</return>
         Task<BaseResponse<GetCardResponse, MundipaggErrorsResponse>> CreateCardAsync(string customerId, CreateCardRequest request);
 
@@ -198,23 +198,23 @@ namespace Mundipagg.Resources.Interface
         BaseResponse<GetCardResponse, MundipaggErrorsResponse> GetCard(string customerId, string cardId);
 
         /// <summary>
-        /// Lists all cards from a customer
+        /// Get a customer's card
         /// </summary>
+        /// <param name="customerId">Required parameter: Customer id</param>
+        /// <param name="cardId">Required parameter: Card id</param>
+        /// <return>Returns Models.GetCardResponse response from the API call</return>
         Task<BaseResponse<GetCardResponse, MundipaggErrorsResponse>> GetCardAsync(string customerId, string cardId);
 
         /// <summary>
         /// Lists all cards from a customer
         /// </summary>
         /// <return>Returns BaseResponse<PagingResponse<GetCardResponse>> response from the API call</return>
-        /// <return>Returns Task<BaseResponse<PagingResponse<GetCardResponse>>> response from the API call</return>
         BaseResponse<PagingResponse<GetCardResponse>, MundipaggErrorsResponse> ListCards(ListCardsRequest request);
 
         /// <summary>
-        /// Renew a card
+        /// Lists all cards from a customer
         /// </summary>
-        /// <param name="customerId">Required parameter: Customer id</param>
-        /// <param name="cardId">Required parameter: Card Id</param>
-        /// <return>Returns Models.GetCardResponse response from the API call</return>
+        /// <return>Returns BaseResponse<PagingResponse<GetCardResponse>> response from the API call</return>
         Task<BaseResponse<PagingResponse<GetCardResponse>, MundipaggErrorsResponse>> ListCardsAsync(ListCardsRequest request);
 
         /// <summary>
@@ -226,9 +226,9 @@ namespace Mundipagg.Resources.Interface
         BaseResponse<GetCardResponse, MundipaggErrorsResponse> RenewCard(string customerId, string cardId);
 
         /// <summary>
-        /// Delete a customer's card
+        /// Renew a card
         /// </summary>
-        /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <param name="customerId">Required parameter: Customer id</param>
         /// <param name="cardId">Required parameter: Card Id</param>
         /// <return>Returns Models.GetCardResponse response from the API call</return>
         Task<BaseResponse<GetCardResponse, MundipaggErrorsResponse>> RenewCardAsync(string customerId, string cardId);
@@ -242,11 +242,10 @@ namespace Mundipagg.Resources.Interface
         BaseResponse<GetCardResponse, MundipaggErrorsResponse> DeleteCard(string customerId, string cardId);
 
         /// <summary>
-        /// Updates a card
+        /// Delete a customer's card
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
-        /// <param name="cardId">Required parameter: Card id</param>
-        /// <param name="request">Required parameter: Request for updating a card</param>
+        /// <param name="cardId">Required parameter: Card Id</param>
         /// <return>Returns Models.GetCardResponse response from the API call</return>
         Task<BaseResponse<GetCardResponse, MundipaggErrorsResponse>> DeleteCardAsync(string customerId, string cardId);
 
@@ -262,10 +261,10 @@ namespace Mundipagg.Resources.Interface
         /// <summary>
         /// Updates a card
         /// </summary>
-        /// <param name="customerId"></param>
-        /// <param name="cardId"></param>
-        /// <param name="request"></param>
-        /// <returns></returns>
+        /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <param name="cardId">Required parameter: Card id</param>
+        /// <param name="request">Required parameter: Request for updating a card</param>
+        /// <return>Returns Models.GetCardResponse response from the API call</return>
         Task<BaseResponse<GetCardResponse, MundipaggErrorsResponse>> UpdateCardAsync(string customerId, string cardId, UpdateCardRequest request);
 
         #endregion
@@ -273,18 +272,18 @@ namespace Mundipagg.Resources.Interface
         #region Access Token
 
         /// <summary>
-        /// Get a Customer's access token
+        /// Creates a access token for a customer
         /// </summary>
-        /// <param name="customerId"></param>
-        /// <param name="request"></param>
-        /// <returns></returns>
+        /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <param name="request">Required parameter: Request for creating a access token</param>
+        /// <return>Returns Models.GetAccessTokenResponse response from the API call</return>
         BaseResponse<GetAccessTokenResponse, MundipaggErrorsResponse> CreateAccessToken(string customerId, CreateAccessTokenRequest request);
 
         /// <summary>
-        /// Get a Customer's access token
+        /// Creates a access token for a customer
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
-        /// <param name="tokenId">Required parameter: Token Id</param>
+        /// <param name="request">Required parameter: Request for creating a access token</param>
         /// <return>Returns Models.GetAccessTokenResponse response from the API call</return>
         Task<BaseResponse<GetAccessTokenResponse, MundipaggErrorsResponse>> CreateAccessTokenAsync(string customerId, CreateAccessTokenRequest request);
 
@@ -297,23 +296,23 @@ namespace Mundipagg.Resources.Interface
         BaseResponse<GetAccessTokenResponse, MundipaggErrorsResponse> GetAccessToken(string customerId, string tokenId);
 
         /// <summary>
-        /// Lists all access tokens from a customer
+        /// Get a Customer's access token
         /// </summary>
+        /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <param name="tokenId">Required parameter: Token Id</param>
+        /// <return>Returns Models.GetAccessTokenResponse response from the API call</return>
         Task<BaseResponse<GetAccessTokenResponse, MundipaggErrorsResponse>> GetAccessTokenAsync(string customerId, string tokenId);
 
         /// <summary>
         /// Lists all access tokens from a customer
         /// </summary>
         /// <return>Returns BaseResponse<PagingResponse<GetAccessTokenResponse>> response from the API call</return>
-        /// <return>Returns Task<BaseResponse<PagingResponse<GetAccessTokenResponse>>> response from the API call</return>
         BaseResponse<PagingResponse<GetAccessTokenResponse>, MundipaggErrorsResponse> ListAccessTokens(ListAccessTokensRequest request);
 
         /// <summary>
-        /// Delete a customer's access token
+        /// Lists all access tokens from a customer
         /// </summary>
-        /// <param name="customerId">Required parameter: Customer Id</param>
-        /// <param name="tokenId">Required parameter: Token Id</param>
-        /// <return>Returns Models.GetAccessTokenResponse response from the API call</return>
+        /// <return>Returns BaseResponse<PagingResponse<GetAccessTokenResponse>> response from the API call</return>
         Task<BaseResponse<PagingResponse<GetAccessTokenResponse>, MundipaggErrorsResponse>> ListAccessTokensAsync(ListAccessTokensRequest request);
 
         /// <summary>
@@ -325,9 +324,11 @@ namespace Mundipagg.Resources.Interface
         BaseResponse<GetAccessTokenResponse, MundipaggErrorsResponse> DeleteAccessToken(string customerId, string tokenId);
 
         /// <summary>
-        /// Delete a Customer's access tokens
+        /// Delete a customer's access token
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <param name="tokenId">Required parameter: Token Id</param>
+        /// <return>Returns Models.GetAccessTokenResponse response from the API call</return>
         Task<BaseResponse<GetAccessTokenResponse, MundipaggErrorsResponse>> DeleteAccessTokenAsync(string customerId, string tokenId);
 
         /// <summary>
@@ -335,14 +336,13 @@ namespace Mundipagg.Resources.Interface
         /// </summary>
         /// <param name="customerId">Required parameter: Customer Id</param>
         /// <return>Returns BaseResponse<PagingResponse<GetAccessTokenResponse>> response from the API call</return>
-        /// <return>Returns Task<BaseResponse<PagingResponse<GetAccessTokenResponse>>> response from the API call</return>
         BaseResponse<PagingResponse<GetAccessTokenResponse>, MundipaggErrorsResponse> DeleteAllAccessTokens(string customerId);
 
         /// <summary>
         /// Delete a Customer's access tokens
         /// </summary>
-        /// <param name="customerId"></param>
-        /// <returns></returns>
+        /// <param name="customerId">Required parameter: Customer Id</param>
+        /// <return>Returns BaseResponse<PagingResponse<GetAccessTokenResponse>> response from the API call</return>
         Task<BaseResponse<PagingResponse<GetAccessTokenResponse>, MundipaggErrorsResponse>> DeleteAllAccessTokensAsync(string customerId);
 
         #endregion

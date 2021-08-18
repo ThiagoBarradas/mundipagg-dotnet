@@ -12,7 +12,7 @@ namespace Mundipagg.Resources.Interface
     public interface IAccountResource : IResource
     {
         /// <summary>
-        /// 
+        /// Get Account Info
         /// </summary>
         /// <param name="accountId"></param>
         /// <returns></returns>
@@ -31,9 +31,8 @@ namespace Mundipagg.Resources.Interface
         BaseResponse<PagingResponse<GetAccountResponse>, MundipaggErrorsResponse> ListAccounts();
 
         /// <summary>
-        /// Cretes a new account
+        /// List all accounts
         /// </summary>
-        /// <param name="request"></param>
         /// <returns></returns>
         Task<BaseResponse<PagingResponse<GetAccountResponse>, MundipaggErrorsResponse>> ListAccountsAsync();
 
@@ -45,9 +44,9 @@ namespace Mundipagg.Resources.Interface
         BaseResponse<GetAccountResponse, MundipaggErrorsResponse> CreateAccount(CreateAccountRequest request);
 
         /// <summary>
-        /// Get Account Info
+        /// Cretes a new account
         /// </summary>
-        /// <param name="masterAccountId"></param>
+        /// <param name="request"></param>
         /// <returns></returns>
         Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> CreateAccountAsync(CreateAccountRequest request);
 
@@ -59,10 +58,9 @@ namespace Mundipagg.Resources.Interface
         BaseResponse<PagingResponse<GetAccountResponse>, MundipaggErrorsResponse> GetTestAccounts(string masterAccountId);
 
         /// <summary>
-        /// Cretes a new account
+        /// Get Account Info
         /// </summary>
         /// <param name="masterAccountId"></param>
-        /// <param name="request"></param>
         /// <returns></returns>
         Task<BaseResponse<PagingResponse<GetAccountResponse>, MundipaggErrorsResponse>> GetTestAccountsAsync(string masterAccountId);
 
@@ -75,9 +73,9 @@ namespace Mundipagg.Resources.Interface
         BaseResponse<GetAccountResponse, MundipaggErrorsResponse> CreateTestAccount(string masterAccountId, CreateAccountRequest request);
 
         /// <summary>
-        /// Update Account
+        /// Cretes a new account
         /// </summary>
-        /// <param name="accountId"></param>
+        /// <param name="masterAccountId"></param>
         /// <param name="request"></param>
         /// <returns></returns>
         Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> CreateTestAccountAsync(string masterAccountId, CreateAccountRequest request);
@@ -91,7 +89,7 @@ namespace Mundipagg.Resources.Interface
         BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateAccount(string accountId, UpdateAccountRequest request);
 
         /// <summary>
-        /// Update Status
+        /// Update Account
         /// </summary>
         /// <param name="accountId"></param>
         /// <param name="request"></param>
@@ -107,10 +105,10 @@ namespace Mundipagg.Resources.Interface
         BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateStatus(string accountId, UpdateAccountStatusRequest request);
 
         /// <summary>
-        ///     
+        /// Update Status
         /// </summary>
         /// <param name="accountId"></param>
-        /// <param name="merchantKey"></param>
+        /// <param name="request"></param>
         /// <returns></returns>
         Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> UpdateStatusAsync(string accountId, UpdateAccountStatusRequest request);
 
@@ -123,10 +121,10 @@ namespace Mundipagg.Resources.Interface
         BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateMundipaggConfig(string accountId, UpdateMundipaggConfigRequest request);
 
         /// <summary>
-        /// 
+        ///     
         /// </summary>
         /// <param name="accountId"></param>
-        /// <param name="request"></param>
+        /// <param name="merchantKey"></param>
         /// <returns></returns>
         Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> UpdateMundipaggConfigAsync(string accountId, UpdateMundipaggConfigRequest request);
 

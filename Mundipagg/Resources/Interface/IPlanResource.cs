@@ -11,30 +11,31 @@ namespace Mundipagg.Resources.Interface
     /// </summary>
     public interface IPlanResource : IResource
     {
+
         /// <summary>
-        /// Lists all plans
+        /// Gets a plan
         /// </summary>
-        /// <param name="planId"></param>
-        /// <returns></returns>
+        /// <param name="planId">Required parameter: Plan id</param>
+        /// <return>Returns BaseResponse<GetPlanResponse> response from the API call</return>
         BaseResponse<GetPlanResponse, MundipaggErrorsResponse> GetPlan(string planId);
 
         /// <summary>
-        /// Lists all plans
+        /// Gets a plan
         /// </summary>
+        /// <param name="planId">Required parameter: Plan id</param>
+        /// <return>Returns BaseResponse<GetPlanResponse> response from the API call</return>
         Task<BaseResponse<GetPlanResponse, MundipaggErrorsResponse>> GetPlanAsync(string planId);
 
         /// <summary>
         /// Lists all plans
         /// </summary>
         /// <return>Returns BaseResponse<PagingResponse<GetPlanResponse>> response from the API call</return>
-        /// <return>Returns Task<BaseResponse<PagingResponse<GetPlanResponse>>> response from the API call</return>
         BaseResponse<PagingResponse<GetPlanResponse>, MundipaggErrorsResponse> ListPlans(ListPlansRequest request);
 
         /// <summary>
         /// Lists all plans
         /// </summary>
-        /// <param name="request"></param>
-        /// <returns></returns>
+        /// <return>Returns BaseResponse<PagingResponse<GetPlanResponse>> response from the API call</return>
         Task<BaseResponse<PagingResponse<GetPlanResponse>, MundipaggErrorsResponse>> ListPlansAsync(ListPlansRequest request);
     }
 }

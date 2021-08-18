@@ -23,7 +23,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetPlanResponse>(method, endpoint, null);
         }
 
-
         public async Task<BaseResponse<GetPlanResponse, MundipaggErrorsResponse>> GetPlanAsync(string planId)
         {
             var method = HttpMethod.Get;
@@ -31,7 +30,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<GetPlanResponse>(method, endpoint, null);
         }
-
 
         public BaseResponse<PagingResponse<GetPlanResponse>, MundipaggErrorsResponse> ListPlans(ListPlansRequest request)
         {
@@ -41,7 +39,6 @@ namespace Mundipagg.Resources
 
             return this.SendRequest<PagingResponse<GetPlanResponse>>(method, endpoint, null, query);
         }
-
 
         public async Task<BaseResponse<PagingResponse<GetPlanResponse>, MundipaggErrorsResponse>> ListPlansAsync(ListPlansRequest request)
         {

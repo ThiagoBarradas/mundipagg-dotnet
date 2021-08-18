@@ -21,7 +21,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetChargeResponse>(method, endpoint, null);
         }
 
-
         public async Task<BaseResponse<GetChargeResponse, MundipaggErrorsResponse>> GetChargeAsync(string chargeId)
         {
             var method = HttpMethod.Get;
@@ -29,7 +28,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<GetChargeResponse>(method, endpoint, null);
         }
-
 
         public BaseResponse<PagingResponse<GetChargeResponse>, MundipaggErrorsResponse> ListCharges(ListChargesRequest request)
         {
@@ -40,7 +38,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<PagingResponse<GetChargeResponse>>(method, endpoint, null, query);
         }
 
-
         public async Task<BaseResponse<PagingResponse<GetChargeResponse>, MundipaggErrorsResponse>> ListChargesAsync(ListChargesRequest request)
         {
             var method = HttpMethod.Get;
@@ -49,7 +46,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<PagingResponse<GetChargeResponse>>(method, endpoint, null, query);
         }
-
 
         public BaseResponse<GetChargeResponse, MundipaggErrorsResponse> CancelCharge(string idempotencyKey, string chargeId, CreateCancelChargeRequest request = null)
         {
@@ -60,7 +56,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetChargeResponse>(method, endpoint, request, null, headers);
         }
 
-
         public async Task<BaseResponse<GetChargeResponse, MundipaggErrorsResponse>> CancelChargeAsync(string idempotencyKey, string chargeId, CreateCancelChargeRequest request = null)
         {
             var method = HttpMethod.Delete;
@@ -69,7 +64,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<GetChargeResponse>(method, endpoint, request, null, headers);
         }
-
 
         public BaseResponse<GetChargeResponse, MundipaggErrorsResponse> CaptureCharge(string idempotencyKey, string chargeId, CreateCaptureChargeRequest request = null)
         {
@@ -80,7 +74,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetChargeResponse>(method, endpoint, request, null, headers);
         }
 
-
         public async Task<BaseResponse<GetChargeResponse, MundipaggErrorsResponse>> CaptureChargeAsync(string idempotencyKey, string chargeId, CreateCaptureChargeRequest request = null)
         {
             var method = HttpMethod.Post;
@@ -90,7 +83,6 @@ namespace Mundipagg.Resources
             return await this.SendRequestAsync<GetChargeResponse>(method, endpoint, request, null, headers);
         }
 
-
         public BaseResponse<GetChargeResponse, MundipaggErrorsResponse> ConfirmChargePayment(string chargeId, CreateConfirmPaymentRequest request = null)
         {
             var method = HttpMethod.Post;
@@ -99,7 +91,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetChargeResponse>(method, endpoint, request);
         }
 
-
         public async Task<BaseResponse<GetChargeResponse, MundipaggErrorsResponse>> ConfirmChargePaymentAsync(string chargeId, CreateConfirmPaymentRequest request = null)
         {
             var method = HttpMethod.Post;
@@ -107,7 +98,6 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<GetChargeResponse>(method, endpoint, request);
         }
-
 
         public BaseResponse<GetChargeResponse, MundipaggErrorsResponse> CreateCharge(string idempotencyKey, CreateChargeRequest request)
         {
@@ -118,7 +108,6 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetChargeResponse>(method, endpoint, request, null, headers);
         }
 
-
         public async Task<BaseResponse<GetChargeResponse, MundipaggErrorsResponse>> CreateChargeAsync(string idempotencyKey, CreateChargeRequest request)
         {
             var method = HttpMethod.Post;
@@ -128,7 +117,6 @@ namespace Mundipagg.Resources
             return await this.SendRequestAsync<GetChargeResponse>(method, endpoint, request, null, headers);
         }
 
-
         public BaseResponse<GetChargeResponse, MundipaggErrorsResponse> RetryCharge(string chargeId)
         {
             var method = HttpMethod.Post;
@@ -136,7 +124,6 @@ namespace Mundipagg.Resources
 
             return this.SendRequest<GetChargeResponse>(method, endpoint, null);
         }
-
 
         public async Task<BaseResponse<GetChargeResponse, MundipaggErrorsResponse>> RetryChargeAsync(string chargeId)
         {
@@ -146,7 +133,6 @@ namespace Mundipagg.Resources
             return await this.SendRequestAsync<GetChargeResponse>(method, endpoint, null);
         }
 
-
         public BaseResponse<GetChargeResponse, MundipaggErrorsResponse> UpdateChargeCard(string chargeId, UpdateChargeCardRequest request)
         {
             var method = new HttpMethod("PATCH");
@@ -154,7 +140,6 @@ namespace Mundipagg.Resources
 
             return this.SendRequest<GetChargeResponse>(method, endpoint, request);
         }
-
 
         public async Task<BaseResponse<GetChargeResponse, MundipaggErrorsResponse>> UpdateChargeCardAsync(string chargeId, UpdateChargeCardRequest request)
         {
@@ -164,7 +149,6 @@ namespace Mundipagg.Resources
             return await this.SendRequestAsync<GetChargeResponse>(method, endpoint, request);
         }
 
-
         public BaseResponse<GetChargeResponse, MundipaggErrorsResponse> UpdateChargeDueDate(string chargeId, UpdateChargeDueDateRequest request)
         {
             var method = new HttpMethod("PATCH");
@@ -172,7 +156,6 @@ namespace Mundipagg.Resources
 
             return this.SendRequest<GetChargeResponse>(method, endpoint, request);
         }
-
 
         public async Task<BaseResponse<GetChargeResponse, MundipaggErrorsResponse>> UpdateChargeDueDateAsync(string chargeId, UpdateChargeDueDateRequest request)
         {
@@ -182,7 +165,6 @@ namespace Mundipagg.Resources
             return await this.SendRequestAsync<GetChargeResponse>(method, endpoint, request);
         }
 
-
         public BaseResponse<GetChargeResponse, MundipaggErrorsResponse> UpdateChargeMetadata(string chargeId, UpdateMetadataRequest request)
         {
             var method = new HttpMethod("PATCH");
@@ -190,7 +172,6 @@ namespace Mundipagg.Resources
 
             return this.SendRequest<GetChargeResponse>(method, endpoint, request);
         }
-
 
         public async Task<BaseResponse<GetChargeResponse, MundipaggErrorsResponse>> UpdateChargeMetadataAsync(string chargeId, UpdateMetadataRequest request)
         {
@@ -200,7 +181,6 @@ namespace Mundipagg.Resources
             return await this.SendRequestAsync<GetChargeResponse>(method, endpoint, request);
         }
 
-
         public BaseResponse<GetChargeResponse, MundipaggErrorsResponse> UpdateChargePaymentMethod(string chargeId, UpdateChargePaymentMethodRequest request)
         {
             var method = new HttpMethod("PATCH");
@@ -208,7 +188,6 @@ namespace Mundipagg.Resources
 
             return this.SendRequest<GetChargeResponse>(method, endpoint, request);
         }
-
 
         public async Task<BaseResponse<GetChargeResponse, MundipaggErrorsResponse>> UpdateChargePaymentMethodAsync(string chargeId, UpdateChargePaymentMethodRequest request)
         {
