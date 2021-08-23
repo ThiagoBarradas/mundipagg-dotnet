@@ -14,6 +14,6 @@ namespace Mundipagg.Models.Request
 
         public List<CreateSplitRequest> Split { get; set; }
 
-        public CreatePOIInformationRequest PoiInformation { get; set; }
+        public CreatePOIInformationRequest Poi { get; set; }
     }
 }
