@@ -2,6 +2,7 @@
 using Mundipagg.Models.Request;
 using Mundipagg.Models.Response;
 using RestSharp.Easy.Models;
+using System.Threading.Tasks;
 
 namespace Mundipagg.Resources.Interface
 {
@@ -19,12 +20,27 @@ namespace Mundipagg.Resources.Interface
         BaseResponse<GetInvoiceResponse, MundipaggErrorsResponse> CreateInvoice(string subscriptionId, string cycleId);
 
         /// <summary>
+        /// Create an Invoice
+        /// </summary>
+        /// <param name="subscriptionId">Required parameter: Subscription Id</param>
+        /// <param name="cycleId">Required parameter: Cycle Id</param>
+        /// <return>Returns BaseResponse<GetInvoiceResponse> response from the API call</return>
+        Task<BaseResponse<GetInvoiceResponse, MundipaggErrorsResponse>> CreateInvoiceAsync(string subscriptionId, string cycleId);
+
+        /// <summary>
         /// Gets an invoice
         /// </summary>
         /// <param name="invoiceId">Required parameter: Invoice Id</param>
         /// <return>Returns BaseResponse<GetInvoiceResponse> response from the API call</return>
         BaseResponse<GetInvoiceResponse, MundipaggErrorsResponse> GetInvoice(string invoiceId);
-        
+
+        /// <summary>
+        /// Gets an invoice
+        /// </summary>
+        /// <param name="invoiceId">Required parameter: Invoice Id</param>
+        /// <return>Returns BaseResponse<GetInvoiceResponse> response from the API call</return>
+        Task<BaseResponse<GetInvoiceResponse, MundipaggErrorsResponse>> GetInvoiceAsync(string invoiceId);
+
         /// <summary>
         /// Cancels an invoice
         /// </summary>
@@ -33,10 +49,23 @@ namespace Mundipagg.Resources.Interface
         BaseResponse<GetInvoiceResponse, MundipaggErrorsResponse> CancelInvoice(string invoiceId);
 
         /// <summary>
+        /// Cancels an invoice
+        /// </summary>
+        /// <param name="invoiceId">Required parameter: Invoice id</param>
+        /// <return>Returns BaseResponse<GetInvoiceResponse> response from the API call</return>
+        Task<BaseResponse<GetInvoiceResponse, MundipaggErrorsResponse>> CancelInvoiceAsync(string invoiceId);
+
+        /// <summary>
         /// Lists invoices
         /// </summary>
         /// <return>Returns BaseResponse<PagingResponse<GetInvoiceResponse>> response from the API call</return>
         BaseResponse<PagingResponse<GetInvoiceResponse>, MundipaggErrorsResponse> ListInvoices(ListInvoicesRequest request);
+
+        /// <summary>
+        /// Lists invoices
+        /// </summary>
+        /// <return>Returns BaseResponse<PagingResponse<GetInvoiceResponse>> response from the API call</return>
+        Task<BaseResponse<PagingResponse<GetInvoiceResponse>, MundipaggErrorsResponse>> ListInvoicesAsync(ListInvoicesRequest request);
 
         /// <summary>
         /// Updates the status from an invoice
@@ -47,11 +76,27 @@ namespace Mundipagg.Resources.Interface
         BaseResponse<GetInvoiceResponse, MundipaggErrorsResponse> UpdateInvoiceStatus(string invoiceId, UpdateInvoiceStatusRequest request);
 
         /// <summary>
+        /// Updates the status from an invoice
+        /// </summary>
+        /// <param name="invoiceId">Required parameter: Invoice Id</param>
+        /// <param name="request">Required parameter: Request for updating an invoice's status</param>
+        /// <return>Returns BaseResponse<GetInvoiceResponse> response from the API call</return>
+        Task<BaseResponse<GetInvoiceResponse, MundipaggErrorsResponse>> UpdateInvoiceStatusAsync(string invoiceId, UpdateInvoiceStatusRequest request);
+
+        /// <summary>
         /// Updates the metadata from an invoice
         /// </summary>
         /// <param name="invoiceId">Required parameter: The invoice id</param>
         /// <param name="request">Required parameter: Request for updating the invoice metadata</param>
         /// <return>Returns BaseResponse<GetInvoiceResponse> response from the API call</return>
         BaseResponse<GetInvoiceResponse, MundipaggErrorsResponse> UpdateInvoiceMetadata(string invoiceId, UpdateMetadataRequest request);
+
+        /// <summary>
+        /// Updates the metadata from an invoice
+        /// </summary>
+        /// <param name="invoiceId">Required parameter: The invoice id</param>
+        /// <param name="request">Required parameter: Request for updating the invoice metadata</param>
+        /// <return>Returns BaseResponse<GetInvoiceResponse> response from the API call</return>
+        Task<BaseResponse<GetInvoiceResponse, MundipaggErrorsResponse>> UpdateInvoiceMetadataAsync(string invoiceId, UpdateMetadataRequest request);
     }
 }

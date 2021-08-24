@@ -1,13 +1,13 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using System;
 
 namespace Mundipagg.Models.Request
 {
     [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class UpdatePixSettingsRequest
+    public class CreatePOIInformationRequest
     {
-        public bool Enabled { get; set; }
-
-        public string Gateway { get; set; }
+        public DateTime? InitiatorDate { get; set; }
+        public string InitiatorReference { get; set; }
     }
 }
