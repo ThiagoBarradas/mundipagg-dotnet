@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Mundipagg.Resources
 {
@@ -22,7 +23,6 @@ namespace Mundipagg.Resources
         {
             this.Configuration = configuration;
         }
-
 
         private Configuration _configuration { get; set; }
 
@@ -88,12 +88,51 @@ namespace Mundipagg.Resources
             string authMode = "sk")
             where TSuccess : class, new()
         {
+            var user = ConfigureUser(authMode);
+            headers = AddHeaders(headers, user);
+
+            return this.EasyRestClient.SendRequest<TSuccess, MundipaggErrorsResponse>
+                (method, endpoint, body, query, headers);
+        }
+
+        public async Task<BaseResponse<TSuccess, MundipaggErrorsResponse>> SendRequestAsync<TSuccess>(
+            HttpMethod method,
+            string endpoint,
+            object body = null,
+            Dictionary<string, string> query = null,
+            Dictionary<string, string> headers = null,
+            string authMode = "sk")
+            where TSuccess : class, new()
+        {
+
+            var user = ConfigureUser(authMode);
+            headers = AddHeaders(headers, user);
+
+            return await this.EasyRestClient.SendRequestAsync<TSuccess, MundipaggErrorsResponse>
+                (method, endpoint, body, query, headers);
+        }
+
+        private static Dictionary<string, string> AddHeaders(Dictionary<string, string> headers, string user)
+        {
+            var basic = Convert.ToBase64String(Encoding.UTF8.GetBytes($"{user}:"));
+
+            if (headers == null)
+            {
+                headers = new Dictionary<string, string>();
+            }
+
+            headers.Add("Authorization", $"Basic {basic}");
+            return headers;
+        }
+
+        private string ConfigureUser(string authMode)
+        {
+            string user;
+
             if (authMode == null)
             {
                 authMode = "sk";
             }
-
-            var user = "";
 
             switch (authMode)
             {
@@ -108,17 +147,7 @@ namespace Mundipagg.Resources
                     break;
             }
 
-            var basic = Convert.ToBase64String(Encoding.UTF8.GetBytes($"{user}:"));
-
-            if (headers == null)
-            {
-                headers = new Dictionary<string, string>();
-            }
-
-            headers.Add("Authorization", $"Basic {basic}");
-
-            return this.EasyRestClient.SendRequest<TSuccess, MundipaggErrorsResponse>
-                (method, endpoint, body, query, headers);
+            return user;
         }
     }
 }
