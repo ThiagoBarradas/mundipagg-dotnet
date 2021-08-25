@@ -177,6 +177,10 @@ namespace Mundipagg.Models.Request
         public long MaxCards { get; set; }
 
         public bool Shared { get; set; }
+
+        public bool ForceVerification { get; set; }
+
+        public bool ForceCvv { get; set; }
     }
 
     public class CreateWebhookSettingRequest
