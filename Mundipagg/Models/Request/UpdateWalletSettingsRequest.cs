@@ -11,5 +11,9 @@ namespace Mundipagg.Models.Request
         public int MaxCards { get; set; }
 
         public bool Shared { get; set; }
+
+        public bool ForceVerification { get; set; }
+
+        public bool ForceCvv { get; set; }
     }
 }
