@@ -9,6 +9,8 @@ namespace Mundipagg.Models.Request
     {
         public string Name { get; set; }
 
+        public string BillingType { get; set; }
+
         public DateTime? CreatedSince { get; set; }
 
         public DateTime? CreatedUntil { get; set; }
