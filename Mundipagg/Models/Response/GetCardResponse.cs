@@ -12,6 +12,8 @@ namespace Mundipagg.Models.Response
 
         public string Brand { get; set; }
 
+        public string Country { get; set; }
+
         public DateTime CreatedAt { get; set; }
 
         public GetCustomerResponse Customer { get; set; }
@@ -33,6 +35,8 @@ namespace Mundipagg.Models.Response
         public string LastFourDigits { get; set; }
 
         public Dictionary<string, string> Metadata { get; set; }
+
+        public string PGID { get; set; }
 
         public string Status { get; set; }
 
