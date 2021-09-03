@@ -22,9 +22,9 @@ namespace Mundipagg.Models.Response
 
         public string Id { get; set; }
 
-        public string Line1 { get; set; }
+        public string Line_1 { get; set; }
 
-        public string Line2 { get; set; }
+        public string Line_2 { get; set; }
 
         public Dictionary<string, string> Metadata { get; set; }
 
