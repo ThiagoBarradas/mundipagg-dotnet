@@ -12,8 +12,10 @@ namespace Mundipagg.Models.Response
 
         public string Country { get; set; }
 
+        [JsonProperty("line_1")]
         public string Line1 { get; set; }
 
+        [JsonProperty("line_2")]
         public string Line2 { get; set; }
 
         public string Neighborhood { get; set; }
