@@ -7,6 +7,8 @@ namespace Mundipagg.Models.Request
     [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class ListSubscriptionsRequest : BaseListRequest
     {
+        public string Id { get; set; }
+
         public string BillingType { get; set; }
 
         public string CardId { get; set; }

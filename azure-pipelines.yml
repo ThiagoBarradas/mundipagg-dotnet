@@ -171,7 +171,8 @@ stages:
         in(dependencies.UpdateBuildVersion.result, 'Succeeded'),
         in(dependencies.Build.result, 'Succeeded', 'Skipped'),
         in(dependencies.UnitTests.result, 'Succeeded', 'Skipped'),
-        eq(variables['execute_sonarcloud'], 'true')
+        eq(variables['execute_sonarcloud'], 'true'),
+        ne(variables['Build.Reason'], 'PullRequest')
       )
     workspace:
       clean: all

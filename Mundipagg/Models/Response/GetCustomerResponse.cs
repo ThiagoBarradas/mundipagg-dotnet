@@ -10,6 +10,8 @@ namespace Mundipagg.Models.Response
     {
         public GetAddressResponse Address { get; set; }
 
+        public DateTime? Birthdate { get; set; }
+
         public string Code { get; set; }
 
         public DateTime CreatedAt { get; set; }

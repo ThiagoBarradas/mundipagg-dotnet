@@ -22,8 +22,10 @@ namespace Mundipagg.Models.Response
 
         public string Id { get; set; }
 
+        [JsonProperty("line_1")]
         public string Line1 { get; set; }
 
+        [JsonProperty("line_2")]
         public string Line2 { get; set; }
 
         public Dictionary<string, string> Metadata { get; set; }
