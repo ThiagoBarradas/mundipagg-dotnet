@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 
 namespace Mundipagg.Utils
 {
@@ -40,6 +41,13 @@ namespace Mundipagg.Utils
                 {
                     value = ((Enum)value).GetEnumMember();
                 }
+
+                if (value is DateTime)
+                {
+                    var date = (DateTime)value;
+                    value = date.ToString(CultureInfo.InvariantCulture);
+                }
+
                 dictionary.Add(property.Name.ToSnakeCase(), value.ToString());
             }
         }
