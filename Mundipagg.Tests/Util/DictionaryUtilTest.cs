@@ -40,6 +40,24 @@ namespace Mundipagg.Tests.Util
             // Assert
             Assert.Equal(ex.ParamName, "source");
         }
+
+        [Theory]
+        [InlineData("11/07/2021 21:00:00", "07/11/2021 21:00:00")]
+        [InlineData("2020-11-19T00:00:00", "11/19/2020 00:00:00")]
+        [InlineData("01/01/2021 21:00:00", "01/01/2021 21:00:00")]
+        public void Should_Convert_DateTime(string originalDate, string expectedDate)
+        {
+            DictionaryUtilTestClass obj = new DictionaryUtilTestClass
+            {
+                CreatedAt = DateTime.Parse(originalDate)
+            };
+
+            // Act
+            var result = DictionaryUtil.ToDictionary(obj);
+
+            // Assert
+            Assert.Equal(expectedDate, result["created_at"]);
+        }
     }
 
     public class DictionaryUtilTestClass
@@ -49,6 +67,8 @@ namespace Mundipagg.Tests.Util
         public string Name { get; set; }
 
         public int Age { get; set; }
+
+        public DateTime? CreatedAt { get; set; }
 
         public CustomerTypeEnum CustomerType { get; set; }
     }
