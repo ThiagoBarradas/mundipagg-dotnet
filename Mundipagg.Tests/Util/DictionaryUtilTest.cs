@@ -1,6 +1,7 @@
 ﻿using Mundipagg.Models.Enums;
 using Mundipagg.Utils;
 using System;
+using System.Globalization;
 using Xunit;
 
 namespace Mundipagg.Tests.Util
@@ -49,7 +50,7 @@ namespace Mundipagg.Tests.Util
         {
             DictionaryUtilTestClass obj = new DictionaryUtilTestClass
             {
-                CreatedAt = DateTime.Parse(originalDate)
+                CreatedAt = DateTime.Parse(originalDate, new CultureInfo("pt-BR"))
             };
 
             // Act
