@@ -9,6 +9,8 @@ namespace Mundipagg.Models.Request
     {
         public int? Amount { get; set; }
 
+        public string Code { get; set; }
+
         public CreateBankTransferPaymentRequest BankTransfer { get; set; }
 
         public CreateBoletoPaymentRequest Boleto { get; set; }
