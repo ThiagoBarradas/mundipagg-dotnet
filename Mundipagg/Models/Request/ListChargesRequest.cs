@@ -15,9 +15,9 @@ namespace Mundipagg.Models.Request
 
         public string OrderId { get; set; }
 
-        public PaymentMethodTypeEnum PaymentMethod { get; set; }
+        public PaymentMethodTypeEnum? PaymentMethod { get; set; } = PaymentMethodTypeEnum.CreditCard;
 
-        public ChargeStatusEnum Status { get; set; }
+        public ChargeStatusEnum? Status { get; set; } = ChargeStatusEnum.Pending;
 
         public string InitiatorTransactionKey { get; set; }
     }
