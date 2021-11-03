@@ -7,5 +7,6 @@ namespace Mundipagg.Models.Request
     public class CreateImportRecipientRequest
     {
         public string GatewayId { get; set; }
+        public bool? DefaultRecipient { get; set; }
     }
 }
