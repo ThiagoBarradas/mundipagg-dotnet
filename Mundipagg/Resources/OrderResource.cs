@@ -120,6 +120,22 @@ namespace Mundipagg.Resources
             return await this.SendRequestAsync<GetOrderResponse>(method, endpoint, request);
         }
 
+        public BaseResponse<GetOrderResponse, MundipaggErrorsResponse> OpenOrder(string id)
+        {
+            var method = new HttpMethod("PATCH");
+            var endpoint = $"/orders/{id}/open";
+
+            return this.SendRequest<GetOrderResponse>(method, endpoint);
+        }
+
+        public async Task<BaseResponse<GetOrderResponse, MundipaggErrorsResponse>> OpenOrderAsync(string id)
+        {
+            var method = new HttpMethod("PATCH");
+            var endpoint = $"/orders/{id}/open";
+
+            return await this.SendRequestAsync<GetOrderResponse>(method, endpoint);
+        }
+
         #endregion
 
         #region Order Item 
