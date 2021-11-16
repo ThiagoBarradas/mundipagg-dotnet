@@ -97,6 +97,8 @@ namespace Mundipagg
 
         public IWebhookResource Webhook { get; private set; }
 
+        public ITransactionResource Transaction { get; private set; }
+
         /// <summary>
         /// Update configuration - if null, new values are ignored
         /// </summary>
@@ -148,6 +150,7 @@ namespace Mundipagg
             this.Subscription = new SubscriptionResource(configuration);
             this.Plan = new PlanResource(configuration);
             this.Recipient = new RecipientResource(configuration);
+            this.Transaction = new TransactionResource(configuration);
             this.Configuration = configuration;
         }
     }
