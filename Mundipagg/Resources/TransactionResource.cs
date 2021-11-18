@@ -22,5 +22,14 @@ namespace Mundipagg.Resources
 
             return this.SendRequest<List<GetTransactionResponse>>(method, endpoint, null, query);
         }
+
+         public async Task<BaseResponse<List<GetTransactionResponse>, MundipaggErrorsResponse>> GetTransactionsAsync(GetTransactionsRequest request)
+        {
+            var method = HttpMethod.Get;
+            var endpoint = $"/transactions";
+            var query = request.ToDictionary();
+
+            return await this.SendRequestAsync<List<GetTransactionResponse>>(method, endpoint, null, query);
+        }
     }
 }
