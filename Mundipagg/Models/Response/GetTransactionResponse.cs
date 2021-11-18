@@ -57,7 +57,5 @@ namespace Mundipagg.Models.Response
         public GetActionPOIInformationResponse Action { get; set; }
 
         public string OperationKey { get; set; }
-
-        public string PaymentMethod { get; set; }
     }
 }
