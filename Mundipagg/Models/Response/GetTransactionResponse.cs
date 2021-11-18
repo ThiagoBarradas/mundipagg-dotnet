@@ -58,6 +58,6 @@ namespace Mundipagg.Models.Response
 
         public string OperationKey { get; set; }
 
-        public string EntityType { get; set; }
+        public string PaymentMethod { get; set; }
     }
 }
