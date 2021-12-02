@@ -100,6 +100,19 @@ namespace Mundipagg.Resources.Interface
         /// <return>Returns Models.BaseResponse<GetOrderResponse> response from the API call</return>
         Task<BaseResponse<GetOrderResponse, MundipaggErrorsResponse>> CloseOrderAsync(string id, UpdateOrderStatusRequest request);
 
+        /// <summary>
+        /// Opens an order
+        /// </summary>
+        /// <param name="id">Required parameter: Order Id</param>
+        /// <return>Returns Models.BaseResponse<GetOrderResponse> response from the API call</return>
+        BaseResponse<GetOrderResponse, MundipaggErrorsResponse> OpenOrder(string id);
+
+        /// <summary>
+        /// Opens an order
+        /// </summary>
+        /// <param name="id">Required parameter: Order Id</param>
+        /// <return>Returns Models.BaseResponse<GetOrderResponse> response from the API call</return>
+        Task<BaseResponse<GetOrderResponse, MundipaggErrorsResponse>> OpenOrderAsync(string id);
         #endregion
 
         #region Order Item
