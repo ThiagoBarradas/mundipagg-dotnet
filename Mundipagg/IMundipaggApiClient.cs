@@ -58,6 +58,11 @@ namespace Mundipagg
         IPlanResource Plan { get; }
 
         /// <summary>
+        /// Subscriptions resource
+        /// </summary>
+        ITransactionResource Transaction { get; }
+
+        /// <summary>
         /// Update configuration
         /// </summary>
         /// <param name="secretKey"></param>
