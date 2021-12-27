@@ -93,8 +93,16 @@ namespace Mundipagg.Models.Request
     public class CreateCheckoutSettingsRequest
     {
         public string AddressType { get; set; }
+        
+        public string DefaultPaymentMethod { get; set; }
 
+        public string SuccessUrl { get; set; }
+        
         public bool Enabled { get; set; }
+
+        public string[] AcceptedBrands { get; set; }
+
+        public string[] AcceptedPaymentMethods { get; set; }
 
         public string[] OptionalFields { get; set; }
 
