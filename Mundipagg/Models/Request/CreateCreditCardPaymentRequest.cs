@@ -12,6 +12,8 @@ namespace Mundipagg.Models.Request
 
         public CreateCardRequest Card { get; set; }
 
+        public CreateNetworkTokenRequest NetworkToken { get; set; }
+
         public string CardId { get; set; }
 
         public string CardToken { get; set; }
