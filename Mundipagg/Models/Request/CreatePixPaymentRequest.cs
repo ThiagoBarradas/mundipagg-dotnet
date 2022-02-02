@@ -14,5 +14,7 @@ namespace Mundipagg.Models.Request
         public int? ExpiresIn { get; set; }
 
         public List<PixAdditionalInformation> AdditionalInformation { get; set; }
+
+        public CreatePOIRequest Poi { get; set; }
     }
 }
