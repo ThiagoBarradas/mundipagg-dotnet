@@ -37,6 +37,8 @@ namespace Mundipagg.Models.Request
 
         public CreateVoucherPaymentRequest Voucher { get; set; }
 
+        public string OperationSource { get; set; }
+
         public CreatePixPaymentRequest Pix { get; set; }
     }
 }
