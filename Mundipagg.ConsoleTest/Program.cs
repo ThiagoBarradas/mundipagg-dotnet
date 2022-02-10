@@ -234,6 +234,88 @@ namespace Mundipagg.ConsoleTest
             //
             // var teste = createPixResult.Data;
 
+            #region CreateNetworkTokenOrder
+            var createNetworkTokenOrder = new CreateOrderRequest()
+            {
+                AntifraudEnabled = false,
+                Customer = new CreateCustomerRequest()
+                {
+                    Name = "teste",
+                    Email = "teste@teste.com",
+                    Document = "12345678978",
+                    Type = "individual",
+                    Phones = new CreatePhonesRequest()
+                    {
+                        HomePhone = new CreatePhoneRequest()
+                        {
+                            AreaCode = "22",
+                            CountryCode = "55",
+                            Number = "12345678"
+                        }
+                    }
+                },
+                Items = new List<CreateOrderItemRequest>
+                {
+                    new CreateOrderItemRequest
+                    {
+                        Amount = 10000,
+                        Category = "beleza",
+                        Code = "pro_123",
+                        Description = "maquiagem",
+                        Quantity = 1,
+                        Seller = null,
+                        SellerId = null
+                    }
+                },
+                Payments = new List<CreatePaymentRequest>()
+                {
+                    new CreatePaymentRequest
+                    {
+                        GatewayAffiliationId = "merchantkey",
+                        Amount = 10000,
+                        CreditCard = new CreateCreditCardPaymentRequest()
+                        {
+                            Authentication = null,
+                            Capture = false,
+                            NetworkToken = new CreateNetworkTokenRequest()
+                            {
+                                Criptogram = "ANfQt43bddROAAEnSAMhAAADFA====",
+                                Number = "5256621004565548",
+                                BillingAddress = new NetworkTokenAddress()
+                                {
+                                    City = "Malibu",
+                                    Country = "US",
+                                    Neighborhood = "Central Malibu",
+                                    Number = "10880",
+                                    State = "CA",
+                                    Street = "Malibu Point",
+                                    ZipCode = "90265"
+                                },
+                                ExpMonth = 12,
+                                ExpYear = 23,
+                                HolderName = "Tony Stark",
+                                TokenRequestorId = "50110540444",
+                            }
+                        },
+                        PaymentMethod = "credit_card",
+                        Metadata =  new Dictionary<string, string>
+                        {
+                            {
+                                "mundipagg_payment_method_code", "19"
+                            }
+                        }
+                    },
+                },
+                SessionId = "123",
+                Shipping = null
+            };
+
+            client.UpdateConfiguration(secretKey:"sk_test_");
+
+            //var networkTokenOrderResult = client.Order.CreateOrder(null, createNetworkTokenOrder);
+            //var resultNetworkTokenOrderResult = networkTokenOrderResult.Data;
+            #endregion
+
             // var r = client.Recipient.GetRecipient("rp_xxx");
             // var r1 = client.Recipient.ListRecipients(new ListRecipientsRequest { Page = 1, Size = 2 });
             // var r2 = client.Recipient.ListRecipients(new ListRecipientsRequest { Page = 2, Size = 1 });
