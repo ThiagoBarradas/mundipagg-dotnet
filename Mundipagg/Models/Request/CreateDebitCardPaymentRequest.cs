@@ -24,6 +24,8 @@ namespace Mundipagg.Models.Request
 
         public string AcquirerAffiliationKey { get; set; }
 
+        public string OperationType { get; set; }
+
         public CreatePOIRequest Poi { get; set; }
     }
 }
