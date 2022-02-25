@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Mundipagg.Models.Commons;
 using Mundipagg.Models.Request;
 using Mundipagg.Models.Webhooks;
 using Newtonsoft.Json;
@@ -273,15 +271,18 @@ namespace Mundipagg.ConsoleTest
                     {
                         GatewayAffiliationId = "merchantkey",
                         Amount = 10000,
-                        CreditCard = new CreateCreditCardPaymentRequest()
+                        CreditCard = new CreateCreditCardPaymentRequest
                         {
                             Authentication = null,
                             Capture = false,
-                            NetworkToken = new CreateNetworkTokenRequest()
+                            NetworkToken = new CreateNetworkTokenRequest
                             {
-                                Criptogram = "ANfQt43bddROAAEnSAMhAAADFA====",
+                                Cryptograms =  new List<string>
+                                {
+                                    "ANfQt43bddROAAEnSAMhAAADFA===="
+                                },
                                 Number = "5256621004565548",
-                                BillingAddress = new NetworkTokenAddress()
+                                BillingAddress = new NetworkTokenAddress
                                 {
                                     City = "Malibu",
                                     Country = "US",

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
@@ -11,7 +12,7 @@ namespace Mundipagg.Models.Request
         public int ExpMonth { get; set; }
         public int ExpYear { get; set; }
         public string TokenRequestorId { get; set; }
-        public string Criptogram { get; set; }
+        public List<string> Cryptograms { get; set; }
         public virtual NetworkTokenAddress BillingAddress { get; set; }
     }
 
