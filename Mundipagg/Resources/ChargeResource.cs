@@ -196,5 +196,21 @@ namespace Mundipagg.Resources
 
             return await this.SendRequestAsync<GetChargeResponse>(method, endpoint, request);
         }
+
+        public BaseResponse<GetChargeResponse, MundipaggErrorsResponse> RetryCharge(string chargeId, RetryChargeRequest request)
+        {
+            var method = new HttpMethod("POST");
+            var endpoint = $"/charges/{chargeId}/retry";
+
+            return this.SendRequest<GetChargeResponse>(method, endpoint, request);
+        }
+
+        public async Task<BaseResponse<GetChargeResponse, MundipaggErrorsResponse>> RetryChargeAsync(string chargeId, RetryChargeRequest request)
+        {
+            var method = new HttpMethod("POST");
+            var endpoint = $"/charges/{chargeId}/retry";
+
+            return await this.SendRequestAsync<GetChargeResponse>(method, endpoint, request);
+        }
     }
 }
