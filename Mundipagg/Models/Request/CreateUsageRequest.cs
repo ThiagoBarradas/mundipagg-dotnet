@@ -13,6 +13,8 @@ namespace Mundipagg.Models.Request
 
         public string Mgroup { get; set; }
 
+        public int Amount { get; set; }
+        
         public int Quantity { get; set; }
 
         public DateTime UsedAt { get; set; }

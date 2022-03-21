@@ -454,20 +454,22 @@ namespace Mundipagg.Resources
 
         #region Usage
 
-        public BaseResponse<GetUsageResponse, MundipaggErrorsResponse> CreateUsage(string subscriptionId, string itemId, CreateUsageRequest request = null)
+        public BaseResponse<GetUsageResponse, MundipaggErrorsResponse> CreateUsage(string subscriptionId, string itemId, CreateUsageRequest request = null, string idempotencyKey = null)
         {
             var method = HttpMethod.Post;
             var endpoint = $"/subscriptions/{subscriptionId}/items/{itemId}/usages";
+            var headers = this.GetIdempontecyAsHeader(idempotencyKey);
 
-            return this.SendRequest<GetUsageResponse>(method, endpoint, request);
+            return this.SendRequest<GetUsageResponse>(method, endpoint, request, null, headers);
         }
 
-        public async Task<BaseResponse<GetUsageResponse, MundipaggErrorsResponse>> CreateUsageAsync(string subscriptionId, string itemId, CreateUsageRequest request = null)
+        public async Task<BaseResponse<GetUsageResponse, MundipaggErrorsResponse>> CreateUsageAsync(string subscriptionId, string itemId, CreateUsageRequest request = null, string idempotencyKey = null)
         {
             var method = HttpMethod.Post;
             var endpoint = $"/subscriptions/{subscriptionId}/items/{itemId}/usages";
+            var headers = this.GetIdempontecyAsHeader(idempotencyKey);
 
-            return await this.SendRequestAsync<GetUsageResponse>(method, endpoint, request);
+            return await this.SendRequestAsync<GetUsageResponse>(method, endpoint, request, null, headers);
         }
 
         public BaseResponse<GetUsagesDetailsResponse, MundipaggErrorsResponse> GetCurrentUsages(ListUsageDetailsRequest request)
