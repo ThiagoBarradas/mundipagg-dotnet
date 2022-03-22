@@ -438,7 +438,7 @@ namespace Mundipagg.Resources.Interface
         /// <param name="itemId"></param>
         /// <param name="body"></param>
         /// <returns></returns>
-        BaseResponse<GetUsageResponse, MundipaggErrorsResponse> CreateUsage(string subscriptionId, string itemId, CreateUsageRequest body = null);
+        BaseResponse<GetUsageResponse, MundipaggErrorsResponse> CreateUsage(string subscriptionId, string itemId, CreateUsageRequest body = null, string idempotencyKey = null);
 
         /// <summary>
         /// Creates usage
@@ -446,7 +446,7 @@ namespace Mundipagg.Resources.Interface
         /// <param name="subscriptionId">Required parameter: The subscription id</param>
         /// <param name="itemId">Required parameter: The subscription item id</param>
         /// <param name="usageId">Required parameter: The usage id</param>
-        Task<BaseResponse<GetUsageResponse, MundipaggErrorsResponse>> CreateUsageAsync(string subscriptionId, string itemId, CreateUsageRequest body = null);
+        Task<BaseResponse<GetUsageResponse, MundipaggErrorsResponse>> CreateUsageAsync(string subscriptionId, string itemId, CreateUsageRequest body = null, string idempotencyKey = null);
 
         /// <summary>
         /// Deletes a usage
