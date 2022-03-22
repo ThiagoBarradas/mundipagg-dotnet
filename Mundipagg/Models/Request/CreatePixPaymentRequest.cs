@@ -15,6 +15,10 @@ namespace Mundipagg.Models.Request
 
         public string QRCode { get; set; }
 
+        public string EndToEndId { get; set; }
+
+        public PixPayerRequest Payer { get; set; }
+
         public List<PixAdditionalInformation> AdditionalInformation { get; set; }
 
         public CreatePOIRequest Poi { get; set; }
