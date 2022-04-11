@@ -41,5 +41,7 @@ namespace Mundipagg.Models.Request
 
         [JsonProperty("track_3")]
         public string Track3 { get; set; }
+
+        public string Label { get; set; }
     }
 }
