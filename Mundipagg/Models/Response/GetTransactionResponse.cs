@@ -28,6 +28,8 @@ namespace Mundipagg.Models.Response
 
         public List<GetSplitResponse> Splits { get; set; }
 
+        public List<GetSplitResponse> Split { get; set; }
+
         public string Status { get; set; }
 
         public bool Success { get; set; }
