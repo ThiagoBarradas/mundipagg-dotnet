@@ -16,6 +16,6 @@ namespace Mundipagg.Models.Response
 
         public string Type { get; set; }
 
-        public GetSplitOptionsRequest SplitOptions { get; set; }
+        public GetSplitOptionsRequest Options { get; set; }
     }
 }
