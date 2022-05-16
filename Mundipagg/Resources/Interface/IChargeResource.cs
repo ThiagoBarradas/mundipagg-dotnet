@@ -180,5 +180,21 @@ namespace Mundipagg.Resources.Interface
         /// <param name="request">Required parameter: Request for updating the payment method from a charge</param>
         /// <return>Returns the Models.GetChargeResponse response from the API call</return>
         Task<BaseResponse<GetChargeResponse, MundipaggErrorsResponse>> UpdateChargePaymentMethodAsync(string chargeId, UpdateChargePaymentMethodRequest request);
+        
+        /// <summary>
+        /// Retry a charge
+        /// </summary>
+        /// <param name="chargeId">Required parameter: Charge id</param>
+        /// <param name="request">Required parameter: Configuration to retry a charge</param>
+        /// <returns>Returns the Models.GetChargeResponse response from the API call</returns>
+        BaseResponse<GetChargeResponse, MundipaggErrorsResponse> RetryCharge(string chargeId, RetryChargeRequest request);
+
+        /// <summary>
+        /// Retry a charge
+        /// </summary>
+        /// <param name="chargeId">Required parameter: Charge id</param>
+        /// <param name="request">Required parameter: Configuration to retry a charge</param>
+        /// <returns>Returns the Models.GetChargeResponse response from the API call</returns>
+        Task<BaseResponse<GetChargeResponse, MundipaggErrorsResponse>> RetryChargeAsync(string chargeId, RetryChargeRequest request);
     }
 }

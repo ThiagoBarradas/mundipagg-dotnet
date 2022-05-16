@@ -1,9 +1,8 @@
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Mundipagg.Models.Commons;
 using Mundipagg.Models.Request;
 using Mundipagg.Models.Webhooks;
 using Newtonsoft.Json;
+using PagarMe.Models.Request;
 
 namespace Mundipagg.ConsoleTest
 {
@@ -25,6 +24,65 @@ namespace Mundipagg.ConsoleTest
             };
 
             IMundipaggApiClient client = new MundipaggApiClient(config);
+
+            var createOrderRequest = new CreateOrderRequest
+            {
+                Items = new List<CreateOrderItemRequest>
+                {
+                    new CreateOrderItemRequest
+                    {
+                        Amount = 5000,
+                        Code = "12345",
+                        Quantity = 1,
+                        Description = "It just works"
+                    }
+                },
+
+                Customer = new CreateCustomerRequest
+                {
+                    Name = "Test da Silva",
+                    Document = "80487236033",
+                    Email = "teste@testando.com",
+                    Type = "individual",
+                    Phones = new CreatePhonesRequest
+                    {
+                        HomePhone = new CreatePhoneRequest
+                        {
+                            AreaCode = "21",
+                            CountryCode = "55",
+                            Number = "12344321"
+                        }
+                    }
+                },
+
+                Payments = new List<CreatePaymentRequest>
+                {
+                    new CreatePaymentRequest
+                    {
+                        Amount = 5000,
+                        PaymentMethod = "private_label",
+                        PrivateLabel = new CreatePrivateLabelPaymentRequest
+                        {
+                            Capture = true,
+                            Installments = 1,
+                            StatementDescriptor = "No Quarter",
+                            Card = new CreateCardRequest
+                            {
+                                Number = "4000000000000010",
+                                Cvv = "123",
+                                ExpMonth = 12,
+                                ExpYear = 2030,
+                                Brand = "elo",
+                                Label = "Pernambucanas",
+                                HolderName = "Teste Da Silva",
+                                HolderDocument = "80487236033"
+                            }
+                        }
+                    }
+                }
+            };
+            var createOrderResponse = client.Order.CreateOrder("idempotency-key", createOrderRequest);
+            System.Console.WriteLine(createOrderResponse);
 
             //Create recipient request with code
             var recipientRequest = new CreateRecipientRequest()
@@ -273,15 +331,18 @@ namespace Mundipagg.ConsoleTest
                     {
                         GatewayAffiliationId = "merchantkey",
                         Amount = 10000,
-                        CreditCard = new CreateCreditCardPaymentRequest()
+                        CreditCard = new CreateCreditCardPaymentRequest
                         {
                             Authentication = null,
                             Capture = false,
-                            NetworkToken = new CreateNetworkTokenRequest()
+                            NetworkToken = new CreateNetworkTokenRequest
                             {
-                                Criptogram = "ANfQt43bddROAAEnSAMhAAADFA====",
+                                Cryptograms =  new List<string>
+                                {
+                                    "ANfQt43bddROAAEnSAMhAAADFA===="
+                                },
                                 Number = "5256621004565548",
-                                BillingAddress = new NetworkTokenAddress()
+                                BillingAddress = new NetworkTokenAddress
                                 {
                                     City = "Malibu",
                                     Country = "US",

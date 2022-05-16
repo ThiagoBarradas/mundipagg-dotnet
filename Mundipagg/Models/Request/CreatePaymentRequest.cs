@@ -1,5 +1,6 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using PagarMe.Models.Request;
 using System.Collections.Generic;
 
 namespace Mundipagg.Models.Request
@@ -21,6 +22,8 @@ namespace Mundipagg.Models.Request
 
         public CreateCreditCardPaymentRequest CreditCard { get; set; }
 
+        public CreatePrivateLabelPaymentRequest PrivateLabel { get; set; }
+
         public CreateCustomerRequest Customer { get; set; }
 
         public string CustomerId { get; set; }
@@ -36,6 +39,8 @@ namespace Mundipagg.Models.Request
         public List<CreateSplitRequest> Split { get; set; }
 
         public CreateVoucherPaymentRequest Voucher { get; set; }
+
+        public string OperationSource { get; set; }
 
         public CreatePixPaymentRequest Pix { get; set; }
     }
