@@ -61,6 +61,7 @@ namespace Mundipagg.Models.Response
         public string StatementDescriptor { get; set; }
 
         public string Status { get; set; }
+        public string StatusReason { get; set; }
 
         public DateTime UpdatedAt { get; set; }
     }
