@@ -35,6 +35,7 @@ namespace Mundipagg
         /// <param name="timeout"></param>
         /// <param name="mpToken"></param>
         /// <param name="accountManagementKey"></param>
+        /// <param name="serviceRefererName"></param>
         public Configuration(
             string secretKey = null, 
             string requestKey = null, 
@@ -42,7 +43,8 @@ namespace Mundipagg
             int? timeout = null,
             string mpToken = null,
             string accountManagementKey = null,
-            bool enableLog = false)
+            bool enableLog = false,
+            string serviceRefererName = null)
         {
             this.SecretKey = secretKey;
             this.ApiUrl = apiUrl ?? API_URL;
@@ -51,6 +53,7 @@ namespace Mundipagg
             this.MpToken = mpToken;
             this.AccountManagementKey = accountManagementKey;
             this.EnableLog = enableLog;
+            this.ServiceRefererName = serviceRefererName;
         }
 
         /// <summary>
@@ -97,7 +100,12 @@ namespace Mundipagg
         /// Timeout in milliseconds
         /// </summary>
         public int Timeout { get; set; }
-    
+
+        /// <summary>
+        /// Service Referer Name
+        /// </summary>
+        public string ServiceRefererName { get; set; }
+
         public Configuration Clone()
         {
             return (Configuration) this.MemberwiseClone();
