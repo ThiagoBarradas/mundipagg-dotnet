@@ -39,6 +39,8 @@ namespace Mundipagg.Models.Request
 
         public string SuccessUrl { get; set; }
 
+        public string CancellationUrl { get; set; }
+
         public CreateCheckoutPixPaymentRequest Pix { get; set; }
     }
 }
