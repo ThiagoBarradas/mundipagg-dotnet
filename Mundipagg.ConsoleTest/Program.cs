@@ -59,24 +59,14 @@ namespace Mundipagg.ConsoleTest
                 {
                     new CreatePaymentRequest
                     {
+                        PaymentMethod = "checkout",
                         Amount = 5000,
-                        PaymentMethod = "private_label",
-                        PrivateLabel = new CreatePrivateLabelPaymentRequest
+                        Checkout = new CreateCheckoutPaymentRequest
                         {
-                            Capture = true,
-                            Installments = 1,
-                            StatementDescriptor = "No Quarter",
-                            Card = new CreateCardRequest
-                            {
-                                Number = "4000000000000010",
-                                Cvv = "123",
-                                ExpMonth = 12,
-                                ExpYear = 2030,
-                                Brand = "elo",
-                                Label = "Pernambucanas",
-                                HolderName = "Teste Da Silva",
-                                HolderDocument = "80487236033"
-                            }
+                            AcceptedPaymentMethods = new List<string>{"credit_card"},
+                            SuccessUrl = "https://google.com",
+                            CancellationUrl = "https://pagar.me",
+                            ExpiresIn = 90000
                         }
                     }
                 }
