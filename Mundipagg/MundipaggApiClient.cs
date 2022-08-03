@@ -44,7 +44,8 @@ namespace Mundipagg
             this.Initialize(new Configuration(secretKey, requestKey, apiUrl, timeout, mpToken, accountManagementKey, enableLog, serviceRefererName)
             {
                 MerchantId = merchantId,
-                AccountId = accountId
+                AccountId = accountId,
+                ServiceRefererName = serviceRefererName
             });
         }
 
