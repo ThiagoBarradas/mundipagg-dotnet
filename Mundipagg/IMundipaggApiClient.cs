@@ -74,6 +74,7 @@ namespace Mundipagg
         /// <param name="merchantId"></param>
         /// <param name="accountId"></param>
         /// <param name="enableLog"></param>
+        /// <param name="serviceRefererName"></param>
         void UpdateConfiguration(string secretKey = null,
             string requestKey = null,
             string apiUrl = null,
@@ -82,6 +83,7 @@ namespace Mundipagg
             string accountManagementKey = null,
             string merchantId = null,
             string accountId = null,
-            bool enableLog = false);
+            bool enableLog = false,
+            string serviceRefererName = null);
     }
 }

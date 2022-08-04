@@ -45,7 +45,8 @@ namespace Mundipagg.Resources
                 var additionalLog = new Dictionary<string, string>()
                 {
                     { "AccountId", this._configuration.AccountId },
-                    { "MerchantId", this._configuration.MerchantId }
+                    { "MerchantId", this._configuration.MerchantId },
+                    { "ServiceRefererName", this._configuration.ServiceRefererName }
                 };
 
                 this.EasyRestClient = new EasyRestClient(value.ApiUrl,
