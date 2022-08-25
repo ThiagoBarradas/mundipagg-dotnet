@@ -4,10 +4,10 @@ namespace Mundipagg.Models.Enums
 {
     public enum ProviderNameEnum
     {
-        [EnumMember(Value = "mundipagg")]
-        Mundipagg,
+        [EnumMember(Value = "gateway")]
+        Gateway,
 
-        [EnumMember(Value = "pagarme")]
-        Pagarme,
+        [EnumMember(Value = "psp")]
+        Psp,
     }
 }
