@@ -2,7 +2,7 @@
 
 namespace Mundipagg.Models.Enums
 {
-    public enum PaymentProviderEnum
+    public enum ProviderNameEnum
     {
         [EnumMember(Value = "mundipagg")]
         Mundipagg,

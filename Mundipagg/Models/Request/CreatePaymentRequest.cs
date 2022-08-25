@@ -13,7 +13,7 @@ namespace Mundipagg.Models.Request
 
         public string Code { get; set; }
 
-        public PaymentProviderEnum? Provider { get; set; }
+        public ProviderNameEnum? ProviderName { get; set; }
 
         public CreateBankTransferPaymentRequest BankTransfer { get; set; }
 
