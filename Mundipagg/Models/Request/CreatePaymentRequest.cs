@@ -1,3 +1,4 @@
+using Mundipagg.Models.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using PagarMe.Models.Request;
@@ -11,6 +12,8 @@ namespace Mundipagg.Models.Request
         public int? Amount { get; set; }
 
         public string Code { get; set; }
+
+        public ProviderNameEnum? ProviderName { get; set; }
 
         public CreateBankTransferPaymentRequest BankTransfer { get; set; }
 
