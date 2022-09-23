@@ -9,5 +9,8 @@ namespace Mundipagg.Models.Enums
 
         [EnumMember(Value = "psp")]
         Psp,
+
+        [EnumMember(Value = "simulator")]
+        Simulator,
     }
 }
