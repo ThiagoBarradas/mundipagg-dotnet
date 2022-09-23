@@ -9,6 +9,8 @@ namespace Mundipagg.Models.Request
     [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class CreatePixPaymentRequest
     {
+        public DateTime? PaidAt { get; set; }
+
         public DateTime? ExpiresAt { get; set; }
 
         public int? ExpiresIn { get; set; }
