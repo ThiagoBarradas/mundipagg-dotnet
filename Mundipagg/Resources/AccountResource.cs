@@ -412,7 +412,7 @@ namespace Mundipagg.Resources
             return await this.SendRequestAsync<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
-        public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateAntifraudSettings(string accountId, UpdateCashSettingsRequest request)
+        public BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateAntifraudSettings(string accountId, UpdateAntifraudSettingsRequest request)
         {
             var method = new HttpMethod("patch");
             var endpoint = $"/accounts/{accountId}/antifraud-settings";
@@ -420,7 +420,7 @@ namespace Mundipagg.Resources
             return this.SendRequest<GetAccountResponse>(method, endpoint, request, authMode: "amk");
         }
 
-        public async Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> UpdateAntifraudSettingsAsync(string accountId, UpdateCashSettingsRequest request)
+        public async Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> UpdateAntifraudSettingsAsync(string accountId, UpdateAntifraudSettingsRequest request)
         {
             var method = new HttpMethod("patch");
             var endpoint = $"/accounts/{accountId}/antifraud-settings";

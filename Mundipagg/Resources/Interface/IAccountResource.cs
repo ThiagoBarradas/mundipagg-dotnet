@@ -438,7 +438,7 @@ namespace Mundipagg.Resources.Interface
         /// <param name="accountId"></param>
         /// <param name="request"></param>
         /// <returns></returns>
-        BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateAntifraudSettings(string accountId, UpdateCashSettingsRequest request);
+        BaseResponse<GetAccountResponse, MundipaggErrorsResponse> UpdateAntifraudSettings(string accountId, UpdateAntifraudSettingsRequest request);
 
         /// <summary>
         /// 
@@ -446,7 +446,7 @@ namespace Mundipagg.Resources.Interface
         /// <param name="accountId"></param>
         /// <param name="request"></param>
         /// <returns></returns>
-        Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> UpdateAntifraudSettingsAsync(string accountId, UpdateCashSettingsRequest request);
+        Task<BaseResponse<GetAccountResponse, MundipaggErrorsResponse>> UpdateAntifraudSettingsAsync(string accountId, UpdateAntifraudSettingsRequest request);
 
     }
 }
