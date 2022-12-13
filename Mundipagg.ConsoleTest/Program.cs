@@ -25,6 +25,86 @@ namespace Mundipagg.ConsoleTest
 
             IMundipaggApiClient client = new MundipaggApiClient(config);
 
+            var createOmnichannelOrderRequest = new CreateOrderRequest
+            {
+                Items = new List<CreateOrderItemRequest>
+                {
+                    new CreateOrderItemRequest
+                    {
+                        Amount = 5000,
+                        Code = "12345",
+                        Quantity = 1,
+                        Description = "It just works"
+                    }
+                },
+
+                Customer = new CreateCustomerRequest
+                {
+                    Name = "Test da Silva",
+                    Document = "80487236033",
+                    Email = "teste@testando.com",
+                    Type = "individual",
+                    Phones = new CreatePhonesRequest
+                    {
+                        HomePhone = new CreatePhoneRequest
+                        {
+                            AreaCode = "21",
+                            CountryCode = "55",
+                            Number = "12344321"
+                        }
+                    }
+                },
+
+                Payments = new List<CreatePaymentRequest>
+                {
+                    new CreatePaymentRequest
+                    {
+                        PaymentMethod = "credit_card",
+                        Amount = 5000,
+                        CreditCard = new CreateCreditCardPaymentRequest
+                        {
+                            Poi = new CreatePOIRequest
+                            {
+                                Device = new CreateDevicePOIRequest
+                                {
+                                    SystemName = "mamba",
+                                    Model = "modelo",
+                                    SerialNumber = "123456778",
+                                    VersionNumber = "1.2",
+                                    CommunicationType = "WIFI",
+                                    Manufacturer = "PAX",
+                                    PartnerName = "omnichannel",
+                                }
+                            },
+                            Authentication = null,
+                            Capture = false,
+                            Card = new CreateCardRequest
+                            {
+                                Number = "5365726799601271",
+                                Brand = "Mastercard",
+                                HolderName = "Tony Stark",
+                                ExpMonth = 8,
+                                ExpYear = 2028,
+                                Cvv = "708",
+                                Track2 = "5413330089600028D25122010123409172",
+                                BillingAddress = new CreateAddressRequest
+                                {
+                                    Street = "Malibu Point",
+                                    Number = "10880",
+                                    ZipCode = "90265",
+                                    Neighborhood = "Central Malibu",
+                                    City = "Malibu",
+                                    State = "CA",
+                                    Country = "US"
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+            var createOmnichannelOrderResponse = client.Order.CreateOrder("idempotency-key", createOmnichannelOrderRequest);
+            System.Console.WriteLine(createOmnichannelOrderResponse);
+
             var createOrderRequest = new CreateOrderRequest
             {
                 Items = new List<CreateOrderItemRequest>
