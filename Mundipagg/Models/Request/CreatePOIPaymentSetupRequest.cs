@@ -7,5 +7,7 @@
         public int? Installments { get; set; }
 
         public string InstallmentType { get; set; }
+
+        public int? Amount { get; set; }
     }
 }
