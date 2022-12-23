@@ -13,7 +13,5 @@
         public string VersionNumber { get; set; }
 
         public string CommunicationType { get; set; }
-
-        public string PartnerName { get; set; }
     }
 }
