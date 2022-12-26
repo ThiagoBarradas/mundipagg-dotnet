@@ -1,10 +1,12 @@
 using Mundipagg.Models.Converters;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 
 namespace Mundipagg.Models.Response
 {
+    [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     [JsonConverter(typeof(GetTransactionResponseCreationConverter))]
     public class GetTransactionResponse
     {
