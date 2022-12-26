@@ -4,6 +4,10 @@ namespace Mundipagg.Models.Request
 {
     public class CreatePOIRequest
     {
+        public string PartnerName { get; set; }
+
+        public string PartnerVersionId { get; set; }
+
         public string InitiatorTransactionKey { get; set; }
 
         public string CardSequenceNumber { get; set; }
