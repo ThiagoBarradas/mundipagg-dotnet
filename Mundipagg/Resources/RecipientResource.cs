@@ -67,7 +67,7 @@ namespace Mundipagg.Resources
         {
             var method = HttpMethod.Put;
             var endpoint = $"/recipients/{recipientId}";
-
+ 
             return this.SendRequest<GetRecipientResponse>(method, endpoint, request);
         }
 
