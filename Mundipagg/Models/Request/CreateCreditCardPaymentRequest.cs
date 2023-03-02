@@ -26,6 +26,8 @@ namespace Mundipagg.Models.Request
 
         public long? MerchantCategoryCode { get; set; }
 
+        public string RecurrenceCycle { get; set; }
+
         public bool? Recurrence { get; set; }
 
         public string StatementDescriptor { get; set; }
