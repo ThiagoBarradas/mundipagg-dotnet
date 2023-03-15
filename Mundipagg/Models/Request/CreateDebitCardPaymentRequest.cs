@@ -20,6 +20,8 @@ namespace Mundipagg.Models.Request
 
         public CreateCardPaymentTokenRequest Token { get; set; }
 
+        public CreateNetworkTokenRequest NetworkToken { get; set; }
+
         public string EntryMode { get; set; }
 
         public string AcquirerAffiliationKey { get; set; }
