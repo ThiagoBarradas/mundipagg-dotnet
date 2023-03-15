@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Mundipagg.Models.Request;
 using Mundipagg.Models.Webhooks;
 using Newtonsoft.Json;
+using PagarMe.Models.Request;
 
 namespace Mundipagg.ConsoleTest
 {
@@ -23,6 +24,55 @@ namespace Mundipagg.ConsoleTest
             };
 
             IMundipaggApiClient client = new MundipaggApiClient(config);
+
+            var createOrderRequest = new CreateOrderRequest
+            {
+                Items = new List<CreateOrderItemRequest>
+                {
+                    new CreateOrderItemRequest
+                    {
+                        Amount = 5000,
+                        Code = "12345",
+                        Quantity = 1,
+                        Description = "It just works"
+                    }
+                },
+
+                Customer = new CreateCustomerRequest
+                {
+                    Name = "Test da Silva",
+                    Document = "80487236033",
+                    Email = "teste@testando.com",
+                    Type = "individual",
+                    Phones = new CreatePhonesRequest
+                    {
+                        HomePhone = new CreatePhoneRequest
+                        {
+                            AreaCode = "21",
+                            CountryCode = "55",
+                            Number = "12344321"
+                        }
+                    }
+                },
+
+                Payments = new List<CreatePaymentRequest>
+                {
+                    new CreatePaymentRequest
+                    {
+                        PaymentMethod = "checkout",
+                        Amount = 5000,
+                        Checkout = new CreateCheckoutPaymentRequest
+                        {
+                            AcceptedPaymentMethods = new List<string>{"credit_card"},
+                            SuccessUrl = "https://google.com",
+                            CancellationUrl = "https://pagar.me",
+                            ExpiresIn = 90000
+                        }
+                    }
+                }
+            };
+            var createOrderResponse = client.Order.CreateOrder("idempotency-key", createOrderRequest);
+            System.Console.WriteLine(createOrderResponse);
 
             //Create recipient request with code
             var recipientRequest = new CreateRecipientRequest()
