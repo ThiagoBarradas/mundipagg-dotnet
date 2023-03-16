@@ -22,6 +22,8 @@ namespace Mundipagg.Models.Response
 
         public string AuthenticationType { get; set; }
 
+        public string FundingSource { get; set; }
+
         public GetCardResponse Card { get; set; }
 
         public string Eci { get; set; }
