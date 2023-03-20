@@ -20,6 +20,8 @@ namespace Mundipagg.Models.Response
 
         public string AcquirerTid { get; set; }
 
+        public string FundingSource { get; set; }
+
         public GetCardResponse Card { get; set; }
 
         public int? Installments { get; set; }
