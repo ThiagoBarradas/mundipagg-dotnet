@@ -1,6 +1,5 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using System;
 using System.Collections.Generic;
 
 namespace Mundipagg.Models.Request
@@ -13,5 +12,7 @@ namespace Mundipagg.Models.Request
         public List<CreateSplitRequest> SplitRules { get; set; }
 
         public CreatePOIInformationRequest Poi { get; set; }
+
+        public CreateBankAccountRefundingRequest BankAccount { get; set; }
     }
 }
